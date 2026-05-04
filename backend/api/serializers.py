@@ -9,6 +9,18 @@ class ClauseSerializer(serializers.ModelSerializer):
         model = Clause
         fields = '__all__'
 
+class SmartContractTemplateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SmartContractTemplate
+        fields = '__all__'
+
+class ContractProposalSerializer(serializers.ModelSerializer):
+    template_details = SmartContractTemplateSerializer(source='template', read_only=True)
+    
+    class Meta:
+        model = ContractProposal
+        fields = '__all__'
+
 class DocumentSerializer(serializers.ModelSerializer):
     clause_count = serializers.IntegerField(source='clauses.count', read_only=True)
     pending_clause_count = serializers.SerializerMethodField()
@@ -26,18 +38,6 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'email', 'role', 'first_name', 'last_name')
-
-class SmartContractTemplateSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SmartContractTemplate
-        fields = '__all__'
-
-class ContractProposalSerializer(serializers.ModelSerializer):
-    template_details = SmartContractTemplateSerializer(source='template', read_only=True)
-    
-    class Meta:
-        model = ContractProposal
-        fields = '__all__'
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
