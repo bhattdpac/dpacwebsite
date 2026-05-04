@@ -1,0 +1,34 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+db.sqlite3
+media/
+static/
+
+# Node / Frontend
+node_modules/
+dist/
+.eslintcache
+*.log
+
+# Blockchain
+artifacts/
+cache/
+typechain-types/
+coverage/
+coverage.json
+.openzeppelin/
+
+# OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Project Specific
+*.pdf
+nginx.conf
+host.md

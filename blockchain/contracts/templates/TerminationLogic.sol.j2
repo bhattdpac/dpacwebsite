@@ -1,0 +1,42 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.28;
+
+import "./BaseLegalContract.sol";
+
+/**
+ * @title TerminationLogic
+ * @dev Manages the active state of a legal contract based on duration or mutual consent.
+ */
+contract TerminationLogic is BaseLegalContract {
+    uint256 public expiryDate;
+    bool public isTerminated;
+
+    event ContractTerminated(string reason);
+
+    modifier onlyActive() {
+        require(!isTerminated, "Contract is terminated");
+        require(block.timestamp < expiryDate, "Contract has expired");
+        _;
+    }
+
+    constructor() {
+        expiryDate = block.timestamp + ({{ durationDays }} * 1 days);
+        isTerminated = false;
+    }
+
+    /**
+     * @dev Manually terminates the contract (e.g., mutual consent).
+     */
+    function terminate() external onlyOwner {
+        require(!isTerminated, "Already terminated");
+        isTerminated = true;
+        emit ContractTerminated("Manual termination by authorized party");
+    }
+
+    /**
+     * @dev Checks if the contract is still valid.
+     */
+    function isValid() public view returns (bool) {
+        return !isTerminated && block.timestamp < expiryDate;
+    }
+}
