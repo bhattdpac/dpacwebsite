@@ -4,73 +4,49 @@
 This project is an AI-driven, human-centered framework designed to integrate advanced Natural Language Processing (NLP) with blockchain-based smart contracts. The goal is to translate human-readable legal documents into secure, transparent, and executable code on a blockchain, specifically for legal documentation.
 
 **Developer:** Deepak Bhatt (PhD Research Project)
-**Status:** In Development (Unit 01 Scaffolding Complete)
+**Status:** **PHASE 5 COMPLETE (Production Ready)**
 
 ## Technology Stack
 - **Frontend:** React + TypeScript + Vite + Tailwind CSS
 - **Backend:** Django + Django Rest Framework + spaCy/NLTK (NLP)
 - **Blockchain:** Hardhat + Solidity + Ethers.js
-- **Database:** PostgreSQL (Relational metadata)
+- **Database:** PostgreSQL (Production) / SQLite (Dev)
+- **Security:** Slither-audited Smart Contracts, RBAC Enforced
 
 ## Project Structure
 - `frontend/` — React application for lawyers and clients.
 - `backend/` — Django REST API and NLP processing engine.
 - `blockchain/` — Solidity contracts and Hardhat development environment.
+- `deployment/` — Production configurations (Nginx, Gunicorn, deploy script).
 - `context/` — The Six-File Context System (Project Overview, Architecture, Code Standards, etc.)
 
 ## Progress Summary
 
-### Phase 1: Foundation & Infrastructure
-- [x] **Unit 01: Multi-Repo Scaffolding**
-  - React/TS frontend initialized with Tailwind CSS tokens.
-  - Django project with health check API and CORS configured.
-  - Hardhat project with a verified "Health" smart contract and test suite.
-  - Six-file context system established in the `context/` folder.
-- [x] **Unit 02: Authentication & Role-Based Access Control (RBAC)**
-  - JWT-based authentication in Django using `djangorestframework-simplejwt`.
-  - Custom User model with "Lawyer" and "Client" roles.
-  - Frontend Auth flow (Login, Signup, Protected Routes, Auth Context).
+### Phase 1 to 4: Core Implementation (Units 01-11)
+- [x] **Full Document-to-Blockchain Lifecycle:** Integrated NLP, Clause Extraction, Template Mapping, and Hardhat Deployment.
+- [x] **Human-AI Collaboration:** Robust UI for Lawyers to validate AI findings and Clients to approve plain-language summaries.
+- [x] **Audit Trail:** Complete visual provenance of every document step.
 
-### Phase 2: Core Document Workflow
-- [x] **Unit 03: Document Management System**
-  - Upload UI and Backend storage (Local media storage).
-  - Document model with title, file, owner, and status metadata.
-  - Document listing and deletion functionality on the dashboard.
-
-### Phase 3: Intelligence & Generation
-- [x] **Unit 04: Intelligent Document Processing (NLP)**
-  - Integrated spaCy for clause extraction and entity recognition.
-  - Automated processing pipeline triggered on document upload.
-- [x] **Unit 05: Human-AI Collaboration Interface**
-  - UI for reviewing, editing, and explaining extracted clauses.
-- [x] **Unit 06: Solidity Contract Templates**
-  - Modular legal templates for Escrow, Termination, and Provenance.
-- [x] **Unit 07: Template Selection & Mapping**
-  - Logic to map legal clauses to verified Solidity implementations.
-- [x] **Unit 08: Smart Contract Generation Engine**
-  - Dynamic assembly of `.sol` files with hardcoded legal parameters.
-
-### Phase 4: Verification & Deployment
-- [x] **Unit 09: Client Explanation & Feedback System**
-  - Plain-language translation of smart contract logic for non-technical users.
-- [x] **Unit 10: Blockchain Deployment Layer**
-  - Integration with Hardhat for one-click deployment from the dashboard.
-- [x] **Unit 11: Audit Trail & On-Chain Status**
-  - Full traceability from raw document to immutable blockchain record.
+### Phase 5: Advanced Security Audits & Mainnet Readiness
+- [x] **RBAC Hardening:** Granular permissions ensuring Clients cannot modify contract logic or approve unauthorized clauses.
+- [x] **Bias & Fairness Module:** Intelligent NLP detection of gendered language and power imbalances.
+- [x] **Security Auditing:** Automated contract scans via **Slither**; applied fixes for gas and safety.
+- [x] **Environment Management:** Secured secrets using `.env` and `python-dotenv`.
+- [x] **Production Config:** Automated `deploy.sh` and PostgreSQL support implemented.
 
 ## Deployment
-The project is configured for deployment on a VPS (IP: `92.249.46.152`) using Nginx, Gunicorn, and SSL.
-Refer to `context/specs/deployment-plan.md` for the full deployment guide.
+The project is configured for deployment on your VPS at `deepakbhatt.dev`.
+Refer to **`GEMINI.md`** for the updated deployment guide and operational standards.
 
-### Key Deployment Commands:
-- **Frontend Build:** `cd frontend && npm run build`
-- **Backend Setup:** `pip install -r backend/requirements.txt`
-- **SSL Setup:** `sudo certbot --nginx -d deepakbhatt.dev`
+### Key Operational Commands:
+- **Run Full Demo:** `python backend/demo_flow.py` (Verifies entire pipeline)
+- **Run Security Tests:** `python backend/manage.py test api.test_rbac`
+- **Smart Contract Audit:** `slither blockchain/ --filter-paths "node_modules"`
 
 ## How to Resume
-1.  Read `CLAUDE.md` to understand the entry point.
-2.  Review `context/progress-tracker.md` for the latest implementation details.
-3.  Execute `npm run build` in the `frontend/` and `npx hardhat test` in the `blockchain/` to verify health.
+1.  Read **`GEMINI.md`** for current architectural mandates.
+2.  Review `context/progress-tracker.md` for historical implementation details.
+3.  Check `.env.example` files to set up your local or production environment.
 
 ---
 *Note: This README serves as the persistent memory for the project progress and architecture.*
