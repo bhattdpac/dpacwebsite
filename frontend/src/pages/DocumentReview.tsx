@@ -26,6 +26,7 @@ const DocumentReview = () => {
   const navigate = useNavigate();
   const [document, setDocument] = useState<Document | null>(null);
   const [clauses, setClauses] = useState<Clause[]>([]);
+  const [rawText, setRawText] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [generating, setGenerating] = useState(false);
@@ -33,12 +34,14 @@ const DocumentReview = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [docRes, clausesRes] = await Promise.all([
+        const [docRes, clausesRes, textRes] = await Promise.all([
           api.get(`/documents/${id}/`),
-          api.get(`/documents/${id}/clauses/`)
+          api.get(`/documents/${id}/clauses/`),
+          api.get(`/documents/${id}/raw_text/`)
         ]);
         setDocument(docRes.data);
         setClauses(clausesRes.data);
+        setRawText(textRes.data.text);
       } catch (err) {
         setError('Failed to load document data.');
         console.error(err);
@@ -170,7 +173,7 @@ const DocumentReview = () => {
 
       {/* Split View Content */}
       <div className="flex-1 flex overflow-hidden">
-        {/* Left Panel: Document Preview (Placeholder) */}
+        {/* Left Panel: Document Preview */}
         <div className="flex-1 bg-gray-50 p-8 overflow-y-auto border-r border-border-default">
           <div className="max-w-3xl mx-auto">
             <div className="bg-white shadow-lg rounded-sm border border-border-default min-h-[1000px] p-12">
@@ -185,27 +188,23 @@ const DocumentReview = () => {
                 </div>
               </div>
 
-              <div className="animate-pulse space-y-4">
-                <div className="h-8 bg-gray-100 rounded w-3/4 mb-12"></div>
-                <div className="h-4 bg-gray-50 rounded w-full"></div>
-                <div className="h-4 bg-gray-50 rounded w-full"></div>
-                <div className="h-4 bg-gray-50 rounded w-5/6"></div>
-                <div className="h-4 bg-gray-50 rounded w-full"></div>
-                <div className="h-4 bg-gray-50 rounded w-4/5"></div>
-                
-                <div className="h-32"></div>
-
-                <div className="h-6 bg-gray-100 rounded w-1/4 mb-4"></div>
-                <div className="h-4 bg-gray-50 rounded w-full"></div>
-                <div className="h-4 bg-gray-50 rounded w-full"></div>
-                <div className="h-4 bg-gray-50 rounded w-full"></div>
-                <div className="h-4 bg-gray-50 rounded w-3/4"></div>
+              <div className="prose prose-slate max-w-none">
+                <h2 className="text-2xl font-bold text-slate-900 mb-8 border-b-2 border-slate-100 pb-4">
+                  {document.title}
+                </h2>
+                <div className="whitespace-pre-wrap text-slate-700 leading-relaxed font-serif text-lg">
+                  {rawText || (
+                    <div className="animate-pulse space-y-4">
+                      <div className="h-4 bg-gray-100 rounded w-full"></div>
+                      <div className="h-4 bg-gray-100 rounded w-full"></div>
+                      <div className="h-4 bg-gray-100 rounded w-5/6"></div>
+                    </div>
+                  )}
+                </div>
               </div>
 
-              <div className="mt-20 p-8 border-2 border-dashed border-gray-100 rounded-xl text-center">
-                <p className="text-text-muted italic text-sm">
-                  Interactive document preview engine is being initialized...
-                </p>
+              <div className="mt-20 pt-8 border-t border-slate-100 text-[10px] text-slate-400 text-center uppercase tracking-widest">
+                End of Document Preview
               </div>
             </div>
           </div>

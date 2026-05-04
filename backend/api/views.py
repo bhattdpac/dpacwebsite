@@ -37,6 +37,15 @@ class DocumentViewSet(viewsets.ModelViewSet):
         serializer = ClauseSerializer(clauses, many=True)
         return Response(serializer.data)
 
+    @action(detail=True, methods=['get'])
+    def raw_text(self, request, pk=None):
+        document = self.get_object()
+        try:
+            text = nlp_service.extract_text_from_file(document.file.path)
+            return Response({"text": text})
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     @action(detail=True, methods=['get', 'post'])
     def proposal(self, request, pk=None):
         document = self.get_object()
