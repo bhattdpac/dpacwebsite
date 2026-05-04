@@ -40,10 +40,23 @@ This project is an AI-driven, human-centered framework designed to integrate adv
 ### Phase 3: Intelligence & Generation
 - [x] **Unit 04: Intelligent Document Processing (NLP)**
   - Integrated spaCy for clause extraction and entity recognition.
-  - PDF/Text extraction service using PyMuPDF.
   - Automated processing pipeline triggered on document upload.
-- [ ] **Unit 05: Human-AI Collaboration Interface (Next)**
+- [x] **Unit 05: Human-AI Collaboration Interface**
   - UI for reviewing, editing, and explaining extracted clauses.
+- [x] **Unit 06: Solidity Contract Templates**
+  - Modular legal templates for Escrow, Termination, and Provenance.
+- [x] **Unit 07: Template Selection & Mapping**
+  - Logic to map legal clauses to verified Solidity implementations.
+- [x] **Unit 08: Smart Contract Generation Engine**
+  - Dynamic assembly of `.sol` files with hardcoded legal parameters.
+
+### Phase 4: Verification & Deployment
+- [x] **Unit 09: Client Explanation & Feedback System**
+  - Plain-language translation of smart contract logic for non-technical users.
+- [x] **Unit 10: Blockchain Deployment Layer**
+  - Integration with Hardhat for one-click deployment from the dashboard.
+- [x] **Unit 11: Audit Trail & On-Chain Status**
+  - Full traceability from raw document to immutable blockchain record.
 
 ## Deployment
 The project is configured for deployment on a VPS (IP: `92.249.46.152`) using Nginx, Gunicorn, and SSL.

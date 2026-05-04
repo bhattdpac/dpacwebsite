@@ -26,6 +26,7 @@ const DocumentReview = () => {
   const [clauses, setClauses] = useState<Clause[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [generating, setGenerating] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,6 +60,18 @@ const DocumentReview = () => {
       } catch (err) {
         alert('Failed to delete clause.');
       }
+    }
+  };
+
+  const handleGenerate = async () => {
+    setGenerating(true);
+    try {
+      await api.post(`/documents/${id}/proposal/`);
+      navigate(`/contract/${id}`);
+    } catch (err: any) {
+      alert(err.response?.data?.error || 'Failed to generate smart contract.');
+    } finally {
+      setGenerating(false);
     }
   };
 
@@ -131,14 +144,23 @@ const DocumentReview = () => {
               </div>
             </div>
             <button 
-              disabled={approvedCount < clauses.length}
+              disabled={approvedCount < clauses.length || generating}
+              onClick={handleGenerate}
               className={`flex items-center gap-2 px-6 py-2 rounded-md font-bold transition-all shadow-sm ${
-                approvedCount === clauses.length && clauses.length > 0
+                approvedCount === clauses.length && clauses.length > 0 && !generating
                   ? 'bg-state-success text-white hover:bg-green-700'
                   : 'bg-gray-100 text-text-muted cursor-not-allowed'
               }`}
             >
-              <CheckCircle className="h-5 w-5" /> Generate Smart Contract
+              {generating ? (
+                <>
+                  <Loader2 className="h-5 w-5 animate-spin" /> Generating...
+                </>
+              ) : (
+                <>
+                  <CheckCircle className="h-5 w-5" /> Generate Smart Contract
+                </>
+              )}
             </button>
           </div>
         </div>

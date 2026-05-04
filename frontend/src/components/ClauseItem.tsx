@@ -25,7 +25,7 @@ const ClauseItem = ({ clause, onUpdate, onDelete }: ClauseItemProps) => {
 
   const handleToggleApproval = async () => {
     try {
-      const response = await api.patch(`/clauses/${clause.id}/`, {
+      await api.patch(`/clauses/${clause.id}/`, {
         is_approved: !clause.is_approved
       });
       // Note: We need a dedicated ClauseViewSet or action for this to work perfectly

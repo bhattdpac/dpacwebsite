@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
-import "./BaseLegalContract.sol";
+import "./templates/BaseLegalContract.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
 /**
@@ -21,7 +21,7 @@ contract PaymentEscrow is BaseLegalContract, ReentrancyGuard {
     event PaymentReleased(uint256 amount);
     event PaymentRefunded(uint256 amount);
 
-    constructor() {
+    constructor() BaseLegalContract({{ docHash }}, "{{ docURI }}") {
         state = State.Pending;
     }
 

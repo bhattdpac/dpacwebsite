@@ -1,3 +1,9 @@
+import os
+import django
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
+django.setup()
+
 from api.models import Document, User, ContractProposal
 from api.services import mapping_service, generation_service
 

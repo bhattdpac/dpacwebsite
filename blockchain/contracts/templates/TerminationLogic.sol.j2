@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
-import "./BaseLegalContract.sol";
+import "./templates/BaseLegalContract.sol";
 
 /**
  * @title TerminationLogic
@@ -19,7 +19,7 @@ contract TerminationLogic is BaseLegalContract {
         _;
     }
 
-    constructor() {
+    constructor() BaseLegalContract({{ docHash }}, "{{ docURI }}") {
         expiryDate = block.timestamp + ({{ durationDays }} * 1 days);
         isTerminated = false;
     }
