@@ -34,6 +34,11 @@ Update this file after every meaningful implementation change.
   - Created Gunicorn systemd service and Nginx configuration templates.
   - Developed `deploy.sh` automation script.
   - Added PostgreSQL support and production dependencies (`gunicorn`, `psycopg2-binary`).
+- **Live Deployment:**
+  - Synchronized production environment at `/var/www/deepakbhatt.dev` with latest "Dark Web3" redesign.
+  - Resolved blockchain stability issues (Chai dependency conflict) in production.
+  - Verified live Nginx configuration and SSL setup.
+  - **Status:** Portfolio is fully live and operational at `deepakbhatt.dev`.
 
 ## In Progress
 

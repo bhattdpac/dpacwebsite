@@ -2,20 +2,17 @@ import {
   Shield, 
   Cpu, 
   ExternalLink, 
-  Mail, 
   ChevronRight,
   Blocks,
   FileCode,
   Layout,
   MessageSquare,
-  Map,
-  Network,
   Terminal,
-  Layers,
   Zap,
   Box,
   Globe,
-  Link as LinkIcon
+  Link as LinkIcon,
+  Code
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ArchitectureVisual from '../components/ArchitectureVisual';
@@ -36,21 +33,21 @@ const PortfolioHome = () => {
   const projects = [
     {
       title: 'Legal Framework',
-      description: 'NLP-driven legal document to smart contract pipeline with human-in-the-loop validation.',
+      description: 'Translating complex legal language into executable, audited smart contracts using modular NLP pipelines.',
       tags: ['Django', 'Solidity', 'spaCy'],
       link: '/legal-framework',
       type: 'internal'
     },
     {
       title: 'DEX Aggregator',
-      description: 'Smart routing protocol across multiple decentralized exchanges for optimal pricing.',
+      description: 'Advanced liquidity routing engine optimized for low slippage across cross-chain decentralized exchanges.',
       tags: ['Solidity', 'Ethers.js'],
       link: '#',
       type: 'external'
     },
     {
       title: 'DAO Governance',
-      description: 'Modular governance framework for decentralized organizations with fractional ownership.',
+      description: 'A modular framework for decentralized autonomous organizations with adaptive voting mechanisms.',
       tags: ['Hardhat', 'OpenZeppelin'],
       link: '#',
       type: 'external'
@@ -58,92 +55,77 @@ const PortfolioHome = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-bg-base font-sans text-text-primary selection:bg-accent-primary selection:text-white relative overflow-hidden">
+    <div className="min-h-screen bg-bg-base font-sans text-text-primary selection:bg-accent-primary selection:text-white relative">
       
-      {/* Fixed Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-[100] bg-bg-base/60 backdrop-blur-xl border-b border-white/5 px-6 py-4">
+      {/* Refined Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-[100] bg-bg-base/80 backdrop-blur-xl border-b border-white/5 px-8 py-5">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="bg-accent-primary p-2 rounded-lg shadow-[0_0_15px_rgba(139,92,246,0.4)] group-hover:scale-110 transition-transform">
-              <Box className="text-white h-5 w-5" />
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl sunset-gradient flex items-center justify-center shadow-lg shadow-orange-500/20">
+              <Box className="text-white h-6 w-6" />
             </div>
-            <span className="text-xl font-extrabold tracking-tighter uppercase">DPAC<span className="text-accent-primary">.</span>DEV</span>
+            <span className="font-display text-2xl font-bold tracking-tight">DPAC<span className="text-accent-primary">.</span>DEV</span>
           </div>
-          <div className="hidden md:flex gap-10 text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-text-muted">
-            <a href="#about" className="hover:text-accent-primary transition-colors">About</a>
-            <a href="#architecture" className="hover:text-accent-primary transition-colors">Architecture</a>
-            <a href="#skills" className="hover:text-accent-primary transition-colors">Skills</a>
-            <a href="#projects" className="hover:text-accent-primary transition-colors">Work</a>
-            <a href="#roadmap" className="hover:text-accent-primary transition-colors">Roadmap</a>
+          <div className="hidden lg:flex gap-10 text-xs font-bold uppercase tracking-[0.2em] text-text-muted">
+            {['About', 'Architecture', 'Skills', 'Work', 'Roadmap'].map(item => (
+              <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-accent-primary transition-colors">
+                {item}
+              </a>
+            ))}
           </div>
           <div className="flex items-center gap-6">
-            <a href="mailto:hello@deepakbhatt.dev" className="text-text-muted hover:text-accent-primary transition-colors">
-              <Mail className="w-5 h-5" />
-            </a>
-            <button className="relative group bg-white text-black px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-accent-primary hover:text-white transition-all overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-              <span className="relative z-10">Hire Me</span>
-              <div className="absolute inset-0 bg-accent-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+            <button className="bg-white text-black px-8 py-3 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-accent-primary hover:text-white transition-all shadow-xl shadow-white/5">
+              Contact
             </button>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-48 pb-32 px-6">
-        {/* Radial Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] radial-glow opacity-50 -z-10"></div>
+      <section className="relative pt-64 pb-48 px-8 overflow-hidden">
+        {/* Animated Orbs */}
+        <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-accent-primary/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+        <div className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-accent-secondary/20 rounded-full blur-[100px] -z-10 animate-pulse"></div>
         
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col items-start max-w-4xl">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-accent-primary text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-8 animate-fade-in">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-primary"></span>
-              </span>
-              Protocols & Architecture
+          <div className="max-w-4xl space-y-10">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-accent-tertiary text-[10px] font-bold uppercase tracking-[0.3em]">
+              <span className="w-2 h-2 rounded-full bg-accent-tertiary animate-ping"></span>
+              Engineering the Trustless Era
             </div>
             
-            <h1 className="text-7xl md:text-9xl font-extrabold tracking-tighter leading-[0.85] mb-12 uppercase">
-              Building <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-purple-400">Trustless</span> <br />
-              Systems.
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-[0.9] tracking-tight">
+              Architecting <br />
+              <span className="text-transparent bg-clip-text sunset-gradient">Digital Integrity.</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-text-muted font-medium mb-12 leading-relaxed max-w-2xl font-mono uppercase tracking-tight">
-              I architect <span className="text-text-primary">Decentralized Infrastructure</span> and bridge the gap between human legal code and immutable blockchain logic.
+            <p className="text-xl md:text-2xl text-text-muted font-medium leading-relaxed max-w-2xl">
+              I build secure, modular blockchain infrastructure that bridges the gap between <span className="text-text-primary">human-readable agreements</span> and <span className="text-text-primary">immutable code</span>.
             </p>
             
-            <div className="flex flex-wrap gap-8 items-center mb-24">
-              <div className="flex -space-x-4">
-                {[1,2,3,4].map(i => (
-                  <div key={i} className="w-12 h-12 rounded-full border-2 border-bg-base bg-bg-surface flex items-center justify-center">
-                    <Layers className="w-5 h-5 text-accent-primary/50" />
-                  </div>
-                ))}
-                <div className="w-12 h-12 rounded-full border-2 border-bg-base bg-accent-primary flex items-center justify-center text-[10px] font-bold text-white">
-                  +15
+            <div className="flex flex-wrap gap-8 pt-6">
+              <div className="flex items-center gap-10">
+                <div>
+                  <div className="text-4xl font-display font-bold text-text-primary italic">15+</div>
+                  <div className="text-[10px] font-bold text-text-muted uppercase tracking-widest mt-1">Protocols Shipped</div>
                 </div>
-              </div>
-              <div className="h-10 w-px bg-white/10"></div>
-              <div>
-                <div className="text-3xl font-extrabold text-text-primary">5k+</div>
-                <div className="text-[10px] font-mono font-bold text-text-muted uppercase tracking-widest">Git Commits</div>
-              </div>
-              <div>
-                <div className="text-3xl font-extrabold text-text-primary">100%</div>
-                <div className="text-[10px] font-mono font-bold text-text-muted uppercase tracking-widest">Audit Safety</div>
+                <div className="w-px h-10 bg-white/10"></div>
+                <div>
+                  <div className="text-4xl font-display font-bold text-text-primary italic">5k+</div>
+                  <div className="text-[10px] font-bold text-text-muted uppercase tracking-widest mt-1">On-Chain Commits</div>
+                </div>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-6">
-              <a href="#projects" className="flex items-center gap-3 bg-accent-primary text-white px-10 py-5 rounded-xl font-bold uppercase tracking-widest hover:scale-105 hover:shadow-[0_0_40px_rgba(139,92,246,0.4)] transition-all group">
-                Explore Work <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-wrap gap-6 pt-10">
+              <a href="#projects" className="sunset-gradient text-white px-10 py-5 rounded-2xl font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-2xl shadow-orange-500/20">
+                View Projects
               </a>
               <div className="flex gap-4">
-                <a href="#" className="p-5 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-accent-primary transition-all">
+                <a href="#" className="p-5 space-card rounded-2xl">
                   <LinkIcon className="w-6 h-6 text-text-muted hover:text-white transition-colors" />
                 </a>
-                <a href="#" className="p-5 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-accent-primary transition-all">
+                <a href="#" className="p-5 space-card rounded-2xl">
                   <Globe className="w-6 h-6 text-text-muted hover:text-white transition-colors" />
                 </a>
               </div>
@@ -153,33 +135,33 @@ const PortfolioHome = () => {
       </section>
 
       {/* About & Skills Split */}
-      <section id="about" className="py-32 border-y border-white/5 relative">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-start">
-          <div>
-            <div className="flex items-center gap-4 mb-10">
-              <div className="w-12 h-[1px] bg-accent-primary"></div>
-              <h2 className="text-4xl font-extrabold uppercase tracking-tight">System Engineer</h2>
+      <section id="about" className="py-40 px-8 relative">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-32 items-center">
+          <div className="space-y-12">
+            <div className="space-y-4">
+              <h2 className="text-5xl font-display font-bold uppercase tracking-tight">Systematic <br /> Excellence</h2>
+              <div className="w-20 h-1.5 sunset-gradient rounded-full"></div>
             </div>
-            <div className="space-y-8 text-lg font-medium text-text-muted leading-relaxed">
+            <div className="space-y-8 text-xl text-text-muted font-medium leading-relaxed">
               <p>
-                Specializing in <span className="text-text-primary underline decoration-accent-primary underline-offset-8">Ethereum Infrastructure</span> and Secure Smart Contract development. My approach combines rigorous academic research with battle-tested engineering.
+                My approach to development is rooted in <span className="text-text-primary">rigorous modularity</span>. Every system I build is designed to be extensible, secure, and provably correct.
               </p>
               <p>
-                My work on the "Legal Framework" system pioneered NLP-driven clause extraction for on-chain execution, ensuring that decentralized agreements maintain legal intent while gaining trustless automation.
+                From NLP-driven legal tech to cross-chain DeFi protocols, I focus on creating infrastructure that remains robust under adversarial conditions.
               </p>
             </div>
           </div>
           
-          <div id="skills" className="grid grid-cols-2 gap-px bg-white/5 border border-white/5 rounded-2xl overflow-hidden shadow-2xl">
+          <div id="skills" className="grid grid-cols-2 gap-4">
             {skills.map((skill, i) => (
-              <div key={i} className="group p-10 bg-bg-surface hover:bg-bg-surface/50 transition-all text-left">
-                <div className="w-12 h-12 rounded-xl bg-bg-base border border-white/5 flex items-center justify-center mb-6 group-hover:bg-accent-primary/10 group-hover:border-accent-primary/50 group-hover:shadow-[0_0_15px_rgba(139,92,246,0.2)] transition-all">
-                  <div className="text-text-muted group-hover:text-accent-primary transition-colors">
+              <div key={i} className="group p-8 space-card rounded-3xl hover:bg-white/[0.05]">
+                <div className="w-12 h-12 rounded-2xl bg-bg-base border border-white/5 flex items-center justify-center mb-6 group-hover:border-accent-primary transition-all">
+                  <div className="text-accent-primary group-hover:scale-110 transition-transform">
                     {skill.icon}
                   </div>
                 </div>
-                <h3 className="font-extrabold text-lg mb-1 group-hover:text-white transition-colors">{skill.name}</h3>
-                <p className="font-mono text-[10px] font-bold text-text-muted uppercase tracking-[0.2em]">{skill.category}</p>
+                <h3 className="text-xl font-display font-bold mb-1">{skill.name}</h3>
+                <p className="text-[10px] font-bold text-text-muted uppercase tracking-widest">{skill.category}</p>
               </div>
             ))}
           </div>
@@ -187,51 +169,48 @@ const PortfolioHome = () => {
       </section>
 
       {/* Architecture Visual Section */}
-      <section id="architecture" className="py-32 px-6 bg-white/[0.01]">
-        <div className="max-w-7xl mx-auto text-center mb-24">
-          <h2 className="text-5xl font-extrabold mb-6 uppercase tracking-tight italic flex items-center justify-center gap-4">
-            <Network className="text-accent-primary w-12 h-12" />
-            Infrastructure
-          </h2>
-          <p className="text-text-muted max-w-2xl mx-auto font-mono text-sm uppercase tracking-widest">
-            Cross-layer communication protocol for the Legal Framework System.
-          </p>
-        </div>
-        <div className="max-w-7xl mx-auto">
+      <section id="architecture" className="py-40 px-8 bg-white/[0.01]">
+        <div className="max-w-7xl mx-auto space-y-24">
+          <div className="text-center max-w-3xl mx-auto space-y-6">
+            <h2 className="text-5xl font-display font-bold uppercase tracking-tight">Modular Topology</h2>
+            <p className="text-text-muted text-lg font-medium">
+              A high-fidelity representation of the Legal Framework System's cross-layer data flow.
+            </p>
+          </div>
           <ArchitectureVisual />
         </div>
       </section>
 
       {/* Projects Grid */}
-      <section id="projects" className="py-32 px-6">
+      <section id="projects" className="py-40 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
-            <div className="max-w-xl">
-              <h2 className="text-6xl font-extrabold mb-6 uppercase tracking-tight italic underline decoration-accent-primary decoration-4 underline-offset-[12px]">Featured Ops</h2>
+            <div className="max-w-xl space-y-6">
+              <h2 className="text-6xl font-display font-bold uppercase tracking-tight">Work</h2>
               <p className="text-text-muted text-xl font-medium">
-                Production-grade blockchain architecture and decentralized services.
+                Production-grade implementations of decentralised infrastructure.
               </p>
             </div>
-            <a href="#" className="flex items-center gap-3 text-accent-primary font-bold uppercase tracking-widest hover:text-white transition-colors group">
-              Full Archive <ExternalLink className="w-5 h-5 group-hover:rotate-45 transition-transform" />
+            <a href="#" className="flex items-center gap-3 text-accent-primary font-bold uppercase tracking-widest hover:text-accent-secondary transition-colors group">
+              Browse Github <ExternalLink className="w-5 h-5 group-hover:rotate-45 transition-transform" />
             </a>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-3xl overflow-hidden shadow-2xl">
+          <div className="grid md:grid-cols-3 gap-8">
             {projects.map((project, i) => (
-              <div key={i} className="group relative bg-bg-surface p-10 hover:bg-bg-surface/40 transition-all duration-500 overflow-hidden">
-                {/* Hover Top Border Animation */}
-                <div className="absolute top-0 left-0 w-0 h-1 bg-accent-primary group-hover:w-full transition-all duration-700"></div>
+              <div key={i} className="group relative space-card rounded-[2rem] p-10 hover:bg-white/[0.05] transition-all overflow-hidden flex flex-col h-full">
+                {/* Accent Decor */}
+                <div className="absolute -top-10 -right-10 w-32 h-32 sunset-gradient opacity-0 group-hover:opacity-10 rounded-full blur-2xl transition-opacity"></div>
                 
-                <div className="mb-12">
+                <div className="mb-10 flex-grow">
                   <div className="flex gap-2 mb-8">
                     {project.tags.map((tag, j) => (
-                      <span key={j} className="text-[9px] font-mono font-bold px-2 py-1 rounded bg-white/5 text-text-muted uppercase tracking-widest border border-white/5">
+                      <span key={j} className="text-[9px] font-bold px-3 py-1.5 rounded-full bg-white/5 text-text-muted uppercase tracking-[0.2em] border border-white/5">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <h3 className="text-3xl font-extrabold mb-6 group-hover:text-accent-primary transition-colors leading-tight uppercase">{project.title}</h3>
+                  <h3 className="text-3xl font-display font-bold mb-6 group-hover:text-accent-primary transition-colors leading-tight uppercase tracking-tight">{project.title}</h3>
                   <p className="text-text-muted font-medium leading-relaxed mb-8">
                     {project.description}
                   </p>
@@ -239,12 +218,12 @@ const PortfolioHome = () => {
                 
                 <div className="pt-8 border-t border-white/5">
                   {project.type === 'internal' ? (
-                    <Link to={project.link} className="flex items-center justify-between font-mono font-bold text-[10px] uppercase tracking-[0.3em] text-accent-primary hover:text-white transition-colors">
-                      Live Protocol <ChevronRight className="w-4 h-4" />
+                    <Link to={project.link} className="flex items-center justify-between font-bold text-xs uppercase tracking-widest text-accent-primary hover:text-white transition-colors">
+                      Live Protocol <ChevronRight className="w-5 h-5" />
                     </Link>
                   ) : (
-                    <a href={project.link} className="flex items-center justify-between font-mono font-bold text-[10px] uppercase tracking-[0.3em] text-accent-primary hover:text-white transition-colors">
-                      Source Code <FileCode className="w-4 h-4" />
+                    <a href={project.link} className="flex items-center justify-between font-bold text-xs uppercase tracking-widest text-accent-primary hover:text-white transition-colors">
+                      Repository <Code className="w-5 h-5" />
                     </a>
                   )}
                 </div>
@@ -255,15 +234,12 @@ const PortfolioHome = () => {
       </section>
 
       {/* Roadmap Section */}
-      <section id="roadmap" className="py-32 px-6 border-t border-white/5 bg-white/[0.01]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24">
-            <h2 className="text-5xl font-extrabold mb-6 uppercase tracking-tight flex items-center justify-center gap-6">
-              <Map className="text-accent-primary w-12 h-12" />
-              Mastery Path
-            </h2>
-            <p className="text-text-muted max-w-2xl mx-auto font-mono text-sm uppercase tracking-widest leading-loose">
-              Curated blockchain research & development roadmap for the next generation of architects.
+      <section id="roadmap" className="py-40 px-8 border-t border-white/5 bg-white/[0.01]">
+        <div className="max-w-7xl mx-auto space-y-24">
+          <div className="text-center max-w-3xl mx-auto space-y-6">
+            <h2 className="text-5xl font-display font-bold uppercase tracking-tight">Upskill Protocol</h2>
+            <p className="text-text-muted text-lg font-medium">
+              Continuous iteration on knowledge. A curated mastery path for blockchain systems engineering.
             </p>
           </div>
           <BlockchainRoadmap />
@@ -271,30 +247,32 @@ const PortfolioHome = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 py-32 bg-bg-base relative">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-24 items-center">
-          <div>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="bg-accent-primary p-2.5 rounded-xl shadow-[0_0_20px_rgba(139,92,246,0.3)]">
-                <Box className="text-white h-6 w-6" />
+      <footer className="border-t border-white/5 py-32 bg-bg-base relative px-8 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-secondary/5 rounded-full blur-[150px] -z-10"></div>
+        
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+          <div className="space-y-12">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl sunset-gradient flex items-center justify-center shadow-xl">
+                <Box className="text-white h-7 w-7" />
               </div>
-              <span className="text-3xl font-extrabold tracking-tighter uppercase">DPAC<span className="text-accent-primary">.</span>DEV</span>
+              <span className="font-display text-4xl font-bold tracking-tight">DPAC<span className="text-accent-primary">.</span>DEV</span>
             </div>
-            <p className="text-text-muted font-medium mb-10 max-w-sm">
-              Architecting secure, scalable, and decentralized futures. Available for worldwide collaborations.
+            <p className="text-text-muted text-xl font-medium max-w-sm leading-relaxed">
+              Engineering secure, scalable, and decentralized futures for the global digital economy.
             </p>
-            <div className="flex gap-8">
-              <a href="#" className="text-text-muted hover:text-white transition-colors"><Globe className="w-5 h-5" /></a>
-              <a href="#" className="text-text-muted hover:text-white transition-colors"><LinkIcon className="w-5 h-5" /></a>
-              <a href="#" className="text-text-muted hover:text-white transition-colors"><Globe className="w-5 h-5" /></a>
+            <div className="flex gap-10">
+              <a href="#" className="text-text-muted hover:text-accent-primary transition-colors font-bold uppercase tracking-widest text-xs">Twitter</a>
+              <a href="#" className="text-text-muted hover:text-accent-primary transition-colors font-bold uppercase tracking-widest text-xs">GitHub</a>
+              <a href="#" className="text-text-muted hover:text-accent-primary transition-colors font-bold uppercase tracking-widest text-xs">LinkedIn</a>
             </div>
           </div>
           
           <div className="flex flex-col items-end gap-12">
-            <a href="mailto:hello@deepakbhatt.dev" className="text-4xl md:text-6xl font-extrabold uppercase tracking-tighter hover:text-accent-primary transition-colors text-right">
-              Let's <br /> Build.
+            <a href="mailto:hello@deepakbhatt.dev" className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter text-right hover:text-accent-primary transition-all">
+              Launch <br /> Project.
             </a>
-            <p className="text-text-muted font-mono text-xs uppercase tracking-[0.4em]">&copy; 2026 Deepak Bhatt. Built for the Web3 Era.</p>
+            <p className="text-text-muted text-sm font-medium tracking-widest">&copy; 2026 Deepak Bhatt. All systems operational.</p>
           </div>
         </div>
       </footer>

@@ -14,6 +14,7 @@
 
   /* Typography */
   --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
   --font-mono: var(--font-mono);
 
   /* Map to standard Tailwind utility classes */
@@ -21,45 +22,54 @@
 }
 
 :root {
-  /* Dark Web3 Aesthetic Colors */
-  --bg-base: #0A0A0B;
-  --bg-surface: #141416;
-  --text-primary: #F4F4F5;
-  --text-muted: #A1A1AA;
-  --accent-primary: #8B5CF6; /* Purple accent */
-  --border-default: #27272A;
-  --state-error: #EF4444;
+  /* Cyber Sunset Aesthetic */
+  --bg-base: #030304;
+  --bg-surface: #0A0A0E;
+  --text-primary: #F8FAFC;
+  --text-muted: #94A3B8;
+  --accent-primary: #F97316; /* Sunset Orange */
+  --accent-secondary: #D946EF; /* Cosmic Magenta */
+  --accent-tertiary: #38BDF8; /* Space Cyan */
+  --border-default: #1E293B;
+  --state-error: #F43F5E;
   --state-success: #10B981;
-  --state-warning: #F59E0B;
+  --state-warning: #FBBF24;
 
   /* Typography */
-  --font-sans: "Syne", sans-serif;
-  --font-mono: "DM Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 @layer base {
   body {
     @apply bg-bg-base text-text-primary font-sans antialiased selection:bg-accent-primary selection:text-white;
     background-image: 
-      linear-gradient(to right, rgba(39, 39, 42, 0.2) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(39, 39, 42, 0.2) 1px, transparent 1px);
-    background-size: 40px 40px;
+      radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(217, 70, 239, 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
   }
 
-  .radial-glow {
-    background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+  .sunset-gradient {
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  }
+
+  .space-card {
+    @apply bg-bg-surface/40 backdrop-blur-md border border-white/5 hover:border-white/10 transition-all;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-extrabold text-text-primary tracking-tight;
+    @apply font-display font-bold text-text-primary tracking-tight;
   }
+}
 
-  @keyframes fade-in {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
+@layer utilities {
   .animate-fade-in {
     animation: fade-in 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
