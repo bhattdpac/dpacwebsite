@@ -1,0 +1,16 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/root/dpacwebsite/backend
+ExecStart=/root/dpacwebsite/backend/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/root/dpacwebsite/backend/core.sock \
+          core.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

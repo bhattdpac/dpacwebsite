@@ -24,9 +24,16 @@ Update `context/progress-tracker.md` after each meaningful implementation change
 - Use `backend/test_generation.py` to verify the generation engine without full deployment.
 
 ## Deployment to VPS
-- **Backend:** Gunicorn + Nginx.
-- **Frontend:** Static build served by Nginx.
-- **Blockchain:** Local Hardhat node for development; updates to `hardhat.config.ts` required for testnets.
+- **Configurations:** Templates for Gunicorn and Nginx are located in the `deployment/` directory.
+- **Backend:** 
+    1. Copy `deployment/gunicorn.service` to `/etc/systemd/system/`.
+    2. Start and enable: `systemctl start gunicorn && systemctl enable gunicorn`.
+- **Nginx:** 
+    1. Copy `deployment/nginx.conf` to `/etc/nginx/sites-available/dpacwebsite`.
+    2. Link to enabled sites: `ln -s /etc/nginx/sites-available/dpacwebsite /etc/nginx/sites-enabled/`.
+    3. Test and restart: `nginx -t && systemctl restart nginx`.
+- **Automated Deployment:** Use `deployment/deploy.sh` for updates. Ensure it has execute permissions: `chmod +x deployment/deploy.sh`.
+- **Database:** Mainnet requires PostgreSQL. Update `.env` with `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`, and `DB_PORT` before running migrations on VPS.
 
 ## Error Handling
 - Per user instruction: Save error messages to `error.txt` if a critical script fails.

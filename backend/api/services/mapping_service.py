@@ -1,7 +1,8 @@
 import re
-from api.models import SmartContractTemplate, ContractProposal, Clause
+from typing import Optional, Dict, Any
+from api.models import SmartContractTemplate, ContractProposal, Clause, Document
 
-def suggest_templates(document):
+def suggest_templates(document: Document) -> Optional[ContractProposal]:
     """
     Scans approved clauses of a document and suggests smart contract templates.
     """
@@ -66,7 +67,7 @@ def suggest_templates(document):
 
     return None
 
-def extract_payment_params(clause):
+def extract_payment_params(clause: Clause) -> Dict[str, Any]:
     """
     Extracts amount and addresses from a payment clause.
     Uses basic regex for now; in a real app, use spaCy entities.
@@ -90,7 +91,7 @@ def extract_payment_params(clause):
 
     return params
 
-def extract_termination_params(clause):
+def extract_termination_params(clause: Clause) -> Dict[str, Any]:
     """
     Extracts duration from a termination clause.
     """

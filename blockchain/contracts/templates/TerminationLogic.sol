@@ -8,7 +8,7 @@ import "./BaseLegalContract.sol";
  * @dev Manages the active state of a legal contract based on duration or mutual consent.
  */
 contract TerminationLogic is BaseLegalContract {
-    uint256 public expiryDate;
+    uint256 public immutable expiryDate;
     bool public isTerminated;
 
     event ContractTerminated(string reason);

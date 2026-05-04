@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  * Stores the hash of the original legal document to ensure provenance.
  */
 contract BaseLegalContract is Ownable {
-    bytes32 public documentHash;
+    bytes32 public immutable documentHash;
     string public documentURI;
     bool public isFinalized;
 

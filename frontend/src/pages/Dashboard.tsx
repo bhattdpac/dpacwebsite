@@ -122,7 +122,39 @@ const Dashboard = () => {
         {loading ? (
           <div className="text-center py-12">Loading documents...</div>
         ) : (
-          <DocumentList documents={documents} onDelete={handleDelete} />
+          <div className="space-y-8">
+            <DocumentList documents={documents} onDelete={handleDelete} />
+            
+            {documents.filter((doc: any) => doc.proposal?.contract_address).length > 0 && (
+              <div className="bg-bg-surface p-6 rounded-xl border border-border-default shadow-sm">
+                <h3 className="text-lg font-bold text-text-primary mb-4 flex items-center gap-2">
+                  <Briefcase className="h-5 w-5 text-accent-primary" /> Recent On-Chain Deployments
+                </h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {documents
+                    .filter((doc: any) => doc.proposal?.contract_address)
+                    .slice(0, 3)
+                    .map((doc: any) => (
+                      <div key={doc.id} className="p-4 border border-border-default rounded-lg hover:border-accent-primary transition-colors">
+                        <p className="font-bold text-sm text-text-primary truncate">{doc.title}</p>
+                        <p className="text-[10px] text-text-muted font-mono mt-1">{doc.proposal.contract_address}</p>
+                        <div className="mt-3 flex justify-between items-center">
+                          <span className="text-[10px] bg-green-50 text-state-success px-2 py-0.5 rounded font-bold uppercase">Success</span>
+                          <a 
+                            href={`https://sepolia.etherscan.io/address/${doc.proposal.contract_address}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[10px] text-accent-primary hover:underline flex items-center gap-1"
+                          >
+                            View on Explorer
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            )}
+          </div>
         )}
       </main>
 

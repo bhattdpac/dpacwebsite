@@ -2,8 +2,10 @@ import os
 import subprocess
 import json
 from django.conf import settings
+from typing import Dict, Any
+from ..models import ContractProposal
 
-def deploy_to_blockchain(proposal):
+def deploy_to_blockchain(proposal: ContractProposal) -> Dict[str, Any]:
     """
     Deploys the generated Solidity contract using Hardhat.
     """
@@ -12,6 +14,12 @@ def deploy_to_blockchain(proposal):
 
     blockchain_dir = os.path.join(settings.BASE_DIR, '..', 'blockchain')
     contract_name = proposal.template.contract_name
+    # Security: Ensure contract_name doesn't contain path traversal characters
+    if not contract_name.isalnum():
+         # Allow underscores but nothing else suspicious
+         if not all(c.isalnum() or c == '_' for c in contract_name):
+             return {"error": "Invalid contract name for deployment."}
+
     # Save as a unique file to avoid collisions
     file_name = f"Generated_{proposal.id}_{contract_name}.sol"
     file_path = os.path.join(blockchain_dir, 'contracts', file_name)

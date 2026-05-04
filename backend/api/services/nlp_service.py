@@ -59,6 +59,40 @@ def generate_explanation(clause_type, text):
         return "This section describes how disagreements will be settled, often through a specific legal process."
     return "This is a general provision of the agreement."
 
+def perform_fairness_audit(text):
+    """
+    Analyzes legal text for bias, gendered language, and power imbalances.
+    Returns (score, notes).
+    """
+    notes = []
+    score = 1.0
+    text_lower = text.lower()
+
+    # 1. Gendered Language Check
+    gender_terms = ['he', 'him', 'his', 'she', 'her', 'hers']
+    found_gender = [term for term in gender_terms if f" {term} " in f" {text_lower} "]
+    if found_gender:
+        score -= 0.1
+        notes.append(f"Detected gendered pronouns: {', '.join(found_gender)}. Consider using gender-neutral terms like 'the Party' or 'they/them' for inclusivity.")
+
+    # 2. Power Imbalance Check
+    imbalance_terms = {
+        'sole discretion': 'Indicates a potential unilateral power imbalance.',
+        'unilateral': 'Suggests a lack of mutual consent or balance.',
+        'waives all rights': 'Highly restrictive; may disadvantage the weaker party.',
+        'at any time without notice': 'Can be perceived as unfair in certain legal contexts.'
+    }
+    
+    for term, reason in imbalance_terms.items():
+        if term in text_lower:
+            score -= 0.15
+            notes.append(f"Term '{term}': {reason}")
+
+    # Ensure score doesn't go below 0
+    score = max(0.0, score)
+    
+    return round(score, 2), " ".join(notes) if notes else "No significant bias or imbalance detected."
+
 def process_document(document):
     """Main NLP pipeline for a Document instance."""
     document.status = 'PROCESSING'
@@ -96,13 +130,18 @@ def process_document(document):
                 # Extract entities specific to this sentence
                 sent_entities = [e for e in entities if e['start'] >= sent.start_char and e['end'] <= sent.end_char]
                 
+                # Perform Fairness Audit
+                f_score, f_notes = perform_fairness_audit(text)
+                
                 Clause.objects.create(
                     document=document,
                     text=text,
                     type=clause_type,
                     explanation=generate_explanation(clause_type, text),
                     metadata={'entities': sent_entities},
-                    confidence=0.85 if clause_type != 'GENERAL' else 0.70
+                    confidence=0.85 if clause_type != 'GENERAL' else 0.70,
+                    fairness_score=f_score,
+                    fairness_notes=f_notes
                 )
         
         document.status = 'COMPLETED'

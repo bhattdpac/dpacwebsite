@@ -7,7 +7,7 @@ User = get_user_model()
 class ClauseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Clause
-        fields = '__all__'
+        fields = ('id', 'document', 'text', 'type', 'explanation', 'is_approved', 'metadata', 'confidence', 'fairness_score', 'fairness_notes', 'created_at')
 
 class SmartContractTemplateSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,10 +16,15 @@ class SmartContractTemplateSerializer(serializers.ModelSerializer):
 
 class ContractProposalSerializer(serializers.ModelSerializer):
     template_details = SmartContractTemplateSerializer(source='template', read_only=True)
+    document_status = serializers.CharField(source='document.status', read_only=True)
+    pending_clause_count = serializers.SerializerMethodField()
     
     class Meta:
         model = ContractProposal
         fields = '__all__'
+
+    def get_pending_clause_count(self, obj):
+        return obj.document.clauses.filter(is_approved=False).count()
 
 class DocumentSerializer(serializers.ModelSerializer):
     clause_count = serializers.IntegerField(source='clauses.count', read_only=True)

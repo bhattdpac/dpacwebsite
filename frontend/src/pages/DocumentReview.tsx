@@ -17,6 +17,8 @@ interface Clause {
   explanation: string;
   is_approved: boolean;
   confidence: number;
+  fairness_score: number;
+  fairness_notes: string;
 }
 
 const DocumentReview = () => {

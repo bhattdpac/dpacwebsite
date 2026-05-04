@@ -6,6 +6,7 @@ from rest_framework.decorators import action
 from .serializers import RegisterSerializer, UserSerializer, DocumentSerializer, ClauseSerializer, ContractProposalSerializer
 from .models import Document, Clause, ContractProposal
 from .services import nlp_service, mapping_service, generation_service, deployment_service
+from .permissions import IsLawyer
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
@@ -18,6 +19,11 @@ class DocumentViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Document.objects.filter(owner=self.request.user)
+
+    def get_permissions(self):
+        if self.action in ['create', 'destroy', 'deploy']:
+            return [IsAuthenticated(), IsLawyer()]
+        return super().get_permissions()
 
     def perform_create(self, serializer):
         document = serializer.save(owner=self.request.user)
@@ -36,6 +42,11 @@ class DocumentViewSet(viewsets.ModelViewSet):
         document = self.get_object()
         
         if request.method == 'POST':
+            # Check if user is lawyer to generate
+            if request.user.role != 'LAWYER':
+                return Response({"error": "Only lawyers can generate proposals."}, 
+                                status=status.HTTP_403_FORBIDDEN)
+            
             proposal = mapping_service.suggest_templates(document)
             if proposal:
                 # Trigger code generation
@@ -52,7 +63,7 @@ class DocumentViewSet(viewsets.ModelViewSet):
             return Response({"error": "No proposal found for this document."}, 
                             status=status.HTTP_404_NOT_FOUND)
 
-    @action(detail=True, methods=['post'])
+    @action(detail=True, methods=['post'], permission_classes=[IsAuthenticated, IsLawyer])
     def deploy(self, request, pk=None):
         document = self.get_object()
         try:

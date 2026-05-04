@@ -9,9 +9,9 @@ import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
  * @dev Handles milestone-based payments for legal agreements.
  */
 contract PaymentEscrow is BaseLegalContract, ReentrancyGuard {
-    address public payer = {{ payer }};
-    address public payee = {{ payee }};
-    uint256 public totalAmount = {{ totalAmount }};
+    address public immutable payer = {{ payer }};
+    address public immutable payee = {{ payee }};
+    uint256 public immutable totalAmount = {{ totalAmount }};
     uint256 public amountReleased;
 
     enum State { Pending, Funded, Released, Refunded }
@@ -21,7 +21,9 @@ contract PaymentEscrow is BaseLegalContract, ReentrancyGuard {
     event PaymentReleased(uint256 amount);
     event PaymentRefunded(uint256 amount);
 
-    constructor() BaseLegalContract({{ docHash }}, "{{ docURI }}") {
+    constructor() {
+        require(payer != address(0), "Payer cannot be zero address");
+        require(payee != address(0), "Payee cannot be zero address");
         state = State.Pending;
     }
 

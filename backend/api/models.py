@@ -35,6 +35,8 @@ class Clause(models.Model):
     is_approved = models.BooleanField(default=False)
     metadata = models.JSONField(default=dict)
     confidence = models.FloatField(default=1.0)
+    fairness_score = models.FloatField(default=1.0) # 1.0 = highly fair/balanced
+    fairness_notes = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

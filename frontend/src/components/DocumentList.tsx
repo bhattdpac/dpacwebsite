@@ -7,6 +7,10 @@ interface Document {
   file: string;
   status: 'PENDING' | 'PROCESSING' | 'COMPLETED' | 'FAILED';
   created_at: string;
+  proposal?: {
+    contract_address?: string;
+    transaction_hash?: string;
+  };
 }
 
 interface DocumentListProps {
@@ -15,7 +19,7 @@ interface DocumentListProps {
 }
 
 const DocumentList = ({ documents, onDelete }: DocumentListProps) => {
-  const getStatusColor = (doc: any) => {
+  const getStatusColor = (doc: Document) => {
     if (doc.proposal?.contract_address) return 'text-accent-primary bg-blue-50 border border-accent-primary/20';
     switch (doc.status) {
       case 'COMPLETED': return 'text-state-success bg-green-50';
@@ -25,8 +29,8 @@ const DocumentList = ({ documents, onDelete }: DocumentListProps) => {
     }
   };
 
-  const getStatusText = (doc: any) => {
-    if (doc.proposal?.contract_address) return 'DEPLOYED';
+  const getStatusText = (doc: Document) => {
+    if (doc.proposal?.contract_address) return `DEPLOYED: ${doc.proposal.contract_address.substring(0, 6)}...`;
     return doc.status;
   };
 

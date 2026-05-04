@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CheckCircle, Clock, Trash2, Edit3, Save, X, HelpCircle } from 'lucide-react';
+import { CheckCircle, Clock, Trash2, Edit3, Save, X, HelpCircle, AlertTriangle, ShieldCheck } from 'lucide-react';
 import api from '../api/api';
 
 interface Clause {
@@ -9,6 +9,8 @@ interface Clause {
   explanation: string;
   is_approved: boolean;
   confidence: number;
+  fairness_score: number;
+  fairness_notes: string;
 }
 
 interface ClauseItemProps {
@@ -106,11 +108,25 @@ const ClauseItem = ({ clause, onUpdate, onDelete }: ClauseItemProps) => {
       )}
 
       {showExplanation && (
-        <div className="mt-4 p-4 bg-blue-50/50 border border-blue-100 rounded-lg animate-in fade-in slide-in-from-top-2">
-          <p className="text-sm font-bold text-accent-primary mb-1 flex items-center gap-2">
-            <HelpCircle className="h-4 w-4" /> Plain Language Summary:
-          </p>
-          <p className="text-sm text-text-muted">{clause.explanation}</p>
+        <div className="mt-4 space-y-3">
+          <div className="p-4 bg-blue-50/50 border border-blue-100 rounded-lg animate-in fade-in slide-in-from-top-2">
+            <p className="text-sm font-bold text-accent-primary mb-1 flex items-center gap-2">
+              <HelpCircle className="h-4 w-4" /> Plain Language Summary:
+            </p>
+            <p className="text-sm text-text-muted">{clause.explanation}</p>
+          </div>
+
+          <div className={`p-4 rounded-lg border animate-in fade-in slide-in-from-top-2 ${
+            clause.fairness_score < 0.8 ? 'bg-amber-50 border-amber-200' : 'bg-green-50/30 border-green-100'
+          }`}>
+            <p className={`text-sm font-bold mb-1 flex items-center gap-2 ${
+              clause.fairness_score < 0.8 ? 'text-state-warning' : 'text-state-success'
+            }`}>
+              {clause.fairness_score < 0.8 ? <AlertTriangle className="h-4 w-4" /> : <ShieldCheck className="h-4 w-4" />}
+              Fairness Audit (Score: {clause.fairness_score.toFixed(1)}/1.0):
+            </p>
+            <p className="text-sm text-text-muted">{clause.fairness_notes}</p>
+          </div>
         </div>
       )}
       

@@ -1,8 +1,10 @@
 import os
 from jinja2 import Template
 from django.conf import settings
+from typing import Optional, Dict, Any
+from ..models import ContractProposal, SmartContractTemplate
 
-def generate_solidity_code(proposal):
+def generate_solidity_code(proposal: ContractProposal) -> Optional[str]:
     """
     Generates customized Solidity code for a ContractProposal.
     """
@@ -59,7 +61,7 @@ def generate_solidity_code(proposal):
         print(f"Code Generation Error: {str(e)}")
         return None
 
-def generate_client_explanation(template, params):
+def generate_client_explanation(template: SmartContractTemplate, params: Dict[str, Any]) -> str:
     """
     Translates Solidity template logic and parameters into plain language.
     """

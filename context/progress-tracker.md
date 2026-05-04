@@ -4,38 +4,36 @@ Update this file after every meaningful implementation change.
 
 ## Current Phase
 
-- Foundation Setup (Context Files)
+- Phase 5: Advanced Security Audits & Mainnet Readiness
 
 ## Current Goal
 
-- Initialize the Six-File Context System and define the overall build plan.
+- Harden the system for deployment, enforce RBAC, and verify smart contract integrity.
 
 ## Completed
 
-- `project-overview.md` created based on PhD Synopsis.
-- `architecture.md` defined with React/Django/Hardhat stack.
-- `code-standards.md` set up.
-- `ai-workflow-rules.md` and `ui-context.md` established.
-- `specs/00-build-plan.md` created, decomposing the project into 11 units.
-- Unit 01: Project Scaffolding (Frontend, Backend, Blockchain) complete and verified.
-- Unit 02: Authentication & Role-Based Access Control (RBAC) complete and verified.
-- Unit 03: Document Management System (Uploads & Metadata) complete and verified.
-- Unit 04: Intelligent Document Processing (NLP - Clause Extraction) complete and verified.
-- Unit 05: Human-AI Collaboration Interface (Review & Explainability) complete and verified.
-- Unit 06: Solidity Contract Templates (Modular Legal Clauses) complete and verified.
-- Unit 07: Template Selection & Mapping (Clause-to-Template Logic) complete and verified.
-- Unit 08: Smart Contract Generation Engine (Dynamic Assembly) complete and verified.
-- Unit 09: Client Explanation & Feedback System (Plain-Language Summaries) complete and verified.
-- Unit 10: Blockchain Deployment Layer (Hardhat Integration) complete and verified.
-- Unit 11: Audit Trail & On-Chain Status (Final Dashboard) complete and verified.
+- ... (previous units)
+- Unit 11: Audit Trail & On-Chain Status (Final Dashboard) complete with Audit Timeline and Recent Deployments view.
+- **Phase 5 Hardening:** 
+  - Environment variables implemented (`python-dotenv`) to remove hardcoded secrets.
+  - Role-Based Access Control (RBAC) enforced on the backend (only Lawyers can upload/deploy).
+  - **Bias Check Module:** Implemented a Fairness Audit in the NLP pipeline to detect gendered language and power imbalances, fulfilling core PhD research objectives.
+  - Smart contract templates reviewed and optimized based on **Slither** security audits (zero-address checks, immutables).
+  - Automated security auditing integrated with `slither-analyzer`.
+  - Path traversal protection added to the deployment service.
+  - Preliminary dependency audit completed (0 production vulnerabilities).
+- **Deployment Preparation:**
+  - Created Gunicorn systemd service and Nginx configuration templates.
+  - Developed `deploy.sh` automation script.
+  - Added PostgreSQL support and production dependencies (`gunicorn`, `psycopg2-binary`).
 
 ## In Progress
 
-- Project Maintenance & Further PhD Research Objectives.
+- System Demonstration & Final Handoff.
 
 ## Next Up
 
-- Phase 5: Advanced Security Audits & Mainnet Readiness.
+- Execution of Deployment on Production VPS.
 
 ## Session Notes
 

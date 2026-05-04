@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Shield, Cpu, Info, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import api from '../api/api';
 import { useAuth } from '../context/AuthContext';
+import DeploymentTimeline from '../components/DeploymentTimeline';
 
 interface Proposal {
   id: number;
@@ -12,6 +13,8 @@ interface Proposal {
   contract_address: string;
   transaction_hash: string;
   parameters: any;
+  document_status: string;
+  pending_clause_count: number;
   template_details: {
     name: string;
     description: string;
@@ -199,8 +202,15 @@ const ContractPreview = () => {
               </div>
             </div>
 
-            <div className="mt-auto pt-12">
-              <div className="bg-amber-50 p-4 rounded-lg border border-amber-100 flex gap-3">
+            <div className="mt-auto pt-8">
+              <DeploymentTimeline 
+                status={proposal.document_status}
+                isLawyerApproved={proposal.pending_clause_count === 0}
+                isClientApproved={proposal.client_approved}
+                contractAddress={proposal.contract_address}
+              />
+              
+              <div className="bg-amber-50 p-4 rounded-lg border border-amber-100 flex gap-3 mt-6">
                 <AlertCircle className="h-5 w-5 text-state-warning flex-shrink-0" />
                 <p className="text-xs text-amber-800">
                   <strong>Notice:</strong> This summary is generated to help you understand the smart contract logic. 
