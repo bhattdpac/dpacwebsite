@@ -90,6 +90,8 @@ class DocumentViewSet(viewsets.ModelViewSet):
             return Response({"error": "No proposal found for this document."}, 
                             status=status.HTTP_404_NOT_FOUND)
 
+from rest_framework.exceptions import PermissionDenied
+
 class ClauseViewSet(viewsets.ModelViewSet):
     serializer_class = ClauseSerializer
     permission_classes = [IsAuthenticated]
@@ -97,12 +99,28 @@ class ClauseViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         return Clause.objects.filter(document__owner=self.request.user)
 
+    def get_permissions(self):
+        if self.action in ['update', 'partial_update', 'destroy', 'create']:
+            return [IsAuthenticated(), IsLawyer()]
+        return super().get_permissions()
+
 class ContractProposalViewSet(viewsets.ModelViewSet):
     serializer_class = ContractProposalSerializer
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         return ContractProposal.objects.filter(document__owner=self.request.user)
+
+    def perform_update(self, serializer):
+        # Clients can only approve, not change other fields
+        if self.request.user.role == 'CLIENT':
+            allowed_fields = {'client_approved'}
+            sent_fields = set(self.request.data.keys())
+            if not sent_fields.issubset(allowed_fields):
+                 raise PermissionDenied("Clients are only authorized to update the approval status.")
+        
+        # Lawyers can update anything but only on their own documents (queryset handles this)
+        serializer.save()
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
