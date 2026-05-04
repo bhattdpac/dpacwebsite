@@ -22,6 +22,14 @@ Update this file after every meaningful implementation change.
   - Automated security auditing integrated with `slither-analyzer`.
   - Path traversal protection added to the deployment service.
   - Preliminary dependency audit completed (0 production vulnerabilities).
+  - **Portfolio Visuals:** 
+    - Implemented `ArchitectureVisual` component to showcase the system flow (Frontend -> Backend/AI -> Blockchain).
+    - Implemented `BlockchainRoadmap` component for a structured YouTube-based learning path.
+    - Integrated both into the `PortfolioHome` landing page with updated navigation.
+  - **Dark Web3 Redesign:**
+    - Refactored entire frontend aesthetic to "Dark Web3" (Syne/DM Mono typography, dark palette, purple radial glows).
+    - Implemented CSS grid overlay and custom animations (fade-in, border reveals).
+    - Overhauled Hero, About, Skills, Projects, and Footer sections for a high-impact, professional developer look.
 - **Deployment Preparation:**
   - Created Gunicorn systemd service and Nginx configuration templates.
   - Developed `deploy.sh` automation script.
