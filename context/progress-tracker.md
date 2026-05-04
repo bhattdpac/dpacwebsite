@@ -26,11 +26,13 @@ Update this file after every meaningful implementation change.
     - Implemented `ArchitectureVisual` component to showcase the system flow (Frontend -> Backend/AI -> Blockchain).
     - Implemented `BlockchainRoadmap` component for a structured YouTube-based learning path.
     - Integrated both into the `PortfolioHome` landing page with updated navigation.
-  - **Dark Web3 Redesign:**
-    - Refactored entire frontend aesthetic to "Dark Web3" (Syne/DM Mono typography, dark palette, purple radial glows).
-    - Implemented CSS grid overlay and custom animations (fade-in, border reveals).
-    - Overhauled Hero, About, Skills, Projects, and Footer sections for a high-impact, professional developer look.
-- **Deployment Preparation:**
+  - **Cyber Sunset Redesign:**
+    - Replaced Syne/DM Mono with "Space Grotesk" (Display) and "Inter" (Sans) typography.
+    - Implemented a "Cyber Sunset" color palette (Deep Space Black, Sunset Orange, Cosmic Magenta).
+    - Refactored layout for improved balance and readability, featuring space-card glassmorphism and animated orbs.
+    - Updated Architecture and Roadmap visuals to align with the new cosmic aesthetic.
+  - **Live Deployment:**
+
   - Created Gunicorn systemd service and Nginx configuration templates.
   - Developed `deploy.sh` automation script.
   - Added PostgreSQL support and production dependencies (`gunicorn`, `psycopg2-binary`).
