@@ -1,15 +1,9 @@
 import { 
   BookOpen, 
-  Terminal, 
-  Shield, 
-  Cpu, 
   Zap, 
-  Search,
-  CheckCircle2,
   ChevronRight,
   Blocks,
   Globe,
-  Database,
   Lock
 } from 'lucide-react';
 import { Link } from 'react-router-dom';

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { 
   FileText, 
   Upload, 
-  Search, 
   ArrowRight, 
   Brain, 
   Database, 
@@ -11,8 +10,7 @@ import {
   Loader2,
   FileCheck,
   ChevronRight,
-  History,
-  Trash2
+  History
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { uploadResearchPaper, getResearchPapers } from '../api/api';
