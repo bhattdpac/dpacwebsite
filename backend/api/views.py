@@ -3,9 +3,12 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
-from .serializers import RegisterSerializer, UserSerializer, DocumentSerializer, ClauseSerializer, ContractProposalSerializer
-from .models import Document, Clause, ContractProposal
-from .services import nlp_service, mapping_service, generation_service, deployment_service
+from .serializers import (
+    RegisterSerializer, UserSerializer, DocumentSerializer, 
+    ClauseSerializer, ContractProposalSerializer, ResearchPaperSerializer
+)
+from .models import Document, Clause, ContractProposal, ResearchPaper
+from .services import nlp_service, mapping_service, generation_service, deployment_service, research_nlp_service
 from .permissions import IsLawyer
 
 @api_view(['GET'])
@@ -136,3 +139,19 @@ def register_user(request):
 def get_current_user(request):
     serializer = UserSerializer(request.user)
     return Response(serializer.data)
+
+class ResearchPaperViewSet(viewsets.ModelViewSet):
+    serializer_class = ResearchPaperSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return ResearchPaper.objects.filter(owner=self.request.user)
+
+    def perform_create(self, serializer):
+        paper = serializer.save(owner=self.request.user)
+        # Trigger Research NLP processing
+        sections = research_nlp_service.extract_sections(paper.file.path)
+        paper.abstract = sections.get('abstract', '')
+        paper.methodology = sections.get('methodology', '')
+        paper.findings = sections.get('findings', '')
+        paper.save()

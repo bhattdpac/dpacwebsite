@@ -39,18 +39,18 @@ const PortfolioHome = () => {
       type: 'internal'
     },
     {
-      title: 'DEX Aggregator',
-      description: 'Advanced liquidity routing engine optimized for low slippage across cross-chain decentralized exchanges.',
-      tags: ['Solidity', 'Ethers.js'],
-      link: '#',
-      type: 'external'
+      title: 'Blockchain Academy',
+      description: 'A structured curriculum for mastering decentralized systems, from cryptography to advanced DeFi protocols.',
+      tags: ['React', 'Web3', 'EduTech'],
+      link: '/academy',
+      type: 'internal'
     },
     {
-      title: 'DAO Governance',
-      description: 'A modular framework for decentralized autonomous organizations with adaptive voting mechanisms.',
-      tags: ['Hardhat', 'OpenZeppelin'],
-      link: '#',
-      type: 'external'
+      title: 'AI Research Hub',
+      description: 'Automated literature reviewer that extracts methodologies and findings from academic papers using NLP.',
+      tags: ['AI', 'Python', 'NLP'],
+      link: '/research',
+      type: 'internal'
     }
   ];
 
@@ -67,8 +67,8 @@ const PortfolioHome = () => {
             <span className="font-display text-2xl font-bold tracking-tight">DPAC<span className="text-accent-primary">.</span>DEV</span>
           </div>
           <div className="hidden lg:flex gap-10 text-xs font-bold uppercase tracking-[0.2em] text-text-muted">
-            {['About', 'Architecture', 'Skills', 'Work', 'Roadmap'].map(item => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-accent-primary transition-colors">
+            {['About', 'Architecture', 'Skills', 'Work', 'Academy', 'Research'].map(item => (
+              <a key={item} href={item === 'Academy' ? '/academy' : item === 'Research' ? '/research' : `#${item.toLowerCase()}`} className="hover:text-accent-primary transition-colors">
                 {item}
               </a>
             ))}

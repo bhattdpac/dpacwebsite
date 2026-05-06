@@ -8,6 +8,8 @@ import DocumentReview from './pages/DocumentReview';
 import ContractPreview from './pages/ContractPreview';
 import PortfolioHome from './pages/PortfolioHome';
 import LegalFrameworkLanding from './pages/LegalFrameworkLanding';
+import Academy from './pages/Academy';
+import ResearchHub from './pages/ResearchHub';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<PortfolioHome />} />
           <Route path="/legal-framework" element={<LegalFrameworkLanding />} />
+          <Route path="/academy" element={<Academy />} />
+          <Route path="/research" element={<ResearchHub />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route 

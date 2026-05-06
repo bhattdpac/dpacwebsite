@@ -1,8 +1,14 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import Document, Clause, SmartContractTemplate, ContractProposal
+from .models import Document, Clause, SmartContractTemplate, ContractProposal, ResearchPaper
 
 User = get_user_model()
+
+class ResearchPaperSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ResearchPaper
+        fields = ('id', 'title', 'file', 'abstract', 'methodology', 'findings', 'owner', 'created_at')
+        read_only_fields = ('owner', 'created_at', 'abstract', 'methodology', 'findings')
 
 class ClauseSerializer(serializers.ModelSerializer):
     class Meta:

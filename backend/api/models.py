@@ -66,3 +66,15 @@ class ContractProposal(models.Model):
 
     def __str__(self):
         return f"Proposal for {self.document.title}"
+
+class ResearchPaper(models.Model):
+    title = models.CharField(max_length=255)
+    file = models.FileField(upload_to='research_papers/')
+    abstract = models.TextField(blank=True, null=True)
+    methodology = models.TextField(blank=True, null=True)
+    findings = models.TextField(blank=True, null=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='research_papers')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

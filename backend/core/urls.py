@@ -7,12 +7,16 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from api.views import health_check, register_user, get_current_user, DocumentViewSet, ClauseViewSet, ContractProposalViewSet
+from api.views import (
+    health_check, register_user, get_current_user, 
+    DocumentViewSet, ClauseViewSet, ContractProposalViewSet, ResearchPaperViewSet
+)
 
 router = DefaultRouter()
 router.register(r'documents', DocumentViewSet, basename='document')
 router.register(r'clauses', ClauseViewSet, basename='clause')
 router.register(r'proposals', ContractProposalViewSet, basename='proposal')
+router.register(r'research-papers', ResearchPaperViewSet, basename='research-paper')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

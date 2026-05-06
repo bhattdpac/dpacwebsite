@@ -43,4 +43,18 @@ api.interceptors.response.use(
   }
 );
 
+export const uploadResearchPaper = async (formData: FormData) => {
+  const response = await api.post('/research-papers/', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
+  return response.data;
+};
+
+export const getResearchPapers = async () => {
+  const response = await api.get('/research-papers/');
+  return response.data;
+};
+
 export default api;

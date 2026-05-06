@@ -41,6 +41,12 @@ Update this file after every meaningful implementation change.
   - Resolved blockchain stability issues (Chai dependency conflict) in production.
   - Verified live Nginx configuration and SSL setup.
   - **Status:** Portfolio is fully live and operational at `deepakbhatt.dev`.
+- **Meaning & Education Integration:**
+  - **Blockchain Academy:** Implemented a new `/academy` route featuring a multi-module curriculum and a "Decentralized Dictionary" (Glossary) to teach blockchain fundamentals.
+  - **AI Research Hub:** Implemented a new `/research` route and backend service for academic paper analysis.
+    - **Research NLP Service:** Developed a specialized extraction pipeline for Abstracts, Methodologies, and Findings from PDFs.
+    - **Isolated Data Model:** Created `ResearchPaper` model and dedicated API endpoints to keep academic work separate from the Legal Framework.
+    - **Review History:** Added a persistent "Recent Reviews" feature to track and revisit analyzed research papers.
 
 ## In Progress
 
