@@ -34,6 +34,11 @@ This project is an AI-driven, human-centered framework designed to integrate adv
 - [x] **Environment Management:** Secured secrets using `.env` and `python-dotenv`.
 - [x] **Production Config:** Automated `deploy.sh` and PostgreSQL support implemented.
 
+### New Features & Portfolio Meaning (Latest)
+- [x] **Blockchain Academy:** Interactive educational module (`/academy`) with a multi-step curriculum and "Decentralized Dictionary" glossary.
+- [x] **AI Research Hub:** Specialized academic tool (`/research`) using NLP to automatically extract Abstracts, Methodologies, and Findings from PDF research papers.
+- [x] **Ollama LLM Integration:** Server-side chatbot service (`chatbot_service.py`) designed to interface with local LLMs and log interactions to GitHub for transparent AI history.
+
 ## Deployment
 The project is configured for deployment on your VPS at `deepakbhatt.dev`.
 Refer to **`GEMINI.md`** for the updated deployment guide and operational standards.
