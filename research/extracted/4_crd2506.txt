@@ -1,0 +1,513 @@
+Advance Analyzes for Blockchain Legal 
+Issues in India 
+ 
+Abstract:  
+This paper delves into the intricate legal landscape surrounding blockchain technology in the Indian 
+context. It explores the potential challenges and opportunities that arise with the adoption of 
+blockchain in various industries, shedding light on jurisdictional issues, smart contract 
+enforceability, and the need for regulatory frameworks. The document emphasizes the importance 
+of monitoring the evolving case law and legal principles related to blockchain technology in India, 
+highlighting the necessity for a robust legal framework to address emerging issues. Additionally, it 
+discusses the implications of blockchain technology on supply chain finance and the banking sector 
+in India, offering insights into the barriers to adoption and potential solutions. Overall, the PDF 
+serves as a valuable resource for legal scholars, policymakers, and industry professionals seeking 
+to navigate the complex legal landscape of blockchain technology in India. 
+Keywords: Adoption barriers, Banking sector, Blockchain technology, Case law, Jurisdiction, 
+Legal issues, Regulatory framework, Smart contracts, Supply chain finance. 
+1. Introduction 
+With the ever-changing landscape of technology, the Indian legal system has continually 
+faced new challenges. This paper aims to explore the legal issues surrounding blockchain 
+technology in India. Blockchain can be simply described as a decentralized digital ledger 
+for the storage of data. A more technical definition is provided by the European Parliament 
+in a 2017 publication which explains it as "a digital ledger in which transactions made in 
+cryptocurrency are recorded chronologically and publicly". Blockchain technology was 
+first devised in 2008 by "an unknown person or group of people under the pseudonym 
+Satoshi Nakamoto who implemented it as a core component of the digital currency, 
+Bitcoin" and it is best known as the technology underpinning Bitcoin. However, there are 
+many other uses of this technology, including the possibility of vastly improving 
+transparency, efficiency, and trust in multiple applications across the professional 
+environment. Despite its many exciting opportunities and the serious challenges for the 
+legal system, India's unique position has not yet been significantly explored in the analysis 
+of blockchain technology. This paper will help to fill that gap. (Gad et al.2022) (Namasudra 
+et al.2021) (Tanwar, 2022) (Gururaj et al.2020) (Kim, 2020) 
+Ajay Patel 
+Faculty of Computer Applications 
+(Ganpat University) 
+Kherva, India  
+Krupa Bhavsar  
+Faculty of Computer 
+Applications 
+(Ganpat University) 
+Kherva, India 
+ 
+Ketan Patel 
+Faculty of Computer 
+Applications 
+(Ganpat University) 
+Kherva, India  
+Amit Suthar  
+Faculty of Computer 
+Applications 
+(Ganpat University) 
+Kherva, India  
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 27
+1.1. Overview of blockchain technology 
+A blockchain is a decentralized digital ledger that records unalterable transactions. Each 
+transaction generates a unique hash and is added to a block, creating a chain. Blockchain 
+has transformative potential, extending beyond digital applications. It provides 
+transparency and verification for various uses, like smart contracts and supply-chain 
+transparency. Blockchain's key attributes are its decentralized nature and the use of hashes, 
+making it virtually impossible to alter records. It can be used in industries such as finance, 
+charities, and the public sector. However, data protection and potential consequences must 
+be considered. The law surrounding blockchain is an area that will continue to expand 
+alongside its use. (Schneider et al.2020) (Ralston, 2020) 
+1.2. Importance of analyzing legal issues in India 
+The study of blockchain is globally appealing and has gained attention from legal scholars 
+and regulators worldwide. However, the legal issues surrounding blockchain in India have 
+been overlooked. Despite not being widely embraced at the legislative level, there are 
+certain restrictions on using blockchain in specific contexts, such as property or document 
+records. Understanding blockchain technology beyond Bitcoin and virtual currencies 
+reveals various legal issues, including data protection, smart contracts, representation, and 
+jurisdictional problems. Organizations planning to utilize blockchain technology should 
+consider the applicable laws and regulations, making it crucial to analyze legal issues in 
+India. Blockchain's decentralized nature makes it difficult for a single entity to corrupt the 
+ledger, potentially discouraging violators from non-compliance. Blockchain's core beauty 
+lies in its digitized and decentralized public ledgers, which provide accurate and secure 
+data. This research explores the legal aspects of blockchain, focusing on data protection, 
+smart contracts, jurisdiction, and addressing challenges within traditional legal frameworks 
+during the transitional period. It also examines the impact of blockchain on anti-money 
+laundering and counter-terrorism financing regimes in Australia and highlights the need to 
+address substantive legal issues in property regulations when employing blockchain 
+technology. (Schuetz & Venkatesh, 2020) (Rana et al.2022) (Sharma and Joshi2021) 
+2. Regulatory Framework for Blockchain in India 
+ The Indian felony device works in a manner that the right is taken into consideration as 
+having been forbidden until it's far allowed through regulation. This subdivision analyses 
+and examines the approaches the modern-day Indian felony system might be a barrier to 
+the development of blockchain technology. It is also necessary to justify comments with 
+the flow of the reasoning and substantiate feedback with relevant examples and/or 
+authoritative blockchain literature. This may be done via the execution of advanced studies 
+processes, along with assessing the criticisms and guidelines offered by blockchain 
+specialists. Furthermore, comparative analyses among India and other international 
+locations might be applied to show the effectiveness of shifting in the direction of a more 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 28
+liberal legal regulatory machine for the improvement of blockchain technology in India. 
+This might provide to demonstrate a right expertise to comment absolutely on a long way 
+achieving criminal suggestions which might be required to help the operation and 
+achievement of blockchain technology. Also, countries such as Estonia and Switzerland 
+have adopted a more liberal mind-set in the direction of blockchain and that has led to a 
+fulfillment of this technology within the provision of 'public services' along with the digital 
+health record machine ('eleven', 2019). (Kaur et al.2022) (Patki & Sople, 2020) 
+(Mathivathanan et al.2021) (Bhuvana and Aithal2020). Refer to Figure 1 for a detailed 
+illustration of the blockchain structure, including its decentralized nature, hash mechanism, 
+and transaction flow, along with insights into the current legal landscape for blockchain 
+technology in India. 
+ 
+Figure 1: System Overview of Blockchain Technology in India 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 29
+2.1. Current legal landscape for blockchain technology 
+Firstly, there is no express law or regulation on blockchain technology in India to date. As 
+indicated above, most of the technology companies in India find their way to use 
+blockchain technology under the Information Technology Act, 2000. Sections 91 and 92 
+of the Indian Evidence Act, 1872 dealing with the definition of the public at large and the 
+definition of the electronic records and these definitions are the main issues when it comes 
+to the legal recognition of blockchain technology in India. As per the Section 3 of the 
+Information Technology Act, 2000, electronic records created through blockchain 
+technology are recognized as the electronic record. But, there is no consensus or directly 
+content which deals with the blockchain technology. It is not covered within the IT Act. 
+According to the Rule 13 of the Information Technology (Preservation and Retention of 
+Information by Intermediaries providing Digital Locker facilities) Rules, 2016, an 
+electronic agreement is defined as an agreement which is concluded by affixing the digital 
+signature in case of the parties have option of affixing digital signature. If such provisions 
+are properly invoked for accepting the contents by affixing the digital signature or 
+electronic signature then it is possible that a blockchain based agreement may become the 
+electronic agreement. Also, the general practice in blockchain projects is that the provider 
+in the chain transfer the data by way of the digital signature. So, if some regulations are 
+prescribed for invoking these provisions then in the future the 'smart contract' can be 
+recognized under the Indian laws. As per Section 13 of the Information Technology Act, 
+2000, when any information is being stored by the any person on any tamper-evident 
+technology then such information shall be deemed to be a valid storage. It is a positive 
+progress that the Government of Andhra Pradesh in India is trying to protect the tamper-
+evident technology based records through blockchain technology. The State of Andhra 
+Pradesh has taken a lead where the state plans to protect the land records by creating a land 
+registry on a platform of the blockchain. This is the first kind of initiative in India in which 
+the government is trying to implement the blockchain technology for the public records. 
+Also the states like Telangana and Maharashtra have shown their interests in the blockchain 
+technology and they are creating a new block of records to start with. (Pandey & Sen, 2022) 
+(Ghosh and Nanda2022) (Dimitropoulos, 2020) (Singh2020) 
+2.2. Government initiatives and policies 
+Different state governments in India recognize the potential of blockchain technology and 
+its adoption on a global scale. They aim to promote the development of blockchain 
+applications across industries to enhance the growth of the technology and related services 
+in India. 
+On 26th September 2018, the Government of Telangana signed eight MoUs with consensus 
+systems in New York. The objective is to create a blockchain ecosystem in Telangana and 
+implement IT initiatives. The Consul General of India in New York played a crucial role 
+in bringing the parties together. Dr. I Jayaraj, special chief secretary and IT advisor, 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 30
+expressed excitement about the potential of blockchain technology for the state's 
+digitalization. 
+The Andhra Pradesh government partnered with Covalent Fund to enhance cybersecurity, 
+speed up services, and prevent cybercrime. Blockchain solutions will improve public 
+services and governance reform. 
+The Indian government has been proactive in implementing blockchain technology in 
+India. In 2016, the Indian government launched the "Digital India" campaign to ensure that 
+government services are made available to citizens electronically. The main objective of 
+the campaign is to connect rural areas with high-speed internet networks and improve 
+digital literacy. Blockchain technology is recognized as an important research area by the 
+Indian government and is funded by different government agencies such as the Department 
+of Science and Technology. (Bhatt, 2020) (Gupta et al.2020) (Singh & Bansal, 2020) 
+(Gulyani et al.) (Jain) (Beriya, 2021) 
+2.3. Challenges in implementing regulations 
+The challenges in implementing regulations are multi-pronged. Firstly, the technology is 
+constantly evolving and it is difficult for the legislation to keep up. For example, courts 
+need to understand complex technological concepts. Another complication is keeping 
+regulations updated. The lack of industry-specific regulations in India also creates 
+difficulty. Secondly, blockchain is part of a wider technological process, presenting 
+complications for regulators. This may result in drafting broad legislations or implementing 
+subsidiary legislations. This creates uncertainty for businesses. The paper will discuss 
+learning from the European Union and the United States in protecting consumers' interests. 
+Another problem is the decentralized nature of blockchain, making it difficult for countries 
+to regulate data stored globally. Global cooperation is needed. This could be an obstacle to 
+the effectiveness of the regulations. (Saraf et al.2024) (Kharitonova et al.2020) 
+3. Legal Issues and Challenges in Blockchain Adoption 
+The Algory project, initially registered with the Copyright Office, became the center of a 
+legal dispute when its creator filed a lawsuit, alleging neglect of their research and testing 
+contributions. The court ruled in favor of the creator, declaring that the defendants had no 
+legal rights or interest in the invention (see Figure 2). Leaving research uncopyrightable 
+would lead to less unlawful use of the technology. (Olson, 2020) (Kartiko and 
+Soegiono2024) (Kingsley et al.2022) 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 31
+ 
+Figure 2: Legal Implications and Consideration 
+3.1. Data privacy and protection 
+It is no doubt to say that data security is one of the significant issues to the blockchain 
+innovation. Distributing information between all members on a blockchain network makes 
+it hard to revise or erase information if the need ought to emerge. It is likewise essential to 
+take note of that the worldwide pattern of digitization has realized new ways information 
+is being used and how that information is ensured. Truth be told, the requirement for 
+information protection has become a worldwide worry with the execution of the General 
+Data Protection Regulation in the European Union, which we will contrast with the present 
+Indian lawful system for security of individual information. Hence, it is basic to 
+comprehend the lawful commitments forced on any individual who is setting up a 
+blockchain, yet additionally on any individual who is chosen as an information holder. 
+Blockchain innovation ordinarily centers around the decentralized perspective and the 
+straightforwardness of the information stream. Be that as it may, these features proposed 
+by blockchain innovation may not generally hold up under a similarity to right security or 
+consistence with the information security law. There are three key laws characterizing the 
+space of information insurance and security in India: the IT Act 2000, the SPDI Rules 2011, 
+and the novel Aadhar Act 2016. The centre rule of information assurance under the Indian 
+enactment is to put the individual in charge of their own information and to guarantee the 
+information is precisely put away and sensibly ensured, which is generally in accordance 
+with the GDPR guideline in the EU. Assuming individual information neglects to be 
+ensured, the law forces unforgiving punishments. (Guru et al., 2021) (Rao et al., 2021) 
+(Simaiya et al.2020) 
+3.2. Smart contracts and enforceability 
+The concept of smart contracts is of utmost importance to blockchain technology as they 
+represent the self-executing nature of a blockchain. Smart contracts are pre-programmable 
+computer codes which are capable of executing on their own once certain predefined 
+conditions are met. To put it simply, smart contracts are software that can automatically 
+enforce and execute a contract when certain predefined conditions are met. However, as of 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 32
+today, there is no specific legal framework available to recognize the legality and validity 
+of such smart contracts in India. The Information Technology Act, 2000 which is the 
+general statute governing cyber contracts in India, does not specifically deal with smart 
+contracts. Moreover, the Indian Contract Act, 1872 as well does not specifically recognize 
+or provide for the legality of smart contracts. It becomes important to ask the question - 
+how the contracts executed by software will be recognized by the conventional legal 
+framework when there is no specific statutory recognition to smart contracts. In the absence 
+of any specific provision in the current law with respect to smart contracts, it becomes 
+imperative to analyze how these self-executing digital contracts would be recognized and 
+enforced under the current Indian legal framework and what are the potential legal 
+challenges of the same. (Dwivedi et al.2021) (Drummer & Neumann, 2020) (Khan et 
+al.2021) 
+3.3. Intellectual property rights 
+Intellectual property assets can be effectively managed using blockchain technology. 
+Blockchains have the capability to transparently track and validate transactions and 
+holdings of digital assets, which is particularly beneficial for intellectual property law. This 
+includes managing financial interests, license rights, and providing a secure escrow facility 
+for unregistered design or copyright material. However, implementing blockchain 
+technology also requires establishing new rules and standards for its administration and 
+control. This challenges traditional concepts and means of control in the intellectual 
+property space. While there are potential benefits, such as redefining the legal 'author' of a 
+work, there are also risks and costs involved, especially for error detection in digital assets. 
+The use of blockchain to register patents or designs is no longer a technological pursuit but 
+rather a consideration for legislation and practice to catch up with existing possibilities. 
+Cybersecurity is another important aspect to consider, as personally identifiable 
+information may be exposed in certain blockchain implementations. (Rambhia et al.2021) 
+(Singh, 2022) (Bhadauria et al.2021) (Laroiya et al.2020) ( & Krishna, 2022) (Chaudhary 
+& Nidhi, 2023) 
+3.4. Jurisdictional issues 
+The development of case law and legal principles on blockchain technology in India will 
+be an interesting area for legal scholars and the judiciary to watch in the coming years. 
+Similarly, as blockchain technology is adopted by more mainstream industries, it is 
+conceivable that there will be legal issues when third-party rights are affected. For instance, 
+where an individual or business seeks to rely on smart contract self-execution and a third 
+party disputes the second element of a contract, namely that the contract is legally 
+enforceable, there may be a need for courts to have jurisdiction. The issue of jurisdiction 
+will become increasingly acute as blockchain technology becomes more prevalent in areas 
+such as the internet of things and supply chain maintenance. 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 33
+In international law, state sovereignty refers to the interrelated concept of territory and the 
+right to rule. In the case of data created, stored, and transmitted on a blockchain, it exists 
+on multiple computers in different jurisdictions simultaneously. It is unclear whether the 
+Indian courts will have jurisdiction to settle a dispute. This leads to uncertainties for those 
+in the blockchain industry and may undermine the attraction of India as a potential hub for 
+blockchain innovation and business. 
+In India, there is as yet no legal definition of blockchain. The Indian legislature has avoided 
+any direct reference to distributed ledger technology, the term "blockchain" or 
+cryptocurrencies. However, section 2(1)(zb) of the Information Technology Act, 2000 ("IT 
+Act") provides a definition of "electronic record" which states that data, record or data 
+generated, image or sound stored, received or sent in an electronic form or microfilm or 
+computer-generated microfiche. It also states that any reference to a law having been made 
+in the electronic form will be construed as a reference to that law or regulation or rule and 
+such statute, ordinance, etc. in force in India. This quite broad and generic definition could 
+mean that the Indian courts will have the power to adjudicate in legal cases in respect of 
+blockchain-related activities. However, as the technology and its application is a relatively 
+new area, the question of the territorial jurisdiction of the Indian legal system becomes 
+important. 
+Jurisdictional challenges in the field of blockchain technology relate to the nature of the 
+technology itself. Blockchain is decentralized, which means that it operates on a global 
+scale. In the absence of national regulations on blockchain, a key legal question is of 
+identifying the proper jurisdiction over a dispute. It is a fundamental principle of any legal 
+system to establish the powers of the authorities and courts of that jurisdiction. (Mohit, 
+2023) (Dylag & Smith) (SINGH, 2023) (Sharma et al.2021) (Dabas and Bhatt2022) (Jaya 
+Prakash & Putchala, 2023). 
+4. Future Outlook and Recommendations 
+The Indian judiciary should promote the use of blockchain in the legal system. Allowing 
+blockchain evidence in certain legal proceedings would establish India as progressive and 
+technology-friendly. Creating a specialized regulator with experts from relevant fields 
+would stimulate adoption in different sectors. India needs to streamline its legal framework 
+and provide clarity and guidance to attract foreign investment in blockchain technology. 
+The potential for blockchain in India is significant. (Haridas et al.2022) (Khairwal and 
+Shah2020). 
+ 
+ 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 34
+ 
+Figure 3: Future Outlook and Recommendation 
+4.1. Potential solutions for legal challenges 
+Firstly, it is vital to develop a comprehensive legal and regulatory framework to address 
+the legal challenges discovered in the advancement of blockchain technology in India. This 
+framework should be inclusive and ensure that every legal challenge is undertaken 
+properly. The policy makers in India should adopt a new approach in policy design that 
+will include all stakeholders and provide a test bed to trial and develop technology that can 
+be regulated in the future. The government should continue with the momentum it has 
+already started of adopting blockchain technology especially in land registration system, 
+digital identity and electronic health records. This has two advantages; one it is expected 
+that successful deployment of these technologies will provide a good reason to improve 
+and advance current legal systems and secondly it will create a pipeline of technology 
+lawyers, academics and policy makers that might think about innovative ways to regulate 
+the technological advancements through research and development. There should be a 
+focus on smart contracts in Indian legal system. It is submitted that a clarification under 
+Indian law is needed to confirm that a smart contract has legal effect. One solution could 
+be that the IT Act is amended to add provisions that explicitly recognize blockchain and 
+permit electronic records to be maintained on a blockchain. In tandem, amendments could 
+be added to recognize smart contracts under Indian law as proposed in the UK Jurisdiction 
+Taskforce consultation. This would afford a set of rights to parties who enter into a smart 
+contract and aid the enforceability of such contracts under Indian legal system. This is 
+further supported by the fact that most of the land in India should be registered and backed 
+by a guarantee as to the title which requires a robust and secure land registration system. 
+This is a legal requirement and this should pave the way for the use of blockchain 
+technology provided that the relevant enactments in India permit digital registration and 
+the formation of smart contracts on a blockchain. Last but not least, India should also 
+consider joining the New York Convention on the Recognition and Enforcement of Foreign 
+Arbitral Awards. This will be a good step forward to deal with the legal challenge of 
+jurisdiction when planning to implement blockchain technology in India. This is because 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 35
+the ratification of this convention and the enacting of appropriate arbitration laws in India 
+will mean that parties will be able to agree to resolve disputes using an international 
+arbitration regime and it will allow foreign awards to be enforced in India. This will 
+facilitate blockchain technology to be more easily adopted and accepted in India as it 
+alleviates the fear of legal uncertainties during international business transactions and 
+cross-border trade in the digital economy. (MGBEMENA2022) (Shalini et al., 2023) 
+4.2. Collaboration between stakeholders 
+Members of the blockchain community want a lobby group to advise the government on 
+blockchain and cryptocurrency. They aim to engage with the government to negotiate 
+regulations and establish legal clarity. Compliance with existing laws is required, but there 
+is no specific regulation for blockchain and legal technology. Commentators suggest 
+creating an industry advisory board to improve current laws. A regulatory sandbox for 
+startups to work on new technologies, like blockchain and smart contracts, is also proposed. 
+Responsive regulation that allows legislation to be influenced by technology use is 
+mentioned in literature. A fuller understanding of a technology's efficacy will emerge 
+through its development under the law's oversight. (Bhuvana and Aithal2020) (Rana et 
+al.2022) (Thakur et al.2020) 
+Conclusion 
+India can take policy measures to promote and adopt blockchain technology. The first step 
+is raising awareness about its utilities. The second step is hiring more consultants and 
+providing training programs for advocates, judges, and officers. A regulatory sandbox can 
+be created for experimenting with blockchain technology. A separate panel can be formed 
+to manage and register blockchain development, with technical experts, government 
+representatives, and academic consultants. This panel can grant registration for new 
+blockchain solutions.ety or the trade. The panel ensures that proper independent work and 
+innovation is appreciated in a secure and regulated manner. 
+References: 
+1. Gad, A. G., Mosa, D. T., Abualigah, L., & Abohany, A. A. (2022). Emerging trends in 
+blockchain technology and applications: A review and outlook. Journal of King Saud 
+University-Computer and Information Sciences, 34(9), 6719-6742.sciencedirect.com 
+2. Namasudra, S., Deka, G. C., Johri, P., Hosseinpour, M., & Gandomi, A. H. (2021). The 
+revolution of blockchain: State-of-the-art and research challenges. Archives of 
+Computational Methods in Engineering, 28, 1497-1515.researchgate.net 
+3. Tanwar, S. (2022). Blockchain Technology.HTML 
+4. Gururaj, H. L., Manoj Athreya, A., Kumar, A. A., Holla, A. M., Nagarajath, S. M., & 
+Ravi Kumar, V. (2020). Blockchain: A new era of technology. Cryptocurrencies and 
+blockchain technology applications, 1-24.HTML 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 36
+5. Kim, J. W. (2020). Blockchain technology and its applications: Case studies. Journal of 
+System and Management Sciences.aasmr.org 
+6. Schneider, S., Leyer, M., & Tate, M. (2020). The transformational impact of blockchain 
+technology on business models and ecosystems: A symbiosis of human and technology 
+agents. IEEE Transactions on Engineering Management, 67(4), 1184-1195.HTML 
+7. Ralston, S. J. (2020). Postdigital prospects for blockchain-disrupted higher education: 
+beyond the theater, memes and marketing hype. Postdigital Science and 
+Education.springer.com 
+8. Schuetz, S. & Venkatesh, V. (2020). Blockchain, adoption, and financial inclusion in 
+India: Research opportunities. International journal of information management.vt.edu 
+9. Rana, N. P., Dwivedi, Y. K., & Hughes, D. L. (2022). Analysis of challenges for 
+blockchain adoption within the Indian public sector: An interpretive structural 
+modelling approach. Information Technology & People, 35(2), 548-576.brad.ac.uk 
+10. 
+Sharma, M., & Joshi, S. (2021). Barriers to blockchain adoption in health-care industry: 
+an Indian perspective. Journal of Global Operations and Strategic Sourcing, 14(1), 134-
+169.HTML 
+11. Kaur, J., Kumar, S., Narkhede, B. E., Dabić, M., Rathore, A. P. S., & Joshi, R. (2022). 
+Barriers to blockchain adoption for supply chain finance: the case of Indian SMEs. 
+Electronic Commerce Research, 1-38.springer.com 
+12. Patki, A. & Sople, V. (2020). Indian banking sector: Blockchain implementation, 
+challenges and way forward. Journal of Banking and Financial Technology.HTML 
+13. Mathivathanan, D., Mathiyazhagan, K., Rana, N. P., Khorana, S., & Dwivedi, Y. K. 
+(2021). Barriers to the adoption of blockchain technology in business supply chains: a 
+total interpretive structural modelling (TISM) approach. International Journal of 
+Production Research, 59(11), 3338-3359.bournemouth.ac.uk 
+14. Bhuvana, R., & Aithal, P. S. (2020). RBI distributed ledger technology and blockchain-
+a future of decentralized India. International Journal of Management, Technology and 
+Social Sciences (IJMTS), 5(1), 227-237.supublication.com 
+15. Pandey, S. & Sen, C. (2022). Blockchain Technology in Real-Time Governance: An 
+Indian Scenario. Indian Journal of Public Administration.researchgate.net 
+16. Ghosh, J., & Nanda, A. S. (2022). Legal implication of blockchain technology in public 
+health. In Digital Health Transformation with Blockchain and Artificial Intelligence (pp. 
+299-318). CRC Press.HTML 
+17. Dimitropoulos, G. (2020). The law of blockchain. Wash. L. Rev..uw.edu 
+18. Singh, P. (2020, December). Role of blockchain technology in digitization of land 
+records in Indian scenario. In IOP Conference Series: Earth and Environmental Science 
+(Vol. 614, No. 1, p. 012055). IOP Publishing.iop.org 
+19. Bhatt, S. (2020). Digitalization of rural india: Digital village. VISION: Journal of Indian 
+Taxation.researchgate.net 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 37
+20. Gupta, R., Pal, S. K., & Muttoo, S. K. (2020). Data analytics for better branding of e-
+governance and e-business systems: Case of “DIGITAl India” campaign. In Leveraging 
+digital innovation for governance, public administration, and citizen services: Emerging 
+research and opportunities (pp. 51-78). IGI Global.HTML 
+21. Singh, R. & Bansal, R. (2020). Benefits & Challenges of Digital India: A Study. Impact 
+of COVID-19 on Global Economy.researchgate.net 
+22. Gulyani, M., Pasricha, C., Batra, P., Student, M. B. A., & Goel, C. (). A STUDY ON 
+GROWTH OF DIGITAL INDIA CAMPAIGN. system.ijeast.com 
+23. Jain, M. D. (). A Study on Growth and Prospect of Digital India Campaign. 
+ijaem.net.ijaem.net 
+24. Beriya, A. (2021). Digital India Programme: Going Full Circle.econstor.eu 
+25. Saraf, K., Bajar, K., Jain, A., & Barve, A. (2024). Assessment of barriers impeding the 
+incorporation of blockchain technology in the service sector: a case of hotel and health 
+care. Journal of Modelling in Management, 19(2), 407-440.HTML 
+26. Kharitonova, E., Kharitonova, N., Pulyaeva, V., & Shaidullina, V. (2020, October). 
+Revealing best practices in legal regulation in the sphere of blockchain technology. In 
+Proceedings of the 2nd International Scientific Conference on Innovations in Digital 
+Economy (pp. 1-8).HTML 
+27. Olson, K. K. (2020). The Copyright Claims Board and the Individual Creator: Is Real 
+Reform Possible?. Communication Law and Policy.HTML 
+28. Kartiko, N. D., & Soegiono, S. P. (2024). Analysis of the Copyright Dispute Decision 
+Between Djanuar Ishak and PT. Elang Prima Retailindo: Study Of Commercial Court 
+Decision Number 35/PDT. SUS-COPYRIGHT/2021/PN JKT. PUS. Journal of Legal 
+and Cultural Analytics, 3(1), 105-116.formosapublisher.org 
+29. Kingsley, S., Sinha, P., Wang, C., Eslami, M., & Hong, J. I. (2022). " Give Everybody 
+[..] a Little Bit More Equity": Content Creator Perspectives and Responses to the 
+Algorithmic Demonetization of Content Associated with Disadvantaged Groups. 
+Proceedings of the ACM on Human-Computer Interaction, 6(CSCW2), 1-37.acm.org 
+30. Guru, D., Perumal, S., & Varadarajan, V. (2021). Approaches towards blockchain 
+innovation: A survey and future directions. Electronics.mdpi.com 
+31. Rao, U. P., Shukla, P. K., Trivedi, C., Gupta, S., & Shibeshi, Z. S. (2021). Blockchain 
+for Information Security and Privacy.HTML 
+32. Simaiya, S., Lilhore, U. K., Sharma, S. K., Gupta, K., & Baggan, V. (2020). Blockchain: 
+A new technology to enhance data security and privacy in Internet of things. Journal of 
+Computational and Theoretical Nanoscience, 17(6), 2552-2556.researchgate.net 
+33. Dwivedi, V., Norta, A., Wulf, A., Leiding, B., Saxena, S., & Udokwu, C. (2021). A 
+formal specification smart-contract language for legally binding decentralized 
+autonomous organizations. IEEE access, 9, 76069-76082.ieee.org 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 38
+34. Drummer, D. & Neumann, D. (2020). Is code law? Current legal and technical adoption 
+issues and remedies for blockchain-enabled smart contracts. Journal of information 
+technology.HTML 
+35. Khan, S. N., Loukil, F., Ghedira-Guegan, C., Benkhelifa, E., & Bani-Hani, A. (2021). 
+Blockchain smart contracts: Applications, challenges, and future trends. Peer-to-peer 
+Networking and Applications, 14, 2901-2925.springer.com 
+36. Rambhia, V., Mehta, V., Mehta, R., Shah, R., & Patel, D. (2021). Intellectual Property 
+Rights Management Using Blockchain. In Information and Communication Technology 
+for Competitive Strategies (ICTCS 2020) Intelligent Strategies for ICT (pp. 545-552). 
+Springer Singapore.researchgate.net 
+37. Singh, S. (2022). IPR and Blockchain Technology. Issue 2 Int'l JL Mgmt. & 
+Human..HTML 
+38. Bhadauria, S., Kumar, P., & Mohanty, T. (2021, December). Intellectual Property 
+Protection using Blockchain and Digital Watermarking. In 2021 IEEE International 
+Conference on Advanced Networks and Telecommunications Systems (ANTS) (pp. 1-
+6). IEEE.HTML 
+39. Laroiya, C., Saxena, D., & Komalavalli, C. (2020). Applications of blockchain 
+technology. In Handbook of research on blockchain technology (pp. 213-243). 
+Academic press.researchgate.net 
+40. , K. .. & Krishna, V. a. n. a. t. h. i. (2022). Role of Intellectual Property in Blockchain. 
+Part 2 Indian J. Integrated Rsch. L..HTML 
+41. Chaudhary, G. & Nidhi, A. (2023). Artificial intelligence and blockchain: a 
+breakthrough collaboration in IP law. Journal of Intellectual Property Rights 
+(JIPR).niscpr.res.in 
+42. Mohit, V. (2023). Regulating Block-Chain Technology in the Legal Field. Issue 2 Indian 
+JL & Legal Rsch..HTML 
+43. Dylag, M. & Smith, H. (). From cryptocurrencies to cryptocourts: blockchain and the 
+financialization of dispute resolution platforms. Information.tandfonline.com 
+44. SINGH, D. R. B. (2023). … OF PRIVACY AND HEALTHCARE TREATMENT: 
+PROTECTIVE MEASURES VIA APPLICATION AND EFFECTIVENESS OF 
+BLOCKCHAIN TECHNOLOGY IN LEGAL …. A LANDMARK ON THE INDIAN 
+CONSTITUTION.HTML 
+45. Sharma, S., Gamoura, S., Prasad, D., & Aneja, A. (2021). Emerging Legal Informatics 
+towards Legal Innovation: Current status and future challenges and opportunities. Legal 
+Information Management, 21(3-4), 218-235.HTML 
+46. Dabas, D., & Bhatt, H. (2022). Trajectory of Blockchain Technology in India: From 
+Use Cases to Data Protection Regime. Sambodhi Indological Research Journal of LDII 
+ISSN, 2249-6661.HTML 
+47. Jaya Prakash, B. & Putchala, N. R. (2023). The automation in the Indian judiciary. AIP 
+Conference Proceedings.HTML 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 39
+48. Haridas, S., Saroj, S., Maddala, S. T., & Kiruthika, M. (2022). LegalLedger–Blockchain 
+in judicial system. In Innovative Data Communication Technologies and Application: 
+Proceedings of ICIDCA 2021 (pp. 471-482). Singapore: Springer Nature 
+Singapore.HTML 
+49. Khairwal, N., & Shah, R. (2020). Current Indian Judicial System: Issues and Blockchain 
+Solutions. In IC-BCT 2019: Proceedings of the International Conference on Blockchain 
+Technology (pp. 229-239). Springer Singapore.HTML 
+50. MGBEMENA, 
+E. 
+(2022). 
+RECOGNITION 
+AND 
+ENFORCEMENT 
+OF 
+INTERNATIONAL COMMERCIAL ARBITRATION AWARD IN NIGERIA AND IN 
+INDIA: A CASE STUDY. RENAISANCE UNIVERSITY LAW JOURNAL (RNULJ), 
+2(1), 129-146.rnujournals.com.ng 
+51. Shalini, S., Sapre, A. A., & Shah, S. A. (2023). THE SHAKY APPROACH OF THE 
+INDIAN JUDICIARY IN ENFORCING BILATERAL INVESTMENT TREATY 
+AWARDS. Lex Humana (ISSN 2175-0947).ucp.br 
+52. Thakur, V., Doja, M. N., Dwivedi, Y. K., Ahmad, T., & Khadanga, G. (2020). Land 
+records on blockchain for implementation of land titling in India. International Journal of 
+Information Management, 52, 101940.HTML 
+COMPUTER RESEARCH AND DEVELOPMENT (ISSN NO:1000-1239) VOLUME 24 ISSUE 12 2024
+PAGE N0: 40

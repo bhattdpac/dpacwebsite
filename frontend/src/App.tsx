@@ -10,6 +10,7 @@ import PortfolioHome from './pages/PortfolioHome';
 import LegalFrameworkLanding from './pages/LegalFrameworkLanding';
 import Academy from './pages/Academy';
 import ResearchHub from './pages/ResearchHub';
+import SynopsisView from './pages/SynopsisView';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/legal-framework" element={<LegalFrameworkLanding />} />
           <Route path="/academy" element={<Academy />} />
           <Route path="/research" element={<ResearchHub />} />
+          <Route path="/research/synopsis" element={<SynopsisView />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route 

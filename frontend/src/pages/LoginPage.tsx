@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import api from '../api/api';
 import { Shield, Lock, User } from 'lucide-react';
+import axios from 'axios';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -21,8 +22,12 @@ const LoginPage = () => {
       const response = await api.post('/auth/login/', { username, password });
       await login(response.data.access, response.data.refresh);
       navigate('/dashboard');
-    } catch (err: any) {
-      setError(err.response?.data?.detail || 'Failed to login. Please check your credentials.');
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.detail || 'Failed to login. Please check your credentials.');
+      } else {
+        setError('An unexpected error occurred.');
+      }
     } finally {
       setLoading(false);
     }

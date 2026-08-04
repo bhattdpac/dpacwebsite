@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { 
   FileText, 
   Upload, 
@@ -15,28 +15,38 @@ import {
 import { Link } from 'react-router-dom';
 import { uploadResearchPaper, getResearchPapers } from '../api/api';
 
+interface Paper {
+  id: number;
+  title: string;
+  abstract?: string;
+  methodology?: string;
+  findings?: string;
+  created_at: string;
+}
+
 const ResearchHub = () => {
   const [isUploading, setIsUploading] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [results, setResults] = useState<any>(null);
-  const [recentPapers, setRecentPapers] = useState<any[]>([]);
+  const [results, setResults] = useState<Paper | null>(null);
+  const [recentPapers, setRecentPapers] = useState<Paper[]>([]);
 
-  useEffect(() => {
-    loadRecentPapers();
-  }, []);
-
-  const loadRecentPapers = async () => {
+  const loadRecentPapers = useCallback(async () => {
     try {
       const papers = await getResearchPapers();
       setRecentPapers(papers);
-    } catch (error) {
-      console.error("Error loading papers:", error);
+    } catch {
+      // Error handled by interceptors or logged
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    loadRecentPapers();
+  }, [loadRecentPapers]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setSelectedFile(e.target.files[0]);
+    const files = e.target.files;
+    if (files && files[0]) {
+      setSelectedFile(files[0]);
     }
   };
 
@@ -52,8 +62,7 @@ const ResearchHub = () => {
       const data = await uploadResearchPaper(formData);
       setResults(data);
       loadRecentPapers();
-    } catch (error) {
-      console.error("Upload failed:", error);
+    } catch {
       alert("Analysis failed. Please ensure you are logged in as a Lawyer (Researcher).");
     } finally {
       setIsUploading(false);
@@ -94,6 +103,21 @@ const ResearchHub = () => {
               Upload complex research papers and let our specialized NLP models extract methodologies, findings, and structural logic in seconds.
             </p>
             
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+              <Link 
+                to="/research/synopsis" 
+                className="group p-6 space-card rounded-2xl border border-white/5 hover:border-accent-secondary/50 transition-all flex items-center gap-5 flex-1"
+              >
+                <div className="w-12 h-12 rounded-xl sunset-gradient flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-transform">
+                  <FileText className="text-white w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-text-muted mb-1">PhD Thesis</p>
+                  <p className="text-sm font-bold group-hover:text-accent-secondary transition-colors">Read Research Synopsis</p>
+                </div>
+              </Link>
+            </div>
+
             <div className="space-y-6 pt-6">
               <div className="flex items-center gap-4 text-sm font-medium text-text-muted">
                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary">

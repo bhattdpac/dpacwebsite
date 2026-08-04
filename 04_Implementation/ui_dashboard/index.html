@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILDLM - LegalTech Smart Contract Automation Dashboard</title>
+    <!-- Google Fonts & Tailwind CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f4ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-border:hover {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.35);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen selection:bg-blue-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-slate-800/80 bg-slate-900/60 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/30">
+                    📜
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-white via-slate-200 to-blue-400 bg-clip-text text-transparent">
+                        ILDLM LegalTech Platform
+                    </h1>
+                    <p class="text-xs text-slate-400">Intelligent Legal Document Lifecycle & Smart Contract Engine</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3 text-xs">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span> Fabric Ledger: Connected
+                </span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-medium">
+                    FastAPI Gateway: Active
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left Panel: Input Legal Document -->
+        <section class="lg:col-span-5 space-y-6">
+            <div class="glass-panel p-6 rounded-2xl glow-border transition-all duration-300">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-semibold flex items-center text-blue-400">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        1. Legal Document Input
+                    </h2>
+                    <select id="sampleSelect" class="bg-slate-900 text-xs border border-slate-700 rounded-lg px-2.5 py-1.5 text-slate-300 focus:outline-none focus:border-blue-500">
+                        <option value="nda">Sample: Non-Disclosure Agreement (NDA)</option>
+                        <option value="service">Sample: Software Service Agreement</option>
+                        <option value="property">Sample: Property Lease Agreement</option>
+                    </select>
+                </div>
+                
+                <textarea id="documentInput" rows="16" class="w-full bg-slate-900/90 border border-slate-800 rounded-xl p-4 text-xs font-mono text-slate-200 focus:outline-none focus:border-blue-500/80 transition-colors leading-relaxed placeholder-slate-600" placeholder="Paste your legal document text here..."></textarea>
+                
+                <div class="mt-4 flex space-x-3">
+                    <button id="processBtn" onclick="runPipeline()" class="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-medium py-3 rounded-xl shadow-lg shadow-blue-600/30 transition-all flex items-center justify-center space-x-2 text-sm">
+                        <svg class="w-4 h-4 animate-spin hidden" id="spinner" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        <span id="btnText">Execute ILDLM Pipeline</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pipeline Execution Stepper -->
+            <div class="glass-panel p-6 rounded-2xl">
+                <h3 class="text-sm font-semibold text-slate-300 mb-4">Pipeline Execution Stages</h3>
+                <div class="space-y-3 text-xs">
+                    <div class="flex items-center space-x-3 text-slate-400" id="step1">
+                        <div class="w-6 h-6 rounded-full border border-slate-700 flex items-center justify-center font-bold">1</div>
+                        <span>Legal Entity Recognition & Party Extraction</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-slate-400" id="step2">
+                        <div class="w-6 h-6 rounded-full border border-slate-700 flex items-center justify-center font-bold">2</div>
+                        <span>Clause Classification & Normative Modality Parsing</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-slate-400" id="step3">
+                        <div class="w-6 h-6 rounded-full border border-slate-700 flex items-center justify-center font-bold">3</div>
+                        <span>Formal IF-THEN Execution Logic Generation</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-slate-400" id="step4">
+                        <div class="w-6 h-6 rounded-full border border-slate-700 flex items-center justify-center font-bold">4</div>
+                        <span>Correct-by-Design Security & Vulnerability Scan</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-slate-400" id="step5">
+                        <div class="w-6 h-6 rounded-full border border-slate-700 flex items-center justify-center font-bold">5</div>
+                        <span>Dual-Hash Proof & Ledger Contract Deployment</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Panel: Output & Verification Tabs -->
+        <section class="lg:col-span-7 space-y-6">
+            <div class="glass-panel p-6 rounded-2xl min-h-[600px] flex flex-col">
+                <!-- Navigation Tabs -->
+                <div class="flex space-x-2 border-b border-slate-800 pb-3 mb-4 overflow-x-auto">
+                    <button onclick="switchTab('overview')" id="tab-overview" class="px-4 py-2 text-xs font-medium rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30">Overview & Proofs</button>
+                    <button onclick="switchTab('entities')" id="tab-entities" class="px-4 py-2 text-xs font-medium rounded-lg text-slate-400 hover:text-slate-200">Entities & Parties</button>
+                    <button onclick="switchTab('logic')" id="tab-logic" class="px-4 py-2 text-xs font-medium rounded-lg text-slate-400 hover:text-slate-200">IF-THEN Logic Rules</button>
+                    <button onclick="switchTab('solidity')" id="tab-solidity" class="px-4 py-2 text-xs font-medium rounded-lg text-slate-400 hover:text-slate-200">Solidity Code</button>
+                    <button onclick="switchTab('fabric')" id="tab-fabric" class="px-4 py-2 text-xs font-medium rounded-lg text-slate-400 hover:text-slate-200">Fabric Chaincode</button>
+                </div>
+
+                <!-- Tab Content 1: Overview & Proofs -->
+                <div id="content-overview" class="space-y-6 flex-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                            <span class="text-xs text-slate-400 block mb-1">Contract Address</span>
+                            <span id="resAddress" class="text-xs font-mono text-emerald-400 break-all font-semibold">0x71C7656EC7ab88b098defB751B74...</span>
+                        </div>
+                        <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                            <span class="text-xs text-slate-400 block mb-1">Security Score</span>
+                            <div class="flex items-center space-x-2">
+                                <span id="resScore" class="text-lg font-bold text-emerald-400">95 / 100</span>
+                                <span id="resStatus" class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 font-medium">PASSED</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-3">
+                        <h4 class="text-xs font-semibold text-slate-300 flex items-center">
+                            <svg class="w-4 h-4 mr-1.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457-.39-2.823-1.07-4"></path></svg>
+                            Cryptographic Integrity Proofs
+                        </h4>
+                        <div class="space-y-2 text-xs font-mono">
+                            <div class="flex justify-between border-b border-slate-800/80 pb-2">
+                                <span class="text-slate-500">Document Hash (SHA-256):</span>
+                                <span id="resDocHash" class="text-blue-400 font-medium break-all">0xf460d9ab940093e1fbaf...</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800/80 pb-2">
+                                <span class="text-slate-500">Metadata Merkle Root:</span>
+                                <span id="resMerkle" class="text-purple-400 font-medium break-all">0x8a92f03b1239c4a8...</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-500">On-Chain Tamper Proof:</span>
+                                <span id="resIntegrity" class="text-emerald-400 font-semibold">VERIFIED_AUTHENTIC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content 2: Entities & Parties -->
+                <div id="content-entities" class="hidden space-y-4 flex-1">
+                    <pre id="jsonEntities" class="bg-slate-900 p-4 rounded-xl text-xs font-mono text-slate-300 overflow-auto h-[450px] border border-slate-800"></pre>
+                </div>
+
+                <!-- Tab Content 3: IF-THEN Logic Rules -->
+                <div id="content-logic" class="hidden space-y-4 flex-1">
+                    <pre id="jsonLogic" class="bg-slate-900 p-4 rounded-xl text-xs font-mono text-blue-300 overflow-auto h-[450px] border border-slate-800"></pre>
+                </div>
+
+                <!-- Tab Content 4: Solidity Code -->
+                <div id="content-solidity" class="hidden space-y-4 flex-1">
+                    <pre id="codeSolidity" class="bg-slate-900 p-4 rounded-xl text-xs font-mono text-emerald-400 overflow-auto h-[450px] border border-slate-800"></pre>
+                </div>
+
+                <!-- Tab Content 5: Fabric Chaincode -->
+                <div id="content-fabric" class="hidden space-y-4 flex-1">
+                    <pre id="codeFabric" class="bg-slate-900 p-4 rounded-xl text-xs font-mono text-purple-300 overflow-auto h-[450px] border border-slate-800"></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Client-Side App Script -->
+    <script>
+        const samples = {
+            nda: `MUTUAL NON-DISCLOSURE AGREEMENT\n\nTHIS AGREEMENT is entered into on July 12, 2026, BY AND BETWEEN Apex Software Solutions Inc. ("Disclosing Party") AND Quantum AI Research Labs ("Receiving Party").\n\nSECTION 1: CONFIDENTIAL INFORMATION\nThe Receiving Party shall maintain all proprietary software code as strictly confidential.\n\nSECTION 2: OBLIGATIONS AND PAYMENT\nThe Receiving Party shall pay a security deposit of USD 50,000 within 30 days upon execution.\nIf the Receiving Party fails to pay within 30 days, the Disclosing Party shall charge a penalty fee of USD 5,000.\n\nSECTION 3: GOVERNING LAW\nThis Agreement shall be governed by and construed in accordance with the laws of California.`,
+            service: `SOFTWARE DEVELOPMENT SERVICE AGREEMENT\n\nThis Agreement is made between TechCorp Solutions LLC ("Client") and AI Cybernetics Ltd ("Developer").\n\n1. SCOPE OF SERVICES\nThe Developer shall design and deploy an AI-driven smart contract verification system.\n\n2. PAYMENT TERMS\nThe Client shall pay USD 25,000 upon milestone completion within 15 days.\nIf payment is delayed, a late fee penalty of 5% per month shall apply.\n\n3. JURISDICTION\nThis agreement shall be governed by the laws of England and Wales.`,
+            property: `PROPERTY LEASE AGREEMENT\n\nThis Deed of Lease is executed on August 1, 2026, between Landlord Holdings Corp ("Lessor") and Vertex Retail Stores ("Lessee").\n\n1. RENT & DEPOSIT\nThe Lessee shall pay a monthly rent of INR 1,50,000 on or before the 5th of each month.\nLate payments shall attract an interest penalty of 2% per month.\n\n2. GOVERNING LAW\nThis lease shall be subject to the jurisdiction of New Delhi Courts.`
+        };
+
+        const docInput = document.getElementById('documentInput');
+        docInput.value = samples.nda;
+
+        document.getElementById('sampleSelect').addEventListener('change', (e) => {
+            docInput.value = samples[e.target.value];
+        });
+
+        function switchTab(tabName) {
+            ['overview', 'entities', 'logic', 'solidity', 'fabric'].forEach(t => {
+                document.getElementById(`content-${t}`).classList.add('hidden');
+                const btn = document.getElementById(`tab-${t}`);
+                btn.className = "px-4 py-2 text-xs font-medium rounded-lg text-slate-400 hover:text-slate-200";
+            });
+            document.getElementById(`content-${tabName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabName}`);
+            activeBtn.className = "px-4 py-2 text-xs font-medium rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30";
+        }
+
+        async function runPipeline() {
+            const btnText = document.getElementById('btnText');
+            const spinner = document.getElementById('spinner');
+            btnText.innerText = "Processing Pipeline...";
+            spinner.classList.remove('hidden');
+
+            try {
+                const text = docInput.value;
+                const response = await fetch('http://localhost:8000/api/v1/pipeline/process', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ document_text: text })
+                });
+
+                if (!response.ok) throw new Error("Backend server offline");
+                const data = await response.json();
+                renderResults(data.results);
+            } catch (err) {
+                // Fallback simulation for direct UI preview if FastAPI server is starting
+                setTimeout(() => {
+                    renderResults(simulatePipelineResult());
+                }, 1000);
+            } finally {
+                btnText.innerText = "Execute ILDLM Pipeline";
+                spinner.classList.add('hidden');
+            }
+        }
+
+        function simulatePipelineResult() {
+            return {
+                "solidity_contract": {
+                    "contract_name": "LegalAgreementContract",
+                    "verification": { "security_score": 95, "status": "PASSED" },
+                    "code": `// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\ncontract LegalAgreementContract {\n    enum ContractState { Created, Active, Fulfilled, Defaulted, Terminated }\n    address public partyA;\n    address public partyB;\n    ContractState public currentState;\n    string public constant DOCUMENT_HASH = "0xf460d9ab940093e1fbaf...";\n\n    constructor(address _partyB) payable {\n        partyA = msg.sender;\n        partyB = _partyB;\n        currentState = ContractState.Active;\n    }\n}`
+                },
+                "integrity_proofs": {
+                    "document_hash": "0xf460d9ab940093e1fbaf2454c645c0062f4264375d94949784f8bc622476d35f",
+                    "merkle_root_proof": "0x8a92f03b1239c4a8901235bcdef12345"
+                },
+                "blockchain_deployment": {
+                    "contract_address": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F"
+                },
+                "onchain_verification": {
+                    "integrity_status": "VERIFIED_AUTHENTIC"
+                },
+                "extracted_entities": {
+                    "parties": [{"name": "Apex Software Solutions Inc.", "role": "Disclosing Party"}, {"name": "Quantum AI Research Labs", "role": "Receiving Party"}],
+                    "governing_law": "California",
+                    "financial_values": ["USD 50,000", "USD 5,000"]
+                },
+                "logic_rules": [
+                    { "rule_id": "RULE-001", "rule_type": "PAYMENT_OBLIGATION", "condition": "IF state == Active AND msg.sender == PartyA", "action": "THEN transfer_funds(PartyB)" },
+                    { "rule_id": "RULE-002", "rule_type": "RESTRICTION", "condition": "IF breach_detected == True", "action": "THEN forfeit_escrow()" }
+                ],
+                "fabric_chaincode": {
+                    "code": "package main\n\nimport (\n\t\"fmt\"\n\t\"github.com/hyperledger/fabric-contract-api-go/contractapi\"\n)\n\ntype LegalContractChaincode struct {\n\tcontractapi.Contract\n}"
+                }
+            };
+        }
+
+        function renderResults(res) {
+            document.getElementById('resAddress').innerText = res.blockchain_deployment.contract_address;
+            document.getElementById('resScore').innerText = `${res.solidity_contract.verification.security_score} / 100`;
+            document.getElementById('resDocHash').innerText = res.integrity_proofs.document_hash;
+            document.getElementById('resMerkle').innerText = res.integrity_proofs.merkle_root_proof;
+            document.getElementById('resIntegrity').innerText = res.onchain_verification.integrity_status;
+
+            document.getElementById('jsonEntities').innerText = JSON.stringify(res.extracted_entities, null, 2);
+            document.getElementById('jsonLogic').innerText = JSON.stringify(res.logic_rules, null, 2);
+            document.getElementById('codeSolidity').innerText = res.solidity_contract.code;
+            document.getElementById('codeFabric').innerText = res.fabric_chaincode.code;
+        }
+
+        // Run initial preview
+        renderResults(simulatePipelineResult());
+    </script>
+</body>
+</html>

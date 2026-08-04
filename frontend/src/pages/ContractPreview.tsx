@@ -4,6 +4,7 @@ import { ArrowLeft, Shield, Cpu, Info, CheckCircle, AlertCircle, Loader2 } from 
 import api from '../api/api';
 import { useAuth } from '../context/AuthContext';
 import DeploymentTimeline from '../components/DeploymentTimeline';
+import axios from 'axios';
 
 interface Proposal {
   id: number;
@@ -12,7 +13,7 @@ interface Proposal {
   client_approved: boolean;
   contract_address: string;
   transaction_hash: string;
-  parameters: any;
+  parameters: Record<string, unknown>;
   document_status: string;
   pending_clause_count: number;
   template_details: {
@@ -36,8 +37,12 @@ const ContractPreview = () => {
       try {
         const response = await api.get(`/documents/${id}/proposal/`);
         setProposal(response.data);
-      } catch (err: any) {
-        setError(err.response?.data?.error || 'Failed to load contract proposal.');
+      } catch (err) {
+        if (axios.isAxiosError(err)) {
+          setError(err.response?.data?.error || 'Failed to load contract proposal.');
+        } else {
+          setError('An unexpected error occurred.');
+        }
       } finally {
         setLoading(false);
       }
@@ -51,7 +56,7 @@ const ContractPreview = () => {
     try {
       await api.patch(`/proposals/${proposal?.id}/`, { client_approved: true });
       setProposal(prev => prev ? { ...prev, client_approved: true } : null);
-    } catch (err) {
+    } catch {
       alert('Failed to approve contract.');
     } finally {
       setApproving(false);
@@ -68,8 +73,12 @@ const ContractPreview = () => {
         transaction_hash: response.data.txHash 
       } : null);
       alert('Contract deployed successfully to blockchain!');
-    } catch (err: any) {
-      alert(err.response?.data?.error || 'Deployment failed. Ensure local Hardhat node is running.');
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        alert(err.response?.data?.error || 'Deployment failed. Ensure local Hardhat node is running.');
+      } else {
+        alert('An unexpected error occurred during deployment.');
+      }
     } finally {
       setDeploying(false);
     }
@@ -111,7 +120,7 @@ const ContractPreview = () => {
               <p className="text-xs text-text-muted">Template: {proposal.template_details.name}</p>
             </div>
           </div>
-          
+
           <div className="flex items-center gap-4">
             {proposal.contract_address ? (
               <div className="flex items-center gap-2 text-state-success font-bold bg-green-50 px-4 py-2 rounded-md border border-green-100">
@@ -186,7 +195,7 @@ const ContractPreview = () => {
               <p className="text-lg text-text-primary leading-relaxed bg-blue-50/30 p-6 rounded-lg border border-blue-100 italic">
                 "{proposal.client_explanation}"
               </p>
-              
+
               <div className="mt-8 space-y-6">
                 <h4 className="font-bold text-text-primary border-b border-border-default pb-2">Extracted Parameters:</h4>
                 <div className="grid grid-cols-2 gap-4">
@@ -209,7 +218,7 @@ const ContractPreview = () => {
                 isClientApproved={proposal.client_approved}
                 contractAddress={proposal.contract_address}
               />
-              
+
               <div className="bg-amber-50 p-4 rounded-lg border border-amber-100 flex gap-3 mt-6">
                 <AlertCircle className="h-5 w-5 text-state-warning flex-shrink-0" />
                 <p className="text-xs text-amber-800">

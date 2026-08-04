@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, FileText, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import api from '../api/api';
 import ClauseItem from '../components/ClauseItem';
+import axios from 'axios';
 
 interface Document {
   id: number;
@@ -42,9 +43,8 @@ const DocumentReview = () => {
         setDocument(docRes.data);
         setClauses(clausesRes.data);
         setRawText(textRes.data.text);
-      } catch (err) {
+      } catch {
         setError('Failed to load document data.');
-        console.error(err);
       } finally {
         setLoading(false);
       }
@@ -62,7 +62,7 @@ const DocumentReview = () => {
       try {
         await api.delete(`/clauses/${clauseId}/`);
         setClauses(clauses.filter(c => c.id !== clauseId));
-      } catch (err) {
+      } catch {
         alert('Failed to delete clause.');
       }
     }
@@ -73,8 +73,12 @@ const DocumentReview = () => {
     try {
       await api.post(`/documents/${id}/proposal/`);
       navigate(`/contract/${id}`);
-    } catch (err: any) {
-      alert(err.response?.data?.error || 'Failed to generate smart contract.');
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        alert(err.response?.data?.error || 'Failed to generate smart contract.');
+      } else {
+        alert('An unexpected error occurred.');
+      }
     } finally {
       setGenerating(false);
     }
@@ -242,7 +246,7 @@ const DocumentReview = () => {
               ))
             )}
           </div>
-          
+
           <div className="mt-12 p-6 bg-blue-50 rounded-xl border border-blue-100">
             <h4 className="text-sm font-bold text-accent-primary mb-2">Review Tip:</h4>
             <p className="text-xs text-text-muted leading-relaxed">

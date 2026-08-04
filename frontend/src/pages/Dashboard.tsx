@@ -1,37 +1,46 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../context/AuthContext';
 import api from '../api/api';
 import { LogOut, User, Briefcase, FileText, Activity, Plus } from 'lucide-react';
 import DocumentUpload from '../components/DocumentUpload';
 import DocumentList from '../components/DocumentList';
 
+interface Document {
+  id: number;
+  title: string;
+  pending_clause_count?: number;
+  proposal?: {
+    contract_address?: string;
+  };
+}
+
 const Dashboard = () => {
   const { user, logout } = useAuth();
-  const [documents, setDocuments] = useState([]);
+  const [documents, setDocuments] = useState<Document[]>([]);
   const [showUpload, setShowUpload] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const fetchDocuments = async () => {
+  const fetchDocuments = useCallback(async () => {
     try {
       const response = await api.get('/documents/');
       setDocuments(response.data);
-    } catch (error) {
-      console.error('Failed to fetch documents', error);
+    } catch {
+      // Error logged or handled by interceptors
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchDocuments();
-  }, []);
+  }, [fetchDocuments]);
 
   const handleDelete = async (id: number) => {
     if (window.confirm('Are you sure you want to delete this document?')) {
       try {
         await api.delete(`/documents/${id}/`);
-        setDocuments(documents.filter((doc: any) => doc.id !== id));
-      } catch (error) {
+        setDocuments(documents.filter((doc) => doc.id !== id));
+      } catch {
         alert('Failed to delete document.');
       }
     }
@@ -47,7 +56,7 @@ const Dashboard = () => {
           <Activity className="text-accent-primary h-6 w-6" />
           <span className="font-bold text-xl text-text-primary">LegalDoc</span>
         </div>
-        
+
         <nav className="flex-1 p-4 space-y-2">
           <a href="#" className="flex items-center gap-3 px-4 py-2 bg-blue-50 text-accent-primary rounded-md font-medium">
             <Activity className="h-5 w-5" /> Dashboard
@@ -108,13 +117,13 @@ const Dashboard = () => {
           <div className="bg-bg-surface p-6 rounded-xl border border-border-default shadow-sm">
             <h3 className="text-text-muted text-sm font-medium mb-1">Pending Approvals</h3>
             <p className="text-3xl font-bold text-text-primary">
-              {documents.reduce((acc: number, doc: any) => acc + (doc.pending_clause_count || 0), 0)}
+              {documents.reduce((acc: number, doc: Document) => acc + (doc.pending_clause_count || 0), 0)}
             </p>
           </div>
           <div className="bg-bg-surface p-6 rounded-xl border border-border-default shadow-sm">
             <h3 className="text-text-muted text-sm font-medium mb-1">On-Chain Deployments</h3>
             <p className="text-3xl font-bold text-text-primary">
-              {documents.filter((doc: any) => doc.proposal?.contract_address).length}
+              {documents.filter((doc: Document) => doc.proposal?.contract_address).length}
             </p>
           </div>
         </div>
@@ -124,24 +133,24 @@ const Dashboard = () => {
         ) : (
           <div className="space-y-8">
             <DocumentList documents={documents} onDelete={handleDelete} />
-            
-            {documents.filter((doc: any) => doc.proposal?.contract_address).length > 0 && (
+
+            {documents.filter((doc: Document) => doc.proposal?.contract_address).length > 0 && (
               <div className="bg-bg-surface p-6 rounded-xl border border-border-default shadow-sm">
                 <h3 className="text-lg font-bold text-text-primary mb-4 flex items-center gap-2">
                   <Briefcase className="h-5 w-5 text-accent-primary" /> Recent On-Chain Deployments
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {documents
-                    .filter((doc: any) => doc.proposal?.contract_address)
+                    .filter((doc: Document) => doc.proposal?.contract_address)
                     .slice(0, 3)
-                    .map((doc: any) => (
+                    .map((doc: Document) => (
                       <div key={doc.id} className="p-4 border border-border-default rounded-lg hover:border-accent-primary transition-colors">
                         <p className="font-bold text-sm text-text-primary truncate">{doc.title}</p>
-                        <p className="text-[10px] text-text-muted font-mono mt-1">{doc.proposal.contract_address}</p>
+                        <p className="text-[10px] text-text-muted font-mono mt-1">{doc.proposal?.contract_address}</p>
                         <div className="mt-3 flex justify-between items-center">
                           <span className="text-[10px] bg-green-50 text-state-success px-2 py-0.5 rounded font-bold uppercase">Success</span>
                           <a 
-                            href={`https://sepolia.etherscan.io/address/${doc.proposal.contract_address}`}
+                            href={`https://sepolia.etherscan.io/address/${doc.proposal?.contract_address}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-[10px] text-accent-primary hover:underline flex items-center gap-1"

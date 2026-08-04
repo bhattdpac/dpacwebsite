@@ -1,0 +1,469 @@
+A Comprehensive Technological and 
+Institutional Framework for the 
+Implementation of Smart Contracts in 
+Legal Documentation: An Integrated 
+Roadmap for Ph.D. Research 
+Completion 
+The digital transformation of the legal industry is currently undergoing a radical evolution, 
+characterized by the transition from static, paper-based agreements to dynamic, self-executing 
+smart contracts anchored on decentralized blockchain networks. This paradigm shift addresses 
+fundamental systemic failures in traditional contract management, including temporal 
+inefficiencies, opaque execution processes, and the significant financial burdens associated with 
+manual oversight.1 Within the context of higher education and advanced research, specifically at 
+institutions such as Uttaranchal University, the pursuit of a doctoral degree in Computer 
+Applications with a focus on blockchain and machine learning requires a dual-track commitment 
+to both technological innovation and rigorous institutional compliance.1 The successful 
+completion of this research entails a sophisticated synthesis of natural language processing 
+(NLP), cryptographic security, human-centered design, and adherence to the specific 
+administrative and academic protocols mandated by the university’s Research Degree 
+Committee (RDC).1 
+Institutional Compliance and the Ph.D. Lifecycle at 
+Uttaranchal University 
+The completion of a doctoral thesis is not merely a technical achievement but a structured 
+academic journey governed by stringent regulatory frameworks. At Uttaranchal University, the 
+Ph.D. program in Computer Applications is designed as a three-to-four-year progression for 
+full-time and part-time scholars, respectively.4 The researcher must navigate a series of 
+milestones, beginning with the successful completion of coursework and the formal allocation of 
+a supervisor and mentor.1 This initial phase establishes the theoretical foundation and provides 
+the necessary guidance for the experimental and design work that follows. 
+The maintenance of academic standards is facilitated through the submission of Half-Yearly 
+Progress Reports (Annexure-5), which serve as a critical record of the candidate's trajectory.4 
+These reports must document the evolution of the research, the challenges encountered, and 
+the milestones achieved in each six-month window. Central to the university's quality assurance 
+process is the requirement to attend a minimum of five RDC meetings.4 These meetings provide 
+a forum for scholarly critique and ensure that the research aligns with contemporary standards 
+in the field of blockchain and machine learning. 
+The university imposes specific prerequisites for the pre-thesis submission stage, which serves 
+as a gateway to the final evaluation of the research. Scholars must demonstrate their 
+contribution to the global knowledge pool through the publication of at least two research papers 
+in Scopus or SCI-indexed journals.3 Furthermore, active participation in the academic 
+community is mandated through the presentation of papers at a minimum of two seminars or 
+conferences.3 These publication and presentation requirements ensure that the researcher’s 
+work is subjected to peer review and attains a level of rigor commensurate with the degree 
+being sought. 
+Institutional integrity is further safeguarded by strict plagiarism regulations. The university 
+mandates that the similarity index of the thesis must remain below 10%, a standard that is 
+verified through the use of professional anti-plagiarism software such as Turnitin.2 Scholars are 
+required to submit an affidavit on a one-hundred-rupee stamp paper regarding the originality of 
+their work, emphasizing the legal and ethical accountability inherent in doctoral research.3 
+The physical presentation of the thesis is also strictly standardized to ensure uniformity across 
+the university's archives. The specific formatting requirements for the final hard-bound 
+submission are detailed in the following table: 
+ 
+Formatting Element 
+Institutional Requirement for 
+Law/Computer Science 
+Paper Size 
+A4 Size Bond Paper 3 
+Typography 
+Times New Roman or Arial, Font Size 12 3 
+Line Spacing 
+1.5 Spacing for text; Single for 
+tables/footnotes 3 
+Left Margin 
+4 cm (35-40 mm for binding allowance) 3 
+Right/Top/Bottom Margins 
+3 cm (25 mm allowed in some contexts) 3 
+Major Headings 
+Bold Fonts, Size 18 3 
+Sub-headings 
+Bold Fonts, Size 14 3 
+Cover Color (Law) 
+Black 3 
+Cover Color (Comp. App) 
+Pale Yellow 3 
+Spine Information 
+Title and Year of Submission 2 
+From a logistical perspective, the final submission requires three hard-bound copies of the 
+thesis and the abstract, along with three copies of the approved synopsis.4 Digital versions must 
+also be provided on a CD or pen drive, containing the complete thesis, chapters, abstract, and 
+published research papers.3 This comprehensive documentation ensures the accessibility and 
+durability of the doctoral work for future academic reference. 
+Foundations of Blockchain and Smart Contract 
+Technology 
+To complete the proposed research on secure legal documentation, one must first establish a 
+nuanced understanding of the underlying blockchain architecture. A blockchain is defined as a 
+decentralized, distributed, and immutable ledger system that records transactions across a 
+peer-to-peer network.1 The core strength of this system lies in its use of cryptographic hashing 
+and consensus mechanisms, which ensure that once data is committed to a block, it cannot be 
+altered without the consensus of the majority of network participants.1 This immutability is the 
+primary mechanism for ensuring the integrity and transparency of legal documents stored on the 
+ledger. 
+Smart contracts represent the application layer of this technology. Introduced prominently by 
+platforms like Ethereum, smart contracts are self-executing agreements where the terms are 
+directly encoded into software code.1 They operate on an "if-then" logical structure: when 
+specified conditions are met, the contract automatically executes the corresponding actions, 
+such as releasing funds or transferring digital assets.1 By eliminating the need for traditional 
+intermediaries, smart contracts reduce execution delays, minimize transaction costs, and 
+mitigate the risk of human error or intentional manipulation. 
+In the legal domain, smart contracts can serve as "digital twins" of traditional legal agreements.9 
+These "smart legal contracts" combine the legally binding nature of natural language 
+agreements with the automated performance capabilities of blockchain-based code.1 This dual 
+existence ensures that the agreement remains enforceable within traditional legal frameworks 
+while benefiting from the efficiency of automated processing. 
+State-of-the-Art Legal NLP and Information Extraction 
+The bridge between human-readable legal text and machine-executable code is constructed 
+through Natural Language Processing (NLP). The inherent complexity of legal 
+language—characterized by archaic terminology, complex syntactic structures, and pervasive 
+ambiguity—poses a significant challenge for conventional linguistic models.1 Successful 
+completion of this research requires the deployment of domain-specific NLP architectures 
+tailored to the nuances of legal jurisprudence. 
+Domain-Specific Language Models 
+Recent advancements have seen the emergence of Large Language Models (LLMs) 
+specialized for the legal domain. Models such as SaulLM-7B represent a pioneering effort in this 
+field.13 Unlike general-purpose models, SaulLM-7B was trained on a curated corpus of over 30 
+billion tokens sourced from legal documents across various English-speaking jurisdictions.13 
+This specialized training allows the model to achieve state-of-the-art proficiency in legal text 
+comprehension, issue spotting, and rule-recall tasks.13 
+ 
+Model 
+Foundation 
+Training Focus 
+Key Innovation 
+SaulLM-7B 
+Mistral 7B 
+30B Tokens 
+(Statutes, Case 
+Law, Contracts) 
+Instruction 
+fine-tuning for legal 
+tasks 13 
+Olava Extract 
+MoE Architecture 
+24 Annotated Public 
+Contracts 
+78-97% reduction in 
+extraction costs 17 
+LEGAL-BERT 
+BERT 
+EUR-Lex / UK 
+Legislation 
+Optimized for 
+clause classification 
+and NER 18 
+L4L 
+LLM + Solver 
+Statutory Law Logic 
+Verifiable, formal 
+alignment with laws 
+20 
+The application of these models in the research framework allows for the automated analysis of 
+"e-contracts," extracting key entities, obligations, and relationships.12 Techniques such as 
+Named Entity Recognition (NER) and dependency parsing are utilized to map the linguistic 
+structure of the document into a structured knowledge graph, which subsequently informs the 
+generation of the smart contract logic.12 
+The Role of the CUAD Dataset in Contract Understanding 
+For the empirical training of these models, the Contract Understanding Atticus Dataset (CUAD) 
+provides an essential benchmark.22 CUAD consists of more than 13,000 expert-annotated 
+labels in 510 commercial contracts, spanning 41 distinct categories that are critical for legal 
+review.22 The dataset frames contract review as a question-answering task: given a specific 
+query—such as "On what date will the contract's initial term expire?"—the model must identify 
+the relevant text span within the document.22 
+The categories covered by CUAD are summarized in the following table: 
+ 
+Category Group 
+Examples of Key Provisions 
+Termination Rights 
+Termination for Convenience, Change of 
+Control 22 
+Financial Terms 
+Payment Terms, Revenue/Profit Sharing 22 
+Governance 
+Governing Law, Jurisdiction, Dispute 
+Resolution 22 
+Confidentiality 
+Non-Disclosure Agreements, Exclusions 22 
+Utilizing CUAD in the research enables the assessment of how well transformer models 
+generalize to highly specialized domains. Research indicate that while performance is 
+improving—with models like DeBERTa significantly outperforming earlier BERT iterations—the 
+task remains a matter of "finding needles in a haystack" due to the density and precision 
+required for legal accuracy.23 
+Technological Implementation and Pipeline 
+Architecture 
+The realization of a functional system for smart contract generation from legal text requires a 
+modular and scalable architecture. This pipeline typically consists of five distinct phases: input 
+selection, prompt engineering, LLM execution, code cleaning, and security assessment.9 
+Automated Smart Contract Generation Workflow 
+The generation process begins with the ingestion of a legal agreement or a textual description 
+of the desired logic.9 This text is then processed through a prompt engineering layer, often 
+utilizing methodologies such as CO-STAR (Context, Objective, Style, Tone, Audience, 
+Response) to optimize the quality and consistency of the LLM’s output.9 
+A sophisticated implementation strategy, as evidenced in recent research, follows the sequence 
+detailed below: 
+ 
+Phase 
+Technical Mechanism 
+Key Output 
+Preprocessing 
+Normalization and 
+Tokenization 
+Clean text for NLP analysis 
+1 
+Logic Extraction 
+LLM-based Clause 
+Interpretation 
+Identification of obligations 
+and rights 9 
+Code Generation 
+Mapping logic to Solidity 
+templates 
+Raw smart contract source 
+code 9 
+Code Cleaning 
+Regular expression filtering 
+Compilable Solidity scripts 9 
+Security Audit 
+Static analysis (e.g., Slither) 
+Vulnerability reports 
+(Reentrancy, etc.) 9 
+The technical foundation for interacting with the generated contracts on the blockchain is 
+provided by libraries such as Web3.js or Ethers.js.28 These libraries allow the application to 
+communicate with a blockchain node via RPC (Remote Procedure Call).7 The deployment 
+process involves compiling the Solidity code using the solc compiler to generate the binary 
+bytecode and the Application Binary Interface (ABI).28 The ABI acts as the standard interface for 
+calling functions and receiving data from the deployed contract. 
+Integration of Knowledge Graphs and Formal Verification 
+To resolve the "complexity discrepancy" between natural legal language and technical code 
+execution, the research proposes the use of Knowledge Graphs.12 By constructing a knowledge 
+graph from the original e-contract and another from the Abstract Syntax Tree (AST) of the 
+generated smart contract, the system can systematically compare the two structures to ensure 
+logical alignment.12 This approach enhances trust and reliability by confirming that the 
+automated execution engine accurately reflects the intent of the human parties. 
+Human-Centered Design in Legal Technology 
+The successful adoption of smart contracts in the legal industry is predicated not only on 
+technical accuracy but also on the user experience of both legal professionals and their clients.1 
+Human-centered design (HCD) principles advocate for the involvement of end-users—lawyers, 
+judges, and citizens—from the earliest stages of the design process.31 
+Margaret Hagan’s Framework for Legal Help 
+Research conducted at the Stanford Legal Design Lab, under the direction of Margaret Hagan, 
+emphasizes that the most effective legal AI tools focus on empowerment and actionability.34 
+Users do not merely want abstract legal knowledge; they require a "smart navigation system" 
+that diagnoses their problem and provides step-by-step guidance on how to resolve it.34 For a 
+smart contract framework, this means the interface must offer: 
+1.​ Direct Access to Sources: Professionals must be able to view the original legal text cited 
+by the AI to verify its interpretation.31 
+2.​ Plain Language Explanations: Clients must receive an executive summary of the 
+automated work, written in accessible language, to ensure they are not excluded from the 
+process.31 
+3.​ Human-in-the-Loop Oversight: A dedicated panel for professionals to document their 
+review and supervision of the AI-generated outputs.11 
+Evaluating Perceived Usability through the SUS Metric 
+The research framework employs the System Usability Scale (SUS) as the primary metric for 
+gauging the success of the human-centered design.36 The SUS is a ten-item questionnaire that 
+uses a five-point Likert scale (ranging from "Strongly Disagree" to "Strongly Agree") to capture a 
+comprehensive perspective of the user's experience.36 
+The methodology for scoring the SUS involves a specific normalization process: 
+●​ For odd-numbered (positively-oriented) items, the score is the user response minus one.36 
+●​ For even-numbered (negatively-oriented) items, the score is five minus the user 
+response.36 
+●​ The sum of these adjusted scores (ranging from 
+ to 
+) is multiplied by 
+ to produce 
+a final SUS score between 
+ and 
+.36 
+The interpretation of SUS scores is essential for identifying areas for improvement: 
+ 
+SUS Score 
+Percentile / Rank 
+Interpretation 
+Above 80.3 
+Top 10% (A) 
+Excellent; Users are likely 
+to recommend the product 
+36 
+68 - 80.2 
+50th-89th Percentile (B/C) 
+Good/Okay; The product is 
+usable but has room for 
+improvement 37 
+51 - 67.9 
+Marginal (D) 
+Poor; Significant usability 
+issues causing frustration 37 
+Below 51 
+Not Acceptable (F) 
+Major usability problems 
+stopping tasks 36 
+By achieving high SUS scores, the proposed framework ensures that the technological benefits 
+of blockchain do not introduce prohibitive cognitive burdens for the legal professionals tasked 
+with using them. 
+Ethical, Legal, and Regulatory Considerations 
+The transition to automated contracting is occurring within a dynamic regulatory landscape. 
+National and international bodies are increasingly focused on overcoming legal obstacles to the 
+use of AI and smart contracts. 
+The UNCITRAL Model Law on Automated Contracting (MLAC) 
+The 2024 UNCITRAL Model Law on Automated Contracting (MLAC) represents a significant 
+international effort to facilitate automation in contracts.40 The MLAC establishes principles of 
+technology neutrality and non-discrimination, ensuring that contracts formed and performed 
+using automated systems are legally recognized.40 It also addresses the attribution of "outputs" 
+from automated systems and provides rules for unexpected outcomes, thereby reducing legal 
+uncertainty for parties engaging in blockchain-based transactions. 
+Professional Ethics and Risk Mitigation 
+Legal teams adopting AI must maintain visibility into the actions taken by AI agents. Surveys 
+indicate that nearly half of in-house legal professionals would not detect an unauthorized action 
+taken by an AI agent until after it had occurred.41 This highlights the necessity of a 
+comprehensive "agentic AI policy" and the use of the "4 Cs" framework for evaluating legal AI 
+tools: 
+●​ Criticality: Assessing the potential harm if the AI makes an error.42 
+●​ Confidentiality: Ensuring data residency controls and end-to-end encryption.42 
+●​ Complexity: Understanding the rationale behind AI outputs.42 
+●​ Comfort: Ensuring the interface is intuitive and reliable.42 
+Furthermore, the integration of AI into intake processes raises concerns about 
+conflict-of-interest checking.44 AI tools often gather sufficient information to trigger ethical conflict 
+obligations before a human lawyer is even involved. The research must therefore incorporate 
+reference architectures for conflict-aware intake, including direct API integrations with existing 
+case management systems.44 
+Comprehensive Research Roadmap and Strategic 
+Conclusions 
+The successful completion of the research titled "Implementing Smart Contracts Using 
+Blockchain Technology for Secure and Transparent Legal Documentation" requires the 
+systematic execution of a multi-phase design science research approach.1 
+The primary stages of the research completion strategy include: 
+1.​ Problem Articulation: Conducting focus groups and interviews with legal professionals to 
+understand the pain points of traditional documentation.1 
+2.​ Iterative Prototyping: Developing modular components for logic extraction (using 
+SaulLM-7B) and smart contract generation (using Solidity templates).1 
+3.​ Rigorous Evaluation: Testing the framework against standard metrics for accuracy 
+(Precision/Recall on CUAD), security (Slither analysis), and efficiency (gas costs and 
+execution time).1 
+4.​ Institutional Finalization: Ensuring all university mandates—including Scopus 
+publications, Turnitin verification, and the final hard-bound formatting—are met prior to the 
+Ph.D. viva voce examination.1 
+By synthesizing the decentralized security of blockchain with the cognitive capabilities of 
+advanced NLP, this research provides a practical and ethical framework for the future of the 
+legal profession. The integration of human-centered design principles ensures that these tools 
+remain accessible and meaningful for the humans they are intended to serve. As technology 
+continues to outpace traditional legal processes, this research offers a foundational roadmap for 
+creating a more efficient, transparent, and equitable legal system through the power of 
+automated contracting. 
+Works cited 
+1.​ JULY 2025 UU 2353380001 SYNOPSIS Deepak Bhatt (1).pdf 
+2.​ DISSERTATION GUIDEBOOK - Uttaranchal University, accessed on May 15, 
+2026, 
+https://www.uudoon.in/law/includes/downloads/Dissertation_Guide_Book.pdf 
+3.​ GUIDELINES FOR THESIS SUBMISSION - Uttaranchal University, accessed on 
+May 15, 2026, 
+https://www.uudoon.in/phd-programs/includes/pdf/Thesis_Submission_Guidelines
+_And_Format.pdf?utm_source=Website&utm_medium=Online&utm_campaign=W
+ebsite 
+4.​ UTTARANCHAL UNIVERSITY, accessed on May 15, 2026, 
+https://uudoon.in/phd-programs/includes/pdf/PhD_Formats_and_Guidelines.pdf 
+5.​ UG Dissertation Guidelines Overview | PDF | Thesis | Written Communication - 
+Scribd, accessed on May 15, 2026, 
+https://www.scribd.com/document/858920258/Dissertation-Guidelines 
+6.​ A Survey of Classification Tasks and Approaches for Legal Contracts - arXiv, 
+accessed on May 15, 2026, https://arxiv.org/html/2507.21108v1 
+7.​ Interact with Web3 Smart Contracts via Decentralized RPC, accessed on May 15, 
+2026, https://drpc.org/blog/web3-smart-contract/ 
+8.​ Ph.D. (Formats and Guidelines) - Uttaranchal University, accessed on May 15, 
+2026, https://www.uudoon.in/phd-programs/phd-formats-and-guidelines.php 
+9.​ Leveraging Large Language Models for Automatic ... - IRIS-AperTO, accessed on 
+May 15, 2026, 
+https://iris.unito.it/retrieve/b247cc7c-9fa6-4a5e-ab8f-5db678611d81/2024_COMPS
+AC.pdf 
+10.​Generative Contracts - CWSL Scholarly Commons, accessed on May 15, 2026, 
+https://scholarlycommons.law.cwsl.edu/cgi/viewcontent.cgi?article=1493&context=
+fs 
+11.​Natural Language Processing for the Legal Domain: A ... - arXiv, accessed on 
+May 15, 2026, https://arxiv.org/pdf/2410.21306 
+12.​Validation Framework for E-Contract and Smart Contract - arXiv, accessed on May 
+15, 2026, https://arxiv.org/html/2504.19137v1 
+13.​[Literature Review] SaulLM-7B: A pioneering Large Language Model for Law, 
+accessed on May 15, 2026, 
+https://www.themoonlight.io/en/review/saullm-7b-a-pioneering-large-language-mo
+del-for-law 
+14.​SaulLM-7B: Legal Language Model Overview | PDF | Computing - Scribd, 
+accessed on May 15, 2026, 
+https://www.scribd.com/document/715325888/1c8e3d4b-010c-433c-b629-7a0703
+04a3c0 
+15.​[2403.03883] SaulLM-7B: A pioneering Large Language Model for Law - arXiv, 
+accessed on May 15, 2026, https://arxiv.org/abs/2403.03883 
+16.​Better Call Saul - SaulLM-7B - a legal large language model, accessed on May 
+15, 2026, 
+https://training.continuumlabs.ai/continuum-applications/discussion-and-use-cases
+/better-call-saul-saullm-7b-a-legal-large-language-model 
+17.​A Few Good Clauses: Comparing LLMs vs Domain-Trained Small Language 
+Models on Structured Contract Extraction - arXiv, accessed on May 15, 2026, 
+https://arxiv.org/html/2605.05532v1 
+18.​GitHub - Arcaici/LegalBert_LegalPegasus: This repo aim to learn how to work with 
+BERT and Pegasus, while learning the basics of trasformers, accessed on May 
+15, 2026, https://github.com/Arcaici/LegalBert_LegalPegasus 
+19.​Fine-Tuning Legal-BERT: LLMs For Automated Legal Text Classification - Towards 
+AI, accessed on May 15, 2026, 
+https://pub.towardsai.net/fine-tuning-legal-bert-llms-for-automated-legal-text-classi
+fication-33b37ee0192f 
+20.​Towards Trustworthy Legal AI through LLM Agents and Formal Reasoning - arXiv, 
+accessed on May 15, 2026, https://arxiv.org/html/2511.21033v2 
+21.​NLP for Smart Contracts - NORMA@NCI Library - National College ..., accessed 
+on May 15, 2026, https://norma.ncirl.ie/8414/1/nicholasapati.pdf 
+22.​Contract Understanding Atticus Dataset (CUAD) - Kaggle, accessed on May 15, 
+2026, 
+https://www.kaggle.com/datasets/ashyou09/contract-understanding-atticus-datase
+t-cuad 
+23.​CUAD: An Expert-Annotated NLP Dataset for Legal Contract Review, accessed 
+on May 15, 2026, 
+https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/6ea9ab1baa0
+efb9e19094440c317e21b-Paper-round1.pdf 
+24.​CUAD Dataset | The Atticus Project, accessed on May 15, 2026, 
+https://www.atticusprojectai.org/cuad/ 
+25.​theatticusproject/cuad · Datasets at Hugging Face, accessed on May 15, 2026, 
+https://huggingface.co/datasets/theatticusproject/cuad 
+26.​CUAD Projects - AI Tinkerers, accessed on May 15, 2026, 
+https://aitinkerers.org/technologies/cuad 
+27.​Free Non-Disclosure Agreement Template and NDA Contract | Docusign, 
+accessed on May 15, 2026, 
+https://www.docusign.com/templates/nondisclosure-agreement 
+28.​Deploying and Interacting with Smart Contracts - Web3.js, accessed on May 15, 
+2026, https://docs.web3js.org/guides/smart_contracts/smart_contracts_guide/ 
+29.​Interact With Your Smart Contract - Web3 University, accessed on May 15, 2026, 
+https://www.web3.university/tracks/create-a-smart-contract/interact-with-your-smar
+t-contract 
+30.​Interacting With Ethereum Smart Contract Using Web3js - GeeksforGeeks, 
+accessed on May 15, 2026, 
+https://www.geeksforgeeks.org/solidity/interacting-with-ethereum-smart-contract-u
+sing-web3js/ 
+31.​A human-centered AI : designing legal technology around professionals and 
+clients, accessed on May 15, 2026, 
+https://www.lefebvre-group.com/a-human-centered-ai-designing-legal-technology-
+around-professionals-and-clients/ 
+32.​The Stanford Legal Design Lab - ResearchGate, accessed on May 15, 2026, 
+https://www.researchgate.net/publication/387220811_The_Stanford_Legal_Design
+_Lab 
+33.​Towards human-centred standards for legal help AI - Royal Society Publishing, 
+accessed on May 15, 2026, 
+https://royalsocietypublishing.org/rsta/article/382/2270/20230157/112566/Towards-
+human-centred-standards-for-legal-help 
+34.​Measuring What Matters: A Quality Rubric for Legal AI Answers - Justice 
+Innovation, accessed on May 15, 2026, 
+https://justiceinnovation.law.stanford.edu/measuring-what-matters-a-quality-rubric-
+for-legal-ai-answers/ 
+35.​Legal Design Lab - Programs and Centers - Stanford Law School, accessed on 
+May 15, 2026, https://law.stanford.edu/legal-design-lab/ 
+36.​Measuring Usability with the System Usability Scale (SUS), accessed on May 15, 
+2026, https://measuringu.com/sus/ 
+37.​A Practical Guide to the System Usability Scale - Uxia Blog, accessed on May 15, 
+2026, https://www.uxia.app/blog/system-usability-scale 
+38.​System Usability Scale (SUS) Practical Guide for 2026 - UXtweak, accessed on 
+May 15, 2026, https://blog.uxtweak.com/system-usability-scale/ 
+39.​How to use and implement the system usability scale (SUS) - Dovetail, accessed 
+on May 15, 2026, https://dovetail.com/ux/how-to-use-the-system-usability-scale/ 
+40.​UNCITRAL Model Law on Automated Contracting (2024), accessed on May 15, 
+2026, https://uncitral.un.org/en/mlac 
+41.​Survey: Legal Teams Lack Visibility Into AI Agents' Actions, Icertis Research 
+Finds, accessed on May 15, 2026, 
+https://www.lawnext.com/2026/05/survey-legal-teams-lack-visibility-into-ai-agents-
+actions-icertis-research-finds.html 
+42.​How to Evaluate Legal AI Tools: The 4 Cs Framework - Ironclad, accessed on 
+May 15, 2026, 
+https://ironcladapp.com/resources/articles/how-to-evaluate-legal-ai-tools 
+43.​How to Evaluate AI Contract Review Tools: Legal-Specific Criteria for Small Law 
+Firms, accessed on May 15, 2026, 
+https://www.paxton.ai/post/how-to-evaluate-ai-contract-review-tools 
+44.​Why Legal Help AI R&D Gets Stuck. And why we need shared infrastructure… | 
+by Margaret Hagan - Medium, accessed on May 15, 2026, 
+https://medium.com/legal-design-and-innovation/why-legal-help-ai-r-d-gets-stuck-7
+c950cd484b5 
+45.​Interview Guide Template for AI-Moderated Research | Qualz.ai Blog, accessed 
+on May 15, 2026, https://qualz.ai/blog/interview-guide-template-ai-moderated/ 

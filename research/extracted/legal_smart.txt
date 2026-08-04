@@ -1,0 +1,650 @@
+International Journal for Multidisciplinary Research (IJFMR) 
+ 
+E-ISSN: 2582-2160   ●   Website: www.ijfmr.com       ●   Email: editor@ijfmr.com 
+ 
+IJFMR240214877 
+Volume 6, Issue 2, March-April 2024 
+1
+ 
+Legality of Blockchain and Smart Contracts in 
+India 
+ 
+Megha Ravindranath 
+ 
+LLM Student (Post Graduate), CHRIST (Deemed to be University) 
+ 
+ABSTRACT 
+India is presently experiencing a moment of profound transformation that encompasses revisions to its 
+constitution and legal principles. In this era of remarkable transformation, it would be imprudent to 
+overlook the technological innovations and digital advancements that have permeated the legal domain. 
+One particularly vital aspect in this context is the field of Contract Law. Presently, electronic contracts in 
+India are primarily governed by The Indian Contract Act, in conjunction with the Information Technology 
+Act and the Indian Evidence Act, unless stated otherwise. These legal frameworks provide the foundation 
+for legally enforceable electronic contracts in the country. This research paper emphasizes the urgent 
+requirement for a legal adaptation in the field of Contract Law to align with the ever-evolving 
+technological landscape. It also delves into the legal intricacies associated with blockchain-based Smart 
+Contracts, elucidating how these contracts function within the current judicial landscape. Finally, it 
+concludes by emphasizing the necessity for a pioneering effort to regulate this dynamic domain. 
+ 
+Keywords: Blockchain, Smart Contracts, E-Commerce, E-Contracts, Legality 
+ 
+INTRODUCTION 
+Modern contract law is akin to a masterpiece, bearing significant influence from Greek, Roman, and 
+Anglo-Saxon legal traditions1. The evolution of contract law in India has been a journey marked by various 
+changes until it was ultimately consolidated under the Indian Contracts Act of 1872 during the colonial 
+era. Since its enactment, this legislation has consistently served as a guiding light, illuminating the 
+landscape of contractual jurisprudence for over fifteen decades. However, Indian contract law has faced 
+criticism for its cumbersome processes, third-party interventions, and susceptibility to unauthorized 
+alterations. 
+Nevertheless, contemporary technological innovations offer a revolutionary shift, capable of reshaping 
+our understanding of contracts. This intellectual invention introduces a shared database of transactions, 
+designed to enhance security, transparency, and efficiency2, known as blockchain technology. The 
+potential of blockchain extends far beyond mere data storage; it enables decentralized transaction 
+Management and automates processes, regulations, and organizational principles3 
+ 
+1. Vijayakumaran, A. (2019) Legally blocked: The evolution and legality of smart contracts, SSRN. Available at: 
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3481038 (Accessed: 09 October 2023).  
+2. Rofiles 
+in 
+NNOVATION 
+- 
+gspublishing.com. 
+Available 
+at: 
+https://www.gspublishing.com/content/research/en/reports/2019/09/04/a0d36f41-b16a-4788-9ac5-68ddbc941fa9.pdf 
+(Accessed: 09 October 2023).  
+International Journal for Multidisciplinary Research (IJFMR) 
+ 
+E-ISSN: 2582-2160   ●   Website: www.ijfmr.com       ●   Email: editor@ijfmr.com 
+ 
+IJFMR240214877 
+Volume 6, Issue 2, March-April 2024 
+2
+ 
+To facilitate these transactions, a concept known as "smart contracts" is employed. Smart contracts 
+enhance blockchain functionality by incorporating self-executing instructions3, with the blockchain 
+serving as the ultimate source of truth. These contracts, which does not mandate manual verification, 
+simplifies approval processes and offer transparent calculations4. 
+However, the distinctive features that set smart contracts apart from other contractual innovations raise 
+questions about their legality and existence. This research paper conducts an examination of different 
+facets of smart contracts while tackling issues regarding their legal standing within the framework of 
+Indian law. 
+ 
+RESEARCH OBJECTIVES 
+1. To evaluate the effectiveness of existing Indian laws, including The Indian Contract Act, the 
+Information Technology Act, and the Indian Evidence Act, in addressing challenges arising from 
+technological advancements in electronic contracts. 
+2. To explore the legal complexities and implications associated with blockchain-based Smart Contracts 
+within the Indian legal system. 
+3. To investigate how blockchain-based Smart Contracts affect the enforceability and transparency of 
+contracts, as well as the interests of parties involved within the Indian context. 
+ 
+RESEARCH QUESTIONS 
+1. To what extent do existing Indian laws, such as The Indian Contract Act, the Information Technology 
+Act, and the Indian Evidence Act, effectively address the challenges presented by technological 
+advancements in the realm of electronic contracts? 
+2. What are the key legal intricacies associated with blockchain-based Smart Contracts in India, and how 
+do these contracts fit into the broader judicial landscape? 
+3. How do blockchain-based Smart Contracts impact the enforceability and transparency of contracts 
+within the Indian legal system, and what are the implications for parties involved in such contracts? 
+ 
+CONTRACTS IN INDIA: A LEGAL PERSPECTIVE 
+Contracts, in essence, represent agreements between parties, yet their validity hinges on specific criteria 
+prescribed by the governing law. A precise definition of a contract varies depending on the legal requisites 
+stipulated by the relevant jurisdiction. In order to grasp the conceptual framework of smart contracts and 
+their legal status in India, it is essential to understand the position of "contract" within India's legislative 
+framework5. 
+ 
+In India, Section 2(h) of the Indian Contract Act, 18726 (ICA) defines a contract as "an agreement enfor- 
+ 
+3. (November 
+2018) 
+The 
+blockchain 
+- 
+nishith 
+desai. 
+Available 
+at: 
+https://www.nishithdesai.com/fileadmin/user_upload/pdfs/Research%20Papers/The_Blockchain.pdf 
+(Accessed: 
+09 
+October 2023).  
+4. Khan, S.N. et al. (2021) Blockchain Smart Contracts: Applications, challenges, and future trends - peer-to-peer networking 
+and applications, SpringerLink. Available at: https://link.springer.com/research paper/10.1007/s12083-021-01127-0 
+(Accessed: 10 October 2023).  
+5. Stationing smart contract as a ‘contract’: A case for interpretative ... Available at: http://nujslawreview.org/wp-
+content/uploads/2021/01/13.4-Pandey-Raghunath.pdf (Accessed: 10 October 2023).  
+6. The 
+Indian 
+Contract 
+Act, 
+1872 
+arrangement 
+of 
+sections 
+- 
+india 
+code. 
+Available 
+at: 
+https://www.indiacode.nic.in/bitstream/123456789/2187/2/A187209.pdf (Accessed: 10 October 2023).  
+International Journal for Multidisciplinary Research (IJFMR) 
+ 
+E-ISSN: 2582-2160   ●   Website: www.ijfmr.com       ●   Email: editor@ijfmr.com 
+ 
+IJFMR240214877 
+Volume 6, Issue 2, March-April 2024 
+3
+ 
+eable by law." Section 107 of the ICA delineates the essential conditions for an agreement to transform 
+into a contract. These conditions include free consent of competent parties, a lawful consideration, a lawful 
+object, and the absence of an express declaration of voidness. Moreover, Section 118 of the ICA stipulates 
+that a person must be a major, of sound mind, and not prohibited by state laws9 to be competent to contract. 
+An agreement adhering to these conditions is regarded as a valid contract. However, a pertinent question 
+arises: are electronically entered agreements legally valid? To address this inquiry, we must first 
+understand the concept of electronic contracts. 
+ 
+Electronic Contracts: 
+Electronic contracts, often referred to as e-contracts, are agreements formed within the realm of e-
+commerce through interactions involving electronic media, such as email10, or communication with 
+electronic agents, like computer programs. Examples include end-user license agreements where users 
+accept contract terms by using, downloading, or installing software or services11. 
+In the digital age, failing to acknowledge the legal nature of electronically crafted contracts would create 
+a significant void in contractual jurisprudence. The validity of e-contracts in India is primarily governed 
+by three key statutes: the Indian Contract Act, 1872, the Information Technology Act, 2000 (IT Act), and 
+the Indian Evidence Act, 1872. 
+The IT Act aims to provide legal recognition to transactions conducted through electronic media or 
+electronic commerce. Section 10A of the IT Act12, introduced through an amendment in 2008, confers 
+legal recognition upon electronic contracts. Additionally, Section 3513 of the IT Act addresses the issuance 
+of digital signatures, emphasizing the necessity of obtaining them from government-designated certifying 
+authorities. These digital signatures serve as crucial proof of identity in the digital realm and are vital for 
+authenticating electronic documents, guarding against online misrepresentation and identity forgery. 
+The dynamic nature of the digital world raises an important question: Can it coexist with the enduring 
+Indian legal system? The answer to this question lies in Sections 65A and 65B of the Indian Evidence Act, 
+187214. 
+Section 65A of the Indian Evidence Act, 1872 recognizes electronic documents. Section 65B establishes 
+that information contained in an electronic record generated by a computer shall be deemed as evidence 
+if certain conditions are met15. These conditions include the record being produced from a computer in 
+ 
+7. Indian Contract Act, 1872 [hereinafter, ICA, 1872]. 11 Id.   
+8. d. at §11.   
+9. Ann O’Connell, A. (2023) Legal Guide to Electronic Contracts and electronic signatures, www.nolo.com. Available at: 
+https://www.nolo.com/legal-encyclopedia/electronic-signatures-online-contracts-29495.html (Accessed: 10 October 
+2023).  
+10. US Legal, Inc.  Find a legal form in minutes, E. Available at: https://definitions.uslegal.com/e/e-contract (Accessed: 10 
+October 2023).  
+11. Id.   
+12. (2000) 
+Ministry 
+of 
+Law, 
+justice 
+and 
+company 
+- 
+eprocure.gov.in. 
+Available 
+at: 
+https://eprocure.gov.in/cppp/rulesandprocs/kbadqkdlcswfjdelrquehwuxcfmijmuixngudufgbuubgubfugbububjxcgfvsbdihb
+gfGhdfgFHytyhRtMjk4NzY= (Accessed: 10 October 2023).  
+13. Id. at §35.   
+14. (13 March 2020) The indian evidence act, 1872 last updated:-13-3-2020 R F ... - india code. Available at: 
+https://www.indiacode.nic.in/bitstream/123456789/15351/1/iea_1872.pdf (Accessed: 10 October 2023).  
+15. Sharma, M.K. and Gupta, S. (2021) E-signing of contract and documents in India, Lexology. Available at: 
+https://www.lexology.com/library/detail.aspx?g=c49488a8-7417-4920-a056-b7d1e4cd363b. (Accessed: 10 October 
+2023).  
+International Journal for Multidisciplinary Research (IJFMR) 
+ 
+E-ISSN: 2582-2160   ●   Website: www.ijfmr.com       ●   Email: editor@ijfmr.com 
+ 
+IJFMR240214877 
+Volume 6, Issue 2, March-April 2024 
+4
+ 
+regular use, under lawful control, during ordinary activities, in proper working condition, and with regular 
+updates16. Given the recognition of e-contracts, one may wonder what prevents smart contracts from being 
+legally recognized. To understand this, it is imperative to distinguish smart contracts from other e-
+contracts, necessitating a deep dive into the workings of blockchain technology. 
+ 
+THE ASCENDANCE OF BLOCKCHAIN TECHNOLOGY 
+The wave of interest in understanding the revolutionary blockchain technology-based smart contracts in 
+India began around 2017 when SBI launched the "bank chain" platform, a consortium of 27 banks 
+designed to share e-KYC information17. This announcement was followed by a deluge of articles in leading 
+newspapers, dissecting the pros and cons of blockchain-based technologies18.  
+However, the term "blockchain" first gained global prominence in 2008 when an enigmatic figure or group 
+known as Satoshi Nakamoto used it as a public transaction ledger for the cryptocurrency Bitcoin19. To 
+truly comprehend the significance of smart contracts, it is imperative to delve into the workings of 
+blockchain technology. 
+Blockchain represents a novel database technology in which information is shared across a network of 
+users, with each user maintaining a comprehensive and up-to-date copy of records. The core strength of 
+blockchain lies in how information is stored, duplicated, and updated within a distributed ledger, rendering 
+it reliable and transparent. An inherent feature of blockchain is its decentralized nature; it is not controlled 
+by a single central authority. Instead, it operates through "nodes," which constitute a network of 
+participating computers.  
+These nodes function as the custodians of publicly transacted data, ensuring its storage, updates, and 
+security. Every node has a duplicate of the blockchain. database, and these copies remain in 
+synchronization with one another through a set of cryptographically-enforced rules, known as a consensus 
+algorithm. The blockchain's integrity is upheld by a cryptographic process called a hash function, which 
+swiftly identifies and rejects any attempt to alter the database. 
+Subsequent to this peer-to-peer broadcasting, the next step involves aggregating transactions into a block. 
+Each block has a reference to another block, collectively forming the "chain" in the blockchain. This 
+linkage ensures that third parties cannot tamper with the transactions. These transactions are based on 
+mathematical logic and lack a reliance on trust. Any modification to any aspect of a transaction or a block 
+result in a distinct "hash." 
+This emerging technology boasts a myriad of features warranting exploration. Its technological attributes 
+encompass transparency, timestamps, immutability, irrevocability, and programmability. Its capacity to 
+facilitate the exchange of entirely Digital assets can be exchanged without the involvement of a third-party 
+intermediary that needs to be trusted. The statement, "has the potential to reshape the global financial" can 
+be rewritten as "has the potential to transform the global financial landscape. 
+ 
+ 
+16. Sharma, M.K. and Gupta, S. (2021) E-signing of contract and documents in India, Lexology. Available at: 
+https://www.lexology.com/library/detail.aspx?g=c49488a8-7417-4920-a056-b7d1e4cd363b. (Accessed: 10 October 
+2023).  
+17. Ibid 
+18. Indian Institute of Banking & Finance (IIBF). Available at: https://iibf.org.in/documents/BankQuest/BankQuestJuly-
+September20211004.pdf (Accessed: 10 October 2023).  
+19. Frankenfield, J. (no date) What is bitcoin? how to mine, buy, and use it, Investopedia. Available at: 
+https://www.investopedia.com/terms/b/bitcoin.asp (Accessed: 11 October 2023).  
+International Journal for Multidisciplinary Research (IJFMR) 
+ 
+E-ISSN: 2582-2160   ●   Website: www.ijfmr.com       ●   Email: editor@ijfmr.com 
+ 
+IJFMR240214877 
+Volume 6, Issue 2, March-April 2024 
+5
+ 
+WHAT ARE SMART CONTRACTS? 
+Smart contracts represent a pivotal aspect of blockchain technology. The term "smart contract" is rather 
+self-explanatory, though the term "smartness" might seem misleading. The true brilliance of a smart 
+contract lies in its decentralized, third-party-free execution, where parties engage in agreements governed 
+by programmed code, rendering it "smart." 
+In an ever-evolving technological and legal landscape, the conceptual definitions of terms and analogies 
+are continually in flux. The notion of the smart contract is no exception to this dynamic state of change. 
+The earliest definition of a smart contract can be traced back to Nick Szabo's 1995 paper, "Smart Contracts: 
+Building Blocks for Digital Markets." Szabo defined a traditional contract as "a set of promises agreed to 
+in a meeting of the minds, to formalize a relationship." He then described a smart contract as "a set of 
+promises, specified in digital form, including protocols within which the parties perform on the other 
+promises." 
+Based on Szabo's definition, the key components include: 
+1. "A set of promises" – These promises can be contractual or non-contractual, depending on the smart 
+contract model. The terms of the contract and equivalent functional outcomes are determined by the 
+business logic embedded in the software code20. 
+2. "Specified in digital form" – Refers to the lines of code and software that define the contract. 
+3. "Protocols" – Computer protocols are algorithms that establish rules for processing data in 
+technologically enabled, rule-based operations. 
+4. "Within which the parties perform" – Denotes the blockchain technology that underlies the 
+automation and irrevocability of smart contracts. 
+Another well-regarded definition of smart contracts comes from Christopher D. Clack in his manuscript 
+titled "Smart Contract Templates: Foundations, Design Landscape and Research Directions." He defines 
+a smart contract as "an agreement whose execution is both automatable and enforceable.  
+Automatable by a computer, although some parts may require human input and control. Enforceable 
+through legal enforcement of rights and obligations or tamper-proof execution." This definition recognizes 
+that defining a contract and inputting code necessitates human cognition, while the smart contract 
+automates execution based on predetermined parameters, maintaining control over the elements required 
+for execution. 
+The vending machine serves as the simplest real-life example of a smart contract, as illustrated by Szabo. 
+When payment is made, a set of irreversible actions is triggered, and the machine enforces the terms of 
+the deal by calculating and dispensing the customer's selected product and change. This model closely 
+resembles that of a smart contract.  
+However, more complex transactions require intricate programming. For instance, obligations like 
+payment and delivery can be programmed to self-execute once algorithm-based calculations are in place. 
+Such contracts reduce the resources needed for contract management significantly. 
+Additionally, a decentralized and mathematically verified process eliminates the requirement for trust-
+based execution of contractual obligations. This capability can be harnessed effectively In fields like 
+supply chain management and trade finance, significant advancements have been made in recent years. 
+documentation, automating processes.  
+ 
+20. Ibid 
+International Journal for Multidisciplinary Research (IJFMR) 
+ 
+E-ISSN: 2582-2160   ●   Website: www.ijfmr.com       ●   Email: editor@ijfmr.com 
+ 
+IJFMR240214877 
+Volume 6, Issue 2, March-April 2024 
+6
+ 
+Financial institutions like Barclays, headquartered in London, have embraced smart contract templates, 
+supported by R3, to automate legal documentation in financial transactions. Startups like Chain, that utilize 
+blockchain technology for managing and negotiating smart contracts, catering to the evolving landscape 
+of technology-driven contracts. 
+However, a fundamental question remains: Are smart contracts legally considered "contracts" in the 
+general legal sense? 
+ 
+EXPLORING CONTRACTUAL DIMENSIONS OF SMART CONTRACTS 
+Our previous discussion has revolved around the evolution and integration of blockchain-based smart 
+contracts within the global financial landscape. However, a more challenging question emerges: Do smart 
+contracts truly qualify as contracts in the conventional legal sense? In the second part of this paper, we 
+delve into the analysis of smart contracts in comparison to generally enforceable traditional contracts, 
+exploring their compatibility as well as discrepancies within the smart contract ecosystem. 
+Proposal, Acceptance, and Consideration: 
+Under Indian law, the creation of a legally enforceable contract typically requires demonstrating the 
+proposal, acceptance, and the meeting of minds between the parties. Section 2(a) states that an offer is 
+made when a party expresses their willingness to perform or abstain from performing a specific action. In 
+a distributed ledger environment, this would likely constitute an offer if other participants can interact with 
+and execute the code. For example, in algorithmic trading, parties use computerized algorithms as 
+negotiators before a contract is formed, allowing them to select order terms for the market. 
+Section 2(b) of the Indian Contract Act, defines acceptance as the act of signifying assent by the person to 
+whom the proposal is made. In the context of a smart contract, the proposer or any participant on the ledger 
+may indicate acceptance by signing the transaction using a private key. Section 2(d) explains consideration 
+as an act or abstinence performed at the promisor's request by the promisee. This value can be given at the 
+time prescribed. 
+The Challenge of Immutability 
+Max Raskin, in his paper titled "The Law and Legality of Smart Contracts21," distinguishes contracts into 
+two categories: strong and weak contracts. A contract that can be easily altered by a court is considered 
+weak, while a contract is strong if modifying it involves substantial costs that render such alterations 
+nonsensical. 
+Smart contracts fall into the category of stronger contracts. For instance, consider a hypothetical contract 
+where a party is obliged to deliver a certain quantity of milk upon the dispersal of funds. If the mechanism 
+for enforcing the funds' dispersal involves a counting machine, the contract may not necessarily be 
+executed if one party's conduct can be altered by a court's decision to excuse performance. 
+However, if this contract were entered into a blockchain, the parties establish an agreement, encode it to 
+meet their specifications, and then execute it. In this scenario, the performance of the second party is 
+automatically linked to the first party's dispersal of funds. Should a party wish to terminate the contract or 
+fail to fulfil their obligations with valid reasons, the immutability of smart contracts presents a unique 
+challenge, as the parties cannot roll back the transaction. This is an unprecedented situation that warrants 
+further consideration. 
+ 
+ 
+21. The 
+law 
+and 
+legality 
+of 
+smart 
+contracts. 
+Available 
+at: 
+https://georgetownlawtechreview.org/wp-
+content/uploads/2017/05/Raskin-1-GEO.-L.-TECH.-REV.-305-.pdf (Accessed: 15 October 2023).  
+International Journal for Multidisciplinary Research (IJFMR) 
+ 
+E-ISSN: 2582-2160   ●   Website: www.ijfmr.com       ●   Email: editor@ijfmr.com 
+ 
+IJFMR240214877 
+Volume 6, Issue 2, March-April 2024 
+7
+ 
+Conscionability Test 
+Another pressing concern relates to the conscionability of agreements formed through smart contracts. 
+The Law Commission's 199th report in 2016 emphasized Section 16 of the Indian Contract Act, which 
+addresses inequalities in bargaining power due to one party's unfair advantage over the other. It was 
+proposed that the court should examine substantive unfairness and provide relief if the terms are found to 
+be unjust and unconscionable22. In the context of smart contracts, where the potential of this crucial part 
+of the Indian Contract Act remains uncertain, the terms governing damages awarded under smart contracts 
+may fail the conscionability test23. 
+Non-Adherence to CFTC Framework 
+In 2017, a blockchain-based sharing of KYC data among banks was introduced, albeit limited to record-
+keeping and information sharing24. Cryptocurrencies have long been a contentious topic for the Reserve 
+Bank of India (RBI). In 2018, the RBI issued a circular prohibiting regulated financial institutions from 
+engaging with virtual currencies25. 
+However, the issue of whether cryptocurrencies can be considered non-monetary consideration for a 
+contract, akin to the Commodities Futures Trading Commission (CFTC) recognizing bitcoin as a 
+commodity and taxing it accordingly, raises a complex question contradicting the RBI's policy. This 
+becomes particularly relevant in light of the CFTC's order to the National Stock Exchange (NSE) in May 
+2018, allowing members to accept U.S. customer funds for trading in futures and options contracts without 
+the need to register with the CFTC as a futures commission merchant, under its program of regulatory 
+deference to foreign regulatory frameworks26. 
+These multifaceted issues underline the intricate nature of smart contracts and their relationship with the 
+existing legal framework, calling for further exploration and clarity. 
+ 
+THE NEED FOR A LEGISLATIVE FRAMEWORK 
+Legal recognition is a fundamental ideal necessary for upholding justice among parties involved. 
+However, a significant void exists in the current legal landscape regarding the definition and establishment 
+of a legal framework for blockchain-based contracts. This void requires immediate attention and 
+resolution. 
+The Indian Contract Act already acknowledges legally enforceable agreements as "contracts." 
+Simultaneously, the Information Technology Act, in conjunction with the Indian Contract Act, confers 
+legality to electronic contracts (e-contracts). Nevertheless, what poses a substantial challenge for both 
+policymakers and those who benefit from these policies, The absence of a comprehensive legislative 
+framework is causing confusion and hindering progress. blockchain-based contracts. 
+Presently, the governmental efforts to shape policies related to blockchain technology are primarily 
+focused on the regulation of cryptocurrency. In 2017, an inter-ministerial committee was established to 
+investigate cryptocurrency-related issues. The committee presented its report on February 28th, 2019., 
+ 
+22. Ibid 
+23. 199th 
+report 
+on 
+unfair 
+(procedural 
+and 
+substantive) 
+terms 
+in 
+... 
+Available 
+at: 
+https://indiankanoon.org/doc/140848451/ (Accessed: 16 October 2023).  
+24. Ibid 
+25. Ibid 
+26. Saidha, M.K. (2021) Smart contracts and cryptocurrency – is it time to revisit the bounds of consideration?, IRCCL. 
+Available at: https://www.irccl.in/post/smart-contracts-and-cryptocurrency-is-it-time-to-revisit-the-bounds-of-
+consideration (Accessed: 16 October 2023).  
+International Journal for Multidisciplinary Research (IJFMR) 
+ 
+E-ISSN: 2582-2160   ●   Website: www.ijfmr.com       ●   Email: editor@ijfmr.com 
+ 
+IJFMR240214877 
+Volume 6, Issue 2, March-April 2024 
+8
+ 
+subsequently introducing a draft bill that sought to ban the use of cryptocurrency.  
+This proposed legislation aimed to prohibit cryptocurrency usage and criminalize activities such as 
+mining, buying, holding, selling, dealing, and issuance. Often, people mistakenly associate cryptocurrency 
+with smart contracts. It is important to note that cryptocurrency represents only one facet of blockchain 
+technology, while smart contracts constitute another. The government's recognition of blockchain 
+technology's potential, as indicated in the committee report submitted in August, was unexpected given its 
+earlier reluctance towards cryptocurrencies27. This bodes well for the acknowledgment of smart contracts. 
+The effectiveness of a law in society depends on its ability to encompass and recognize a comprehensive 
+set of rights, duties, and obligations. In many societies and jurisdictions, legal recognition involves 
+records, forms, documents, and other tangible artifacts28. The requirement for a digital signature imparts 
+evidentiary value to an electronic agreement, recognizing the legality of e-contracts.  
+However, whether this recognition extends to the hash function of a smart contract remains a subject of 
+debate29. The Chamber of Digital Commerce, an American advocacy group, suggests that it should. If the 
+conditions outlined in the Indian Contract Act are met, even an agreement formed through a distributed 
+ledger may hold legal significance. This is the gray area that researchers, legal scholars, and policymakers 
+need to scrutinize30. 
+In terms of global treatment of smart contracts, Italy became the first country to establish a comprehensive 
+legal foundation for them. The Italian law defines smart contracts as software based on Distributed Ledger 
+Technology (DLTs) that automatically enforces the agreed-upon terms once the relevant ledger entry has 
+been validated31. According to the law, smart contracts are legally equivalent to traditional contracts, 
+provided that the digital authentication of the parties adheres to the method The guidelines established by 
+the Agency for Digital Italy. (Agenzia per l'Italia Digitale – AGID).  
+Several U.S. states have also taken significant steps to incorporate blockchain and smart contracts into 
+their financial and legal frameworks. For instance, in 2017, the state of Arizona enacted a law that granted 
+smart contracts the same legal status as any other contract. The state of Delaware introduced the Delaware 
+blockchain initiative, accompanied by an amendment to Delaware Corporation Law to delve deeper into 
+blockchain technology32. Smart contracts have also been incorporated into the legislative frameworks of 
+states such as Vermont, Nevada, Hawaii, New Hampshire, Illinois, and others. 
+ 
+27. Blockchain 
+technologies 
+and 
+IP 
+Ecosystems: 
+A 
+wipo 
+white 
+paper. 
+Available 
+at: 
+https://www.wipo.int/export/sites/www/cws/en/pdf/blockchain-for-ip-ecosystem-whitepaper.pdf (Accessed: 16 October 
+2023).  
+28. Legal protection of human rights - manual for human rights education with young people - www.coe.int (no date) Manual 
+for Human Rights Education with Young people. Available at: https://www.coe.int/en/web/compass/legal-protection-of-
+human-rights (Accessed: 16 October 2023).  
+29. Zhang, L. et al. (2022) A survey of application research based on Blockchain Smart Contract - Wireless Networks, 
+SpringerLink. Available at: https://link.springer.com/article/10.1007/s11276-021-02874-x (Accessed: 16 October 2023).  
+30. Author links open overlay panelHorst Treiblmaier a et al. (2021) The impact of blockchain on e-commerce: A framework 
+for 
+salient 
+research 
+topics, 
+Electronic 
+Commerce 
+Research 
+and 
+Applications. 
+Available 
+at: 
+https://www.sciencedirect.com/science/article/pii/S1567422321000260 (Accessed: 16 October 2023).  
+31. Squerzoni, F. (2019) Blockchain and smart contracts: Italy first to recognize an overarching legal foundation - contracts 
+and commercial law - italy, Blockchain And Smart Contracts: Italy First To Recognize An Overarching Legal Foundation 
+- Contracts and Commercial Law - Italy. Available at: https://www.mondaq.com/italy/contracts-and-commercial-
+law/782378/blockchain-and-smart-contracts-italy-first-to-recognize-an-overarching-legal-foundation 
+(Accessed: 
+16 
+October 2023).  
+32. Sorelle Friedler, S.V. et al. (2022) Blockchain and U.S. state governments: An initial assessment, Brookings. Available at: 
+https://www.brookings.edu/articles/blockchain-and-u-s-state-governments-an-initial-assessment/ (Accessed: 16 October 
+2023).  
+International Journal for Multidisciplinary Research (IJFMR) 
+ 
+E-ISSN: 2582-2160   ●   Website: www.ijfmr.com       ●   Email: editor@ijfmr.com 
+ 
+IJFMR240214877 
+Volume 6, Issue 2, March-April 2024 
+9
+ 
+In the Indian context, what is needed is legislation in line with these established frameworks. It is always 
+better to make an attempt and potentially fail than to never make an effort at all. 
+ 
+RECOMMENDATIONS 
+It is imperative that India introduces its blockchain legislation. One of the most prudent approaches for 
+India to develop legislation in these complex areas would be to adopt and adapt a comprehensive legal 
+framework, similar to those in Western nations. This endeavour should follow a multi-pronged strategy 
+with a clear goal of minimizing uncertainty. Effective legislation should anticipate and address foreseeable 
+challenges that may arise in the future. If India seeks to legislate on blockchain and smart contracts, the 
+law should address several major concerns33. 
+A significant challenge with smart contracts is their immutability, meaning that once parties enter into a 
+contract, it cannot be reversed34. A solution to this lies within contract jurisprudence itself. Courts can 
+require parties to amend the original contract and create a new one. This new contract would effectively 
+exchange the positions outlined in the original contract, thus undoing its effects. This approach can be 
+applied in cases where there was no mutual agreement or when the parties involved in the blockchain were 
+legally incapable of entering into a contract35. 
+Another pressing concern is determining which law should apply when parties to a contract are from 
+different countries. In such situations, the traditional "lex loci contractus" theory, which applies the laws 
+of the place where the contract was formed, may not be sufficient36. This approach allows for a common 
+choice of law without harmonizing the actual laws37. 
+Evidentiality related to smart contracts is another issue that can be resolved by legalizing smart contracts. 
+To address this, India should consider adopting and adapting legislation similar to Arizona and Nevada in 
+the USA, which have granted smart contracts the same evidentiary value as electronic contracts38. If Indian 
+law requires digital signatures for electronic contracts, a similar provision could be extended to smart 
+contracts. For example, the law might state that submitting a blockchain that electronically contains the 
+signature or verifies a person's intent to provide a signature would satisfy legal requirements39. 
+Determining where to draw the legal boundaries is vital. Arizona, for instance, has enacted laws such as 
+HB 2216 to prevent the misuse of smart contracts, specifically for tracking firearms. India should also 
+consider establishing limits where the use of blockchain-based contracts could jeopardize public order. 
+ 
+33. Draft 
+discussion 
+paper 
+- 
+niti 
+aayog. 
+Available 
+at: 
+https://www.niti.gov.in/sites/default/files/2023-
+02/Blockchain_The_India_Strategy_Part_I.pdf (Accessed: 17 October 2023).  
+34. What 
+is 
+a 
+smart 
+contract, 
+and 
+how 
+does 
+it 
+work? 
+(no 
+date) 
+Cointelegraph. 
+Available 
+at: 
+https://cointelegraph.com/learn/what-are-smart-contracts-a-beginners-guide-to-automated-agreements 
+(Accessed: 
+17 
+October 2023).  
+35. Riva, G.M. (2020) What happens in blockchain stays in blockchain. A legal solution to conflicts between digital ledgers 
+and privacy rights, Frontiers. Available at: https://www.frontiersin.org/articles/10.3389/fbloc.2020.00036/full (Accessed: 
+17 October 2023).  
+36. US 
+Legal, 
+Inc. 
+(no 
+date) 
+Find 
+a 
+legal 
+form 
+in 
+minutes, 
+Conflict 
+of 
+Laws. 
+Available 
+at: 
+https://conflictoflaws.uslegal.com/laws-applicable-to-contracts/lex-loci-contractus/ (Accessed: 20 October 2023).  
+37. (1st June 1990) Consolidated version of the Treaty on the functioning of the ... - EUR-lex. Available at: https://eur-
+lex.europa.eu/resource.html?uri=cellar:2bf140bf-a3f8-4ab2-b506-fd71826e6da6.0023.02/DOC_2&format=PDF 
+(Accessed: 20 October 2023).  
+38. USA: Smart contracts definition and legality. Available at: https://neo-project.github.io/global-blockchain-compliance-
+hub//united-states-of-america/USA-smart-contracts.html (Accessed: 17 October 2023).  
+39. (1st December 2000) Guidelines for usage of digital signatures in e-governance - V1. Available at: 
+https://egovstandards.gov.in/sites/default/files/2021-07/Usage%20of%20Digital%20Signature%20in%20e-
+Governance%20Ver1.0.pdf (Accessed: 17 October 2023).  
+International Journal for Multidisciplinary Research (IJFMR) 
+ 
+E-ISSN: 2582-2160   ●   Website: www.ijfmr.com       ●   Email: editor@ijfmr.com 
+ 
+IJFMR240214877 
+Volume 6, Issue 2, March-April 2024 
+10
+ 
+The taxation of smart contracts is another important consideration. While Nevada40 decided against taxing 
+smart contracts, implementing such taxes could generate revenue and provide the government with better 
+contract tracking capabilities. It is important, however, that legislative action is not rushed. Italy, for 
+example, has AgID41 for managing digital agendas, and Delaware's blockchain initiative has led to a 
+blockchain law. India might also benefit from creating an organization dedicated to the development and 
+exploration of blockchain technology. 
+It is clear that smart contracts will significantly impact a country's legal system. India's jurisprudence is 
+not inherently opposed to smart contracts. What India needs is a well-crafted law capable of addressing 
+every concern thoroughly. 
+ 
+CONCLUSION 
+In conclusion, the introduction of blockchain technology into the legal domain is a remarkable 
+development. Our exploration of the evolution and legality of blockchain-based smart contracts brings us 
+one step closer to embracing a new era42. While certain aspects of smart contracts remain uncertain and 
+ambiguous, we cannot afford to ignore such innovations. In this ever-evolving landscape, what we need 
+is extensive research, thorough analysis, and informed policymaking. 
+Smart contracts have the potential to revolutionize digital contracts, offering solutions that range from 
+small financial transactions to more complex applications in areas like insurance, logistics, and healthcare. 
+India's initial scepticism about blockchain technology is understandable, but it should not hinder the state 
+from crafting new legislation to regulate its use within the country. The vast possibilities of smart contracts 
+await exploration, and the absence of a proper legal framework should no longer impede national 
+progress43. 
+In conclusion, I echo the words of Muhammed Iqbal, which resonate in the current context: "Let this be 
+our beautiful departure from stagnation; let our minds come alive; enter another dimension; go beyond the 
+stars, eagerly struggling to find that... which our naked eyes did not know existed; rise like a falcon born 
+to soar and not be alone but be present amongst others44." It is time for India to embrace the potential of 
+blockchain technology and smart contracts and set sail toward a new era of legal innovation. 
+ 
+40. (79th Session (2017)) The people of the state of Nevada, represented in ... - nevada legislature. Available at: 
+https://www.leg.state.nv.us/Session/79th2017/Bills/SB/SB398_EN.pdf (Accessed: 20 October 2023). 
+41. Casale, F. The Agency for Digital Italy, The Agency for Digital Italy - Progetto Science and Technology Digital Library. 
+Available 
+at: 
+http://stdl.cnr.it/en/chi-siamo-2/the-agency-for-digital-
+italy#:~:text=The%20Agency%20for%20Digital%20Italy%20(AgID)%20coordinates%20the%20policies%20in,Public
+%20Administration%20digitisation%20and%20modernisation. (Accessed: 20 October 2023).  
+42. Author links open overlay panelAhmed G. Gad a et al. (2022) Emerging trends in blockchain technology and applications: 
+A review and outlook, Journal of King Saud University - Computer and Information Sciences. Available at: 
+https://www.sciencedirect.com/science/article/pii/S1319157822000891 (Accessed: 17 October 2023).  
+43. Bains, P. et al. (2022) Regulating the crypto ecosystem: The case of unbacked crypto assets, IMF eLibrary. Available at: 
+https://www.elibrary.imf.org/view/journals/063/2022/007/article-A001-en.xml (Accessed: 17 October 2023).  
+44. The reconstruction of religious thought in Islam : Umair Mirza : Free download, Borrow, and streaming (2013) Internet 
+Archive. Available at: https://archive.org/details/the-reconstruction-of-religious-thought-in-islam_202012 (Accessed: 20 
+October 2023).  
+ 

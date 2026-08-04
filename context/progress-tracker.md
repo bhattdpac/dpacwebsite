@@ -48,9 +48,14 @@ Update this file after every meaningful implementation change.
     - **Isolated Data Model:** Created `ResearchPaper` model and dedicated API endpoints to keep academic work separate from the Legal Framework.
     - **Review History:** Added a persistent "Recent Reviews" feature to track and revisit analyzed research papers.
 
+- **SaaS & National Integration Research:**
+  - **NBF Alignment:** Completed a comprehensive mapping of the framework to India's National Blockchain Framework (NBF) Live Chains (Document, Judiciary, ICJS, Property, etc.).
+  - **Legal Strategy:** Analyzed Smart Contract validity under the Indian Contract Act (1872) and IT Act (2000), identifying the need for "Bifurcated" (Hybrid) contracts.
+  - **SaaS Roadmap:** Drafted a multi-tenant transition plan stored in `context/specs/saas-roadmap.md`.
+
 ## In Progress
 
-- System Demonstration & Final Handoff.
+- User-directed "different thing" (Awaiting instructions).
 
 ## Next Up
 
