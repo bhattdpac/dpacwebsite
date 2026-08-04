@@ -10,7 +10,10 @@ import {
   Loader2,
   FileCheck,
   ChevronRight,
-  History
+  History,
+  Home,
+  BookOpen,
+  Lock
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { uploadResearchPaper, getResearchPapers } from '../api/api';
@@ -266,6 +269,88 @@ const ResearchHub = () => {
                 <p className="text-text-muted font-medium uppercase tracking-widest text-xs">No research papers analyzed yet.</p>
               </div>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* Super Simple Site Map / Guide */}
+      <section className="py-24 px-8 border-t border-white/5 bg-white/[0.01]">
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div className="text-center space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-secondary/10 text-accent-secondary text-[10px] font-bold uppercase tracking-widest border border-accent-secondary/20">
+              New to the Lab?
+            </div>
+            <h2 className="text-4xl font-display font-bold uppercase tracking-tight">Super Simple Map of the Lab</h2>
+            <p className="text-text-muted text-sm font-medium max-w-xl mx-auto">
+              If you get lost, here is a simple guide on what this website is and where you should go next!
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <Link to="/" className="p-6 space-card rounded-2xl border border-white/5 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
+                <Home className="w-5 h-5" />
+              </div>
+              <h4 className="text-sm font-bold mb-2 group-hover:text-accent-secondary transition-colors">1. Home Base</h4>
+              <p className="text-xs text-text-muted leading-relaxed flex-grow">
+                Start here! Meet Deepak, see his coding skills, and view the big pictures of how his computer systems work.
+              </p>
+              <div className="mt-4 flex items-center gap-1 text-[10px] font-bold text-accent-secondary uppercase tracking-wider">
+                Visit Home <ArrowRight className="w-3 h-3" />
+              </div>
+            </Link>
+
+            <Link to="/academy" className="p-6 space-card rounded-2xl border border-white/5 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
+                <BookOpen className="w-5 h-5" />
+              </div>
+              <h4 className="text-sm font-bold mb-2 group-hover:text-accent-secondary transition-colors">2. Blockchain School</h4>
+              <p className="text-xs text-text-muted leading-relaxed flex-grow">
+                A friendly school where we learn about blockchain, locks, and keys in super simple words!
+              </p>
+              <div className="mt-4 flex items-center gap-1 text-[10px] font-bold text-accent-secondary uppercase tracking-wider">
+                Enter Academy <ArrowRight className="w-3 h-3" />
+              </div>
+            </Link>
+
+            <Link to="/research" className="p-6 space-card rounded-2xl border border-white/5 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
+                <Brain className="w-5 h-5" />
+              </div>
+              <h4 className="text-sm font-bold mb-2 group-hover:text-accent-secondary transition-colors">3. Research Hub</h4>
+              <p className="text-xs text-text-muted leading-relaxed flex-grow">
+                This page! Feed the AI robot a big research paper PDF, and watch it write a short summary instantly.
+              </p>
+              <div className="mt-4 flex items-center gap-1 text-[10px] font-bold text-accent-secondary uppercase tracking-wider">
+                Explore Here <ArrowRight className="w-3 h-3" />
+              </div>
+            </Link>
+
+            <Link to="/research/synopsis" className="p-6 space-card rounded-2xl border border-white/5 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
+                <FileText className="w-5 h-5" />
+              </div>
+              <h4 className="text-sm font-bold mb-2 group-hover:text-accent-secondary transition-colors">4. Simple Story</h4>
+              <p className="text-xs text-text-muted leading-relaxed flex-grow">
+                Read a simple explanation of what this whole research is about in plain language.
+              </p>
+              <div className="mt-4 flex items-center gap-1 text-[10px] font-bold text-accent-secondary uppercase tracking-wider">
+                Read Story <ArrowRight className="w-3 h-3" />
+              </div>
+            </Link>
+
+            <Link to="/login" className="p-6 space-card rounded-2xl border border-white/5 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
+                <Lock className="w-5 h-5" />
+              </div>
+              <h4 className="text-sm font-bold mb-2 group-hover:text-accent-secondary transition-colors">5. Lawyer Room</h4>
+              <p className="text-xs text-text-muted leading-relaxed flex-grow">
+                A locked room for lawyers to upload real agreements, check for fairness, and write them into the blockchain ledger.
+              </p>
+              <div className="mt-4 flex items-center gap-1 text-[10px] font-bold text-accent-secondary uppercase tracking-wider">
+                Enter Portal <ArrowRight className="w-3 h-3" />
+              </div>
+            </Link>
           </div>
         </div>
       </section>
