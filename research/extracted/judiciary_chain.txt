@@ -1,0 +1,562 @@
+1 
+ 
+ 
+Blockchain Technology in Judiciary 
+ 
+ 
+ 
+A Concept Note  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Center of Excellence in Blockchain Technology 
+National Informatics Centre 
+Bengaluru 
+2 
+ 
+Table of Contents 
+Serial 
+No 
+Topic 
+Page 
+No 
+1
+Background
+3-4
+2 
+Blockchain Technology    
+4 
+3 
+Center of Excellence in Blockchain Technology 
+5 
+4 
+Use of Blockchain Technology in Judiciary 
+5-7 
+5
+Technology Decision 
+8
+6 
+Solution Architecture 
+ 
+8 
+7 
+Verification  
+9 
+8
+Conclusion 
+9
+9 
+Annexure 
+10-15 
+ 
+ 
+ 
+3 
+ 
+Background     
+The Indian Judiciary has been one of the early adopters of ICT.  The Indian 
+Judicial system comprises of the Supreme Court, High Courts, District and 
+Tehsil courts.  The e-Courts system has facilitated all the courts in India to 
+record the case details, facilitate easy creation of documents such as 
+summons, maintain a ledger of the certified copy requests / issued and a 
+ledger for judicial deposits made by the party. The Judgments are digitally 
+signed and stored in a repository. The use of ICT in the registries of these 
+courts has provided transparency by providing the cause list, case status, 
+judgments etc. in the respective web sites of the courts in India.   
+   
+ The Judicial process and the interaction with Stake holders 
+The Judiciary depends heavily on the documents from different pillars of the 
+Criminal Justice System namely the Prisons, Police, Forensic labs. In 
+addition, documents issued by the Government and other agencies are relied 
+upon by the Judiciary in delivering Justice to the citizens.  
+ 
+  
+While the civil cases could be filed by the advocates in the respective courts, 
+the criminal cases are initiated with the police registering a FIR which is then 
+sent to the Court. Receipt of FIR is acknowledged and if necessary, 
+proceedings could be initiated.  The police then prepares the charge sheet and 
+submits the same to the court. Traffic police also issues challans which could 
+be challenged in the courts. The proceedings take place in the Court. Notices, 
+summons are issued to the party through the police. Bail orders / conviction 
+orders are sent to the Prisons.  In the process of hearing of civil matters, the 
+details of the property and other assets are sought by the Judiciary to decide 
+the matter. In some other disputes, documents issued by Government are 
+sought.   
+The registry in the courts also maintain and issue various documents as 
+certified copies to the citizens. The accounts of all the payments received as 
+fees and judicial deposits are maintained by the registry.   
+4 
+ 
+Thus there is a need for exchange of data between the different pillars of the 
+criminal justice system, Government and Citizens. The need for trust between 
+these systems and availability of immutable, time stamped document would 
+facilitate quick delivery of Justice.   
+ 
+Blockchain Technology 
+In the traditional methods of recording transactions, the participants kept 
+their own ledger/ records. There would be intermediaries like the auditors / 
+regulators with whom agreements have to be made and to whom some fees 
+has to be paid. There could be delay in synchronizing the ledgers. The 
+duplication of efforts in maintaining multiple ledgers and vulnerability of the 
+central system could cause the network to be affected.  
+Blockchain is a decentralized distributed database (ledger) of immutable 
+records accessed by various applications over the network.  The Blockchain 
+network consists of nodes (Computer owned by the stakeholder) that are 
+geographically distributed and each node maintains the same copy of the 
+ledger.  
+Client applications of related sectors can read or append transaction records 
+to the Blockchain. Transaction records submitted to any node are validated 
+and committed to the ledger database on all the nodes of Blockchain network. 
+Committed transactions are immutable because each transaction is linked 
+with its previous block by means of hash and signature values. Consensus 
+algorithms based on voting / leader selection / lottery and distribution 
+algorithms such as Gossip, multicast etc. ensure that the submitted 
+transactions are transferred to all nodes and committed on all Blockchain 
+nodes consistently. 
+  
+ 
+ 
+5 
+ 
+ 
+Centre of Excellence in Blockchain Technology 
+ 
+NIC has set up a Centre of Excellence (CoE) to overcome these challenges in 
+line with MeitY’s strategy. The CoE provides a platform that Governments can 
+look to for consultancy, capacity building and as an incubation center where 
+the departments can develop Proof of Concepts before moving on to 
+production. 
+ 
+The CoE also helps Government departments to integrate their line-of-
+business application with Blockchain by developing the smart contracts and 
+APIs. The CoE is providing the Blockchain related Services and ICT 
+infrastructure for the government departments to integrate their systems and 
+use the BCT. 
+ 
+The Centre has explored Blockchain protocols such as Hyper ledger Saw tooth 
+and Fabric and Ethereum, and developed and deployed applications on State-
+of-the-Art Infrastructure. These development frameworks have been deployed 
+on Docker and Kubernetes thus enabling scalability and high availability. As 
+part of the project for Unified Blockchain Framework (UBF), funded by MeitY, 
+infrastructure is being created at Hyderabad, Bhubaneshwar, and Pune. 
+ 
+Blockchain Implementations in Government  
+The CoE in Blockchain Technology and developed and deployed products such 
+as Certificate Chain, Property Chain, Drug Logistics System, Blockchain for 
+eForensics that can be rolled out for the country. These system can also 
+provide access to the Judiciary for facilitating access to authentic data thus 
+reducing the time for verification of the documents and data. The details of 
+these systems are provided in Annexure-I 
+ 
+ 
+Use of Blockchain Technology in Judiciary 
+Blockchain can democratize access to the justice system by reducing   
+complexity related to availability of Trusted, Immutable, time-stamped data 
+and documents. Blockchain technology can be used under the following 
+scenarios for the Judiciary: 
+a. 
+Judicial Deposits  - Passbook in the Ledger 
+Under certain circumstances, a party is ordered to deposit the money with 
+the court. The registry then puts the money in fixed deposits in the banks. At 
+various stages in the hearing of the cases, the court might also order that a 
+portion of the judicial deposit be given to the other party. The Registry in the 
+courts maintains these ledgers.  There are instances when the deposits are 
+not claimed by the parties due to various reasons. Maintaining the judicial 
+deposit transactions in the blockchain to ensure that it is not tampered and 
+also initiating the processes of refund automatically will be another use case 
+in the Judiciary.  
+6 
+ 
+ 
+b. 
+Transfer of FIR, Charge-sheet & traffic challan data from the Police   
+The FIR and charge-sheet are issued by the Police. These documents need to 
+be presented to the court within a stipulated time. The details of the FIR are 
+captured in the case information system in the courts and then registered as 
+a case. Sometimes, even though the charge sheet is not filed, the hearings can 
+be made based on the FIR.  The charge sheet is submitted by the police to the 
+prosecution after validating the admissibility and then it is handed over to the 
+court. The Court then acknowledges the receipt and the charge sheet is 
+admitted.  
+Instead, the police / traffic police department software can store the FIR, 
+charge-sheet, traffic offence details & fine amount in the blockchain.  This will 
+facilitate the following: 
+i. 
+Certified copies of the FIR / charge sheet document are also requested 
+by the citizens. Storing these documents in the blockchain will facilitate the 
+issue of hard copies through counters, thereby facilitating the downloading of 
+soft copies by the agencies which need these documents. 
+ii. The Court can refer to the FIR metadata from the blockchain for further 
+processing without waiting for the hard copy of the FIR. 
+iii. The fine on traffic violation can also be retrieved by the traffic court to 
+dispose these cases quickly.  
+E.  Publishing the notices and summons to the parties served by the Police  
+The time and effort needed to issue   summons and notices to parties can be 
+greatly reduced by ensuring that the registry stores these documents in the 
+blockchain and enables the police staff to download these without the need to 
+visit the court every day.  
+f. 
+Issue of bail orders by the Court 
+Bail orders issued by the court are required to be presented in prisons in the 
+shortest possible time.  Enabling the bail orders to be stored in Blockchain 
+will facilitate in-time retrieval of the bail order document. The immutability of 
+these documents ensures that the authorities at the prison and the parties 
+involved can trust the digital document. 
+g. 
+Use of land records & Registration data  
+The land records & registration data on the blockchain can be used by the 
+Judiciary during the different stages in the case proceedings to check for the 
+transaction details and ownership of the land or property.  
+ 
+7 
+ 
+h. 
+Use of certificates and documents issued by Government departments 
+Certificates such as marks-sheet, admission orders, caste, income, Birth, 
+death certificates that are stored by the issuing authorities in the Blockchain 
+can be used by the Judiciary as proof of claims. 
+i. 
+Forensics Reports 
+The eForensics reports that are relied upon by the Judiciary can be retrieved 
+from the Blockchain.  
+j. 
+Securing evidence  
+Digital evidence stored conventionally on a CD or pen drive is more 
+susceptible to data loss. The disc may be damaged or misplaced, whereas the 
+data stored on a centralized system could be tampered with more easily. 
+Blockchain could be used for securing evidence to be presented in court 
+proceedings such as screenshots of websites, photos or any other digital or 
+digitized content, and contracts without getting tampered. Uploading evidence 
+to the blockchain in real-time, allows for reliable sourcing as well as storage. 
+Benefits 
+Implementing blockchain in Judiciary & other pillars of Criminal Justice 
+System will provide the   necessary trust that each of the stakeholders require. 
+Specifically, following benefits are envisaged -  
+ 
+Maintenance of the Judicial deposits registers will ensure that no 
+tampering occurs and also automate certain business tasks which would have 
+otherwise be dependent on human discretion.  
+ 
+Since the documents are available in the blockchain, the need for 
+certified copies of these will be reduced to a great extent as the participating 
+agencies can directly refer to the documents in the blockchain. 
+ 
+Reduction in time taken for movement of the documents between these 
+pillars can improve the efficiency of the systems. 
+ 
+The aggrieved parties will also be able to rely on the data available on 
+the blockchain thereby reducing dependencies on lawyers.  
+ 
+Verification of facts from documents issued by other departments such 
+as land records, property registration etc. will help in quicker disposals. 
+ 
+ 
+ 
+ 
+8 
+ 
+Technology decisions 
+From the above, it is evident that there are two types of assets that could 
+probably be stored in the blockchain.  
+1. Documents - Such as case files including the Judgment. These would 
+be bulky and could be stored in off-chain database (Document 
+Management System) with their hash in the blockchain. Whenever 
+these documents are being referenced, the authenticity of the 
+documents could be verified. 
+ 
+2. Data of various departments used by the courts or sent by the courts 
+to other departments. Critical parameters required for decision making 
+can be stored in the Blockchain. 
+ 
+3. Financial transactions in terms of   judicial deposits and payments to 
+parties etc. is a potential candidate for which Blockchain could be 
+leveraged. 
+ 
+Solution Architecture 
+Various sections of the Judiciary like Pending Branch, PS to Hon’ble Judges, 
+Accounts sections would be storing data or documents into the Blockchain.  
+Other stakeholders who act as consumers will be able to retrieve the 
+documents. The on-boarding of the various stakeholders who would like to 
+consume the data from the Judiciary Chain system or the use of API 
+verification will be done by the portal. The architecture for facilitating these 
+activities is given below in a pictorial form. 
+ 
+9 
+ 
+The process of storing the documents in the Blockchain will greatly aid as 
+supplementary 
+to 
+the 
+existing 
+processes 
+followed 
+by 
+various 
+departments/offices, and organizations, etc. In computerized offices, the data 
+is stored in the databases after the approval of the issuing authority. The 
+existing processes will continue to work as before, except that the digitally 
+signed documents will also be stored in the Blockchain by consuming APIs 
+provided for the purpose.  The Judiciary Chain system will also record the 
+changes made to the documents as and when there is a change in the 
+document by way of judgement and all, and the end-user will be able to view 
+those changes. 
+Verification 
+Retrieval of documents from the Blockchain can be enabled through portal 
+for verification for any verifying parties or Government Departments. The 
+verifying authority will be able to view the details on the portal without 
+depending on a third party for verification. The history of transactions on 
+the case can also be viewed.  
+Alternatively, API can be used to fetch the case data and integrate with their 
+applications for automatic verification.    
+Using the APIs provided by the other chains like Property chain, certificate 
+chain and eForensic chain the data can be fetched and viewed for the purpose 
+of judgement. Thus the different chains can exchange the data based on key 
+parameters for the verification purpose.  
+ 
+10 
+ 
+Conclusion 
+Blockchain is a technology that enables the authenticated verification of the 
+data. Integration with the existing Judicial system will ensure that all 
+sensitive data related to the case documents are updated in Judicial Chain. 
+This will control the data haking and manipulation of the data related to the 
+case history.  
+ 
+ 
+11 
+ 
+Annexure – I 
+ 
+ 
+ 
+Blockchain Solutions in Government 
+ 
+ 
+1. 
+e-forensics 
+Online portal for the processing of forensics examination of exhibits. 
+Automates the complete workflow of the forensics examination from 
+registration to dispatch of reports. 
+ 
+ 
+ 
+Registration of exhibits is done at the front desk of the FSLs and exhibits are 
+assigned to concerned divisions.  
+Pre-examination of the exhibits is done, and acceptance/rejection of exhibits 
+is recorded in the Blockchain. 
+In post-examinations observations, opinion, methods used and notes entry are 
+captured. Report is prepared and the report readiness is entered in the system 
+and the concerned officials stored in the Blockchain.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+12 
+ 
+Features 
+• 
+Registration of cases with forwarding authority and parcel details. 
+• 
+Pre-examination - acceptance/rejection of exhibits. 
+• 
+Post examination – observations, opinion, methods adopted and notes. 
+• 
+Report ready entry – Email and SMS alert to forwarding authority. 
+• 
+e-signing of reports and uploading of reports – Report sharing with 
+police/court. 
+• 
+Despatch of reports with/without exhibits. 
+• 
+OTP authentication to login into eforenisics. 
+• 
+Dashboards to various stake holders to know the status of cases and 
+pendency monitoring 
+Highlights 
+• 
+Software can be used by CFSLs/SFSLs/RFSLs. 
+• 
+102 FSLs are on-boarded into eforensics software. 
+• 
+11.29 lakhs registrations done in eforensics portal far. 
+• 
+Data sharing with police and court and integration with ICJS portal. 
+• 
+Dashboards to various stake holders to know the status of cases and 
+pendency monitoring. 
+• 
+E-signing of forensic report and uploading of reports. 
+• 
+APIs developed to share data and reports with the forwarding authority.
+Impact 
+• 
+Registration of exhibits is made easy as FIR data is fetched from ICJS 
+portal. 
+• 
+Status of examination and pendency monitoring. 
+• 
+Dashboards for various stake holders to monitor the progress of 
+examinations. 
+Future plan 
+• 
+Mobile app for e-forensics system. 
+• 
+Parameters capturing for the forensic examinations 
+13 
+ 
+ 
+2. Certificate Chain 
+ 
+The challenges in the current system of issue and use of the certificates 
+amongst the stakeholders include rampant use of fake documents for 
+exploiting Government benefits, enhanced paperwork for document 
+verification, delay in the process for service delivery etc.  
+ 
+To overcome the above problems associated with paper-based documents, 
+National Informatics Centre (NIC) has adopted Blockchain technology to build 
+‘Certificate Chain’ for secured storage and retrieval of such records.   The main 
+advantage of this   Certificate Chain system is that the Certificate can be 
+accessed online by any authorised person / institution and be assured that it 
+is genuine   and not tampered – all this without the need for an intermediary.  
+This provides the necessary trust to the agencies which use these documents 
+to ascertain the eligibility for providing benefit to the citizens.  
+ 
+ 
+ 
+CBSE Chain has been built to record marks-sheet of Class X and XII students. 
+Marks-sheet of three years totalling about 1 Crore are available in Blockchain. 
+Certificate Chain for Karnataka has been established and certificates of X and 
+XII from year 2012 to year 2021 have been stored in this chain. About 1.2 
+Crore marks-sheet stored in the chain can be used by other agencies for 
+verification. 
+ 
+Some states are testing this in the staging environment. Certificate Chains 
+are planned to be used for the admission to professional colleges, beneficiary 
+schemes and recruitments in Karnataka from this year for verification of 
+eligibility. 
+ 
+ 
+3. Document Chain  
+ 
+Document Chain is a single platform that provides the issuing authorities and 
+consuming entities a standard procedure for storage and retrieval of any 
+document issued by the government such as caste, income, ration card, 
+driving license, birth & death certificates etc.   
+14 
+ 
+ 
+The Document Chain provides a mechanism for any agency to verify the 
+details of the applicant. It could help government departments, educational 
+institutions, job providers and financial institutions to get the documents 
+verified without the need for a third party. 
+ 
+Birth and Death Certificates of Planning Department-Karnataka, from April 
+2022, have been getting recorded. Caste and Income Certificates of Revenue 
+Department-Karnataka, from Jan 2018 are getting recorded.    These 
+Certificate Chains are being used by the systems for admission to professional 
+colleges in Karnataka from  the year 2022. Some states are testing this in the 
+staging environment. 
+ 
+4. Logistics Chain 
+ 
+ 
+ 
+One of the use cases of Logistics chain is the online Supply Chain 
+Management System for medicines (Aushada) of Karnataka.   The Aushada 
+system is integrated with Blockchain to record the transactions related to 
+movement of drugs from the manufacturer to supplier to warehouse and then 
+to the hospitals including quality checks. Smart contracts provide the checks 
+and balances at each stage in the supply chain and also ensure that non-
+standard drugs are not moved down the supply chain.  
+ 
+Patient can check the details of the manufacturer, expiry details & quality of 
+the medicine before consumption. It provides traceability in the transactions 
+(track & trace) reducing the changes of entry of spurious drugs, enhances 
+precision and brings transparency. Efficient recall system can be 
+implemented when the quality of the drug is found to be not-of-standard. The 
+resulting integrated supply chain system brings in all stake holders to a 
+common platform. This system is working since last three years. 
+ 
+ 
+ 
+ 
+ 
+15 
+ 
+5. Remote Voting Chain - PoC 
+ 
+The remote voting system is blockchain-based distributed system developed 
+to enable migrants and other in-service voters posted at different locations to 
+cast their votes from   their place of work (Host Constituency) without 
+commuting to their Parent constituencies, thereby saving time and money, 
+and enabling higher voter turnout. A Proof of Concept (PoC) was developed as 
+per the directions of Election Commission of India and demonstrated. 
+ 
+ 
+ 
+The system enables secured storage of details of remote votes, ballots, and 
+encrypted vote in the Blockchain. The   returning officer of the parent 
+Constituency only would be authorised to download all encrypted votes from 
+the Blockchain on the day of counting and decrypt the same to count the 
+votes. 
+ 
+ 
+6. Property Chain 
+ 
+Blockchain powered property management system enables the availability of 
+common ledger of the property facilitating a single source of truth. The 
+property details and all the transactions on the property ( pledge, release of 
+pledge, inheritence mutation, sale, gift  , acquisition initiation, allienation,  
+etc) would be stored in the blockchain so that even while the process of the 
+mutation is being executed in the land records system to reflect the 
+transactions on the property, all the stakeholders will be able to see the 
+complete history before taking decision. The prospective buyers will benefit 
+greatly in ascertaining the ownership and also the rights , liabilities , details 
+of GPA etc.  This will greatly reduce the litigations and speed up the disposal 
+of disputes/cases.  
+ 
+ 
+Register
+Approve
+Vote
+Count
+Result
+16 
+ 
+ 
+ 
+ 
+ 
+Bhoomi, e-asthi, e-swathu applications of Karnataka are   integrated with 
+Property Chain for recording the agricultural and non-agricultural property 
+details and transactions on them.  
+ 
+  blockchain.gov.in  
+ sio-kar@nic.in

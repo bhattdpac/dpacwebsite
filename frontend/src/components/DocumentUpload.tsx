@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import api from '../api/api';
 import { Upload, X, FileText, CheckCircle, AlertCircle } from 'lucide-react';
+import axios from 'axios';
 
 interface DocumentUploadProps {
   onUploadSuccess: () => void;
@@ -46,8 +47,12 @@ const DocumentUpload = ({ onUploadSuccess, onClose }: DocumentUploadProps) => {
         onUploadSuccess();
         onClose();
       }, 1500);
-    } catch (err: any) {
-      setError(err.response?.data?.file?.[0] || err.response?.data?.title?.[0] || 'Failed to upload document.');
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.file?.[0] || err.response?.data?.title?.[0] || 'Failed to upload document.');
+      } else {
+        setError('An unexpected error occurred.');
+      }
     } finally {
       setLoading(false);
     }

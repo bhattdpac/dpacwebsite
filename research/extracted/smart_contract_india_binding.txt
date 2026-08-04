@@ -1,0 +1,373 @@
+68 
+International Journal of Law 
+www.lawjournals.org 
+ISSN: 2455-2194 
+Received: 06-06-2025, Accepted: 07-07-2025, Published: 22-07-2025 
+Volume 11, Issue 7, 2025, Page No. 68-70 
+ 
+Smart contracts & Indian law legally binding or technically blinded 
+Swati Suman1, Sheershadeb Das2  
+1 Department of Law, Legal Intern, Lex Resolutio, West Bengal, India 
+2 CEO, Department of Law, Institution- Lex Resolutio State- West Bengal, Country- India 
+ 
+ 
+ 
+ 
+Abstract 
+Smart contracts, powered by blockchain technology, are reshaping the way agreements are formed and executed across 
+sectors—from finance to supply chains. These self-executing contracts operate on coded instructions and eliminate the need 
+for intermediaries, making transactions faster and more secure. However, their innovation raises pressing questions within the 
+domain of contract law, particularly concerning their legal validity, enforceability, and dispute resolution under existing 
+statutory frameworks such as the Indian Contract Act, 1872 and the Information Technology Act, 2000. This paper examines 
+the compatibility of smart contracts with established legal doctrines, evaluates the adequacy of the current legislative apparatus 
+in India, and explores international models to propose a legally coherent approach for integrating smart contracts into the 
+Indian legal system. 
+ 
+Keywords: Smart contracts, blockchain technology, contract law, legal validity, enforceability, Indian Contract Act, 1872, 
+legal frameworks, technological innovation, international models, digital transactions, self-executing contracts, comparative 
+legal analysis 
+Introduction 
+The digital revolution has transformed nearly every aspect 
+of modern life, and the realm of contract law is no 
+exception. Among the most disruptive innovations in recent 
+years is the emergence of smart contracts—agreements 
+written in computer code and executed on decentralized 
+blockchain platforms. Smart contracts—digital agreements 
+autonomously executed on blockchain platforms—pose 
+novel questions about the applicability of conventional legal 
+principles to a technologically altered transactional 
+framework. Unlike traditional contracts, which rely on 
+human interpretation and judicial enforcement, smart 
+contracts are encoded with logic-based commands that self-
+execute upon the fulfilment of pre-defined conditions. 
+While this technology holds enormous potential for 
+improving efficiency and reducing transaction costs, it also 
+raises complex legal questions. Can a code-based agreement 
+be considered a valid contract under Indian law? How are 
+disputes to be resolved when human interpretation is 
+bypassed? This blog delves into these pressing questions. 
+ 
+What Are Smart Contracts? 
+The term "smart contract" was first coined by cryptographer 
+Nick Szabo in the late 20th century to denote digital 
+protocols that facilitate, verify, or enforce contractual 
+performance [1]. A smart contract is a digital agreement that 
+runs itself and has its conditions encoded directly into lines 
+of code. These contracts operate on blockchain platforms 
+such as Ethereum, ensuring transparency, immutability, and 
+automation [2]. The main characteristics of smart contracts 
+include automation, where the execution of contract terms 
+occurs without third-party intervention; immutability, which 
+means once the contract is deployed it cannot be altered; 
+and a trust less environment where parties do not need to 
+trust each other, but only the code. From a legal standpoint, 
+smart contracts may be categorized as either fully automated 
+(executed entirely via code) or hybrid contracts (where 
+coded 
+instructions 
+are 
+supplemented 
+by 
+traditional
+contractual language). 
+Smart contracts generally fall into two categories: fully 
+automated smart contracts, which are entirely governed by 
+code and execute without manual intervention (such as 
+automatic release of crypto tokens upon payment), and 
+semi-automated contracts, which combine code with 
+traditional contractual terms and are often used in supply 
+chain or asset tracking systems. This bifurcation bears 
+relevance when determining the contractual elements under 
+the Indian legal framework. 
+ 
+Compatibility with the Indian Contract Act, 1872 
+The Indian Contract Act, 1872, governs the formation and 
+enforceability of contracts in India. Under Section 10 of the 
+Indian Contract Act, 1872, a valid contract must be 
+constituted by free consent, lawful consideration, lawful 
+object, competent parties, and mutual intention to create 
+legal obligations [3]. Assessing smart contracts against these 
+parameters reveals interpretative ambiguities. When applied 
+to smart contracts, these elements pose interpretative 
+challenges. The formation of offer and acceptance in smart 
+contracts is primarily conducted through algorithmic 
+protocols. Though such exchanges may constitute valid 
+expressions of assent, the legal characterization of 
+consent—as defined under Sections 13 and 14—raises 
+critical concerns about whether such acceptance can be truly 
+considered ‘free’ and ‘informed’ [4].  
+Furthermore, while consent exists in a coded structure, the 
+intent behind it is difficult to ascertain in the absence of 
+traditional expressions or negotiations. The absence of 
+negotiation, potential opacity of the code, and asymmetry in 
+technical understanding may compromise the voluntariness 
+and informed nature of consent. Moreover, consideration, 
+typically in the form of cryptocurrency or tokenized assets, 
+while lawful under general principles, lacks regulatory 
+clarity in India [5]. The legal capacity and lawful object 
+remain relatively unaffected by the technological medium. 
+Thus, while smart contracts may align with the statutory 
+International Journal of Law 
+www.lawjournals.org 
+69 
+criteria theoretically, the lack of judicial interpretation and 
+codified recognition casts uncertainty on their enforceability 
+under Indian laws in case of disputes. 
+ 
+Legislative Recognition in India and Comparative 
+Jurisdictions 
+India currently lacks legislation that expressly recognizes or 
+defines smart contracts. Nevertheless, the Information 
+Technology Act, 2000 provides partial support. Section 10A 
+recognizes the validity of contracts formed through 
+electronic means [6], while Sections 3 and 4 validate digital 
+signatures and electronic records. However, these provisions 
+do not resolve the legal ambiguity surrounding the 
+enforceability of self-executing code on whether coded 
+terms and blockchain-based execution fulfil the legal 
+thresholds of contract formation, particularly where such 
+code is not accompanied by human-readable legal language. 
+In the US, the states like Arizona and Tennessee have 
+passed legislation that acknowledge blockchain contracts 
+and smart records are legal [7]. The UK Law Commission, 
+through its 2021 report, affirmed that English common law 
+can 
+accommodate 
+smart 
+legal 
+contracts, 
+albeit 
+recommending judicial and legislative clarifications [8]. 
+Similarly, Singapore’s Smart Nation initiative and the EU’s 
+Digital Finance Package reflect proactive regulatory 
+engagements and are actively working on integrated legal 
+frameworks that acknowledge and regulate decentralized 
+legal structures [9]. 
+India, on the other hand, remains in a nascent stage, lacking 
+both doctrinal clarity and regulatory infrastructure to 
+facilitate the integration of smart contracts into mainstream 
+legal practice. These global efforts provide valuable 
+reference points for India to consider as it contemplates the 
+integration of smart contracts into its legal system. 
+ 
+Enforceability and Jurisdictional Challenges 
+One of the most pressing issues surrounding smart contracts 
+is their enforceability and the mechanisms for dispute 
+resolution, these include- the interpretation of coded terms, 
+redressal for coding errors, and the rigidity of automated 
+execution. Unlike traditional contracts, which can be 
+interpreted and modified through human judgment; smart 
+contracts are rigid, operating strictly according to their code. 
+This rigidity poses problems when ambiguities arise or 
+when unintended consequences result from flaws in the 
+code. The immutable nature of blockchain prevents any 
+post-facto correction, even when unintended consequences 
+emerge. Errors, once coded and executed, are typically 
+irreversible due to the immutability of blockchain platforms 
+and cannot be changed even if unintended consequences 
+emerge. 
+The absence of judicial interpretation makes it difficult for 
+courts to ascertain intent or offer equitable relief in cases of 
+malfunction. The judiciary’s conventional reliance on 
+textual interpretation and equitable principles cannot easily 
+be reconciled with the binary logic of code. Moreover, the 
+global and borderless nature of blockchain complicates 
+jurisdictional determination, raising the question of which 
+court holds authority in the event of a dispute as blockchain 
+systems are decentralized. The lex loci contractus becomes 
+blurred when no clear territorial nexus exists between 
+contracting parties and the digital platform [10]. 
+For instance, in the event of wrongful execution due to a 
+programming error, determining the locus of liability—
+whether it lies with the developer, user, or platform—
+requires 
+a 
+nuanced 
+legal 
+framework, 
+potentially 
+incorporating doctrines of negligence, misrepresentation, or 
+product liability. Presently, Indian law does not provide 
+adequate recourse for such situations unless parties opt for 
+off-chain arbitration or incorporate dispute resolution 
+clauses through hybrid models [11]. 
+  
+Regulatory and Institutional Lacunae in India 
+India’s current legal and policy framework falls short in 
+addressing the unique challenges posed by smart contracts. 
+There is no statutory definition or classification of smart 
+contracts, leaving them in a legal grey area. Furthermore, 
+many legal practitioners, regulators, and members of the 
+judiciary lack the technical expertise necessary to interpret 
+and adjudicate disputes involving blockchain technology. 
+Moreover, taxation, reporting, and compliance rules are 
+ambiguous when contracts involve cryptocurrencies or 
+cross-border obligations, adding another layer of legal 
+complexity. To bridge these gaps, India should consider 
+formulating specific regulations that define smart contracts 
+and outline their legal implications. The regulatory 
+authorities such as the RBI and SEBI have yet to evolve 
+clear guidelines regarding blockchain-enabled transactions, 
+especially those involving tokenized consideration to ensure 
+financial compliance and transparency [12]. This knowledge 
+gap creates a bottleneck in the legal acceptance and 
+application of smart contracts. 
+So, it is suggested that the government should promote 
+public-private partnerships and regulatory sandboxes to test 
+innovative smart contract applications in a controlled 
+environment [13]. A multi-stakeholder approach involving 
+legislative bodies, regulators, legal professionals, and 
+technologists is imperative. Regulatory sandboxes, as 
+implemented in fintech sectors, could serve as experimental 
+platforms to understand the implications and operational 
+mechanics of smart contracts. Standardizing and certifying 
+smart contract development could also enhance trust and 
+reliability in these digital agreements. There is also a 
+pressing need for educational reform to include legal-
+technical literacy in law curricula and judicial training 
+modules. 
+ 
+The Way Forward: A Hybrid Approach 
+India should pursue a hybrid approach that aligns traditional 
+legal principles with modern technological innovations. 
+Rather than viewing smart contracts as a replacement for 
+conventional 
+contracts, 
+they 
+should 
+be 
+seen 
+as 
+complementary tools that enhance legal and transactional 
+efficiency. India must strive toward a harmonized 
+framework that accommodates technological innovation 
+within its legal architecture. Legal recognition can be 
+achieved through amendments to the Indian Contract Act or 
+the introduction of a new regulatory statute addressing 
+digital transactions and decentralized technologies. Drafting 
+smart contracts with both code and human-readable legal 
+text can help bridge the gap between automation and legal 
+interpretation this model is known as bifurcated contracts. 
+[14]  
+The incorporation of dispute resolution clauses, either 
+through 
+off-chain 
+arbitration 
+or 
+blockchain-based 
+decentralized courts, may provide procedural safeguards. 
+Alternatively, judicial pronouncements can incrementally 
+evolve doctrines recognizing the functional equivalence of 
+International Journal of Law 
+www.lawjournals.org 
+70 
+code and written expression. India can also explore the 
+concept of blockchain-based dispute resolution mechanisms, 
+often referred to as “blockchain courts,” to handle low-value 
+or high-frequency digital contract disputes efficiently [15]. 
+Ultimately, legal certainty, predictability, and accessibility 
+must remain paramount, even as the law embraces emerging 
+technologies. 
+By 
+combining 
+legal 
+foresight 
+with 
+technological adoption, India can establish a robust 
+regulatory framework that promotes innovation without 
+compromising the rule of law. Investing in legal education 
+and judicial capacity building is essential to ensure the legal 
+ecosystem is prepared for the challenges posed by smart 
+contracts. 
+ 
+Conclusion 
+Smart contracts signify a transformative development in 
+contract law and commercial practice and represent a 
+transformative leap in the way contracts are formed, 
+executed, and enforced. Using the power of blockchain 
+technology offers unprecedented efficiency, transparency, 
+and security. Their potential to automate transactions, 
+reduce costs, and enhance trust is indisputable. However, 
+these advantages come with significant legal and regulatory 
+challenges, especially in jurisdictions like India where 
+traditional legal doctrines have yet to catch up with digital 
+realities. Their current deployment exists in a legal vacuum, 
+as India still continues to rely on pre-digital legal constructs. 
+Bridging this gap necessitates both legislative innovation 
+and judicial adaptability. 
+The current absence of legal recognition, combined with 
+enforcement and jurisdictional hurdles, highlights the urgent 
+need for legislative clarity. By examining international legal 
+models and tailoring them to adapt to India’s unique socio-
+economic and legal context, a forward-looking framework 
+can be envisioned—one that upholds legal sanctity while 
+fostering technological advancement. Our lawmakers can 
+pave the way for a future where smart contracts coexist 
+seamlessly with conventional legal systems. Embracing a 
+proactive and inclusive approach will ensure that 
+technological 
+innovation 
+strengthens, 
+rather 
+than 
+destabilizes, the legal foundations of commerce and society. 
+The convergence of law and technology should not be seen 
+as antagonistic, instead of that is should be seen as a 
+synergistic evolution towards a more efficient and inclusive 
+legal system.  
+ 
+References 
+1. Nick Szabo, Smart Contracts: Building Blocks for 
+Digital 
+Markets, 
+1996, 
+https://www.fon.hum.uva.nl/rob/Courses/InformationIn
+Speech/CDROM/Literature/LOTwinterschool2006/szab
+o.best.vwh.net/smart_contracts_2.html  
+2. Vitalik Buterin, Ethereum White Paper: A Next 
+Generation 
+Smart 
+Contract 
+& 
+Decentralized 
+Application 
+Platform 
+2014, 
+https://ethereum.org/en/whitepaper/ 
+3. The Indian Contract Act, No. 9 of 1872, § 10. 
+4. Id. §§ 13–14. 
+5. Reserve Bank of India, Master Direction – Know Your 
+Customer (KYC) Direction, 2016 (Updated May 2021), 
+para. 3.2.1(iv), https://rbi.org.in 
+6. The Information Technology Act, No. 21 of 2000, § 
+10A. 
+7. Arizona Rev. Stat. Ann. § 44-7061 (2017); Tenn. Code
+Ann. § 47-10-202, 2018. 
+8. UK Law Commission, Smart Legal Contracts: Advice 
+to 
+Government, 
+2021, 
+https://lawcom.gov.uk/project/smart-contracts/ 
+9. Singapore Smart Nation and Digital Government 
+Office, 
+Smart 
+Nation 
+Overview, 
+https://www.smartnation.gov.sg 
+10. James E. Bailey, Facing the Internet Jurisdiction 
+Challenge, 33 Ga. J. Int’l & Comp. L. 111, 2004. 
+11. Max Raskin, The Law and Legality of Smart Contracts, 
+1 Geo. L. Tech. Rev. 305, 325–26 ,2017. 
+12. Reserve Bank of India, Report of the Inter-Ministerial 
+Committee 
+on 
+Virtual 
+Currencies 
+2019, 
+https://dea.gov.in/reports/committee  
+13. SEBI, Framework for Regulatory Sandbox 2020, 
+https://www.sebi.gov.in 
+14. UK Law Commission, Smart Legal Contracts, supra 
+note [8], at 29–30. 
+15. Primavera De Filippi et al., Blockchain and the Law: 
+The Rule of Code, 51 Harv. Int’l L.J. 1 2019. 

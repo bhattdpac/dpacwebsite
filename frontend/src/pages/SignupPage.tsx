@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import api from '../api/api';
 import { Shield, User, Mail, Lock, Briefcase, Users } from 'lucide-react';
+import axios from 'axios';
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -24,12 +25,16 @@ const SignupPage = () => {
     try {
       await api.post('/auth/register/', formData);
       navigate('/login', { state: { message: 'Account created successfully! Please log in.' } });
-    } catch (err: any) {
-      const errors = err.response?.data;
-      if (errors) {
-        setError(Object.values(errors).flat().join(' '));
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        const errors = err.response?.data;
+        if (errors) {
+          setError(Object.values(errors).flat().join(' '));
+        } else {
+          setError('Failed to create account. Please try again.');
+        }
       } else {
-        setError('Failed to create account. Please try again.');
+        setError('An unexpected error occurred.');
       }
     } finally {
       setLoading(false);

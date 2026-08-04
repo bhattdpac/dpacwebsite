@@ -1,0 +1,451 @@
+1 
+SMART CONTRACTS: FUNCTIONING AND LEGAL ENFORCEABILITY IN 
+INDIA 
+Sannidhi Agrawal1 
+INTRODUCTION 
+In the words of Milton Friedman, the 1976 Nobel Laureate for Economics, “The three 
+primary functions of a government are law and order, defence, and contract enforcement.” 
+The last function is generally performed through deterrence, wherein penal provisions are set 
+for parties who violate the terms and conditions laid down in the contracts; and such 
+provisions are enforced through adjudication, upon their violation. However, keeping the 
+traditional methods of contract enforcement aside, there exists a lot of potential in technology 
+to revolutionise the way contracts are performed. Smart contracts provide the platform to do 
+exactly that.2  
+They are essentially self-executing, digitally encrypted contracts, which make use of block 
+chain technology to ensure due performance and execution of contracts virtually, so as to 
+provide a smooth and trouble-free experience.  
+Although so far, there is no concrete legislation which deals with smart contracts, the 
+Telecom Regulatory Authority of India (TRAI) released a notification in 2018 which briefly 
+defined the term. It stated that they work on a programmable code which can implement pre-
+determined tasks or rules so as to check regulatory compliance in advance, in the absence of 
+human intervention. Further, it mentioned that such contracts are suitable for a DLT 
+(Distributed Ledger Technology) system to formulate a digital agreement, with certainty 
+(owing to cryptography) that the agreement has been executed in the ledger of every party to 
+the agreement.3 
+Through this paper, the researcher aims to study the following objectives: 
+1 Student, NMIMS School of Law, Mumbai. 
+2 Punit Shukla, “How India's government can build better contracts with block chain”, World Economic Forum 
+(October 4, 2019). 
+3  Telecom Regulatory Authority of India, “The Telecom Commercial Communications Customer Preference 
+Regulations, 2018”, Gazette of India (July 19, 2018). 
+International Journal of Law and Social Sciences (IJLS) 
+Volume 7, Issue 1, 2021  │  P-ISSN No: 2454-8553 
+2 
+
+To understand the operation and functioning of smart contracts.
+
+To analyse the pros and cons of switching to smart contracts.
+
+To examine whether there are any statutory provisions which could potentially govern
+contracts in digital form.
+
+To gauge the applicability of smart contracts across various sectors.
+
+To ascertain the legal validity and enforceability of smart contracts in India.
+WHAT ARE SMART CONTRACTS? 
+In 1994, it was uncovered that since cryptography is decentralized in nature, it could be used 
+to improve the process of execution of a contract virtually. This took the shape of ‘smart 
+contracts’. Block chain technology eliminates the requirement of any intermediaries (and 
+subsequently, unnecessary human interaction in the form of calls and emails) owing to its 
+decentralized nature. Thus, they operate on P2P (Peer-to-peer) technology instead of being 
+maintained under a central server. As a result, a lot of time is saved and it leads to avoidance 
+of any conflict which may arise owing to a third party.4 They rule out room for human 
+intervention of any sort, thereby eliminating the risk of human error. Further, they cannot be 
+altered once the agreement is finally codified, even if either party wishes to modify the terms 
+in their favour.5 Additionally, they help in doing away with transactional and procedural costs 
+associated with negotiations (paperwork) and verification (commissions); since there is no 
+intermediary.6 
+The key feature of a smart contract is that it is self-performing in nature, i.e. the terms of the 
+agreement between the parties to the contract are directly incorporated into lines of the code. 
+The code is contained in a distributed block chain network, and it comprises all the agreement 
+terms. Apart from the agreements, it consists of information that enables execution of the 
+transactions and makes sure that these transactions are fully tracked, permanent, irreversible 
+and time stamped. 7 Every transaction carried out by the smart contract is placed as a block 
+4 STA Law Firm, “The Enforceability of Smart Contracts in India”, “Mondaq (December 13, 2019).” 
+5 Vijay Pal Dalmia, “India: Blockchain And Smart Contracts – Indian Legal Status”’, Mondaq (February 5, 
+2020). 
+6 Id. 
+7 Supra note 3. 
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553 
+3 
+on the platform, which helps in establishing a clear audit trail, and erasing or wiping- it out 
+is an arduous task. 8 
+The important characteristics of a smart contract are as follows: 
+
+Once it has been released, it is not possible for anyone, including the owner or creator
+to alter its terms.
+
+Its performance and completion do not require submission of any physical documents.
+
+Although users may be anonymous, the details of each transaction are recorded and
+registered.
+
+Transactions under smart contracts are irreversible in nature.9
+There can be two types of smart contracts, the first one being contracts which are entered into 
+in the absence of any enforceable text-based contract governing them. For instance, when two 
+parties agree in oral terms, the business relationship they wish to maintain and proceed to 
+capture that understanding into executable code; it is termed as a “code-only smart contract”. 
+The second type of contract can be used to execute certain clauses of a conventional text-
+based contract when it consists of provisions for the same. They may be termed as “ancillary 
+smart contracts”.10 
+The main point of difference between a smart contract and a traditional contract is that the 
+former is a self-executing computer programme, which cannot be tampered with by parties 
+and works on complicated block chain technology. On the other hand, the latter relies on the 
+performance of the legal terms agreed upon by the parties, which can be modified at any 
+given parties with their mutual consent and leaves room for conflicts.11 Further, the risk 
+factor associated with conventional contracts is very high, as there are chances of non-
+performance. Whereas in case of smart contracts, since they are automated, the risk is 
+minimised.12 
+8 Rishi A, “The Legality of Smart Contracts in India”, India Corp Law (December 10, 2017). 
+9 Supra note 3. 
+10 Stuart Levi and “Alex Lipton, “An Introduction to Smart Contracts and Their Potential and Inherent 
+Limitations”, Harvard Law School Forum on Corporate Governance” (May 26, 2018). 
+11 Supra note 4. 
+12 Kashish Khattar, “Everything you need to know about Smart Contracts”, iPleaders (June 2, 2018). 
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553 
+4 
+ 
+HOW DO SMART CONTRACTS WORK? 
+The code contains the terms of the smart contract. Thus, the contract comprehends, approves 
+and automatically executes any transaction which in line with the terms. The contract triggers 
+itself once the predetermined terms and conditions are met. Moreover, once the contract is 
+executed, the obligations (which are encoded) cannot be paused mid-way; making 
+the contract self-enforcing.13 
+At present, such contracts can smoothly carry out two types of transactions that are present in 
+numerous contracts:  ensuring the payment of funds post the occurrence of a certain event; 
+and imposing monetary penalties upon lack of fulfilment of certain conditions.14 
+For instance, if a contract of rent is converted into a smart contract so as to assess 
+its effectiveness and efficiency; then the tenant will pay the rent to the landlord 
+in cryptocurrency. Once the payment is made, the code will carry out the respective 
+transaction according to the terms of the contract that were entered into the code. If the said 
+transaction is successfully carried out, a receipt will be delivered to the landlord. Post that, 
+they will release the key to the house. This system is based on the ‘If-then’ principle, and 
+everyone involved in the block chain will observe the transaction and become witness 
+to the contract. If the landlord releases the key, then they will definitely receive the 
+amount. Likewise, if the tenant pays the rent amount, they will definitely receive the key. 
+Therefore, one transaction cannot be completed in the absence of the other, which ensures 
+effectiveness and efficiency of this mode of transaction.15 
+The if-then principle can be explained best by- “If ‘x’ condition is fulfilled, ‘then’ y 
+obligation must be enforced”. This feature makes smart contracts extremely lucrative for the 
+insurance industry and the financial services sector. Moreover, creation of smart contracts is 
+easier when there are bare minimal to none non-operational clauses involved. Since 
+such clauses are ambiguous and leave room for interpretation, they are unsuitable for 
+smart 
+13 Supra note 7. 
+14 Supra note 9. 
+15 Supra note 3. 
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553 
+5 
+contracts16. They are well suited for cases where the agreement has mechanical 
+and straightforward clauses, and well defined outcomes”.17 
+The functioning can be further explained with the help of another example. Say, one A 
+wishes to buy a flat in a building being constructed by B, but is unable to afford the full price 
+of the flat. Thus, they avail the loan facility from C, which is a bank. Conventionally, A 
+would have to provide personal information to verify their identity, and also undergo a credit 
+verification process. The process would be time consuming, and it would involve multiple 
+people who would demand compensation in the form of commission for the services 
+rendered. All this would add to the overhead costs. However, with the help of block chain 
+technology, C would be able to download the required information from one of A’s blocks so 
+as to make a quick decision about their identity and credibility; thereby significantly reducing 
+the turnaround time for all parties involved. Post this verification, all parties to the transaction 
+would enter into a smart contract wherein the loan amount will be disbursed by C to B, and 
+ownership of the flat will be transferred to A. However, C would hold charge on the flat till 
+the full and final repayment of the original loan amount is made. The transfer of ownership is 
+automated as the transaction gets recorded on a block chain, which is visible to all the 
+participants on the block and its status can be viewed at any given point.18 
+Apart from listing the rules and penalties in relation to an arrangement (similar to a 
+traditional contract), smart contracts perform the function of executing these obligations 
+automatically. Implementation of these contracts is carried out through a platform called 
+“Ethereum”, which comprises two key elements: currency and contracts.19 
+HOW DO SMART CONTRACTS ENSURE SECURED TRANSACTIONS? 
+They enable the enforcement of a safe and secured transaction between the two parties to the 
+contract. Further, they ensure that while one party gains something of value from the other 
+party for some collateral, the other party is the only prioritized party to that specific 
+16 Supra note 4. 
+17 John Ream et al., “Upgrading blockchains: Smart contract use cases in industry”, Deloitte Insights (June 8, 
+2016). 
+18 Sanmith Seth, “What’s blocking the chain?”, India Business Law Journal (July 20, 2020). 
+19 Supra note 3. 
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553
+6 
+INTERNATIONAL JOURNAL OF LAW AND SOCIAL SCIENCES (IJLS) VOLUME- 7, ISSUE- 1 - 2021 
+ISSN Number 2454-8553 
+collateral. Implementing the same in case of traditional would undoubtedly be difficult, as 
+several other factors would come into picture, such as third parties partaking in the contract. 
+Further, data protection is ensured through cryptography and the operation of the distributive 
+ledger system. Every block consists of information and in order to modify that, each block in 
+a chain will have to be hacked since they are related to each other. 
+This has been transformed into reality by Ethereum. Its network is very transparent and 
+possesses the ability to determine and formulate which party has priority over the specific 
+collateral. Thus, it can conveniently accept or reject that collateral, and enable faster and 
+more efficient implementation of contracts.20 
+SMART CONTRACTS IN INDIA: A STATUTORY OVERVIEW  
+Section 10 of the Indian Contract Act of 1872 (hereinafter referred to as the ‘ICA’), 
+predominantly governs contracts in India.  Section 10 of the Act lays down that “all 
+agreements are legally binding contracts, provided they are entered into with free consent of 
+parties to the contract, for a lawfully accepted consideration and in order to achieve a lawful 
+object.” 
+The essential features of a traditional contract are: a legitimate offer; acceptance which is 
+duly communicated; consideration which is lawful and pertinent to the subject matter; 
+consideration; and free consent of all competent parties to the contract with regards to all 
+aspects of the contract.21 Thus, by definition, it would seem that a smart contract is legally 
+permitted under the ICA, since it fulfils the above mentioned essentials to a contract. 
+However, since they are not legally recognised in India yet, such a proclamation would be too 
+bold and immature, since several factors come into play while determining the legality and 
+enforceability of smart contracts. 
+For instance, ‘consideration’ aspect is problematic, because if it is in the form of 
+cryptocurrency, then it further raises the question as to whether cryptocurrency is accepted as 
+20 Supra note 3. 
+21 Supra note 3. 
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553 
+7 
+INTERNATIONAL JOURNAL OF LAW AND SOCIAL SCIENCES (IJLS) VOLUME- 7, ISSUE- 1 - 2021 
+ISSN Number 2454-8553 
+valid consideration under Indian law.22 The ambiguity surrounding legality of cryptocurrency 
+poses as one of the many challenges to the usage of smart contracts in India. The Supreme 
+Court, in a March 2020 judgement, lifted the ban on cryptocurrency imposed by the RBI, 
+which forbade banks and other financial institutions from providing banking services to those 
+individuals and business entities which were engaged in dealing in cryptocurrency. Prior to 
+that, trading was restricted to crypto-to-crypto, and not crypto-to-INR.23 However, the Indian 
+Government’s stance towards cryptocurrency is not very forthcoming, owing to concerns 
+such as safety of consumers, market integrity and white collar crimes such as money 
+laundering. A lot of prominent media houses have reported in the recent past that the 
+Government is planning to introduce a law which bans trading in cryptocurrencies. If 
+implemented, it could severely hamper the functioning of smart contracts.24 
+Furthermore, there is no governing authority to evaluate whether the object is lawful or not. 
+All these factors raise doubts about the legal validity of smart contracts. 25 
+Some of the more pertinent questions with regards to enforceability are: 
+1. Will an electronic signature generated through the block chain technology deemed to be
+valid for authenticating an agreement under a smart contract?
+2. Can a smart contract be placed as an evidence on record in a Court of Law if a dispute
+arises?26
+It is imperative to analyse the Information Technology Act, 2000 (hereinafter referred to as 
+the ‘IT Act’) and the Indian Evidence Act in order to arrive at suggestive answers to the 
+above.  
+Section 5 of the “IT Act permits digital signatures and holds a contract to be legitimate and 
+enforceable.” It states that under any law, when a document or information produced needs 
+22 Supra note 4. 
+23 Dipen Pradhan, “Supreme Court Allows Trading In Cryptocurrency”, Outlook Money (March 4, 2020). 
+24 Archana Chaudhary and Siddhartha Singh, “India Plans to Introduce Law to Ban Cryptocurrency Trading”, 
+Bloomberg Quint (September 15, 2020). 
+25 Alok Vajpeyi and Gauri Bharti, “India: Smart Contracts: a Boon or a Bane?”, Mondaq (December 3, 2019). 
+26 Supra note 7. 
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553 
+8 
+INTERNATIONAL JOURNAL OF LAW AND SOCIAL SCIENCES (IJLS) VOLUME- 7, ISSUE- 1 - 2021 
+ISSN Number 2454-8553 
+verification or authentication through attachment of signatures, the requirement shall be 
+considered to be fulfilled if it is done by means of a digital signature. Thus, a digital signature 
+helps in proving consent to an electronic document.27 Further, Section 65B of the Indian 
+Evidence Act 1872 states that electronic records, i.e. documents signed digitally shall be 
+admissible in the Courts. 28 
+However, as per Section 35 of the IT Act, an electronic signature certificate can be obtained 
+only though a certifying authority designated by the Government.  In order for a smart  
+contract to commence, the generation of a hash key is required, which is done by block chain 
+technology. The same is used as an identifier to authenticate the contract instead of any legal 
+authority. Thus, the electronic signature created by block chain technology is self-generated, 
+and in contrast to the one authorised by the IT Act. 29 Moreover, “Section 85B of the Indian 
+Evidence Act states that an electronic document will be deemed valid only if it is 
+authenticated with a digital signature.”30The problem is further compounded by “Section 88A 
+of the Indian Evidence Act whereby it is mentioned that the Court presumes that an electronic 
+record placed as evidence is genuine, but does not make any presumptions about the 
+originator of the message.” Thus, if a signature for authenticating the smart contract is 
+obtained through block chain technology, the admissibility of the document will only become 
+more problematic as the signature was not obtained under the IT Act. Not only does this 
+impair the legal validity of the method of encryption used for smart contracts, but it also 
+impedes the “admissibility of such contracts as evidence in a Court of law”, as uncertified 
+signatures do not hold much value.31 
+27 Supra note 4. 
+28 Supra note 3. 
+29 Supra note 3. 
+30 Anirudha Bhatnagar, “India: Smart Contract In The Indian Crucible”, Mondaq (June 19, 2018). 
+31 Supra note 3. 
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553 
+9 
+INTERNATIONAL JOURNAL OF LAW AND SOCIAL SCIENCES (IJLS) VOLUME- 7, ISSUE- 1 - 2021 
+ISSN Number 2454-8553 
+AREAS OF CONCERN WITH RESPECT TO SMART CONTRACTS 
+An important question for business entities looking at the technology as a prospect is whether 
+the regulatory and legal compliances are being met. Thus, in order for parties to enter into a 
+binding contract, enforceability is a key aspect which must be looked at. 32 
+One significant legal question which subsequently arises is that of fixing the responsibility. In 
+case an incorrect code is entered owing to its complexity and an error of judgement, then it 
+will become difficult to determine the Defendant party in that case, or the person who could 
+be held liable for committing a negligent or wrongful act, since there is no governing body to 
+do the same.33 
+Though automating a transaction is easy, remedies for non-performance or breach of contract 
+are difficult to code in a smart contract. In specific contracts such as insurance, this problem 
+is further compounded by “insurance-specific aspects such as pre-contractual disclosure 
+obligations.” Further, since it is a regulated industry, concerns of regulators must be taken 
+into account.34 Artificial Intelligence is infamous for the risks it poses to humankind. Since 
+smart contracts leave limited room for human intervention or revocation of control, there is a 
+high possibility of the computer wrongfully assessing a particular situation and implanting an 
+incorrect step. This could result in multiple ramifications for either the parties to the contract, 
+as once the damage is done, it cannot be reversed. Therefore, a high degree of caution is 
+required to be exercised. 35 Furthermore, entries on the block can be tampered with by bad 
+actors, be it contracting parties or miners who add past transaction records to block chain 
+ledgers. A study discovered that close to 3.4% of Ethereum smart contracts are vulnerable to 
+hacking. 36 
+Smart contracts enable “provision of a platform for parties who may or may not know each 
+other” to enter into a contract. Excessive caution is required to be maintained while 
+contracting with another party, as in case of a failed transaction, the cost must be borne by the 
+32 Norton Rose Fullbright, “The future of smart contracts in insurance” (2016). 
+33 Supra note 24. 
+34 Supra note 31. 
+35 Supra note 24. 
+36 Kati Suominen et al., “Top 10 big questions and myths surrounding block chain”, JSTOR (2018). 
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553 
+10 
+INTERNATIONAL JOURNAL OF LAW AND SOCIAL SCIENCES (IJLS) VOLUME- 7, ISSUE- 1 - 2021 
+ISSN Number 2454-8553 
+suffering party alone. The Indian legal system provides no legal recourse with respect to such 
+contracts as there is a dearth of regulatory framework to govern the same.  
+For ensuring consumer protection, there must be a redressal mechanism that the aggrieved 
+parties can resort to. However, there exists no such provision, which stirs doubts in the minds 
+of the potential users. Further, force majeure events might lead to frustration of a contract in 
+case conventional contracts; or either party, in order to maintain good business relations, may 
+condone the other party’s performance. But in case of smart contracts, this is not possible 
+since the contract is automated. Thus, cordial business relations may be compromised at the 
+cost of effectiveness. 37 
+Moreover, conventional contracts provide for termination of the contract at either party’s 
+behest, the option is not available in case of smart contracts. If a party comes across an error 
+in an agreement, which leads to the counterparty gaining more rights than intended, or would 
+result in greater costs if fulfilled; they cannot terminate the contract. 38 
+Furthermore, although the ‘automatic payment’ feature of smart contracts is revered, it does 
+not rule out the adjudication of payment disputes in case of complex commercial contracts. 
+For example, the chances that the party obtaining the loan will deposit the entire loan amount 
+in a specified wallet linked to the contract, are low. Instead, the required repayments would 
+be funded on an ad hoc basis. However, if the borrowing party does not fund the wallet 
+regularly, a smart contract may not be able to find the necessary funds for transfer of money 
+from that wallet or any other source specified to be used in case a contingency arises.39  
+Smart contract writers also need to be mindful of the semantics and foresee how words can be 
+interpreted by the smart contract, since it does not possess the human intuition to deduce the 
+intentions or behaviour of parties. For instance, technology may not be able to interpret open 
+ended terms such as “reasonable efforts”. Thus, the language of the contract needs to be 
+adjusted according the limited vocabulary of the code. 40 This makes the application of smart 
+37J Dax Hansen, “Legal Aspects of Smart Contract Applications, Perkins Coie (2017). 
+38 Supra note 9. 
+39 Supra note 9. 
+40 Supra note 35. 
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553 
+11 
+contracts is restricted to standardized processes. It cannot be extended to agreements where 
+evaluation of the terms and conditions might be required.41 
+When it comes to code-only smart contracts, the execution of the code and its outcome would 
+be the only objective evidence of the terms of the contract, since no paperwork is involved. 
+E-mail exchanges between the contracting parties regarding the functions which the smart
+contract should carry out, or verbal discussions would determine the code and represent their
+intent. Lack of evidence could serve as another barrier.42
+All these factors combined posit a very bleak scenario for the adoption of smart contracts in 
+India, currently. 
+REGULATION OF SMART CONTRACTS IN THE US 
+In 1999, 47 states in the United States adopted the “Uniform Electronic Transactions Act” 
+(UETA), which governs laws relating to e-contracts, electronic records, electronic signatures 
+and so on. The Act approves of the usage of an electronic signature as a valid method of 
+consenting to contracts. However, to keep up with the technological advancements, in 2017, 
+several states in the US felt the need to draft separate regulations for the adoption of smart 
+contracts on a larger magnitude. Consequently, Arizona passed laws recognizing digital 
+signatures for smart contracts via block chain technology, and granting them enforceability. 
+Vermont and Nevada also gave recognition to smart contracts.43 Thus, it is high time that the 
+Indian Government steps up and provides some clarity on how the feasibility of operation of 
+smart contracts in the country, since the benefits are immaculate. 
+POTENTIAL APPLICABILITY OF BLOCK CHAIN- BASED SMART CONTRACTS 
+In 2018, what was considered as a giant technological leap forward, the SBI legitimised 
+sharing of KYC data among banks through block chain technology through the conglomerate 
+of 27 banks called ‘BankChain’. 44 Even the pharmaceutical industry makes use of this 
+41 Anirudha Bhatnagar, “India: Smart Contract in the IPR paradigm”, Mondaq (June 19, 2018). 
+42 Supra note 9. 
+43Supra note 7. 
+44 ET Bureau, “SBI to use block chain for smart contracts and KYC by next month” “Economic Times 
+(November 20, 2017).” 
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553 
+12 
+INTERNATIONAL JOURNAL OF LAW AND SOCIAL SCIENCES (IJLS) VOLUME- 7, ISSUE- 1 - 2021 
+ISSN Number 2454-8553 
+technology for record-keeping. Unfortunately, however, the acceptance has been restricted to 
+information sharing and maintenance of records, and the Government is evidently not 
+inclined towards cryptocurrency, which poses as an obstruction for smart contracts. There 
+exists a lot of untapped potential in the Indian market with respect to these contracts, and it 
+could change the way that household supplies are purchased and e-commerce is carried out 
+by streamlining the entire process and reducing costs substantially.45  
+Furthermore, they could revolutionise how trading systems on the securities markets work; 
+by taking on the arduous function of managing approvals between market players; estimating 
+accurate trade settlement amounts; and ultimately transferring the funds automatically once 
+the verification and approval of transaction is carried out. The purpose of settlement is to 
+ensure irrevocable delivery of a security to a buyer from the seller, for which the latter 
+receives final and irreversible payment of money. The possibility of settlement failures could 
+be negated with the help of smart contracts, since they are irreversible in nature.  In status 
+quo, parties engage in expensive labour-intensive methods to corroborate each other’s 
+performance and reconcile records. Thus, the problem of lack of trust between the parties 
+could also be solved by trusting the smart contract.46 
+CONCLUSION 
+A study conducted by Capgemini reported that the effective adoption and implementation of 
+smart contracts could help retail banking and insurance companies save around 3 to 11 billion 
+in USD as a result of diminished overhead costs, which in turn could help every individual 
+customer save up to USD 980. This proves that the execution and growth of smart contracts 
+could undoubtedly become the ‘next big thing’, resulting in savings of billions of overhead 
+costs, while making the entire procedure more efficient. Block chain can be a complete game 
+changer when it comes to the execution of contracts. However, the grey areas with respect to 
+the law, make it a less lucrative option in India. Owing to the absence of a regulatory body 
+that certifies the admissibility and enforceability of a smart contract under the existing 
+legislations, smart contracts have not gained the traction they deserve; with uncertainty 
+45Supra note 29. 
+46 Adam David Long, “How Smart Contracts for Finance Will Make Stock Markets Faster, Cheaper and Less 
+Error-Prone”, Medium (September 17, 2018). 
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553 
+13 
+INTERNATIONAL JOURNAL OF LAW AND SOCIAL SCIENCES (IJLS) VOLUME- 7, ISSUE- 1 - 2021 
+ISSN Number 2454-8553 
+looming large. A pressing question which needs to be answered is that, “Is a smart contract 
+purported to constitute a contract, or to simply carry out the aspect of one?” This could 
+possibly clarify whether the current legal provisions can govern smart contracts or not. 
+Since the entire process is decentralized, and there is no single entity which handles the data 
+arising out of any transaction, the imposition of “reasonable security practices and 
+procedures” as prescribed under the IT Rules, 2011 remains a challenge. The aforementioned 
+rules set out various guidelines in order to protect sensitive personal data, and safeguard the 
+same from any potential damage by third parties through a computer resource. 
+Several sectors (for instance, syndicated loans) still rely on faxes and paperwork, which 
+results in inefficiency. It is high time they start adopting innovative technologies such as 
+smart contracts. But in order for this transition to take place, the Government needs to break 
+its silence on this topic and come up with ways to permit businesses and individuals to make 
+the switch to efficient, cost-effective systems. 
+Undoubtedly, smart contracts do not have a pervasive applicability, i.e. they cannot be 
+blindly applied to every industry, since they come with their own set of limitations and risks 
+which have been discussed in the paper. They are more suitable where calculation of risks is 
+relatively easier, and the limited vocabulary of the code is able to interpret the commands 
+given.   
+Smart contracts are a part of the surging wave of technological advancements which seek to 
+minimise the risks and costs associated with human capital. Indeed, they do minimise the risk 
+of human error to a great extent but it is an undeniable fact that machines come with their 
+own set of biases and errors; in addition to the Herculean task of regulating their operations. 
+Thus, there are innumerable challenges when it comes to establishing legal accountability.  
+Currently, smart contracts are in a nascent stage, and they require an impetus to penetrate the 
+Indian market. In order to facilitate the same, lawmakers must be vocal about their stance on 
+the various legal questions postulated in this paper. 
+SUGGESTIONS 
+A major hindrance to smart contracts being viewed as a norm is that the Government and 
+lawmakers may not be willing to invest the requisite financial and human capital to pave way 
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553 
+14 
+INTERNATIONAL JOURNAL OF LAW AND SOCIAL SCIENCES (IJLS) VOLUME- 7, ISSUE- 1 - 2021 
+ISSN Number 2454-8553 
+for their development; especially in developing nations. However, the potential benefits of 
+switching to this technology must not be ignored. 
+Furthermore, regulatory concerns pose a major threat in the Indian market. Even if no 
+separate regulation is developed, the Government must amend the relevant provisions of the 
+Indian Evidence at, 1872 and the IT Act; so as to incorporate smart contracts into their 
+purview and keep up with the changing times. For smart contracts to become operational in 
+India, the Government will have to amend certain existing statutory provisions and confront 
+challenges on multiple fronts. It will be interesting to see whether the lawmakers are able to 
+keep up with the ever-expanding realm of block chain and smart contracts. 
+The precarious status of the legality of cryptocurrencies also serves as a major roadblock to 
+progress in the field of smart contracts. Thus, a clear stance must be adopted by the 
+Government, when it comes to its legal validity. 
+If smart contracts do become a reality in India, on a large scale, then the legal industry would 
+have to keep up with changing demands of clients. This paradigm shift could potentially lead 
+to loss of jobs and make professionals in the legal sector rethink the way they function. But 
+on the bright side, it could also encourage collaborations between law firms, software firms 
+and start-up companies, for the greater good. Embracing technology and using it in their 
+favour would help legal professionals in rendering improved services. Thus, smart contracts 
+must not be looked at as a potential threat.  
+International Journal of Law and Social Sciences (IJLS)│Volume 7, Issue 1, 2021  │P-ISSN No: 2454-8553 

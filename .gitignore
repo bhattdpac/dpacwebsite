@@ -29,6 +29,5 @@ Thumbs.db
 .idea/
 
 # Project Specific
-*.pdf
 nginx.conf
 host.md

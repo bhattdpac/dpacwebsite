@@ -33,7 +33,7 @@ const ClauseItem = ({ clause, onUpdate, onDelete }: ClauseItemProps) => {
       // Note: We need a dedicated ClauseViewSet or action for this to work perfectly
       // For now, assuming the API structure allows direct clause updates
       onUpdate({ ...clause, is_approved: !clause.is_approved });
-    } catch (error) {
+    } catch {
       alert('Failed to update approval status.');
     }
   };
@@ -44,7 +44,7 @@ const ClauseItem = ({ clause, onUpdate, onDelete }: ClauseItemProps) => {
       await api.patch(`/clauses/${clause.id}/`, { text: editedText });
       onUpdate({ ...clause, text: editedText });
       setIsEditing(false);
-    } catch (error) {
+    } catch {
       alert('Failed to save changes.');
     } finally {
       setLoading(false);
