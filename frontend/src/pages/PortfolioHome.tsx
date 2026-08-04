@@ -103,19 +103,7 @@ const PortfolioHome = () => {
               I build secure, modular blockchain infrastructure that bridges the gap between <span className="text-text-primary">human-readable agreements</span> and <span className="text-text-primary">immutable code</span>.
             </p>
             
-            <div className="flex flex-wrap gap-8 pt-6">
-              <div className="flex items-center gap-10">
-                <div>
-                  <div className="text-4xl font-display font-bold text-text-primary italic">15+</div>
-                  <div className="text-[10px] font-bold text-text-muted uppercase tracking-widest mt-1">Protocols Shipped</div>
-                </div>
-                <div className="w-px h-10 bg-white/10"></div>
-                <div>
-                  <div className="text-4xl font-display font-bold text-text-primary italic">5k+</div>
-                  <div className="text-[10px] font-bold text-text-muted uppercase tracking-widest mt-1">On-Chain Commits</div>
-                </div>
-              </div>
-            </div>
+
 
             <div className="flex flex-wrap gap-6 pt-10">
               <a href="#projects" className="sunset-gradient text-white px-10 py-5 rounded-2xl font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-2xl shadow-orange-500/20">

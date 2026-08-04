@@ -52,14 +52,19 @@ Update this file after every meaningful implementation change.
   - **NBF Alignment:** Completed a comprehensive mapping of the framework to India's National Blockchain Framework (NBF) Live Chains (Document, Judiciary, ICJS, Property, etc.).
   - **Legal Strategy:** Analyzed Smart Contract validity under the Indian Contract Act (1872) and IT Act (2000), identifying the need for "Bifurcated" (Hybrid) contracts.
   - **SaaS Roadmap:** Drafted a multi-tenant transition plan stored in `context/specs/saas-roadmap.md`.
+  - **Frontend Hardening:** Resolved TypeScript compiler error in `Dashboard.tsx` (unifying `Document` interface definition with `DocumentList` props) and verified successful compilation of production assets. Removed generic placeholder statistics ("15+ Protocols Shipped", "5k+ On-Chain Commits") from the homepage hero section to represent actual research work accurately.
+  - **API Routing Optimization:** Configured Vite dev server proxy for `/api` routing to automatically forward requests to backend on port 8000, and converted `VITE_API_URL` to a relative endpoint (`/api`). This eliminates preflight OPTIONS request overhead for same-origin production requests and guarantees seamless operations across dev and prod environments.
 
 ## In Progress
 
-- User-directed "different thing" (Awaiting instructions).
+- Verification and alignment check on current build state.
 
 ## Next Up
 
 - Execution of Deployment on Production VPS.
+
+
+
 
 ## Session Notes
 

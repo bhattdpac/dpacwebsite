@@ -8,11 +8,16 @@ import DocumentList from '../components/DocumentList';
 interface Document {
   id: number;
   title: string;
+  file: string;
+  status: 'PENDING' | 'PROCESSING' | 'COMPLETED' | 'FAILED';
+  created_at: string;
   pending_clause_count?: number;
   proposal?: {
     contract_address?: string;
+    transaction_hash?: string;
   };
 }
+
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
