@@ -1,0 +1,149 @@
+{
+  "pipeline_status": "SUCCESS",
+  "extracted_entities": {
+    "document_summary": {
+      "character_count": 524,
+      "line_count": 10
+    },
+    "parties": [
+      {
+        "name": "Client Entity",
+        "role": "Client"
+      },
+      {
+        "name": "Developer Entity",
+        "role": "Developer"
+      }
+    ],
+    "governing_law": "the laws of England and Wales",
+    "extracted_dates": [],
+    "financial_values": [
+      "202",
+      "USD 25,000",
+      "15"
+    ],
+    "percentages": []
+  },
+  "parsed_clauses": [
+    {
+      "clause_id": "C-01",
+      "heading": "SOFTWARE DEVELOPMENT SERVICE AGREEMENT",
+      "modality": "DECLARATIVE",
+      "trigger_condition": "Standard Execution",
+      "penalty_clause": "None / General Breach",
+      "raw_text": "SOFTWARE DEVELOPMENT SERVICE AGREEMENT\nThis Agreement is made this 1st day of August, 2026, between\nTechCorp Solutions LLC (\"Client\") and AI Cybernetics Ltd (\"Developer\")."
+    },
+    {
+      "clause_id": "C-02",
+      "heading": "1. SCOPE OF SERVICES",
+      "modality": "OBLIGATION",
+      "trigger_condition": "Standard Execution",
+      "penalty_clause": "None / General Breach",
+      "raw_text": "1. SCOPE OF SERVICES\nThe Developer shall design and deploy an AI-driven smart contract verification system."
+    },
+    {
+      "clause_id": "C-03",
+      "heading": "2. PAYMENT TERMS",
+      "modality": "OBLIGATION",
+      "trigger_condition": "upon milestone completion within 15 days",
+      "penalty_clause": "late fee penalty of 5% per month shall apply",
+      "raw_text": "2. PAYMENT TERMS\nThe Client shall pay USD 25,000 upon milestone completion within 15 days.\nIf payment is delayed, a late fee penalty of 5% per month shall apply."
+    },
+    {
+      "clause_id": "C-04",
+      "heading": "3. JURISDICTION",
+      "modality": "OBLIGATION",
+      "trigger_condition": "Standard Execution",
+      "penalty_clause": "None / General Breach",
+      "raw_text": "3. JURISDICTION\nThis agreement shall be governed by the laws of England and Wales."
+    }
+  ],
+  "logic_rules": [
+    {
+      "rule_id": "RULE-001",
+      "clause_id": "C-01",
+      "rule_type": "GENERAL_CLAUSE",
+      "condition": "IF condition_met('Standard Execution')",
+      "action": "THEN record_event_on_ledger()",
+      "else_action": "ELSE retain_state()",
+      "raw_clause": "SOFTWARE DEVELOPMENT SERVICE AGREEMENT\nThis Agreement is made this 1st day of August, 2026, between\nTechCorp Solutions L..."
+    },
+    {
+      "rule_id": "RULE-002",
+      "clause_id": "C-02",
+      "rule_type": "PAYMENT_OBLIGATION",
+      "condition": "IF state == ContractState.Active AND msg.sender == Client Entity",
+      "action": "THEN transfer_funds(Developer Entity) AND set_state(ContractState.Fulfilled)",
+      "else_action": "ELSE IF current_time > deadline THEN apply_penalty('None / General Breach') AND set_state(ContractState.Defaulted)",
+      "raw_clause": "1. SCOPE OF SERVICES\nThe Developer shall design and deploy an AI-driven smart contract verification system...."
+    },
+    {
+      "rule_id": "RULE-003",
+      "clause_id": "C-03",
+      "rule_type": "PAYMENT_OBLIGATION",
+      "condition": "IF state == ContractState.Active AND msg.sender == Client Entity",
+      "action": "THEN transfer_funds(Developer Entity) AND set_state(ContractState.Fulfilled)",
+      "else_action": "ELSE IF current_time > deadline THEN apply_penalty('late fee penalty of 5% per month shall apply') AND set_state(ContractState.Defaulted)",
+      "raw_clause": "2. PAYMENT TERMS\nThe Client shall pay USD 25,000 upon milestone completion within 15 days.\nIf payment is delayed, a late..."
+    },
+    {
+      "rule_id": "RULE-004",
+      "clause_id": "C-04",
+      "rule_type": "PAYMENT_OBLIGATION",
+      "condition": "IF state == ContractState.Active AND msg.sender == Client Entity",
+      "action": "THEN transfer_funds(Developer Entity) AND set_state(ContractState.Fulfilled)",
+      "else_action": "ELSE IF current_time > deadline THEN apply_penalty('None / General Breach') AND set_state(ContractState.Defaulted)",
+      "raw_clause": "3. JURISDICTION\nThis agreement shall be governed by the laws of England and Wales...."
+    }
+  ],
+  "integrity_proofs": {
+    "document_hash": "0x44b90d7e277e70b6c317891a0adb8cd1ded4ff858cf574048c2b3f956748a51d",
+    "metadata_hash": "0xe9f0b41b5296b5709d4562f949b19fb332c0eb3b1a79ae876c4e3c5b3ac0a0c1",
+    "merkle_root_proof": "0x6b6b9a73e30d1ff4f9a7f8d40e2ec08c832a4a7e9bc6419afba4dd963e404eb2"
+  },
+  "solidity_contract": {
+    "target": "Solidity (EVM)",
+    "contract_name": "ClientEntityVsDeveloperEntityAgr",
+    "document_hash": "0x44b90d7e277e70b6c317891a0adb8cd1ded4ff858cf574048c2b3f956748a51d",
+    "code": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\n/**\n * @title ClientEntityVsDeveloperEntityAgr\n * @dev Auto-generated legal smart contract generated by ILDLM Framework.\n * Document Reference Hash: 0x44b90d7e277e70b6c317891a0adb8cd1ded4ff858cf574048c2b3f956748a51d\n * Governing Law: the laws of England and Wales\n */\ncontract ClientEntityVsDeveloperEntityAgr {\n    enum ContractState { Created, Active, Fulfilled, Defaulted, Terminated }\n\n    address public partyA; // Client: Client Entity\n    address public partyB; // Developer: Developer Entity\n\n    ContractState public currentState;\n    string public constant DOCUMENT_HASH = \"0x44b90d7e277e70b6c317891a0adb8cd1ded4ff858cf574048c2b3f956748a51d\";\n    string public constant GOVERNING_LAW = \"the laws of England and Wales\";\n    uint256 public immutable creationTimestamp;\n    uint256 public totalValue;\n\n    event StateChanged(ContractState previousState, ContractState newState);\n    event PaymentExecuted(address indexed payer, address indexed payee, uint256 amount);\n    event BreachReported(address indexed reporter, string reason);\n    event ContractTerminated(address indexed initiator);\n\n    modifier onlyPartyA() {\n        require(msg.sender == partyA, \"ILDLM: Unauthorized access - Party A only\");\n        _;\n    }\n\n    modifier onlyParties() {\n        require(msg.sender == partyA || msg.sender == partyB, \"ILDLM: Unauthorized access - Contracting parties only\");\n        _;\n    }\n\n    modifier inState(ContractState _state) {\n        require(currentState == _state, \"ILDLM: Action not allowed in current state\");\n        _;\n    }\n\n    constructor(address _partyB) payable {\n        require(_partyB != address(0), \"ILDLM: Invalid counterparty address\");\n        partyA = msg.sender;\n        partyB = _partyB;\n        totalValue = msg.value;\n        creationTimestamp = block.timestamp;\n        currentState = ContractState.Created;\n    }\n\n    function activateContract() external onlyPartyB inState(ContractState.Created) {\n        currentState = ContractState.Active;\n        emit StateChanged(ContractState.Created, ContractState.Active);\n    }\n\n    function executePayment() external payable onlyPartyA inState(ContractState.Active) {\n        require(msg.value > 0, \"ILDLM: Payment must be greater than zero\");\n        payable(partyB).transfer(msg.value);\n        emit PaymentExecuted(partyA, partyB, msg.value);\n    }\n\n    function completeAgreement() external onlyParties inState(ContractState.Active) {\n        currentState = ContractState.Fulfilled;\n        emit StateChanged(ContractState.Active, ContractState.Fulfilled);\n    }\n\n    function reportBreach(string calldata reason) external onlyParties inState(ContractState.Active) {\n        currentState = ContractState.Defaulted;\n        emit BreachReported(msg.sender, reason);\n        emit StateChanged(ContractState.Active, ContractState.Defaulted);\n    }\n\n    function terminateContract() external onlyParties {\n        currentState = ContractState.Terminated;\n        emit ContractTerminated(msg.sender);\n        emit StateChanged(currentState, ContractState.Terminated);\n    }\n}\n",
+    "verification": {
+      "status": "PASSED",
+      "security_score": 95,
+      "total_issues": 1,
+      "issues": [
+        {
+          "severity": "LOW",
+          "type": "FLOATING_PRAGMA",
+          "message": "Solidity pragma uses floating '^' version. Recommend locking compiler version for production."
+        }
+      ],
+      "verification_engine": "ILDLM Correct-By-Design Verifier v1.0"
+    }
+  },
+  "fabric_chaincode": {
+    "target": "Hyperledger Fabric (Go)",
+    "contract_name": "LegalContractChaincode",
+    "document_hash": "0x44b90d7e277e70b6c317891a0adb8cd1ded4ff858cf574048c2b3f956748a51d",
+    "code": "package main\n\nimport (\n\t\"encoding/json\"\n\t\"fmt\"\n\t\"github.com/hyperledger/fabric-contract-api-go/contractapi\"\n)\n\n// LegalContractChaincode manages legal document state on Hyperledger Fabric\ntype LegalContractChaincode struct {\n\tcontractapi.Contract\n}\n\ntype LegalContract struct {\n\tID            string `json:\"id\"`\n\tDocumentHash  string `json:\"documentHash\"`\n\tGoverningLaw  string `json:\"governingLaw\"`\n\tPartyA        string `json:\"partyA\"`\n\tPartyB        string `json:\"partyB\"`\n\tStatus        string `json:\"status\"`\n\tCreationDate  string `json:\"creationDate\"`\n}\n\nfunc (c *LegalContractChaincode) InitContract(ctx contractapi.TransactionContextInterface, id string, docHash string, govLaw string, partyA string, partyB string) error {\n\tcontract := LegalContract{\n\t\tID:           id,\n\t\tDocumentHash: docHash,\n\t\tGoverningLaw: govLaw,\n\t\tPartyA:       partyA,\n\t\tPartyB:       partyB,\n\t\tStatus:       \"ACTIVE\",\n\t}\n\n\tcontractJSON, err := json.Marshal(contract)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn ctx.GetStub().PutState(id, contractJSON)\n}\n\nfunc (c *LegalContractChaincode) QueryContract(ctx contractapi.TransactionContextInterface, id string) (*LegalContract, error) {\n\tcontractJSON, err := ctx.GetStub().GetState(id)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to read contract: %v\", err)\n\t}\n\tif contractJSON == nil {\n\t\treturn nil, fmt.Errorf(\"contract %s does not exist\", id)\n\t}\n\n\tvar contract LegalContract\n\terr = json.Unmarshal(contractJSON, &contract)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &contract, nil\n}\n"
+  },
+  "blockchain_deployment": {
+    "status": "SUCCESS",
+    "network": "SIMULATED_FABRIC",
+    "contract_name": "ClientEntityVsDeveloperEntityAgr",
+    "contract_address": "0x0ddf41b1ea2a7e2686b2b437b2098920d6c4bb4c",
+    "transaction_hash": "0xf2c90247ca0e6e368e63974333dbe20405a20ffee6a8c9b9d2c330566ba611d2",
+    "block_number": 104902,
+    "deployer": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+    "document_hash": "0x44b90d7e277e70b6c317891a0adb8cd1ded4ff858cf574048c2b3f956748a51d",
+    "gas_used": 1428500,
+    "timestamp": 1785855317,
+    "confirmation": "COMMITTED_TO_LEDGER"
+  },
+  "onchain_verification": {
+    "contract_address": "0x0ddf41b1ea2a7e2686b2b437b2098920d6c4bb4c",
+    "onchain_doc_hash": "0x44b90d7e277e70b6c317891a0adb8cd1ded4ff858cf574048c2b3f956748a51d",
+    "integrity_status": "VERIFIED_AUTHENTIC",
+    "is_valid": true,
+    "checked_at_timestamp": 1785855317
+  }
+}
