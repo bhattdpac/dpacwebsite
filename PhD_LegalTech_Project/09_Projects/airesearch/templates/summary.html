@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary - AI Research Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex">
+    <aside class="w-64 bg-white shadow-md flex flex-col">
+        <div class="p-6 font-bold text-xl border-b">AI Research Assistant</div>
+        <nav class="flex-1 p-4 space-y-4">
+            <a href="/" class="block py-2 px-4 rounded hover:bg-gray-200">Upload PDFs</a>
+            <a href="/dashboard" class="block py-2 px-4 rounded hover:bg-gray-200">All Files</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-200">Profile</a>
+        </nav>
+    </aside>
+    <main class="flex-1 p-10 flex flex-col items-center justify-center">
+        <div class="bg-white p-8 rounded shadow max-w-lg w-full">
+            <h1 class="text-2xl font-bold mb-4">AI Summary</h1>
+            <div class="text-gray-800 whitespace-pre-line mb-6">{{ summary }}</div>
+            <a href="/dashboard" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Back to Dashboard</a>
+        </div>
+    </main>
+</body>
+</html> 

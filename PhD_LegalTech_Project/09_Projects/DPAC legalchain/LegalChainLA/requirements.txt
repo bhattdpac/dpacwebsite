@@ -1,0 +1,8 @@
+pymupdf
+spacy
+pandas
+streamlit
+fuzzywuzzy
+matplotlib
+# or use plotly as an alternative to matplotlib
+# plotly 

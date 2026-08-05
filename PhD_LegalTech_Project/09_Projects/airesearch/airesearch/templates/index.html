@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Assistant</title>
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md p-6 flex flex-col">
+        <h1 class="text-2xl font-bold mb-8">AI Assistant</h1>
+        <nav class="flex flex-col gap-4">
+            <a href="/" class="text-blue-600 font-semibold">Upload PDFs</a>
+            <a href="/dashboard" class="hover:text-blue-600">All Files</a>
+            <a href="#" class="hover:text-blue-600">Profile</a>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 p-10">
+        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow p-8">
+            <h2 class="text-xl font-bold mb-4">Upload Academic PDF</h2>
+            <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data" class="space-y-4">
+                <div id="drop-area" class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:bg-gray-100">
+                    <input type="file" id="fileElem" name="file" accept="application/pdf" class="hidden" required>
+                    <p class="text-gray-500">Drag & drop a PDF here, or <span class="text-blue-600 underline cursor-pointer" onclick="document.getElementById('fileElem').click()">browse</span></p>
+                </div>
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" name="tts" class="form-checkbox">
+                    <span>Generate Audio (TTS)</span>
+                </label>
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Upload</button>
+            </form>
+            <div class="mt-6">
+                <h3 class="font-semibold mb-2">Steps</h3>
+                <ol class="list-decimal list-inside text-gray-700">
+                    <li>Upload PDF</li>
+                    <li>Extract Text & Metadata</li>
+                    <li>Generate Summary</li>
+                    <li>Generate Audio (optional)</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Drag & drop logic
+        const dropArea = document.getElementById('drop-area');
+        const fileElem = document.getElementById('fileElem');
+        dropArea.addEventListener('click', () => fileElem.click());
+        dropArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropArea.classList.add('bg-gray-100');
+        });
+        dropArea.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            dropArea.classList.remove('bg-gray-100');
+        });
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropArea.classList.remove('bg-gray-100');
+            fileElem.files = e.dataTransfer.files;
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,2 @@
+[demoVM]
+cdacnbf ansible_host=nbflite@10.244.1.173 ansible_user=nbflite ansible_password=cdac@123

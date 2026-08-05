@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card shadow-sm p-4">
+  <h2 class="fw-bold mb-3">🎧 {{ file.original_name }}</h2>
+  <audio id="audioPlayer" src="{{ url_for('serve_audio', filename=file.id + '.wav') }}" controls class="w-100 mb-3" style="outline: none;"></audio>
+  <div class="d-flex align-items-center gap-3 mb-2">
+    <button class="btn btn-outline-primary" onclick="audioPlayer.currentTime -= 10">⏮️ 10s</button>
+    <button class="btn btn-outline-primary" onclick="audioPlayer.play()">▶️</button>
+    <button class="btn btn-outline-primary" onclick="audioPlayer.pause()">⏸️</button>
+    <button class="btn btn-outline-primary" onclick="audioPlayer.currentTime += 10">⏭️ 10s</button>
+    <label class="ms-3">Speed:</label>
+    <select id="speedSelect" class="form-select w-auto">
+      <option value="0.5">0.5x</option>
+      <option value="1" selected>1x</option>
+      <option value="1.25">1.25x</option>
+      <option value="2">2x</option>
+    </select>
+    <button class="btn btn-warning ms-3">🔖 Bookmark</button>
+    <button class="btn btn-info ms-2">📝 Notes</button>
+    <button class="btn btn-secondary ms-2" onclick="window.location.href='/'">Back</button>
+  </div>
+  <div class="progress" style="height: 8px;">
+    <div id="progressBar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+  </div>
+  <div class="d-flex justify-content-between small mt-1">
+    <span id="currentTime">0:00</span>
+    <span id="duration">0:00</span>
+  </div>
+</div>
+<script>
+const audioPlayer = document.getElementById('audioPlayer');
+const progressBar = document.getElementById('progressBar');
+const currentTime = document.getElementById('currentTime');
+const duration = document.getElementById('duration');
+const speedSelect = document.getElementById('speedSelect');
+
+audioPlayer.addEventListener('timeupdate', function() {
+  const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+  progressBar.style.width = percent + '%';
+  currentTime.textContent = formatTime(audioPlayer.currentTime);
+  duration.textContent = formatTime(audioPlayer.duration);
+});
+
+speedSelect.addEventListener('change', function() {
+  audioPlayer.playbackRate = parseFloat(speedSelect.value);
+});
+
+function formatTime(sec) {
+  if (isNaN(sec)) return '0:00';
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return m + ':' + (s < 10 ? '0' : '') + s;
+}
+</script>
+{% endblock %} 

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4 fw-bold">Upload New PDF</h2>
+<form method="post" enctype="multipart/form-data" class="card p-4 shadow-sm" id="uploadForm">
+  <div class="mb-3">
+    <label for="pdfFile" class="form-label">Drag & Drop PDF Here</label>
+    <input class="form-control" type="file" id="pdfFile" name="file" accept="application/pdf" required>
+    <div class="form-text">Max 50MB • PDF only</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Advanced Options</label>
+    <div class="row g-2">
+      <div class="col-md-4">
+        <label for="voice_id" class="form-label">Voice</label>
+        <select class="form-select" id="voice_id" name="voice_id">
+          <option value="">Default</option>
+          {% for voice in voices %}
+          <option value="{{ voice.id }}">{{ voice.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="rate" class="form-label">Speed</label>
+        <input type="range" class="form-range" min="100" max="300" step="10" id="rate" name="rate" value="180">
+        <span id="rateValue">1.0x</span>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Skip</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="skipHeaders" name="skip_headers" checked>
+          <label class="form-check-label" for="skipHeaders">Headers</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="skipRefs" name="skip_refs" checked>
+          <label class="form-check-label" for="skipRefs">References</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary mt-3" type="submit">🚀 Convert to Podcast</button>
+</form>
+<script>
+// Update speed label
+const rateInput = document.getElementById('rate');
+const rateValue = document.getElementById('rateValue');
+rateInput.addEventListener('input', function() {
+  rateValue.textContent = (rateInput.value / 180).toFixed(2) + 'x';
+});
+</script>
+{% endblock %} 

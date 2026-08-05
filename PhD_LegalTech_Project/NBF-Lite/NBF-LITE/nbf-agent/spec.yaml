@@ -1,0 +1,19 @@
+channel:
+  - localchannelone
+fabric:
+  cas:
+    - ca1.cdac.com
+  peers:
+    - peer1.cdac.com
+  orderers:
+    - orderer1.example.com
+    - orderer2.example.com
+    - orderer3.example.com
+  settings:
+    ca:
+      FABRIC_LOGGING_SPEC: INFO
+    peer:
+      FABRIC_LOGGING_SPEC: INFO
+    orderer:
+      FABRIC_LOGGING_SPEC: INFO
+  netname: aalocaltestnet-network

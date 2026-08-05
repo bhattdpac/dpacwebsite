@@ -1,0 +1,33 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.28;
+
+import "./templates/BaseLegalContract.sol";
+
+/**
+ * @title ConfidentialityNDA
+ * @dev Represents a Non-Disclosure Agreement hash registry with party identities.
+ */
+contract ConfidentialityNDA is BaseLegalContract {
+    address public immutable disclosingParty = {{ disclosingParty }};
+    address public immutable receivingParty = {{ receivingParty }};
+    uint256 public immutable termDuration = {{ termDuration }};
+    uint256 public immutable creationTime;
+    
+    event NDATerminatedMutually();
+
+    constructor() {
+        require(disclosingParty != address(0), "Disclosing party cannot be zero address");
+        require(receivingParty != address(0), "Receiving party cannot be zero address");
+        creationTime = block.timestamp;
+    }
+
+    /**
+     * @dev Checks if the confidentiality obligation is active.
+     */
+    function isActive() public view returns (bool) {
+        if (isFinalized && block.timestamp < creationTime + termDuration) {
+            return true;
+        }
+        return false;
+    }
+}

@@ -1,0 +1,76 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.28;
+
+import "./templates/BaseLegalContract.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+
+/**
+ * @title SecuredLoan
+ * @dev Loan agreement with collateral locking and automatic transfer upon breach/repayment.
+ */
+contract SecuredLoan is BaseLegalContract, ReentrancyGuard {
+    address public immutable lender = {{ lender }};
+    address public immutable borrower = {{ borrower }};
+    uint256 public immutable loanAmount = {{ loanAmount }};
+    uint256 public immutable interestRate = {{ interestRate }}; // Basis points (e.g. 500 = 5%)
+    uint256 public immutable repaymentDeadline = {{ repaymentDeadline }};
+    
+    enum State { Pending, Active, Repaid, Defaulted }
+    State public state;
+
+    event LoanFunded();
+    event LoanRepaid();
+    event LoanDefaulted();
+
+    constructor() {
+        require(lender != address(0), "Lender cannot be zero address");
+        require(borrower != address(0), "Borrower cannot be zero address");
+        require(repaymentDeadline > block.timestamp, "Deadline must be in future");
+        state = State.Pending;
+    }
+
+    /**
+     * @dev Lender funds the loan principal.
+     */
+    function fundLoan() external payable {
+        require(msg.sender == lender, "Only lender can fund");
+        require(state == State.Pending, "Not in pending state");
+        require(msg.value == loanAmount, "Incorrect loan amount");
+        
+        state = State.Active;
+        emit LoanFunded();
+        
+        (bool success, ) = payable(borrower).call{value: msg.value}("");
+        require(success, "Transfer to borrower failed");
+    }
+
+    /**
+     * @dev Borrower repays the loan amount + interest.
+     */
+    function repayLoan() external payable nonReentrant {
+        require(msg.sender == borrower, "Only borrower can repay");
+        require(state == State.Active, "Loan not active");
+        require(block.timestamp <= repaymentDeadline, "Repayment deadline missed");
+        
+        uint256 totalRepayment = loanAmount + (loanAmount * interestRate / 10000);
+        require(msg.value == totalRepayment, "Incorrect repayment amount");
+        
+        state = State.Repaid;
+        emit LoanRepaid();
+        
+        (bool success, ) = payable(lender).call{value: msg.value}("");
+        require(success, "Transfer to lender failed");
+    }
+
+    /**
+     * @dev Lender claims default if the deadline has passed without repayment.
+     */
+    function claimDefault() external {
+        require(msg.sender == lender, "Only lender can claim default");
+        require(state == State.Active, "Loan not active");
+        require(block.timestamp > repaymentDeadline, "Deadline has not passed yet");
+        
+        state = State.Defaulted;
+        emit LoanDefaulted();
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend for Main.py</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Frontend for Main.py</h1>
+    <button id="fetchData">Fetch Data</button>
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('fetchData').addEventListener('click', function() {
+            fetch('http://localhost:5000') // Adjust the URL based on your backend setup
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('response').innerText = JSON.stringify(data);
+                })
+                .catch(error => {
+                    document.getElementById('response').innerText = 'Error: ' + error;
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Summary for {{ file.original_name }}</h2>
+    <div class="card mb-3">
+        <div class="card-body">
+            <p>{{ summary }}</p>
+        </div>
+    </div>
+    <a href="/" class="btn btn-secondary mt-3">Back</a>
+</div>
+{% endblock %} 

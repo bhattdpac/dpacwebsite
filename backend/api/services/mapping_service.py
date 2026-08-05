@@ -8,7 +8,11 @@ def suggest_templates(document: Document) -> Optional[ContractProposal]:
     """
     approved_clauses = document.clauses.filter(is_approved=True)
     if not approved_clauses.exists():
-        return None
+        # Fallback to all extracted clauses for draft matching
+        approved_clauses = document.clauses.all()
+    if not approved_clauses.exists():
+        # Truly no clauses exist, fallback to base document
+        pass
 
     # Default to BaseLegalContract for any document
     base_template = SmartContractTemplate.objects.filter(contract_name='BaseLegalContract').first()

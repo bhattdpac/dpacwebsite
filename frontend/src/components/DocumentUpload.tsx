@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import api from '../api/api';
-import { Upload, X, FileText, CheckCircle, AlertCircle } from 'lucide-react';
+import { Upload, X, FileText, CheckCircle, AlertCircle, Cpu } from 'lucide-react';
 import axios from 'axios';
 
 interface DocumentUploadProps {
@@ -12,6 +12,7 @@ const DocumentUpload = ({ onUploadSuccess, onClose }: DocumentUploadProps) => {
   const [file, setFile] = useState<File | null>(null);
   const [title, setTitle] = useState('');
   const [loading, setLoading] = useState(false);
+  const [currentStep, setCurrentStep] = useState<number>(0); // 0 = idle, 1 = upload, 2 = nlp, 3 = audit, 4 = complete
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
 
@@ -31,10 +32,20 @@ const DocumentUpload = ({ onUploadSuccess, onClose }: DocumentUploadProps) => {
 
     setLoading(true);
     setError('');
+    setCurrentStep(1);
 
     const formData = new FormData();
     formData.append('file', file);
     formData.append('title', title);
+
+    // Timers to simulate pipeline steps during upload
+    const t1 = setTimeout(() => {
+      setCurrentStep(2);
+    }, 700);
+
+    const t2 = setTimeout(() => {
+      setCurrentStep(3);
+    }, 1500);
 
     try {
       await api.post('/documents/', formData, {
@@ -42,12 +53,20 @@ const DocumentUpload = ({ onUploadSuccess, onClose }: DocumentUploadProps) => {
           'Content-Type': 'multipart/form-data',
         },
       });
+      
+      clearTimeout(t1);
+      clearTimeout(t2);
+      setCurrentStep(4);
       setSuccess(true);
+      
       setTimeout(() => {
         onUploadSuccess();
         onClose();
       }, 1500);
     } catch (err) {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      setCurrentStep(0);
       if (axios.isAxiosError(err)) {
         setError(err.response?.data?.file?.[0] || err.response?.data?.title?.[0] || 'Failed to upload document.');
       } else {
@@ -65,26 +84,78 @@ const DocumentUpload = ({ onUploadSuccess, onClose }: DocumentUploadProps) => {
           <h2 className="text-xl font-bold flex items-center gap-2">
             <Upload className="h-5 w-5 text-accent-primary" /> Upload Document
           </h2>
-          <button onClick={onClose} className="text-text-muted hover:text-text-primary transition-colors">
-            <X className="h-6 w-6" />
-          </button>
+          {!loading && (
+            <button onClick={onClose} className="text-text-muted hover:text-text-primary transition-colors">
+              <X className="h-6 w-6" />
+            </button>
+          )}
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 space-y-6">
-          {success ? (
+        <div className="p-6">
+          {loading ? (
+            <div className="space-y-6 py-4">
+              <h3 className="text-base font-bold text-text-primary flex items-center gap-2">
+                <Cpu className="h-5 w-5 text-accent-primary animate-spin" /> Intelligent Processing Pipeline
+              </h3>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                    currentStep > 1 ? 'bg-state-success text-white' : 
+                    currentStep === 1 ? 'bg-accent-primary text-white animate-pulse' : 
+                    'bg-bg-base border border-border-default text-text-muted'
+                  }`}>
+                    {currentStep > 1 ? '✓' : '1'}
+                  </div>
+                  <div className="flex-1">
+                    <p className={`text-sm font-bold ${currentStep >= 1 ? 'text-text-primary' : 'text-text-muted'}`}>Ingesting Legal Document</p>
+                    <p className="text-[10px] text-text-muted">Uploading raw text file to secure cloud directory.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                    currentStep > 2 ? 'bg-state-success text-white' : 
+                    currentStep === 2 ? 'bg-accent-primary text-white animate-pulse' : 
+                    'bg-bg-base border border-border-default text-text-muted'
+                  }`}>
+                    {currentStep > 2 ? '✓' : '2'}
+                  </div>
+                  <div className="flex-1">
+                    <p className={`text-sm font-bold ${currentStep >= 2 ? 'text-text-primary' : 'text-text-muted'}`}>NLP Clause Extraction</p>
+                    <p className="text-[10px] text-text-muted">Identifying PAYMENT, TERMINATION, and GENERAL clauses.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                    currentStep > 3 ? 'bg-state-success text-white' : 
+                    currentStep === 3 ? 'bg-accent-primary text-white animate-pulse' : 
+                    'bg-bg-base border border-border-default text-text-muted'
+                  }`}>
+                    {currentStep > 3 ? '✓' : '3'}
+                  </div>
+                  <div className="flex-1">
+                    <p className={`text-sm font-bold ${currentStep >= 3 ? 'text-text-primary' : 'text-text-muted'}`}>Fairness & Bias Check</p>
+                    <p className="text-[10px] text-text-muted">Auditing gendered pronouns and power dynamics.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : success ? (
             <div className="text-center py-8">
               <CheckCircle className="h-16 w-16 text-state-success mx-auto mb-4" />
               <p className="text-lg font-bold text-text-primary">Upload Successful!</p>
               <p className="text-text-muted">The document has been added to your library.</p>
             </div>
           ) : (
-            <>
+            <form onSubmit={handleSubmit} className="space-y-6">
               {error && (
                 <div className="bg-red-50 border border-state-error text-state-error px-4 py-3 rounded-md flex items-center gap-2 text-sm">
                   <AlertCircle className="h-4 w-4" /> {error}
                 </div>
               )}
-
+              
               <div>
                 <label className="block text-sm font-medium text-text-primary mb-2">Document Title</label>
                 <input
@@ -127,11 +198,11 @@ const DocumentUpload = ({ onUploadSuccess, onClose }: DocumentUploadProps) => {
                 disabled={loading || !file}
                 className="w-full bg-accent-primary text-white py-3 rounded-md font-bold hover:bg-blue-700 transition-colors disabled:opacity-50"
               >
-                {loading ? 'Uploading...' : 'Start Analysis'}
+                Start Analysis
               </button>
-            </>
+            </form>
           )}
-        </form>
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4 fw-bold">Recent Conversions</h2>
+<div class="row g-4">
+  {% for file in files %}
+  <div class="col-md-6 col-lg-4">
+    <div class="card shadow-sm h-100 border-0">
+      <div class="card-body">
+        <h5 class="card-title"><span class="me-2">📄</span>{{ file.original_name }}</h5>
+        <p class="mb-1 text-muted small">{{ file.estimated_duration }} • <span class="fw-semibold">{{ 'Ready' if file.audio_ready else 'Processing...' }}</span></p>
+        {% if file.audio_ready %}
+        <div class="d-flex gap-2">
+          <a href="{{ url_for('player', file_id=file.id) }}" class="btn btn-primary btn-sm">▶️ Play</a>
+          <a href="{{ url_for('summarize', file_id=file.id) }}" class="btn btn-info btn-sm">ℹ️ Details</a>
+          <a href="{{ url_for('delete_file', file_id=file.id) }}" class="btn btn-danger btn-sm">🗑️</a>
+        </div>
+        {% else %}
+        <div class="progress my-2" style="height: 8px;">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: {{ file.progress or 67 }}%"></div>
+        </div>
+        <button class="btn btn-secondary btn-sm" disabled>⏳ Processing...</button>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %} 

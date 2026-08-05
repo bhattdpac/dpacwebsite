@@ -1,0 +1,6 @@
+{
+  "objectives": "Extracted objectives from summary",
+  "findings": "Extracted findings from summary",
+  "contributions": "Extracted contributions from summary",
+  "limitations": "Extracted limitations from summary"
+}

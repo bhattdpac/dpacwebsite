@@ -1,0 +1,12 @@
+PyMuPDF
+pdfplumber
+Tesseract
+EasyOCR
+spaCy
+NLTK
+SQLAlchemy
+psycopg2
+elasticsearch-py
+FastAPI
+Flask
+uvicorn

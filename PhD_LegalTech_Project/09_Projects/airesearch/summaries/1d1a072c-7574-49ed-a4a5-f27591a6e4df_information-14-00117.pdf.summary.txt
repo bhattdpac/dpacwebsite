@@ -1,0 +1,1 @@
+[Summary failed: Ollama not installed. Please install Ollama from https://ollama.com/]

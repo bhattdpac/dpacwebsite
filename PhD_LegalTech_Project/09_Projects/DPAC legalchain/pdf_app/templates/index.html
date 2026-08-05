@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Uploaded PDFs & Podcasts</h2>
+    <a href="/upload" class="btn btn-success mb-3">Upload New PDF</a>
+    {% if files %}
+    <ul class="list-group">
+        {% for file in files %}
+        <li class="list-group-item d-flex flex-column align-items-start mb-3">
+            <div class="fw-bold">{{ file.pdf }}</div>
+            <audio id="audio-{{ loop.index }}" controls style="width: 100%; margin-top: 10px;">
+                <source src="{{ url_for('serve_audio', filename=file.audio) }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="{{ url_for('summarize', filename=file.pdf) }}" class="btn btn-info btn-sm mt-2">Summarize</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No PDFs uploaded yet.</p>
+    {% endif %}
+</div>
+{% endblock %} 

@@ -1,0 +1,30 @@
+[{
+  
+  "template_id": 3,
+  "template_type": "supplychain",
+  "__v": 0,
+  "application_name": "supplychain",
+  "version": [
+    1
+  ]
+},
+{
+ 
+  "template_id": 1,
+  "template_type": "certificate",
+  "__v": 3,
+  "application_name": "Certificate",
+  "version": [
+    1,
+    2
+  ]
+},
+{
+ 
+  "template_type": "insurance",
+  "template_id": 4,
+  "version": [
+    "1.0"
+  ],
+  "language": "nodejs"
+}]

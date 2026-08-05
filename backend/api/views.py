@@ -155,3 +155,15 @@ class ResearchPaperViewSet(viewsets.ModelViewSet):
         paper.methodology = sections.get('methodology', '')
         paper.findings = sections.get('findings', '')
         paper.save()
+
+    @action(detail=True, methods=['get'])
+    def recommendations(self, request, pk=None):
+        paper = self.get_object()
+        # Find related papers and legal cases based on abstract terms
+        related_papers = research_nlp_service.get_related_papers(paper.abstract, limit=3)
+        related_cases = research_nlp_service.get_related_cases(paper.abstract, limit=3)
+        return Response({
+            "papers": related_papers,
+            "cases": related_cases
+        })
+

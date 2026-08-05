@@ -16,7 +16,7 @@ import {
   Lock
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { uploadResearchPaper, getResearchPapers } from '../api/api';
+import api, { uploadResearchPaper, getResearchPapers } from '../api/api';
 
 interface Paper {
   id: number;
@@ -32,6 +32,21 @@ const ResearchHub = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [results, setResults] = useState<Paper | null>(null);
   const [recentPapers, setRecentPapers] = useState<Paper[]>([]);
+  const [recommendations, setRecommendations] = useState<{ papers: any[]; cases: any[] }>({ papers: [], cases: [] });
+  const [loadingRecommendations, setLoadingRecommendations] = useState(false);
+
+  const fetchRecommendations = useCallback(async (paperId: number) => {
+    setLoadingRecommendations(true);
+    try {
+      const response = await api.get(`/research-papers/${paperId}/recommendations/`);
+      setRecommendations(response.data || { papers: [], cases: [] });
+    } catch {
+      setRecommendations({ papers: [], cases: [] });
+    } finally {
+      setLoadingRecommendations(false);
+    }
+  }, []);
+
 
   const loadRecentPapers = useCallback(async () => {
     try {
@@ -64,6 +79,7 @@ const ResearchHub = () => {
     try {
       const data = await uploadResearchPaper(formData);
       setResults(data);
+      fetchRecommendations(data.id);
       loadRecentPapers();
     } catch {
       alert("Analysis failed. Please ensure you are logged in as a Lawyer (Researcher).");
@@ -214,6 +230,71 @@ const ResearchHub = () => {
                   </div>
                 </div>
 
+                {/* Recommendations Grid */}
+                <div className="border-t border-white/5 pt-8 grid md:grid-cols-2 gap-6">
+                  {/* arXiv Recommendations */}
+                  <div className="space-y-4">
+                    <h4 className="text-xs font-bold text-accent-secondary uppercase tracking-widest flex items-center gap-2">
+                      <BookOpen className="h-4 w-4" /> Recommended Relevant Papers (arXiv)
+                    </h4>
+                    {loadingRecommendations ? (
+                      <div className="flex items-center gap-2 text-xs text-text-muted">
+                        <Loader2 className="h-4 w-4 animate-spin text-accent-secondary" /> Tracing similar publications...
+                      </div>
+                    ) : recommendations.papers && recommendations.papers.length > 0 ? (
+                      <div className="space-y-3 max-h-[250px] overflow-y-auto pr-1 scrollbar-thin">
+                        {recommendations.papers.map((rec: any) => (
+                          <div key={rec.id} className="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-accent-secondary/35 transition-colors">
+                            <p className="font-bold text-sm text-text-primary leading-snug line-clamp-1">{rec.title}</p>
+                            <p className="text-[10px] text-text-muted mt-1 truncate">Authors: {rec.authors} | Class: {rec.categories}</p>
+                            <p className="text-[10px] text-text-muted line-clamp-2 mt-2 font-medium italic">"{rec.abstract}"</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-xs text-text-muted italic">No highly similar research papers found in the blockchain/security index.</p>
+                    )}
+                  </div>
+
+                  {/* FCA Legal Case Recommendations */}
+                  <div className="space-y-4 border-t md:border-t-0 md:border-l border-white/5 pt-6 md:pt-0 md:pl-6">
+                    <h4 className="text-xs font-bold text-accent-primary uppercase tracking-widest flex items-center gap-2">
+                      <ShieldCheck className="h-4 w-4" /> Recommended Legal Cases (FCA)
+                    </h4>
+                    {loadingRecommendations ? (
+                      <div className="flex items-center gap-2 text-xs text-text-muted">
+                        <Loader2 className="h-4 w-4 animate-spin text-accent-primary" /> Tracing related judicial precedents...
+                      </div>
+                    ) : recommendations.cases && recommendations.cases.length > 0 ? (
+                      <div className="space-y-3 max-h-[250px] overflow-y-auto pr-1 scrollbar-thin">
+                        {recommendations.cases.map((rec: any) => (
+                          <div key={rec.id} className="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-accent-primary/35 transition-colors">
+                            <p className="font-bold text-sm text-text-primary leading-snug line-clamp-1">{rec.name}</p>
+                            {rec.catchphrases && (
+                              <p className="text-[10px] text-text-muted mt-1 line-clamp-2">
+                                <span className="font-semibold text-accent-primary/80">Catchphrases: </span>
+                                {rec.catchphrases}
+                              </p>
+                            )}
+                            <p className="text-[10px] text-text-muted line-clamp-2 mt-2 font-medium italic">"{rec.summary}"</p>
+                            <a 
+                              href={rec.austlii_url} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="inline-flex items-center gap-1 text-[10px] font-bold text-accent-primary hover:underline mt-2"
+                            >
+                              View on AustLII <ArrowRight className="w-2.5 h-2.5" />
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-xs text-text-muted italic">No highly similar judicial precedents found in the Federal Court of Australia index.</p>
+                    )}
+                  </div>
+                </div>
+
+
                 <div className="pt-8">
                   <button className="w-full bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center justify-between group hover:bg-white/10 transition-all">
                     <div className="flex items-center gap-4 text-left">
@@ -248,7 +329,14 @@ const ResearchHub = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {recentPapers.map((paper) => (
-              <div key={paper.id} className="p-8 space-card rounded-3xl border border-white/5 hover:bg-white/[0.04] transition-all cursor-pointer group" onClick={() => setResults(paper)}>
+              <div 
+                key={paper.id} 
+                className="p-8 space-card rounded-3xl border border-white/5 hover:bg-white/[0.04] transition-all cursor-pointer group" 
+                onClick={() => {
+                  setResults(paper);
+                  fetchRecommendations(paper.id);
+                }}
+              >
                 <div className="flex justify-between items-start mb-6">
                   <div className="w-10 h-10 rounded-xl bg-bg-base border border-white/5 flex items-center justify-center text-text-muted group-hover:border-accent-secondary transition-colors">
                     <FileText className="w-5 h-5" />
@@ -269,6 +357,90 @@ const ResearchHub = () => {
                 <p className="text-text-muted font-medium uppercase tracking-widest text-xs">No research papers analyzed yet.</p>
               </div>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Research Context & Guide */}
+      <section className="py-24 px-8 border-t border-white/5 bg-white/[0.01]">
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div className="text-center space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-secondary/10 text-accent-secondary text-[10px] font-bold uppercase tracking-widest border border-accent-secondary/20">
+              Academic Blueprint
+            </div>
+            <h2 className="text-4xl font-display font-bold uppercase tracking-tight">PhD Research Blueprint & Operations</h2>
+            <p className="text-text-muted text-sm font-medium max-w-xl mx-auto">
+              A detailed overview of the thesis, core concepts, and operational pipeline of the legal tech framework.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* The Research Thesis */}
+            <div className="p-8 space-card rounded-3xl border border-white/5 space-y-6">
+              <h3 className="text-2xl font-display font-bold text-accent-secondary border-b border-white/5 pb-4">What My Research Is About</h3>
+              
+              <div className="space-y-4 text-sm text-text-muted leading-relaxed">
+                <p>
+                  This research addresses a major bottleneck in modern digital commerce: **translating human-readable legal agreements into secure, auto-executing code on a blockchain** without losing legal standing or consumer protection.
+                </p>
+                
+                <h4 className="font-bold text-text-primary text-xs uppercase tracking-wider mt-4">Key Innovation Pillars:</h4>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>
+                    <strong className="text-text-primary">Bifurcated (Hybrid) Contracts:</strong> Bridges the "Pragmatic Gap" by wrapping an immutable on-chain smart contract inside an off-chain natural-language legal agreement, ensuring compatibility under the <em>Indian Contract Act (1872)</em> and <em>IT Act (2000)</em>.
+                  </li>
+                  <li>
+                    <strong className="text-text-primary">Human-in-the-Loop Validation:</strong> Rejects raw "code is law" automation. The system requires explicit confirmation and approval from legal professionals and clients before on-chain deployment.
+                  </li>
+                  <li>
+                    <strong className="text-text-primary">Intelligent Bias Auditing:</strong> Integrates custom NLP pipeline models to automatically flag gendered pronouns and unilateral power imbalances (such as absolute discretion notice rules) in clauses.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* How To Guide */}
+            <div className="p-8 space-card rounded-3xl border border-white/5 space-y-6">
+              <h3 className="text-2xl font-display font-bold text-accent-primary border-b border-white/5 pb-4">How To Use the System</h3>
+              
+              <div className="space-y-4 text-sm text-text-muted leading-relaxed">
+                <p>
+                  The framework coordinates a seamless 5-step pipeline matching raw document uploads to deployed blockchain transactions:
+                </p>
+
+                <div className="relative border-l border-white/10 pl-6 space-y-6">
+                  <div className="relative">
+                    <span className="absolute -left-[30px] w-2.5 h-2.5 rounded-full bg-accent-secondary mt-1.5" />
+                    <h5 className="font-bold text-text-primary text-xs uppercase tracking-wider">Step 1: Document Upload</h5>
+                    <p className="text-xs">Upload a lease or NDA text document in standard format (PDF/TXT) via the lawyer portal.</p>
+                  </div>
+                  
+                  <div className="relative">
+                    <span className="absolute -left-[30px] w-2.5 h-2.5 rounded-full bg-accent-secondary mt-1.5" />
+                    <h5 className="font-bold text-text-primary text-xs uppercase tracking-wider">Step 2: AI Audit & Extraction</h5>
+                    <p className="text-xs">The NLP service automatically extracts clauses, assesses parameter ranges, and flags any gender/power biases for review.</p>
+                  </div>
+
+                  <div className="relative">
+                    <span className="absolute -left-[30px] w-2.5 h-2.5 rounded-full bg-accent-secondary mt-1.5" />
+                    <h5 className="font-bold text-text-primary text-xs uppercase tracking-wider">Step 3: Smart Contract Compiling</h5>
+                    <p className="text-xs">Approved parameters are automatically injected into verified, gas-optimized Solidity templates (like PaymentEscrow.sol).</p>
+                  </div>
+
+                  <div className="relative">
+                    <span className="absolute -left-[30px] w-2.5 h-2.5 rounded-full bg-accent-secondary mt-1.5" />
+                    <h5 className="font-bold text-text-primary text-xs uppercase tracking-wider">Step 4: Client Verification</h5>
+                    <p className="text-xs">Clients log in, review a generated plain-language explanation of the code, and approve parameters.</p>
+                  </div>
+
+                  <div className="relative">
+                    <span className="absolute -left-[30px] w-2.5 h-2.5 rounded-full bg-accent-secondary mt-1.5" />
+                    <h5 className="font-bold text-text-primary text-xs uppercase tracking-wider">Step 5: Blockchain Deployment</h5>
+                    <p className="text-xs">The lawyer triggers deployment, uploading the compiled bytecode to the blockchain ledger, storing transaction details.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

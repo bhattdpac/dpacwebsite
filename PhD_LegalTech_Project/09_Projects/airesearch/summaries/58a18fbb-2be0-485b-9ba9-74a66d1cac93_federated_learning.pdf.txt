@@ -1,0 +1,1462 @@
+Contents lists available at ScienceDirect
+Ad Hoc Networks
+journal homepage: www.elsevier.com/locate/adhoc
+BFL-SC: A blockchain-enabled federated learning framework, with smart
+contracts, for securing social media-integrated internet of things systems
+Sara Salim ∗, Nour Moustafa, Benjamin Turnbull
+School of Engineering and Technology, University of New South Wales (UNSW), Northcott Dr., Campbell, 2612, ACT, Australia
+A R T I C L E
+I N F O
+Keywords:
+Federated learning
+Blockchain
+Smart contracts
+Differential privacy
+Free-riding attack
+Model inversion attack
+Poisoning attacks
+A B S T R A C T
+The integration of Social Media (SM) and the Internet of Things (IoT) is gradually transforming the activities of
+SM users into valuable data streams that can be analyzed using Machine Learning (ML) algorithms. Federated
+Learning (FL) has been widely employed to predict user and anomaly behaviors from distributed systems.
+However, FL encounters substantial security challenges, particularly within the context of SM-integrated IoT
+systems, known as SM 3.0 systems. These challenges encompass issues of accountability and vulnerabilities that
+render them susceptible to various cyberattacks, including single-point-of-failure, free-riding, model inversion,
+and poisoning attacks. We propose a Blockchain-enabled FL with Smart Contracts (SC) (BFL-SC) framework. To
+coordinate the learning process, track participants’ contributions and reward the participants transparently, an
+SC-based FL is constructed as an incentive mechanism that combats free-riding attacks and enables automated
+and auditable rewarding of the participants. Also, to conceal the original data points and mitigate the impact of
+model inversion attacks, a Differentially Privacy-based Perturbation (DPP) mechanism is proposed. To address
+potential poisoning attacks, a thorough verification protocol is suggested. The experimental results obtained
+from two datasets, namely SM 3.0 and Human Activity Recognition (HAR), show that the BFL-SC framework
+can achieve high utility with a precision of 96.95% over the SM 3.0 dataset and 90.14% over the HAR dataset
+while adhering to privacy and efficiency standards, compared with compelling techniques.
+1. Introduction
+Web 3.0 signifies the third generation of web technologies, char-
+acterized by the integration of decentralization and agility into web
+applications [1,2]. In the context of this evolution, the integration
+of Social Media (SM) with the Internet of Things (IoT), known as
+SM 3.0, brings about enhanced connectivity, interaction, and seamless
+movement across physical spaces [3]. However, this integration also
+amplifies the potential of cyberattacks and privacy breaches in such
+data-rich environments, leading to potential financial, political, and
+social damages [4]. As many applications in such environments use
+Machine Learning (ML) techniques that for training often require large
+amounts of data collected from the IoT, data privacy is a critical
+issue [5]. Therefore, approaches that maintain the utility of such valu-
+able data while protecting individuals’ privacy are required. Federated
+Learning (FL)-based Privacy Preservation (PP) is one such approach [6].
+According to [7], the average cost of a data breach in Australia in
+2023 was $3.35 million, an increase of 9.8% over that of the previous
+year. This is approximately $2 million less than the global average for
+2020 of $5.39 million. Due to the rise of big data, ML, and Artificial
+Intelligence (AI), there has also been greater emphasis placed on data
+∗Corresponding author.
+E-mail address: s.salim@unsw.edu.au (S. Salim).
+privacy and security. At the same time, governments are strengthening
+data security and PP through new legislation, such as the European
+Union’s General Data Protection Regulation (GDPR) [4].
+FL [3] expands the scale of training data while protecting partic-
+ipants’ data privacy by periodically exchanging updates at a specific
+frequency (i.e., communication rounds) between local and global mod-
+els rather than instantaneously exchanging raw data. It evolved as a PP
+technique as well as a new category of distributed ML models, relevant
+to a large number of domains that contain sensitive data [8]. However,
+despite its distributed collaborative learning architecture, protected by
+PP safeguards, private information can be illegally inferred from its
+exchanges of models’ updates. At the same time, the sharing of models
+and the high numbers of training iterations and communication rounds
+can be exploited by hackers and curious parties for various purposes,
+such as manipulating a learning model’s output and gaining access to
+sensitive data [4,8].
+Research Challenges– In the context of FL, several potential re-
+search challenges emerge, as demonstrated by recent work [9,10].
+These challenges encompass various aspects that need to be addressed
+for the secure and efficient operation of the learning framework. These
+https://doi.org/10.1016/j.adhoc.2025.103760
+Received 17 September 2024; Received in revised form 18 December 2024; Accepted 7 January 2025
+Ad Hoc Networks 169 (2025) 103760 
+Available online 14 January 2025 
+1570-8705/© 2025 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/ ). 
+ S. Salim et al.
+challenges include:
+Model Poisoning Attacks: A significant challenge in FL arises from
+the potential for participants to upload model updates that, whether
+intentionally or unintentionally, degrade the quality and performance
+of the global model. Malicious participants may manipulate their local
+training datasets or tamper with the model updates before sending
+them to the central server for aggregation, resulting in a phenomenon
+known as model poisoning [4]. These adversarial manipulations can
+severely compromise the integrity of the global model, often causing
+it to make incorrect predictions or behave unpredictably. To mitigate
+the risk of such attacks, it is essential to implement robust verification
+procedures that ensure the authenticity and quality of model updates.
+Incentive mechanisms – systems designed to reward participants based
+on the quality and usefulness of their contributions – are fundamental
+for deterring such attacks. By providing participants with sufficient
+motivation to behave honestly, these mechanisms can prevent adver-
+saries from taking advantage of the system to undermine the learning
+process. Without adequate incentives, malicious actors may find op-
+portunities to inject harmful updates into the model without facing
+any consequences, thereby undermining the effectiveness of the FL
+system [11].
+Model inversion attacks: Another significant challenge arises from
+the potential leakage of sensitive information embedded in local train-
+ing data, which can be inferred from the shared model updates [12].
+Attackers may leverage inference techniques, such as gradient inversion
+or model inversion, to indirectly extract confidential details about the
+local datasets. For example, attackers can reconstruct class represen-
+tatives or individual data points by analyzing the model parameters,
+including gradients, weights, or activations, which are shared during
+the aggregation process [4]. This indirect extraction of sensitive in-
+formation constitutes an inference attack [13], where attackers gain
+access to private data without direct access to the local training data.
+To mitigate this risk, privacy-preserving techniques, such as Differential
+Privacy (DP) [14], can be applied to perturb the model updates, making
+it computationally infeasible to extract meaningful information and
+ensuring that even if they are intercepted, the confidential data remains
+protected.
+Free-Riding Attacks: In FL, where participants contribute com-
+putational resources and data to the collaborative training process
+without receiving direct financial compensation, the issue of free-riding
+becomes a serious concern [4]. Free-riding participants may choose to
+contribute little or nothing while still benefiting from the improvements
+made to the global model. This behavior can distort the learning pro-
+cess, as the global model may be trained on incomplete or suboptimal
+data, which, in turn, impacts its accuracy and overall performance.
+Furthermore, free-riders reduce the incentive for other participants to
+contribute meaningfully, potentially leading to a decrease in overall
+system efficiency. To mitigate free-riding attacks, it is crucial to de-
+sign and implement effective incentive mechanisms that encourage
+participants to make valuable contributions. These mechanisms may
+include rewarding participants based on the quality and relevance of
+their updates or employing reputation systems that track participants’
+contributions over time. Such strategies ensure that all participants
+are motivated to engage actively, which enhances the reliability and
+efficiency of the FL framework.
+To protect against such attacks, recent approaches propose using
+blockchain as a mechanism for sharing and validating local mod-
+els [15–17]. Blockchain is a distributed ledger technology that records
+transactions in a series of blocks linked chronologically, ensuring data
+integrity and transparency [18]. By leveraging blockchain, participants
+can ensure the transparency and integrity of model updates shared
+during the FL process. However, despite the enhanced security pro-
+vided by blockchain, challenges persist, such as the potential lack
+of active contribution from local participants in a consortium-trusted
+environment [11,19]. Participants may opt to remain passive or provide
+minimal contributions, which can undermine the collaborative nature
+of the learning process. Furthermore, the risk of malicious participants
+uploading poisoned local models to compromise the global model’s
+accuracy remains a concern [13].
+In light of these complexities, it is imperative to explore compre-
+hensive approaches that combine the benefits of blockchain technology
+with additional security measures to enhance the resilience and trust-
+worthiness of FL systems. By addressing the aforementioned challenges
+and developing robust mechanisms to incentivize active participation,
+detect and mitigate attacks, and ensure PP, we can pave the way for
+more secure and reliable FL frameworks.
+Contribution– This study seeks to explore the actual potential of
+FL-based PP techniques in the domain of SM-integrated IoT. It aims to
+address critical vulnerabilities in the FL paradigm, paving the way for
+more robust FL environments with enhanced PP guarantees. To accom-
+plish this, a novel strategy is proposed to mitigate the aforementioned
+vulnerabilities and attacks. Firstly, a unique and transparent Smart
+Contracts (SC) architecture is leveraged on a blockchain to construct an
+SC-based FL framework. Through this SC-based FL framework, we es-
+tablish coordination for the learning process while ensuring transparent
+tracking of participants’ contributions.
+This architecture provides a novel scalar incentive mechanism,
+which serves as a powerful deterrent against free-riding attacks. Fur-
+thermore, it enables automated and auditable rewarding of partici-
+pants, thereby fostering accountability and recognizing the quality of
+their contributions. In addition to the SC-based architecture, we harness
+the power of DP and develop a cutting-edge DP-based data-level Per-
+turbation (DPP) mechanism. This mechanism specifically targets model
+inversion attacks in a conventional FL environment, significantly en-
+hancing PP. By perturbing original data points and training the global
+model locally using these perturbed data, the DPP mechanism substan-
+tially reduces the impact of model inversion attacks. The contributions
+of this paper can be summarized as follows:
+• Design and implementation of framework: We propose a com-
+prehensive Blockchain-enabled Federated Learning with Smart
+Contracts (BFL-SC) framework that addresses the limitations of
+centralized FL systems. This framework offers participants a de-
+centralized, transparent, and secure environment for privacy-
+preserving execution. By leveraging the blockchain architecture
+integrated with SC, the BFL-SC framework ensures mutual trust
+and accountability among all FL participants, facilitating collab-
+orative learning without relying on a central authority.
+• Resistance to model inversion attacks: The BFL-SC framework
+incorporates a cutting-edge DPP mechanism, enabling partici-
+pants to perform decentralized PP operations on their datasets.
+This mechanism effectively mitigates the risk of model inversion
+attacks within the FL scenario by preventing adversaries from
+extracting sensitive information from the local models. As a re-
+sult, the DPP mechanism ensures the confidentiality of individual
+participants’ data while maintaining the integrity of the global
+model.
+• Demonstrating imperviousness to poisoning attacks: In the BFL-SC
+framework, the traditional central authority in FL is replaced by
+a novel SC-based system, which introduces a robust verification
+protocol for local models. This decentralized approach signifi-
+cantly reduces the risk of poisoning attacks, as each model update
+undergoes thorough validation before being incorporated into
+the global model. As a result, the PP of the FL environment is
+strengthened, ensuring the integrity of the learning process.
+• SC-based incentive mechanism: A novel incentive mechanism is
+designed and implemented within the SC to prevent free-riding
+attacks and encourage active participation from all participants.
+This mechanism automates the reward distribution process, en-
+suring that rewards are allocated based on each participant’s
+actual contribution to the learning process. By making the re-
+ward system transparent, auditable, and autonomous, the BFL-SC
+Ad Hoc Networks 169 (2025) 103760 
+2 
+ S. Salim et al.
+framework not only motivates participants to contribute effec-
+tively but also helps build trust in the model’s reliability. Par-
+ticipants are rewarded fairly and proportionally to the quality of
+their contributions, ensuring continued engagement and fostering
+a collaborative environment.
+Research Outline– The structure of this paper is organized as follows.
+Section 2 provides the background and reviews the existing related
+work. In Section 3, we present a novel BFL-SC framework. The exper-
+imental results derived from our framework are detailed in Section 4,
+shedding light on the empirical findings and outcomes. Finally, in
+Section 5, we conclude the paper.
+2. Background and related works
+In this section, we provide an introduction to the fundamental
+concepts of FL and SC-based frameworks. We then review the related
+work, highlighting the evolution and lineage of existing frameworks,
+and discuss the gap that motivates the development of the proposed
+BFL-SC framework. This section aims to set the stage for understanding
+both the theoretical foundations and the practical needs that underpin
+our approach.
+2.1. Federated learning
+Consider a generic FL framework that involves a single server and 𝑁
+participants. Each participant, denoted as 𝑃𝑖, holds a local dataset 𝐷𝑖,
+where 𝑖∈ 1, 2, … , 𝑁. The objective at the server is to train a global
+model 𝑀𝐺using the data distributed across the 𝑁participants. We
+can describe the size of the training datasets as |𝐷| = ∑𝑁
+𝑖=1 |𝐷𝑖|, with
+𝑄𝑖=
+|𝐷𝑖|
+|𝐷|
+≥0 and ∑𝑁
+𝑖=1 𝑄𝑖= 1 representing the proportions of the
+datasets.
+Typically, the local training datasets of participants consist of input–
+output pairs, denoted as (𝑥𝑖, 𝑦𝑖), where the input vector 𝑥𝑖∈R𝑑has 𝑑
+features, and the corresponding labeled output 𝑦𝑖∈R. In the learning
+setting, the objective is to learn the model parameter vector (R𝑑)
+that characterizes the output 𝑦𝑖using a loss function 𝐿𝑖(𝑀), such as
+𝐿𝑖(𝑀) =
+1
+2(𝑥𝑇
+𝑖𝑀−𝑦𝑖). The aim is to aggregate the training vectors
+𝑥𝑖(representing the SM and IoT data) at the central server using the
+following aggregation equation:
+𝑀𝐺=
+𝑁
+∑
+𝑖=1
+𝑄𝑖𝑀𝑖
+(1)
+where 𝑀𝐺represents the resulting global model, and 𝑀𝑖denotes the
+updates of the local model trained on the dataset of the 𝑖th participant.
+Consequently, FL aims to learn the global model through parameter
+aggregation, considering the constraints of local dataset storage and
+processing by the participants. This can be formulated as a federated
+optimization problem:
+𝑀𝐺= ar gmin
+𝑁
+∑
+𝑖=1
+𝑄𝑖𝐿𝑖(𝑀 , 𝐷𝑖)
+(2)
+where 𝐿𝑖(.) represents the loss function of the local model of the 𝑖th par-
+ticipant. The solution to this optimization problem’s objective function
+will converge to the global optimal model after a predefined number
+of communication rounds, involving local training and exchange of
+training results between the server and participants.
+2.2. Smart contracts
+SC is a fundamental technology that underpins blockchain. In
+essence, SCs can be defined as ‘‘a set of digitally specified promises
+and agreements that contract parties can fulfill’’ [20]. In the context
+of blockchain, SCs serve as programmable contracts, leveraging the
+decentralized, transparent, and immutable nature of blockchain. The
+Fig. 1. Poisoning attacks in FL framework.
+Fig. 2. Model inversion attacks in FL framework.
+integration of SC technology with blockchain provides an ideal environ-
+ment for automating the execution of FL. The entire learning process
+within the FL system can be effectively traced back and executed
+through SCs.
+By leveraging blockchain technology, SCs offer cost-effectiveness
+and eliminate the possibility of hostile behavior interfering with con-
+tract execution. When an SC is digitally written into the blockchain, the
+properties of the blockchain ensure the maintenance, deployment, and
+execution of its parameters. This enables the traceability, transparency,
+and immutability of the entire learning process. The decentralized
+nature of blockchain ensures that SCs are executed in a distributed
+manner, without the need for a centralized authority, enhancing the
+security and reliability of FL systems.
+2.3. Attack principles in federated learning
+FL-based environments are susceptible to various attacks, including
+poisoning [8], model inversion [3], and free-riding attacks [4], which
+undermine performance, privacy, and efficiency.
+Poisoning attacks [8] (shown in Fig. 1) aim to degrade the global
+model by introducing malicious updates. These can occur through data
+poisoning, where local data is manipulated, or model poisoning, where
+gradients are altered before being shared. Model poisoning is typically
+more effective due to its direct influence on the aggregated global
+model.
+Model inversion attacks [3] (shown in Fig. 2) focus on reconstruct-
+ing sensitive training data from shared model updates. Adversaries
+achieve this by collecting gradients, training an attack model to reverse
+the updates, and recovering the raw data, posing severe privacy risks.
+Free-riding attacks [4] involve participants who abstain from con-
+tributing meaningful updates but still benefit from the global model.
+Such behavior disrupts fairness and efficiency in the learning process,
+especially in resource-constrained settings.
+Ad Hoc Networks 169 (2025) 103760 
+3 
+ S. Salim et al.
+These attacks highlight the critical need for robust security measures
+in FL.
+2.4. Related work
+Several studies have focused on enhancing the security and privacy
+of IoT and SM networks through the integration of FL, blockchain,
+and DP. Despite these advancements, challenges related to inference
+attacks and accountability in FL systems remain unresolved [13]. FL
+is vulnerable to model inversion attacks, where adversaries attempt
+to infer sensitive data from model updates [4,8,12]. The centralized
+nature of FL introduces concerns regarding accountability, making the
+system susceptible to issues such as poisoning attacks and free-riding
+behavior among participants [4,8,21]. To address these issues, several
+works have proposed solutions based on blockchain technology due to
+its inherent immutability and transparency.
+For instance, [13,18] leverage blockchain to offer incentives to
+participants and track the quality of local model updates, ensuring
+a more trustworthy FL process. Similarly, [22] proposes the use of
+blockchain to enable any internet-empowered device to contribute
+to a global privacy-preserving data-sharing network. However, these
+approaches introduce the challenge of model leakage due to the in-
+volvement of third parties, known as miners in the blockchain, which
+may compromise privacy.
+Further advancements have been made to tackle security vulnera-
+bilities in FL systems. Zhao et al. [15] introduced an FL scheme that
+integrates a reputation mechanism along with DP, enabling manufac-
+turers to train ML models while respecting the privacy of participants’
+data. In industrial IoT, Jia et al. [16] proposed a blockchain-enabled FL
+application model that improves security. Passerat et al. [17] extended
+the use of blockchain in FL to facilitate the secure sharing of electronic
+health data among hospitals. These solutions highlight the utility of
+blockchain in enhancing FL security but still face challenges in ensur-
+ing strong privacy guarantees, especially in data-intensive applications
+such as healthcare.
+In the medical domain, [11] presented a blockchain-based FL archi-
+tecture combining blockchain with SCs, designed to ensure the security
+and privacy of medical data shared across healthcare institutions. While
+these works contribute to the security of FL, the privacy of sensitive
+data remains a critical concern, particularly in contexts that require
+intensive data sharing for performance improvement.
+Other works have focused on the role of encryption and trust
+mechanisms within FL. For example, [23] proposed a multi-attribute
+trust metric to evaluate participants in FL environments. However,
+this model lacks robust privacy integration, which is essential for
+maintaining data confidentiality and utility in FL systems. Another
+approach by [24] introduced a cross-modal search framework utilizing
+homomorphic encryption to secure data in FL. While this provides
+high security, it introduces significant computational overhead. On
+the other hand, [25] discussed a compressed-sensing FL model that
+focuses on communication efficiency but sacrifices accuracy when high
+compression rates are applied.
+In addition to these, the application of incentive mechanisms to
+FL has been explored in various studies. For instance, [26] introduced
+ADFL, which utilizes proof mechanisms to defend against poisoning at-
+tacks. This approach, while effective in ensuring data integrity, does not
+provide the same level of participant incentivization as other models,
+leaving room for improvement in participant engagement and trust.
+Recent advancements have led to the development of frameworks
+that integrate advanced privacy techniques such as DP, along with
+reputation-based incentive systems. These methods aim to enhance the
+reliability and resilience of FL-based systems, offering new avenues for
+improving privacy-preserving and trust-enhancing FL models. Despite
+significant progress, challenges such as balancing privacy and utility,
+maintaining high model accuracy, and ensuring robust participant
+engagement continue to be central concerns for FL-based systems [13].
+Motivated by these studies, our proposed BFL-SC framework intro-
+duces a novel decentralized DPP mechanism to address these chal-
+lenges, achieving high accuracy, resilience, and privacy across dis-
+tributed systems while also enhancing participant engagement through
+an innovative reputation-based incentive model.
+3. BFL-SC framework design and implementation
+In this section, we first present an overview of the BFL-SC frame-
+work (hereinafter referred to as BFL-SC) and then its implementation.
+3.1. Overview of the proposed framework
+To facilitate a better understanding of the BFL-SC framework, we
+provide an overview of its functioning as illustrated in Fig. 3. Further-
+more, to coordinate a learning task between its initiator and partici-
+pants, it is assumed that there are four entities/roles, namely, (i) an
+SC-based administrator who deploys SCs on the blockchain, (ii) task
+initiators who launch a request to construct a learning model, that is,
+FL tasks with rewards, (iii) training participants who locally train FL
+global models to gain rewards and (iv) miners who validate/quantify
+the participants’ contributions. Table 1 provides a detailed depiction of
+these entities and their respective roles within the BFL-SC framework.
+As illustrated in Fig. 3, with an initial global model and sufficient
+deposit to reward contributing entities, a task initiator adds an FL task
+to an SC-based system. Participants willing to cooperate in the learning
+process but do not want to reveal their data join and are allocated
+particular tasks as either training participants or miners. Each training
+participant initially collects a specified amount of data that is being per-
+turbed using a data-level perturbation mechanism to protect its privacy
+against any potential attack, as explained in Section 3.2.5. Then the SC-
+based administrator creates an SC as a genesis block of the blockchain’s
+distributed ledger that encapsulates the task’s requirements as well as
+a test dataset provided by the task initiator. Meanwhile, the SC triggers
+the related functions to execute the learning task.
+In the first round of a task’s execution, a training participant re-
+trieves its initialized global model (𝑀0
+𝐺), updates it with the perturbed
+version of its local data (𝐷′
+𝑖) and uploads the training results (local
+updates) to the associated miners. The miners then evaluate all the
+uploaded models to quantify the training participants’ contributions
+based on the levels of classification accuracy of their uploaded models.
+These models are then used to generate the current round’s global
+one. The training participants in the second round receive the previous
+round’s global model, train it on their data and upload their local
+models’ updates. In each round, rewards are offered to both the training
+participants and miners depending on their quantifiable contributions
+to the FL task. These steps are continued until 𝑅rounds are reached.
+3.2. BFL-SC framework implementation
+In this section, the minimum functionalities deployed in the SC
+to enable the workflow stated in the previous section to occur are
+outlined. The entire process of the proposed framework is composed of
+eight phases: (1) initialization; (2) task initiation and deposit-holding;
+(3) task and SC deployment; (4) local model updating; (5) verifica-
+tion of model and quantifications of contributions; (6) global model
+aggregation; (7) block generation and validation; and (8) incentive
+allocation. A diagram of the sequence of the BFL-SC’s learning process
+is depicted in Fig. 4.
+With the implementation of the blockchain, in addition to the task
+initiator and SC-based administrator, the BFL-SC is co-designed by a
+set of participants (𝐸= 𝑒1, … , 𝑒𝐴) willing to work on the task over a
+sequence of rounds (𝑅). In each round, each participant (𝑒) is assigned
+to one of the following key roles: training participants (𝑃= 𝑃1, … , 𝑃𝑁)
+and miners (𝑆= 𝑠1, … , 𝑠𝐽), where 𝑁+ 𝐽= 𝐴.
+Ad Hoc Networks 169 (2025) 103760 
+4 
+ S. Salim et al.
+Fig. 3. Overview of BFL-SC framework.
+Table 1
+Descriptions of entities’ roles.
+Entity
+Role
+Input
+Output
+Task Initiator
+Launches a request to construct an FL task
+Aggregated global model
+as a task response
+All task specifications with the initial global
+model, test dataset, and deposit enough for
+rewarding the contributed entities.
+SC-based
+Administrator
+Deploys SC on the blockchain, registers the
+federation entities, holds the deposits for
+accountability, assigns roles for learning process,
+appends the transaction’s block to the distributed
+ledger, and rewards the contributing entities based
+on an incentive mechanism.
+Validated block, all task
+specifications,
+requirements, and
+thresholds
+Rewards to the miners and training participants,
+global model to the task initiator as a task’s
+response.
+Training
+Participant
+Collects the data for local training, applies the
+DPP mechanism to perturb the local dataset,
+locally trains the pre-given global model on the
+perturbed dataset, and uploads its local model
+updates to the miners.
+Task specifications,
+initial/previous round’s
+global model
+Local model updates.
+Miner
+Validates the uploaded local model, quantifies the
+participants’ contributions, broadcasts and
+aggregates qualified ones, mines and
+cross-validates round’s block.
+Local models’ updates,
+testing dataset
+Aggregated global model, contribution quality
+measurements for the uploaded model, approval
+from the majority of round’s block.
+3.2.1. Initialization phase
+This phase begins before the learning process. In it, all the federa-
+tion entities, including the task initiator and participants, must register,
+approve and sign the terms and conditions of the SC-based system.
+Without the loss of generality, this system is designed to register each
+federation entity by identifying its (i) address and (ii) Boolean value
+that indicates whether it is registered as a task initiator or partici-
+pant. Once registered, the task initiator can launch the tasks and the
+participants can begin them.
+3.2.2. Task initiation and deposit-holding
+To launch an FL task, a task initiator must provide (i) its specifi-
+cations, for example, the metadata required to conduct it, the partic-
+ipants, the baseline model (𝑀0
+𝐺) and parameters of the model to be
+trained, (ii) other parameters and thresholds (e.g., the global model’s
+level of accuracy and the total number of communication rounds)
+and the privacy budget (the privacy parameters are 𝜖and 𝛿) and (iii)
+deposits for rewards.
+Once a launched task is authorized by the SC-based administrator,
+the deposits are held for accountability. The task initiator then deter-
+mines which of the task’s specifications will be made public to the
+community of participants. Once stated, the task is deployed to the
+registered participants. Interested entities, functioning as auctioneers,
+may submit formal bids with their capabilities, dataset details, training
+expenses and deposits to participate in the task. It should be noted
+that, in order to maintain accountability, each participant needs to
+stake a deposit in the SC-based system and all bids are recorded on
+the blockchain to avoid any potential tampering or attacks such as a
+51% one.
+A 51% attack is an attack on a PoW blockchain whereby an attacker
+or group of malicious entities acquires control of 51% or more of the
+network’s mining rate or computing power [27]. In it, the attackers are
+able to prevent qualified participants from winning confirmations and
+rewards. They can also switch transactions that were terminated while
+they possess the network, indicating that they could double-spend re-
+wards. Then, the SC-based administrator chooses the participants who
+provided the most value (e.g., higher capability and lower cost) as the
+winners. The administrator assigns the miner’s role to the participants
+Ad Hoc Networks 169 (2025) 103760 
+5 
+ S. Salim et al.
+Fig. 4. The sequence diagram of the proposed BFL-SC framework.
+with the highest capabilities and that of a training participant to those
+with lower capabilities to jointly accomplish the FL task. Participants
+who lose the bidding can retrieve their deposits through the SC-based
+system while those of the winners are immediately repaid if the results
+of the learning task are later proven to be reliable. Also, the SC-based
+administrator establishes the mechanism for awarding each winner.
+3.2.3. Task and smart contracts deployment
+Once the learning task’s roles of the bid’s winner participants are
+assigned by the SC-based administrator according to their bids and
+capabilities. Details of the task with the rewards mechanism as well
+as the aggregation and block-mining rules are deployed in an initial SC
+which is then signed and approved by the whole task’s entities before
+the actual task-handling is begun.
+3.2.4. Local model updating
+In this framework, a scenario in which numbers of SM and IoT data
+participants are connected with an SC-based administrator is exhibited.
+As depicted in Fig. 3, each participant is responsible for conducting
+local training based on the data it gathers and the global model it
+receives as broadcast by the administrator. Only the local models’
+updates are exchanged not any local training dataset. Once evaluated,
+the miners calculate the average of the qualified models and update
+the global model with it. As the miners are assumed to be honest-
+but-curious participants. With the injected DP noise, the miners or
+adversaries will not be able to retrieve users’ private data by reversing
+their uploaded updates. Therefore, a DPP mechanism for FL to develop
+an effective DPP-based FL framework is proposed.
+At the training participant level, each participant (𝑃𝑖) stores its own
+local dataset (𝐷𝑖) which is gathered from two main heterogeneous data
+sources, that is, SM platforms and IoT devices for smart homes. A 𝐷𝑖
+comes with a 𝑃𝑖’s SM data, with several observations recorded and ex-
+changed between a 𝑃𝑖and its IoT devices. Typically, such raw datasets
+may consist of missing or irrelevant data that should be cleaned and
+filtered to improve the learning model’s classification accuracy. For this
+purpose, data pre-processing steps are used.
+Firstly, to deal with incomplete data values in the SM and IoT
+dataset, an imputation technique consistent with that outlined in [4] is
+used. In it, missing values are replaced with statistical measures, such as
+feature vector means and medians, or static ones such as zeroes. In our
+study, missing values are replaced with zeroes to ensure that the data is
+not skewed toward central data points. Secondly, as the 𝐷𝑖is comprised
+of more than only numeric data from two heterogeneous data sources, a
+feature extraction technique is applied. Its purpose is to filter the 𝐷𝑖and
+remove irrelevant features as well as the labeling process that depends
+on the creation of an authentic ground-truth tabular which includes
+real class labels for the 𝑃𝑖. This enables an evaluation of the learning
+model’s performances before and after applying the proposed DPP to
+ensure data privacy and utility. Finally, since the 𝐷𝑖has different types
+of features, including both categoric and numeric values, the data pre-
+processing sequence outlined in [4] is applied to the local data before
+conducting data perturbation to provide the first level of data privacy
+to the 𝑃𝑖’s data.
+3.2.5. Data perturbation using DPP mechanism
+As outlined in Algorithm 27 (lines 2–10), our DPP is applied to
+the processed data produced from the previous step to provide the
+second level of data privacy to the 𝐷𝑖of this 𝑃𝑖. In it, for every data
+vector, taking vector 𝑥𝑖1 as an example, the following procedures are
+undertaken.
+Firstly, 2𝑛different vectors of the same class label (𝑦𝑖1) as the base
+vector (𝑥𝑖1), where 0 < 𝑛≤𝑇∕2 and 𝑇is the total number of vectors
+with a class label equal to 𝑦𝑖1, are randomly selected. Selecting these
+vectors from the same class label group produces a new perturbed
+vector with more indications and features relative to that class label
+which, in turn, enhance utility in terms of prediction accuracy.
+Ad Hoc Networks 169 (2025) 103760 
+6 
+ S. Salim et al.
+Algorithm 1: BFL-SC framework with proposed DPP
+Input: 𝑅, 𝑀0
+𝐺, 𝜖, and 𝛿(privacy budget), 𝑅(number of rounds),
+𝛥𝐹(global sensitivity), and 𝑛(number of scaled
+difference vectors)
+Output: 𝑀𝑅
+𝐺
+1 Initialization: 𝑟= 1 and 𝑀𝑟−1
+𝑖
+= 𝑀0
+𝐺∀𝑖∈𝑃;
+2 Local Training Dataset Perturbation:
+3 while 𝑃𝑖∈ {𝑃1, 𝑃2, … , 𝑃𝑁} where 𝑁≤𝐴do
+4
+– ∀𝑥𝑖∈𝐷𝑖∈𝑘with class label 𝑦𝑖1;
+5
+– Randomly select 2𝑛different vectors of the same label;
+6
+– Calculate 𝜎𝑖value as in Equation (5);
+7
+– Generate Gaussian distributed random noise () with a
+mean of zero and standard deviation of 𝜎2
+𝑖;
+8
+– Add Gaussian noise to 𝑛scaled difference vectors
+according to Equation (3);
+9 end
+10 Return: 𝐷′
+𝑖;
+11 while 𝑟≤𝑅do
+12
+Local training:
+13
+while 𝑃𝑖∈ {𝑃1, 𝑃2, … , 𝑃𝑁} where 𝑁≤𝐴do
+14
+– Train 𝑀𝑟−1
+𝑖
+on 𝐷
+′
+𝑖to generate 𝑀𝑟
+𝑖as per Equation (6);
+15
+– Calculate model updates as per Equation (7);
+16
+end
+17
+Return: ∇𝑀𝑟
+𝑖;
+18
+Global aggregating:
+19
+– Update 𝑀𝑟
+𝐺using Equation (8);
+20
+– Broadcast the global model ∀𝑖∈𝑃;
+21
+Local verifying:
+22
+while 𝑃𝑖∈ {𝑃1, 𝑃2, … , 𝑃𝑁} do
+23
+– Test (𝑀𝑟
+𝐺) using the local dataset (𝐷
+′
+𝑖∈𝑁);
+24
+end
+25
+𝑟= 𝑟+ 1;
+26 end
+27 Return: 𝑀𝑅
+𝐺;
+Secondly, 𝑛scaled difference vectors are added to the base vector
+as
+𝑥′
+𝑖1 = 𝑥𝑖1 + (0, 𝜎2
+𝑖)(|𝑥𝑖2 −𝑥𝑖3| + ⋯+ |𝑥𝑖2𝑛−1 −𝑥𝑖2𝑛|)
+(3)
+where 𝑖1 ≠𝑖2 ≠𝑖3 and 𝑦𝑖1 = 𝑦𝑖2 = 𝑦𝑖3. 𝑥′
+𝑖1 represents the perturbed vector
+of the 𝑦𝑖1 vector, 𝑖the index of the participant, 𝑖1, 𝑖2, 𝑖3 ∈ {1, 2, … , |𝐷𝑖|}
+random integers that stand for the index of the vector in the 𝐷𝑖and 
+a randomized scaling factor obtained for each index as a realization of
+a Gaussian-distributed random noise with a mean of zero and standard
+deviation of 𝜎𝑖that satisfies the (𝜖, 𝛿)-DP properties and aligns to
+conceal the global sensitivity (𝛥𝐹) of the 𝐷𝑖.
+In this regard, the global sensitivity (𝛥𝐹) of function 𝐹is repre-
+sented as
+𝛥𝐹= 𝑚𝑎𝑥𝐷𝑖,𝐷′
+𝑖‖𝐹(𝐷𝑖) −𝐹(𝐷′
+𝑖)‖1
+= 𝑚𝑎𝑥𝐷𝑖,𝐷′
+𝑖∥
+1
+|𝐷𝑖|
+|𝐷𝑖|
+∑
+𝑗=1
+ar gmin
+𝑀
+𝐿𝑖(𝑀 , 𝐷𝑖[𝑗])
+−1
+|𝐷′
+𝑖|
+|𝐷′
+𝑖|
+∑
+𝑗=1
+ar gmin
+𝑀
+𝐿𝑖(𝑀 , 𝐷′
+𝑖[𝑗]) ∥1= 2𝜗
+|𝐷𝑖|
+(4)
+where 𝐷′
+𝑖is a neighboring dataset of the 𝐷𝑖with the same size but
+differing in only one sample and 𝐷′
+𝑖[𝑗] the 𝑗th training sample in the
+𝐷′
+𝑖. According to the aforementioned results, the optimal requirement
+for achieving a low level of global sensitivity is that all participants
+contribute with sufficient local datasets. Therefore, to ensure (𝜖, 𝛿)-
+DP [13] for each participant in the FL framework, the noise scale is
+set and denoted by the Gaussian noise () [13] with a mean of zero
+and standard deviation of 𝜎2
+𝑖as
+𝜎𝑖= 𝜗× 𝛥𝐹
+𝜖
+(5)
+where 𝜖is a small, positive number that curates the trade-off between
+the utility and privacy levels, (𝜗), which is equal to
+√
+2𝑙 𝑜𝑔1.25
+𝛿
+that is
+a clipping threshold for bounding the local model and 𝛿the possibility
+that 𝜖-DP can be broken with a probability of 𝛿.
+3.2.6. Local training
+Given a perturbed local set (𝐷′
+𝑖) of a training dataset (𝐷𝑖) and an
+FL training task, the 𝑖th participant in a group (𝑃) of 𝑁participants to
+which the learning task is assigned, locally trains the previous round’s
+global model on its perturbed local dataset which leads the objective
+function to be
+𝐿𝑖(𝑀) =
+1
+|𝐷′
+𝑖|
+∑
+𝑗∈𝐷′
+𝑖
+ar gmin
+𝑀
+𝐿𝑖(𝑀 , 𝐷′
+𝑖)
+(6)
+with 𝐿𝑖(𝑀) in this setting as the loss function of the local model of the
+𝑖th participant when trained on the perturbed dataset (𝐷′
+𝑖). Then, the
+𝑖th participant calculates the update (∇𝑀𝑖) of its local model as per
+Eq. (7) and sends it back to the associated miner.
+∇𝑀𝑟
+𝑖= 𝑀𝑟
+𝑖−𝑀𝑟−1
+𝑖
+(7)
+where 𝑟indicates the current communication round and 𝑟∈𝑅.
+3.2.7. Verification of models and quantifications of contributions
+After receiving the local models’ updates, each miner uses the
+testing dataset to evaluate the quality of those of its associated training
+participants according to the evaluation thresholds defined in the SC.
+The SC-based system may use the merits of this evaluation step to
+properly eliminate any faulty/poisoned local models’ updates from
+unreliable training participants as well as quantify the contributions of
+the qualified ones and reward them accordingly.
+This verification step aims to exclude those considerably poisoned
+𝑀𝑟
+𝑖uploaded by compromised training participants using fake data
+or noisy models to adversely affect the global model’s accuracy. In
+particular, to evaluate 𝑀𝑟
+𝑖, each miner is directed to use a unified
+testing dataset to train the local models’ updates it receives. Also, the
+accuracy of the classification for evaluating the quality of the uploaded
+models is leveraged. Therefore, the accuracy of each 𝑀𝑟
+𝑖is evaluated
+by a miner (𝑠) and specified as 𝐿𝑠(𝑀𝑟
+𝑖), with the lower the 𝐿𝑠(𝑀𝑟
+𝑖), the
+higher the accuracy of 𝑀𝑟
+𝑖.
+After comparing the 𝐿𝑠(𝑀𝑟
+𝑖) of model 𝑀𝑟
+𝑖against the 𝐿𝑠(𝑀𝑟−1
+𝐺)
+of previous 𝑅𝑟−1’s global model based on the tolerance threshold, the
+miner can decide whether to broadcast this local model for considera-
+tion in the round’s global model as a qualified one or exclude it as being
+a poisoned trained local one. Finally, if certified as a qualified model
+by more than 𝐽∕2 miners, which means that more than ℎof the miners
+reach the same truthfulness of the model, 𝑀𝑟
+𝑖is used to aggregate the
+global model.
+3.2.8. Global model aggregation
+Each miner, in this phase, aggregates the average weight of the
+qualified local models with that of the previous round’s global model
+(𝑀𝑟−1
+𝐺) and generates a new global model (𝑀𝑟
+𝐺) according to
+𝑀𝑟
+𝐺= 𝑀𝑟−1
+𝐺
++ 1
+𝑁
+𝑁
+∑
+𝑖=0
+∇𝑀𝑟
+𝑖
+(8)
+This FedAvg [28] aggregation of qualified models is triggered if enough
+training participants upload local models in a timely manner, other-
+wise, this round is abandoned.
+Ad Hoc Networks 169 (2025) 103760 
+7 
+ S. Salim et al.
+3.2.9. Block generation and validation
+Once a round’s global model is formulated, each miner commences
+the mining process until either the requisite nonce is found or it
+receives a block produced by another miner. When one miner generates
+a new block, other miners cross-validate its contents (e.g., the nonce,
+evaluations of the training participants contributions, local models’
+updates and aggregated global model). Denoting that 𝑠𝑖is the miner
+who reaches the nonce first, its candidate block is identified as the
+round’s block and broadcast to all the miners for cross-validation.
+3.2.10. Incentive allocation
+The last function in this SC-based FL workflow is to distribute
+rewards. When a round’s block is generated and authenticated by the
+round’s miners, the SC-based system creates an SC containing partici-
+pant incentives and signs it with its own signature. In particular, firstly,
+each participant validates the newly aggregated global model and
+confirms that its quantified contribution is estimated accurately and
+that its transaction details are valid. If this is the case, the participant
+signs the deployed SC with its signature and returns it to the SC-based
+system. Once the signed SC is received, the participant is compensated
+in accordance with the incentive rules specified in the SC and the
+round’s block is added to the blockchain’s distributed ledger.
+In practice, for the SC-based system, an incentive mechanism is
+designed and implemented to deter a free-riding attack and reward
+participants properly. To achieve this goal, an SC-based administrator,
+inspired by the incentive mechanism, compensates participants accord-
+ing to their responsibilities for/contributions to the learning task. Let 𝜌
+denote a unit reward.
+1. Participant rewards: Participant 𝑃𝑖is rewarded proportionally to
+the quality of its locally trained 𝑀𝑟
+𝑖in 𝑅𝑟, denoted as 𝑅𝑒𝑝𝑟
+𝑖, if the
+𝑀𝑟
+𝑖is evaluated as a qualified model. Therefore, the total reward
+for 𝑃𝑖in a 𝑅𝑟is calculated based on the error from the best local
+model in the 𝑅𝑟as
+𝑅𝑒𝑝𝑟
+𝑖= 𝜌×
+1
+|𝐿(𝑀𝑟
+𝑖) −𝐿(𝑀𝑟
+𝑚)| + 1
+(9)
+2. Miner rewards: Miner 𝑠in a 𝑅𝑟is rewarded for evaluating the
+quality of the uploaded local models as well as the generated
+block and its total rewards calculated as
+𝑅𝑒𝑝𝑟
+𝑠= 𝜌×
+𝑇𝑟
+𝑠
+𝑇𝑟
+𝑄
++ 1
+𝐽
+(10)
+3. Block generator’s reward: A block’s generator in a 𝑅𝑟is rewarded
+for generating a round’s block only if the loss function of the
+newly aggregated model is less than that of the previous round’s
+global one ((𝐿(𝑀𝑟
+𝐺) < 𝐿(𝑀𝑟−1
+𝐺))) with its reward calculated as
+𝑅𝑒𝑝𝑟
+𝑙= 𝜌× (𝐿(𝑀𝑟−1
+𝐺) −𝐿(𝑀𝑟
+𝐺))
+(11)
+The reward-distribution and task-handling phases continue to loop
+until the training process is completed and round 𝑅is reached, at which
+point the SC-based administrator can submit the final global model
+(𝑀𝑅
+𝐺) to the task initiator.
+4. Experimental results and analyses
+To validate the effectiveness of our designed BFL-SC, we conduct
+experiments on the newly designed SM 3.0 dataset [1] as well as the
+Human Activity Recognition (HAR) one [29] which has wider com-
+munity acceptance. These two datasets are chosen as the SM 3.0 one
+provides a unique and emerging context and the HAR one highlights
+a wider contextual usage and, therefore, enables broader comparisons
+within the community.
+For comparison purposes, two classifications (learning) tasks are
+conducted. The first is to classify the preferences of SM users in the
+SM 3.0 dataset and the second is a HAR pattern recognition one for
+identifying the actions carried out by a person given a set of observa-
+tions of him/herself and the surrounding environment in the dataset.
+For a comprehensive comparison, these two tasks are conducted using
+the BFL-SC, standard FL, and a centralized learning model. This setup
+allows us to comprehensively assess our framework’s performance in
+both privacy-preserving and non-privacy settings, as well as compare
+it with traditional centralized approaches.
+4.1. Experimental setting
+FL settings: In this framework, a Multilayer Perceptron (MLP) [30]
+is trained on the SM 3.0 dataset and a Convolutional Neural Network
+(CNN) [31] one on the HAR dataset. In this architecture, the task
+initiator is in charge of establishing these models’ parameters. A specific
+set of parameters, such as the number of hidden layers, activation
+functions, and output layers, are used to assess a model’s performance
+in these experiments. In particular, the MLP contains 50 nodes in a
+single hidden layer, a rectified linear activation function (ReLu), and an
+output layer (a SoftMax activation) modified based on the loss function
+used. Three convolutional and three pooling layers as well as a fully
+connected one make up the CNN’s architecture. The kernel sizes of each
+convolutional and pooling layer are 7, 3, and 1, respectively, while the
+depth of the convolution is 64 steps, the stride size is 3 and the batch
+size is 64. In the fully connected layer, there are 512 hidden units. The
+models are used by each participant, with five local training epochs per
+r and a learning rate of 𝜂= 0.01.
+Parameter settings: In the experiments, the total number of rounds
+(𝑅) is set to 100 and the number of participants (𝐴) to 20, with the
+samples of each participant |𝐷𝑖| assigned with a randomly sharded
+equal portion of the entire SM 3.0/HAR training set. The mining time
+per block = 10 with 𝜂= 0.01 the default and the unit reward (𝜌) is
+set to 1 in all the BFL-SC experiments. With the aforementioned basic
+configuration, the following are the specific experimental setups:
+1. A centralized MLP/CNN which is a centralized learning ap-
+proach whereby the training data involved is centrally gathered
+to train the MLP/CNN model;
+2. A standard FL without a PP model, or blockchain as used in [32];
+3. FL with 3 of 20 participants malicious, where these participants
+exhibit mixed malicious behaviors. Specifically, two participants
+perform poisoning attacks by injecting harmful gradients into
+the training process over the course of 10 epochs, deliberately
+updating their local models with incorrect gradient information
+to degrade the overall model performance. The third participant
+acts as a free-rider, abstaining from performing any meaningful
+training or sharing irrelevant updates. This mixed attack sce-
+nario simulates a more realistic adversarial environment and
+demonstrates the framework’s robustness in handling diverse
+malicious activities within the FL ecosystem;
+4. BFL-SC with all 20 participants legitimate; and
+5. BFL-SC with 3 of 20 participants malicious, i.e., a malicious ratio
+of 3/20. In this case, the malicious participants perform both
+poisoning attacks over a period of 10 epochs and free-riding
+attacks by abstaining from contributing updates. These attacks
+are countered by the decentralized verification and consensus
+mechanisms within the BFL-SC framework.
+For development purposes, an Ethereum blockchain is built on the
+back end using the Truffle suite (Ganache and the Truffle Development
+Environment) [33]. Also, the MLP, CNN, and FedAvg [28] are devel-
+oped using the Python programming language. All the experiments are
+executed on a PC with an i7 processor and 16 GB memory.
+Ad Hoc Networks 169 (2025) 103760 
+8 
+ S. Salim et al.
+Fig. 5. Evaluation of BFL-SC framework using SM 3.0 dataset.
+Fig. 6. Evaluation of BFL-SC framework using HAR dataset.
+4.2. Comparative evaluation
+In Figs. 5 and 6, the effectiveness of the proposed framework is
+illustrated. There are three runs across 100 communication rounds for
+each of the four experiments depicted in the images and the accuracy of
+the global model generated by all 20 participants is recorded at the end
+of each round. Over the period of 100 rounds, a random combination
+of 16 𝑁and 4 𝐽is assigned manually to each of the two BFL-SC
+executions, with the average level of accuracy of each round of the
+three executions shown.
+The blue lines in Figs. 5 and 6 represent the levels of accuracy of
+the standard FL experiments and the orange ones of the BFL-SC ones.
+When all 𝑁participants are valid network participants, every uploaded
+local model (𝑀𝑖) is used to construct the global one (𝑀𝐺). As the first
+two setups for the FL and BFL-SC experiments on both datasets do
+not involve any malicious participant, orange curves are observed very
+close to the red lines in Figs. 5 and 6. This indicates that the FL portion
+of the BFL-SC is operating correctly. Furthermore, although the BFL-SC
+has fewer learning participants (𝑁) than the FL (12 vs 20), its accuracy
+is not compromised due to the participants’ roles being re-scheduled in
+each round by the SC-based administrator. The yellow and gray lines
+depict the levels of accuracy of the BFL-SC and FL with 3 malicious
+participants, respectively.
+In comparison with the standard FL with three malicious entities,
+verification of the BFL-SC model efficiently excludes the local model’s
+updates being poisoned by these malicious entities while maintaining
+overall levels of accuracy comparable to those of the standard FL
+and BFL-SC experiments (blue and orange lines). However, following
+convergence, the gaps between the orange/blue lines and yellow ones
+are approximately 12% to 15%. This is due to the fact that up to 15% of
+the training data held by the 3 malicious participants is not adequately
+trained.
+To measure the performances of the trained models, apart from
+measurements of their accuracy levels depicted in Figs. 5 and 6, the
+Table 2
+Evaluation metrics.
+Metric
+Equation
+Precision
+𝑇 𝑃
+𝑇 𝑃+ 𝐹 𝑃
+(12)
+Recall rate
+𝑇 𝑃
+𝑇 𝑃+ 𝐹 𝑁
+(13)
+f1-score
+𝑇 𝑃
+𝑇 𝑃+ 1
+2 (𝐹 𝑃+ 𝐹 𝑁)
+(14)
+Table 3
+Precision, recall and f1-score comparisons of SM 3.0 and HAR datasets’ global models.
+Metric
+Precision (%)
+Recall (%)
+f1-score (%)
+Model/Dataset
+SM 3.0
+HAR
+SM 3.0
+HAR
+SM 3.0
+HAR
+centralized MLP/CNN
+99.18
+93.21
+99.57
+92.82
+99.37
+93.01
+FL
+98.03
+91.35
+98.30
+91.06
+98.21
+91.20
+BFL-SC
+96.95
+90.14
+97.01
+90.11
+96.98
+90.12
+BFL-SC with 3 malicious
+79.46
+75.62
+82.34
+76.04
+80.87
+75.83
+FL with 3 malicious
+46.36
+37.35
+78.51
+39.05
+58.29
+38.18
+Fig. 7. Evaluation of BFL-SC framework with different privacy levels.
+standard metrics in the literature of precision, recall rate, and f1-score
+are applied, with their results presented in Table 3. Also, True Positive
+(TP), False Positive (FP), True Negative (TN), and False-negative (FN)
+are four terms used to describe them, as shown in Table 2.
+As shown in Table 3, the proposed BFL-SC achieves considerable
+performances in the applied learning models (MLP and CNN), with a
+precision of 96.95% for the SM 3.0 dataset and 90.14% for the HAR one
+compared with those of the centralized learning models and standard
+FL. In comparison with the standard FL with 3 malicious entities,
+although the BFL-SC has approximately the same number of malicious
+entities, it enables an average improved user preference recognition
+in the SM 3.0 dataset 33.1%, and accurate activity recognition in the
+HAR dataset with an improvement of 38.27%. Therefore, the learning
+models work well with the maintained local updates protected by the
+DPP in the BFL-SC experiments, as can be seen from the trends for both
+datasets.
+4.3. Evaluation of BFL-SC framework with different privacy levels
+According to the concept of data-based privacy [4], the PP capabil-
+ities of the proposed DPP mechanism in the BFL-SC are examined from
+the following perspectives, with an emphasis on the role of blockchain
+in ensuring privacy:
+Data privacy:
+The proposed mechanism is developed based on
+the DP principle, with a distributed privacy-preserving architecture as
+its core concept. Blockchain plays a crucial role in this process by
+providing a secure and transparent ledger for tracking the updates
+of local models. By using blockchain, participants’ model updates are
+securely recorded and time-stamped, ensuring the integrity and trans-
+parency of the updates. Explicitly, this DPP-based framework enables
+precise classification by aggregating local models’ updates learned on
+Ad Hoc Networks 169 (2025) 103760 
+9 
+ S. Salim et al.
+Fig. 8. Accumulated rewards for BFL-SC with all 20 legitimate participants.
+perturbed datasets instead of the original data. This method preserves
+the privacy of sensitive information, as the data used for learning is
+obfuscated through the DP mechanism. Blockchain further strengthens
+data privacy by ensuring that the data cannot be tampered with or
+accessed by unauthorized parties, enhancing the trustworthiness of the
+entire process.
+Data utility: This relates to approximating the evaluation metrics,
+such as accuracy, precision, and recall, implied in comparisons of re-
+sults. The experimental findings show that the DPP-based framework is
+comparable to the standard FL model in terms of performance. The lat-
+ter is a decentralized ML model that aggregates a significant number of
+raw updates to provide a high level of utility. However, in the context of
+privacy-preserving FL, the aggregation is done over privacy-protected
+updates, ensuring that the raw data remains confidential. As shown
+in Section 4.2, the proposed framework provides comparable results
+to standard FL under the privacy-preserving constraint, demonstrating
+its superiority. Additionally, the integration of blockchain allows for
+the tracking of data flows, ensuring that participants can verify the
+legitimacy of model updates without directly accessing the underlying
+data. As illustrated in Fig. 7, there is also a trade-off between data
+utility and data privacy, where a higher level of privacy protection
+typically results in slightly reduced model performance, but this loss is
+mitigated by the enhanced security and trust provided by blockchain.
+In Fig. 7, the experimental results obtained from the BFL-SC on the
+SM 3.0 dataset with different noise variances are depicted. The blue
+line represents the experiment with 𝜖= 10 and 𝛿= 10−5, and the green
+line represents the identical experiment except with 𝜖= 6. It is clear
+that, at a low privacy level (high 𝜖and small 𝜎), the DPP mechanism
+significantly improves learning efficiency and model accuracy. This
+is reasonable because, as the variance of the injected Gaussian noise
+decreases, so does the learning performance. Blockchain ensures that
+even when privacy is preserved, the integrity of the learning process
+and the authenticity of the model updates are maintained.
+4.4. Evaluation of the incentive mechanism
+In this section, the influence of the incentive mechanism on partic-
+ipants’ rewards and reputations is analyzed. It is possible to compare
+the incentives a participant can obtain at the end of the communication
+rounds by running two experiments on the SM 3.0 dataset. In the first,
+our proposed incentive mechanism is used and all the participants
+are believed to be legitimate entities. In the second, this mechanism
+is applied again but with the premise that 3 of 20 participants are
+malicious.
+The reward lines accumulated by all 20 participants in the experi-
+ments are depicted in Figs. 8 and 9. It is observed that the rewards held
+by malicious participants in the second one grow exceedingly slowly
+and no longer increase in an early round (Fig. 9) due to the incentive
+mechanism.
+Fig. 9. Accumulated rewards for BFL-SC with 3 malicious participants.
+Table 4
+Accuracy, Precision and Recall comparisons.
+Metric
+Accuracy
+Precision
+Recall
+Framework/Dataset
+SM 3.0
+HAR
+SM 3.0
+HAR
+SM 3.0
+HAR
+DPP based BFL-SC
+95.07
+89.45
+96.95
+90.14
+97.01
+90.11
+DP-based BFL-SC
+79.03
+74.16
+79.45
+75.36
+83.28
+79.74
+4.5. Evaluation of the DPP mechanism
+This section examines the efficacy of the proposed DPP mechanism
+through the analysis of two experiments conducted on the SM 3.0
+and HAR datasets. The first experiment utilizes our proposed DPP
+mechanism, while the second experiment replaces this mechanism with
+the standard DP mechanism. The experimental results are summarized
+in Table 4, which presents comparisons of accuracy, precision, and
+recall metrics.
+Analyzing the table, we observe that the DPP-based BFL-SC frame-
+work achieves higher accuracy, precision, and recall scores compared to
+the DP-based BFL-SC framework in both datasets. These results clearly
+demonstrate the superior performance of the proposed DPP mechanism
+compared to the standard DP mechanism, indicating its effectiveness in
+the given context.
+4.6. Interpretability of FL features
+The features relevant to our FL-based framework using the SM 3.0
+dataset are presented in this section. Model interpretation is critical
+for any ML-based framework to be employed in industrial applications
+and networks, especially from regulatory and legal standpoints [13].
+Therefore, the SHAP explainability method, which visualizes the value
+of an input feature that contributes to a learning model’s predic-
+tion/classification performance, is applied as an explainability scoring
+method for our framework’s learning model. To identify the importance
+of each feature, SHAP leverages Shapley values to test basic models
+with multiple combinations of features [34]. The Shapley value is the
+average marginal contribution of a particular feature to all potential
+feature combinations. It specifies a one-of-a-kind payout scheme that
+fulfills the requirements outlined for the concept of data value [35].
+Therefore, it is increasingly being used in centralized learning to value
+the training data and maintain the long-term involvement of highly
+relevant features.
+The average of the feature significance derived using the BFL-SC
+learning model for each participant locally using their test data is
+depicted in Fig. 10. The summary dot plots demonstrate that the global
+tendency in terms of the relevance of features among all participants
+is the same and, furthermore, 𝑠𝑢𝑏𝑝𝑟𝑒𝑓is the most relevant feature
+among all participants. The second most relevant features of SM users
+Ad Hoc Networks 169 (2025) 103760 
+10 
+ S. Salim et al.
+Fig. 10.
+Significance of the features for our FL-based framework using the SM 3.0 dataset and SHAP values (averages of the features’ significance ((a) and (b)); marginal influences
+of one or two features on learning model ((c)); how SHAP values of each feature change model’s output from prior to final predictions given the relevance of all features ((d)).
+Fig. 11. Individual SHAP value plots for local interpretability of (a) single and (b) multiple observations.
+in the SM 3.0 dataset are 𝑑 𝑜𝑏𝑦𝑒𝑎𝑟and personality traits which is rea-
+sonable considering that both variables typically impact an individual’s
+preferences. Also, in Fig. 10(b), a summary bar plot that presents the
+most important features in descending order is shown. The top features
+contribute more to the model than the bottom ones which results in
+significant prediction performances.
+The Partial Dependence Plot (PDP) shown in Fig. 10(c) depicts
+the marginal influences of one or two features on a learning model’s
+predicted result. It determines if the target and a feature have a linear,
+monotonic, or complex relationship. In Fig. 10(d), a waterfall plot that
+illustrates how the SHAP values of each feature change the model’s
+output from the prior prediction under the data distribution to its
+final prediction given the relevance of all the features is depicted.
+The features are ordered according to the levels of intensity of their
+SHAP values, with the lowest gathered together at the bottom of the
+plot when the number of features in the model reaches the maximum
+display limit. Also, individual SHAP value plots for local interpretability
+are shown in Fig. 11 for single and multiple observations, respectively,
+Ad Hoc Networks 169 (2025) 103760 
+11 
+ S. Salim et al.
+which demonstrate how these values can be calculated in individual
+situations. Features that push the prediction rightward and leftward are
+represented in red and blue, respectively.
+4.7. Comparative analysis of BFL-SC with existing privacy and trust
+schemes
+The proposed BFL-SC framework, employing a DPP mechanism,
+addresses key limitations in current FL models by achieving high accu-
+racy, resilience, and privacy across distributed systems [36]. In contrast
+to existing methods, BFL-SC uniquely combines advanced DP with a
+reputation-based incentive mechanism to ensure both PP and robust
+participant engagement. Comparative studies in FL privacy and trust
+were selected based on their leading privacy mechanisms or unique
+approaches to trust evaluation, making them suitable benchmarks for
+assessing BFL-SC’s combined privacy, efficiency, and resilience.
+For instance, the trust evaluation model in [23] was chosen for
+its multi-attribute trust metric, a pioneering approach to trust in FL.
+However, it lacks the robust privacy integration found in BFL-SC, which
+supports variable privacy levels. BFL-SC achieves high data utility
+even under stringent privacy parameters (e.g., at 𝜖= 10, accuracy
+reaches 95.07% on the SM 3.0 dataset, comparable to traditional FL
+models without privacy constraints). As shown in Figure 4.5, BFL-SC
+demonstrates an effective balance between data utility and privacy, a
+feature not fully supported by this model.
+The cross-modal search framework in [24], selected for its use of
+homomorphic encryption, highlights a high-security approach within
+FL, though at a computationally intensive cost. BFL-SC overcomes this
+by employing distributed DP, maintaining privacy with lower overhead
+while sustaining model accuracy and precision across datasets (accu-
+racy: 95.07% on SM 3.0, 89.45% on HAR). Moreover, BFL-SC preserves
+data utility, achieving superior precision and recall metrics of 96.95%
+and 97.01% (SM 3.0 dataset), surpassing traditional DP approaches that
+suffer accuracy drops (e.g., 79.03% on SM 3.0).
+The compressed-sensing FL model in [25] was included for its com-
+munication efficiency, albeit with accuracy loss at high compression
+rates. BFL-SC, instead, applies DP-based perturbation without compres-
+sion, maintaining high-fidelity model updates. Lastly, ADFL of [26],
+recognized for its defense against poisoning attacks through proof
+mechanisms, lacks BFL-SC’s incentive-based deterrent, which rewards
+legitimate contributions while discouraging malicious activity. Figs. 8
+and 9 illustrate how BFL-SC’s incentive mechanism effectively curtails
+malicious participants, with their rewards stagnating early in training.
+Overall, BFL-SC outperforms across multiple benchmarks ( Table 4),
+offering superior accuracy, privacy utility, and participant trust, es-
+tablishing itself as a robust solution for privacy-preserving, resilient
+FL.
+5. Conclusion and future work
+An architectural design of a framework in which an FL learning
+task is regulated by an SC operating on a blockchain network has
+been proposed. It leverages the advantage of the SC to validate partici-
+pants’ contributions, construct the global model, and track participants’
+performances to enable incentive mechanisms while preserving the
+privacy of the participant’s data. More specifically, to promote trust-
+worthiness in the proposed FL framework, the SC is employed to track
+each participant’s contributions and performance. This development of
+an FL framework with the proposed DPP mechanism could preserve
+participants’ private data from being reconstructed by any adversarial
+inversion attacks. Furthermore, by having miners conduct their veri-
+fication protocol, a higher level of transparency is obtained which is
+particularly significant in our setting as the output of this verification
+step is used to estimate incentives. Finally, recognizing the detrimental
+impact that free-riding attacks might have, particularly in a small FL
+setting, the BFL-SC’s incentive mechanism is designed to dissuade them
+and appropriately reward participants for persuading more participants
+to contribute to the learning process. In the future, we intend to conduct
+further experiments and put our framework to the test with real-world
+home appliance datasets. Furthermore, to improve accuracy, we will
+seek out the deterministically optimal harmony for model parameters
+and thresholds.
+CRediT authorship contribution statement
+Sara Salim: Writing – original draft, Visualization, Validation,
+Methodology, Conceptualization. Nour Moustafa: Writing – review &
+editing, Supervision, Conceptualization. Benjamin Turnbull: Writing
+– review & editing, Supervision.
+Declaration of competing interest
+The authors declare that they have no known competing finan-
+cial interests or personal relationships that could have appeared to
+influence the work reported in this paper.
+Data availability
+I have added the link of the used data.
+References
+[1] Sara Salim, Benjamin Turnbull, Nour Moustafa, Data analytics of social media
+3.0: Privacy protection perspectives for integrating social media and internet of
+things (SM-IoT) systems, Ad Hoc Netw. 128 (2022) 102786, http://dx.doi.org/
+10.1016/j.adhoc.2022.102786.
+[2] Wenwen Ding, Jiachen Hou, Juanjuan Li, Chao Guo, Jirong Qin, Robert Kozma,
+Fei-Yue Wang, Desci based on Web3 and DAO: A comprehensive overview and
+reference model, IEEE Trans. Comput. Soc. Syst. 9 (5) (2022) 1563–1573.
+[3] Sara Salim, Nour Moustafa, Benjamin Turnbull, Imran Razzak, Perturbation-
+enabled deep federated learning for preserving internet of things-based social
+networks, ACM Trans. Multimed. Comput. Commun. Appl. (TOMM) 18 (2s)
+(2022) 1–19.
+[4] Lingjuan Lyu, Han Yu, Xingjun Ma, Chen Chen, Lichao Sun, Jun Zhao, Qiang
+Yang, Philip S. Yu, Privacy and robustness in federated learning: Attacks and
+defenses, IEEE Trans. Neural Netw. Learn. Syst. (2022) 1–21.
+[5] Haiming Wang, Zhikun Zhang, Tianhao Wang, Shibo He, Michael Backes,
+Jiming Chen, Yang Zhang, PrivTrace: Differentially private trajectory synthesis
+by adaptive Markov model, in: USENIX Security Symposium 2023, 2023.
+[6] Fan Lai, Xiangfeng Zhu, Harsha V Madhyastha, Mosharaf Chowdhury, Oort: Effi-
+cient federated learning via guided participant selection, in: USENIX Symposium
+on Operating Systems Design and Implementation, 2021, pp. 19–35.
+[7] 13 critical data breach stats for Australian businesses — upguard, 2023,
+https://www.upguard.com/blog/australian-data-breach-stats, 
+(Accessed 
+on
+20/05/2023).
+[8] Minghong Fang, Xiaoyu Cao, Jinyuan Jia, Neil Zhenqiang Gong, Local model
+poisoning attacks to byzantine-robust federated learning, in: Proceedings of the
+29th USENIX Conference on Security Symposium, 2020, pp. 1623–1640.
+[9] Timothy Stevens, Christian Skalka, Christelle Vincent, John Ring, Samuel Clark,
+Joseph Near, Efficient differentially private secure aggregation for federated
+learning via hardness of learning with errors, in: 31st USENIX Security
+Symposium (USENIX Security 22), 2022, pp. 1379–1395.
+[10] Bimal Ghimire, Danda B. Rawat, Recent advances on federated learning for
+cybersecurity and cybersecurity for federated learning for internet of things, IEEE
+Internet Things J. 9 (11) (2022) 8229–8249.
+[11] Zhilin Wang, Qin Hu, Ruinian Li, Minghui Xu, Zehui Xiong, Incentive mechanism
+design for joint resource allocation in blockchain-based federated learning, IEEE
+Trans. Parallel Distrib. Syst. 34 (5) (2023) 1536–1547.
+[12] Kang Wei, Jun Li, Ming Ding, Chuan Ma, Howard H. Yang, Farhad Farokhi,
+Shi Jin, Tony Q.S. Quek, H. Vincent Poor, Federated learning with differential
+privacy: Algorithms and performance analysis, IEEE Trans. Inf. Forensics Secur.
+15 (2020) 3454–3469.
+[13] Sara Salim, Benjamin Turnbull, Nour Moustafa, A blockchain-enabled explain-
+able federated learning for securing internet-of-things-based social media 3.0
+networks, IEEE Trans. Comput. Soc. Syst. (2021) 1–17.
+[14] Sara Salim, Ismail Ali, Sondoss Elsawah, A secure simulation-optimisation
+framework for fleet mix problem: A defence-based real-world application, in: Pro-
+ceedings of the Genetic and Evolutionary Computation Conference Companion,
+2024, pp. 207–210.
+Ad Hoc Networks 169 (2025) 103760 
+12 
+ S. Salim et al.
+[15] Yang Zhao, Jun Zhao, Linshan Jiang, Rui Tan, Dusit Niyato, Zengxiang Li,
+Lingjuan Lyu, Yingbo Liu, Privacy-preserving blockchain-based federated learning
+for IoT devices, IEEE Internet Things J. 8 (3) (2021) 1817–1829.
+[16] Bin Jia, Xiaosong Zhang, Jiewen Liu, Yang Zhang, Ke Huang, Yongquan Liang,
+Blockchain-enabled federated learning data protection aggregation scheme with
+differential privacy and homomorphic encryption in iIoT, IEEE Trans. Ind.
+Inform. 18 (6) (2022) 4049–4058.
+[17] Jonathan Passerat-Palmbach, Tyler Farnan, Mike McCoy, Justin D. Harris, Sean T.
+Manion, Heather Leigh Flannery, Bill Gleim, Blockchain-orchestrated machine
+learning for privacy preserving federated learning in electronic health data,
+in: 2020 IEEE International Conference on Blockchain (Blockchain), 2020, pp.
+550–555.
+[18] Dinh C Nguyen, Ming Ding, Quoc-Viet Pham, Pubudu N Pathirana, Long Bao
+Le, Aruna Seneviratne, Jun Li, Dusit Niyato, H Vincent Poor, Federated learning
+meets blockchain in edge computing: Opportunities and challenges, IEEE Internet
+Things J. 8 (16) (2021) 12806–12825.
+[19] Tong Wu, Weijie Wang, Chuan Zhang, Weiting Zhang, Liehuang Zhu, Keke Gai,
+Haotian Wang, Blockchain-based anonymous data sharing with accountability for
+internet of things, IEEE Internet Things J. 10 (6) (2023) 5461–5475.
+[20] Dominic Deuber, Bernardo Magri, Sri Aravinda Krishnan Thyagarajan, Redactable
+blockchain in the permissionless setting, in: 2019 IEEE Symposium on Security
+and Privacy (SP), IEEE, 2019, pp. 124–138.
+[21] Sin Kit Lo, Yue Liu, Qinghua Lu, Chen Wang, Xiwei Xu, Hye-Young Paik,
+Liming Zhu, Toward trustworthy AI: Blockchain-based architecture design for
+accountability and fairness of federated learning systems, IEEE Internet Things
+J. 10 (4) (2023) 3276–3284.
+[22] Collin Meese, Hang Chen, Syed Ali Asif, Wanxin Li, Chien-Chung Shen, Mark
+Nejad, BFRT: Blockchained federated learning for real-time traffic flow predic-
+tion, in: 2022 22nd IEEE International Symposium on Cluster, Cloud and Internet
+Computing (CCGrid), 2022, pp. 317–326.
+[23] Jingjing Guo, Zhiquan Liu, Siyi Tian, Feiran Huang, Jiaxing Li, Xinghua Li,
+Kostromitin Konstantin Igorevich, Jianfeng Ma, TFL-DT: A trust evaluation
+scheme for federated learning in digital twin for mobile networks, IEEE J. Sel.
+Areas Commun. 41 (11) (2023) 3548–3560, http://dx.doi.org/10.1109/JSAC.
+2023.3310094.
+[24] Xiaoming Wang, Jianwei Li, Zhiquan Liu, Quan Tang, Xixian Wang, Enabling
+secure cross-modal search over encrypted data via federated learning, IEEE
+Internet Things J. (2024) http://dx.doi.org/10.1109/JIOT.2024.3464760, 1–1.
+[25] Yifan Zhang, Yinbin Miao, Xinghua Li, Linfeng Wei, Zhiquan Liu, Kim-
+Kwang Raymond Choo, Robert H. Deng, Efficient privacy-preserving federated
+learning with improved compressed sensing, IEEE Trans. Ind. Inform. 20 (3)
+(2024) 3316–3326, http://dx.doi.org/10.1109/TII.2023.3297596.
+[26] Jingjing Guo, Haiyang Li, Feiran Huang, Zhiquan Liu, Yanguo Peng, Xinghua
+Li, Jianfeng Ma, Varun G. Menon, Konstantin Kostromitin Igorevich, ADFL:
+A poisoning attack defense framework for horizontal federated learning, IEEE
+Trans. Ind. Inform. 18 (10) (2022) 6526–6536, http://dx.doi.org/10.1109/TII.
+2022.3156645.
+[27] Debasis Das, Toward next generation of blockchain using improvized bitcoin-NG,
+IEEE Trans. Comput. Soc. Syst. 8 (2) (2021) 512–521.
+[28] Yuhao Zhou, Qing Ye, Jiancheng Lv, Communication-efficient federated learning
+with compensated overlap-FedAvg, IEEE Trans. Parallel Distrib. Syst. 33 (1)
+(2022) 192–205.
+[29] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra, Jorge L, A public do-
+main dataset for human activity recognition using smartphones, 21th Eur. Symp.
+Artif. Neur. Netw. Comput. Intell. Mach. Learn. (2013) https://archive.ics.uci.
+edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones, (Accessed
+on 22/05/2023).
+[30] Xudong Zhu, Hui Li, Yang Yu, Blockchain-based privacy preserving deep
+learning, in: International Conference on Information Security and Cryptology,
+Springer, 2018, pp. 370–383.
+[31] Shaohua Wan, Lianyong Qi, Xiaolong Xu, Chao Tong, Zonghua Gu, Deep learning
+models for real-time human activity recognition with smartphones, Mob. Netw.
+Appl. 25 (2) (2020) 743–755.
+[32] Maxence Noble, Aurélien Bellet, Aymeric Dieuleveut, Differentially private fed-
+erated learning on heterogeneous data, in: International Conference on Artificial
+Intelligence and Statistics, PMLR, 2022, pp. 10110–10145.
+[33] Truffle Suite, Sweet Tools for Smart Contracts, https://www.trufflesuite.com,
+(Accessed on 20/05/2023).
+[34] Giorgio Severi, Jim Meyer, Scott E. Coull, Alina Oprea, Explanation-guided
+backdoor poisoning attacks against malware classifiers, in: USENIX Security
+Symposium, 2021, pp. 1487–1504.
+[35] Sagar Samtani, Hsinchun Chen, Murat Kantarcioglu, Bhavani Thuraisingham,
+Explainable artificial intelligence for cyber threat intelligence (XAI-CTI), IEEE
+Trans. Dependable Secur. Comput. 19 (04) (2022) 2149–2150.
+[36] Sara Salim, Nour Moustafa, Mohamed Hassanian, David Ormod, Jill Slay,
+Deep-federated-learning-based threat detection model for extreme satellite com-
+munications, IEEE Internet Things J. 11 (3) (2024) 3853–3867, http://dx.doi.
+org/10.1109/JIOT.2023.3301626.
+Ad Hoc Networks 169 (2025) 103760 
+13 

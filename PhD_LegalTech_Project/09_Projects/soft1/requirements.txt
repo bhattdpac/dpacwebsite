@@ -1,0 +1,11 @@
+PyMuPDF
+pytesseract
+opencv-python
+spacy
+transformers
+scikit-learn
+sqlalchemy
+elasticsearch
+en_core_web_sm
+torch
+tensorflow

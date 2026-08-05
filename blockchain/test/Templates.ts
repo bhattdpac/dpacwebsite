@@ -22,7 +22,20 @@ describe("Legal Contract Templates", function () {
     const TerminationLogic = await ethers.getContractFactory("TerminationLogic");
     const termination = await TerminationLogic.deploy(docHash, docURI, 30); // 30 days
 
-    return { base, escrow, termination, owner, payer, payee, docHash, docURI, totalAmount };
+    // Deploy ConfidentialityNDA
+    const termDuration = 31536000; // 1 year
+    const ConfidentialityNDA = await ethers.getContractFactory("ConfidentialityNDA");
+    const nda = await ConfidentialityNDA.deploy(docHash, docURI, payer.address, payee.address, termDuration);
+
+    // Deploy SecuredLoan
+    const loanAmount = ethers.parseEther("5.0");
+    const interestRate = 500; // 5%
+    const currentBlock = await ethers.provider.getBlock("latest");
+    const deadline = currentBlock!.timestamp + 3600; // 1 hour from now
+    const SecuredLoan = await ethers.getContractFactory("SecuredLoan");
+    const loan = await SecuredLoan.deploy(docHash, docURI, payer.address, payee.address, loanAmount, interestRate, deadline);
+
+    return { base, escrow, termination, nda, loan, owner, payer, payee, docHash, docURI, totalAmount, loanAmount, interestRate, deadline };
   }
 
   describe("BaseLegalContract", function () {
@@ -76,6 +89,58 @@ describe("Legal Contract Templates", function () {
       await termination.terminate();
       expect(await termination.isValid()).to.be.false;
       expect(await termination.isTerminated()).to.be.true;
+    });
+  });
+
+  describe("ConfidentialityNDA", function () {
+    it("Should set correct parties and term duration", async function () {
+      const { nda, payer, payee } = await loadFixture(deployTemplatesFixture);
+      expect(await nda.disclosingParty()).to.equal(payer.address);
+      expect(await nda.receivingParty()).to.equal(payee.address);
+    });
+
+    it("Should not be active if not finalized", async function () {
+      const { nda } = await loadFixture(deployTemplatesFixture);
+      expect(await nda.isActive()).to.be.false;
+    });
+
+    it("Should be active after finalization", async function () {
+      const { nda } = await loadFixture(deployTemplatesFixture);
+      await nda.finalize();
+      expect(await nda.isActive()).to.be.true;
+    });
+  });
+
+  describe("SecuredLoan", function () {
+    it("Should set correct loan parameters", async function () {
+      const { loan, payer, payee, loanAmount, interestRate } = await loadFixture(deployTemplatesFixture);
+      expect(await loan.lender()).to.equal(payer.address);
+      expect(await loan.borrower()).to.equal(payee.address);
+      expect(await loan.loanAmount()).to.equal(loanAmount);
+      expect(await loan.interestRate()).to.equal(interestRate);
+    });
+
+    it("Should allow lender to fund the loan", async function () {
+      const { loan, payer, payee, loanAmount } = await loadFixture(deployTemplatesFixture);
+      const initialBorrowerBalance = await ethers.provider.getBalance(payee.address);
+      
+      await loan.connect(payer).fundLoan({ value: loanAmount });
+      
+      expect(await loan.state()).to.equal(1); // State.Active
+      expect(await ethers.provider.getBalance(payee.address)).to.equal(initialBorrowerBalance + loanAmount);
+    });
+
+    it("Should allow borrower to repay the loan with interest", async function () {
+      const { loan, payer, payee, loanAmount, interestRate } = await loadFixture(deployTemplatesFixture);
+      await loan.connect(payer).fundLoan({ value: loanAmount });
+      
+      const totalRepayment = loanAmount + (loanAmount * BigInt(interestRate) / 10000n);
+      const initialLenderBalance = await ethers.provider.getBalance(payer.address);
+      
+      await loan.connect(payee).repayLoan({ value: totalRepayment });
+      
+      expect(await loan.state()).to.equal(2); // State.Repaid
+      expect(await ethers.provider.getBalance(payer.address)).to.equal(initialLenderBalance + totalRepayment);
     });
   });
 });

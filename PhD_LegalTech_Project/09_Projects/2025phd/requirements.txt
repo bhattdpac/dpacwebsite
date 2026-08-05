@@ -1,0 +1,6 @@
+solcx
+py-solc-x
+pandas
+scikit-learn
+joblib
+numpy 

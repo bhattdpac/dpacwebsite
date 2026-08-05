@@ -1,0 +1,1424 @@
+Blockchain and smart contracts: the missing link
+in copyright licensing?
+Bala´zs Bodo´*, Daniel Gervais† and Jo~ao Pedro Quintais‡
+ABSTRACT
+This article offers a normative analysis of key blockchain technology concepts from the
+perspective of copyright law. Some features of blockchain technologies—scarcity, trust,
+transparency, decentralized public records and smart contracts—seem to make this
+technology compatible with the fundamentals of copyright. Authors can publish works
+on blockchain creating a quasi-immutable record of initial ownership, and encode
+‘smart’ contracts to license the use of works. Remuneration may happen on online dis-
+tribution platforms where the smart contracts reside. In theory, such an automated
+setup allows for the private ordering of copyright. Blockchain technology, like Digital
+Rights Management 20 years ago, is thus presented as an opportunity to reduce market
+friction, and increase both licensing efﬁciency and the autonomy of creators. Yet, some
+of the old problems remain. The article examines the differences between new, smart-
+contract-based private ordering regime and the fundamental components of copyright
+law, such as exceptions and limitations, the doctrine of exhaustion, restrictions on for-
+malities, the public domain and fair remuneration.
+KEYWORDS: Blockchain, copyright, smart contracts, distributed ledger technology
+(DLT), copyright registries, automated licensing, digital rights management (DRM)
+INTRODUCTION
+Blockchain is the latest in the series of digital technologies that, due to their decen-
+tralized, horizontal, distributed and open source nature, are expected to cause funda-
+mental and large scale changes in how our current social, economic, political
+* Bala´zs Bodo´, Senior Researcher at the Institute for Information Law (IViR), University of Amsterdam. He is
+also the Head of the IViR’s Blockchain and Society Policy Research Lab. The Lab has received funding from
+the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation
+programme under grant agreement No 759681. E-mail: B.Bodo@uva.nl
+† Daniel J. Gervais, Professor of Information Law, in particular trade and investment related aspects of the in-
+formation society at the University of Amsterdam. Professor Gervais is also the Milton R. Underwood Chair
+in Law at Vanderbilt University Law School and Director of the Vanderbilt Intellectual Property Program.
+He is the current President of the International Association for the Advancement of Teaching and Research
+in Intellectual Property (ATRIP). E-mail: d.j.gervais2@uva.nl
+‡ Jo~ao Pedro Quintais, Postdoctoral Researcher at the Institute for Information Law (IViR), University of
+Amsterdam. He is also a researcher at the IViR’s Blockchain and Society Policy Research Lab. E-mail: J.p.
+quintais@uva.nl. The authors are listed in alphabetical order, and contributed equally to the development of
+ideas, and to the writing of the article.
+V
+C The Author(s) (2018). Published by Oxford University Press.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecom-
+mons.org/licenses/by/4.0/), which permits unrestricted reuse, distribution, and reproduction in any medium, provided the
+original work is properly cited.
+
+311
+International Journal of Law and Information Technology, 2018, 26, 311–336
+doi: 10.1093/ijlit/eay014
+Advance Access Publication Date: 25 September 2018
+Article
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+relations and institutions are organized. Roughly 20 years after the declaration of the
+independence of cyberspace1 and the crypto anarchist manifesto,2 and 12 years after
+Yochai Benkler outlined how peer production and web 2.0 would enable a brave
+new world,3 many now believe blockchain will empower an open, decentralized, dis-
+intermediated, smart, trustless and cryptographic mode of social organization.4
+These hopes are partly based on the relative success of Bitcoin. Bitcoin uses distrib-
+uted ledger technology (DLT) to keep track of the supply and flow of the virtual
+tokens of a financial instrument in a decentralized, disintermediated and demon-
+strably secure manner. It is, in the words of its enigmatic creator(s), ‘a peer-to-peer
+electronic cash system’ and an ongoing proof of concept.5 Even if Bitcoin fails to es-
+tablish itself as a stable mainstream currency, its underlying technological design
+allows individuals to anonymously (or at least pseudonymously) exchange tokens of
+value with each other in a safe and secure manner, with little or sometimes no reli-
+ance on traditional trusted intermediaries, like banks.6 The high visibility of block-
+chain in the cryptocurrency area has prompted widespread exploration of its
+application to other domains, including copyright.
+Second generation DLTs may play a role in the realm of copyright. DLTs use
+enhanced versions of the Bitcoin technology to store transactions of all kinds of
+tokens, including domain names, identity records (eg driving licenses), ownership
+deeds, public records (such as land titles), social welfare payments, bank accounts and
+transactions of fiat currencies.7 Blockchain technologies of this type can also store exe-
+cutable software. The code enables nodes in the network to interact with the data
+stored on a blockchain and act autonomously if some conditions are met. In essence,
+such code constitutes what is now commonly referred to as a smart contract.8
+In the copyright domain, different elements may be represented by cryptographic
+tokens: works, ownership metadata, licensing terms and remuneration. With these
+characteristics, DLTs appear to provide a decentralized platform to build and main-
+tain registries of works. Relying on the registries of such tokenized elements, smart
+contracts may automate and standardize a multitude of copyright-related transac-
+tions, for instance those authorizing the use and exploitation of copyright-protected
+content, and remuneration. Indeed, despite the early stages of the application of
+blockchain technology to copyright goods and services, there is booming deploy-
+ment of applications in this domain, in particular in the online music sector.
+1
+JP Barlow, A Declaration of the Independence of Cyberspace (8 February 1996) <https://www.eff.org/cyber
+space-independence> accessed 17 July 2018.
+2
+TC May, The Crypto Anarchist Manifesto (22 November 1992) <https://www.activism.net/cypher
+punk/crypto-anarchy.html> accessed 17 July 2018.
+3
+Y Benkler, The Wealth of Networks: How Social Production Transforms Markets and Freedom (Yale
+University Press 2006).
+4
+D Tapscott and A Tapscott, Blockchain Revolution: How the Technology Behind Bitcoin Is Changing Money,
+Business, and the World (Portfolio 2016).
+5
+S Nakamoto, ‘Bitcoin: A Peer-to-peer Electronic Cash System’ (2008) 1 <https://bitcoin.org/bitcoin.
+pdf> accessed 16 July 2018.
+6
+We do not subscribe to the claim that blockchain technology does not have intermediaries.
+7
+Tapscott and Tapscott (n 4).
+8
+P Cuccuru, ‘Beyond Bitcoin: An Early Overview on Smart Contracts’ (2017) 25(3) International Journal
+of Law and Information Technology 179–95.
+312
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+This article examines the relationship of blockchain technology with copyright,
+using international copyright law as a frame of reference for the analysis.9 Within this
+general framework, we pay particular attention to rules that may impact the function-
+ing and development of blockchains. These include legal protections afforded to
+technological protection measures (TPMs) and Rights Management Information
+(RMI), jointly referred to as Digital Rights management (DRM).10 The first refer to
+technologies that restrict acts that can be performed in respect of a copy of a work
+(for example by preventing the making of a reproduction thereof). The second
+relates to electronic information attached to a work, for example on ownership and
+terms of use. RMI or similar metadata is often maintained by collective management
+organizations (CMOs), by bodies entrusted with the registration of works (eg the
+US Copyright Office), or other official/authentic registries. Where justified by our
+analysis, the article goes beyond international law and enters the comparative domain
+by reflecting the impact of the two major legal system with distinct traditions in this
+space, namely the civil law tradition of authors rights, for which our flag-bearer will
+be the European Union (EU), and common law copyright, of which the United
+States (US) is the main protagonist.
+The article proceeds as follows. The Section ‘Copyright-relevant characteristics of
+blockchain technology’ identifies the key characteristics of blockchain technologies
+with relevance to our analysis. The Section ‘Blockchain and copyright intersections’
+examines what we perceive to be key issues at the intersection of blockchain technol-
+ogy and copyright law, at least at the current stage of the technology: the use of
+blockchains for private ordering; their applications in the context of copyright regis-
+tries; their interface with the legal protection of DRM; and their potential for fairly
+remunerating artists. In the Section ‘Discussion: between promise and hype’ the art-
+icle offers a discussion on the main normative insights arising from the previous ana-
+lysis. The last section concludes.
+COPYRIGHT-RELEVANT CHARACTERISTICS OF BLOCKCHAIN
+TECHNOLOGY
+Blockchain technology can be defined as a distributed, append only database, which
+enables—without a central trusted intermediary—,transactions between human or
+software agents.11 In reality, there is no such thing as ‘the Blockchain’. Instead, there
+is a range of different DLTs, which share some fundamental principles, but vary inter
+9
+The most relevant international treaties in copyright law are the Berne Convention for the Protection of
+Literary and Artistic Works (1971 Act) [hereinafter ‘Berne Convention’], the 1994 Agreement on Trade-
+Related Aspects of Intellectual Property Rights [hereinafter ‘TRIPS’] and, in relation to use over digital
+networks, the 1996 WIPO Copyright Treaty [hereinafter ‘WCT’] and WIPO Performances and
+Phonograms Treaty [hereinafter ‘WPPT’].
+10
+WCT, ibid arts 11–12, and WPPT, ibid, arts 18–19.
+11
+We treat specific technological design and implementation choices as mostly external to our discussion.
+As such, we only address them where relevant to our analysis. Interested readers can find additional infor-
+mation in: J Bacon and others, ‘Blockchain Demystified’ (21 December 2017). Queen Mary School of Law
+Legal Studies Research Paper No 268/2017 <https://ssrn.com/abstract¼3091218> accessed 16 July
+2018; A Narayanan and others, Bitcoin and Cryptocurrency Technologies: A Comprehensive Introduction
+(Princeton University Press 2016); P De Filippi and A Wright, Blockchain and the Law: The Rule of Code
+(Harvard University Press 2018).
+Blockchain and smart contracts
+
+313
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+alia in their design, purpose and affordances.12 For the purposes of this overview we
+focus on some of the common characteristics relevant to the copyright domain: dis-
+tributed ledgers; tokenization and digital scarcity; smart contracts and decentraliza-
+tion. We explain each one in turn below, as well as the relevance of design choices in
+the characterization of blockchains.
+Distributed ledgers
+In its simplest description, a blockchain is a distributed ledger, or an append only
+database, of which every user has a continuously updated authoritative copy. Anyone
+who has access to the ledger has access to the same full transaction history and the
+ability to verify the validity of all records.13 Sophisticated consensus mechanisms en-
+sure that new entries can only be added to this distributed database if they are con-
+sistent with earlier records. This distributed database has the capacity to record any
+kinds of data. One can save an arbitrary piece of information on blockchain, which
+becomes part of the permanent record. Ledgers can also be used to keep track of
+tokens belonging to specific accounts (or ‘wallets’) and the time-stamped transac-
+tions of tokens between accounts. In that case, DLTs can ensure that the transactions
+are consistent over time, and tokens are not spent twice. Depending on the actual
+technological design, an account holder can be an (anonymous/pseudonymous) in-
+dividual, a legal entity, a smart contract (software code), or any group or combin-
+ation thereof. Tokens, as we show in the next section, can represent almost anything:
+a unit of virtual currency, an asset, a physical object in the world, or any other ab-
+stract entity. Beyond these simple facts, different blockchains may follow different
+designs
+principles.
+As
+we
+explain
+later,
+this
+fundamentally
+impacts
+their
+functioning.14
+Distributed ledgers are a general-purpose technology, meaning that they are freely
+configurable to any and every application. In theory, this makes it relatively easy to
+correspond the core building blocks of blockchain technology to fundamental con-
+cepts in copyright law. Consequentially, multiple DLT configurations are being
+explored in the copyright domain. For example: if tokens represent rights, and wallet
+holders represent rights holders, DLTs may host public copyright registries, which
+record—in a transparent manner—the ownership, distribution, use and remuner-
+ation of works.15 Another example would be a private distributed database set up by
+CMOs to facilitate the inter-organizational identification of works and payment of
+royalties.
+Tokenization and digital scarcity
+The distributed ledgers record the ownership and transactions of digital tokens.
+Virtually any kind of information may be expressed as a token, using a cryptographic
+12
+For an overview and taxonomy see: X Xu and others, ‘A Taxonomy of Blockchain-based Systems for
+Architecture Design’ in Software Architecture (ICSA), 2017 IEEE International Conference on Software
+Architecture (IEEE April 2017), 243–52.
+13
+On public blockchains access is unlimited, in private ones only approved members can read the transac-
+tion history. See Narayanan and others (n 11) (Ch 2).
+14
+See below at sub-section ‘Design choices: from open to closed’.
+15
+See below at Section ‘Blockchain and copyright intersections’.
+314
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+signature. Any such token can be ‘stored’ on a blockchain or distributed ledger. In
+the copyright domain, tokens can represent a number of different elements.16
+Firstly, they can represent a copy of a protected work. This representation can be
+made at the moment of creation (eg a digital camera or a word processor can gener-
+ate a token at the time the work is expressed) or subsequently, by the rights holder
+or an authorized third party. Secondly, tokens can represent a record of RMI for pro-
+tected content.17 Thirdly, tokens can encode a subset of information mentioned
+under the definition of RMI, namely the terms of use of protected content,18 for ex-
+ample the standard licensing terms of Creative Commons (CC) licenses.19 However,
+it is also possible to envision terms of use that refer to the particular status of a work,
+such as whether it is an orphan work or in the public domain.20 Terms of use are
+often static/general or dynamic/conditional. The first are set once and (supposedly)
+do not change afterwards.21 Conversely, dynamic or conditional or conditional terms
+of use may evolve over time. This is the case for most RMI, which changes every
+time a copyright is transferred, or the respective conditions of use change. Finally,
+tokens can represent remuneration for the use of a work, which can be encoded in
+so-called cryptocurrencies (eg Bitcoin, Bitcash) or fiat currency equivalents, constitut-
+ing the counter performance for a transaction on the corresponding (copy of a)
+work.
+Individual tokens are unique. Token transactions on a blockchain are organized in
+a manner that prevents double spending of tokens. In practice, this means that
+tokens are the vehicle through which blockchain technology re-introduces scarcity
+into the digital domain.
+Smart contracts
+The first generation of DLTs, such as the bitcoin blockchain, offered very few built-
+in tools to automate transactions. The second generation of DLTs, like the
+Ethereum network, changed that by adding a Turing complete computer-language22
+to the technology. This language enables users to write complex software that inter-
+acts with the distributed ledger, and is said to share the same characteristics: self-
+enforcing, immutable, etc. In these second generation DLTs, smart contracts are
+16
+See, making reference to some of these elements, H Sheraton and B Clark, ‘Blockchain and IP: Crystal
+Ball-gazing or Real Opportunity?’ PLC Maganize (October 2017) 39–44.
+17
+As mentioned earlier DLTs can keep track of any information. In practice this means that RMI can be
+recorded on a DLT without being tokenized. We explore this option briefly later.
+18
+WCT (n 9), art 12(2), defining RMI as ‘information which identifies the work, the author of the work,
+the owner of any right in the work, or information about the terms and conditions of use of the work,
+and any numbers or codes that represent such information, when any of these items of information is
+attached to a copy of a work or appears in connection with the communication of a work to the public’.
+19
+See Creative Commons, About the Licenses <https://creativecommons.org/licenses/?lang¼en> accessed
+17 July 2018.
+20
+J Goldenfein and D Hunter, ‘Blockchains, Orphan Works, and the Public Domain’
+(2017) 41(1)
+Columbia Journal of Law & the Arts.
+21
+An example is a term that identifies a work as being in the public domain.
+22
+Turing completeness in computer science terms means that any and every computing problem can be
+solved by using the smart contract computer language.
+Blockchain and smart contracts
+
+315
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+algorithmic account holders on the blockchain. They are pieces of code that generate
+transactions if the conditions encoded in them are met. In most cases, smart con-
+tracts encode ‘if-then’ conditions, such as: if a user pays X amount of cryptocurrency
+to the smart contract account then the contract grants them access to a digital copy
+of a work. In a similar vein, a smart contract may help the distribution of revenues: if
+a copyright work generated Y amount of remuneration in its corresponding account,
+the smart contract can distribute the revenue amongst rights holders according to
+the RMI token Z.
+As these simple examples hint at, a substantial amount of transactions in the copy-
+right domain could be modelled after such simple if-then rules. This has led to the
+expectation that smart contracts may be used to reliably automate a large volume of
+‘dumb transactions’,23 where their self-enforcing and automatic nature can lower
+transaction costs. One could also imagine that smart contracts may play a role in
+standardizing licensing terms and conditions for copyright works across uses and dif-
+ferent jurisdictions, similar to the way in which CC licenses are deployed at a global
+scale.
+Yet, there remain substantial unresolved issues limiting the applicability of smart
+contracts. Among others, legal systems lack a consensus on how code as contract fits
+into the traditional concepts of contract law. Open questions include:24 the identifi-
+cation of the pseudonymous parties that are typical for blockchain-based smart con-
+tracts; remedial measures for the breach of smart contracts;25 and how to address
+and resolve jurisdictional conflicts—a crucial question for a markedly territorial right,
+like copyright.26 More broadly, it is unclear how dispute resolution takes place. For
+the foreseeable future, this uncertainty surrounding the legal status of smart contracts
+is likely to limit the emergence of more complex and robust arrangements in the do-
+main of automated copyright licenses in blockchains. Since the detailed analysis of all
+these contract law related issues is beyond the scope of this article, in the following
+we discuss the applicability of smart contracts in the copyright domain, thus proceed-
+ing under the optimistic assumption that such issues are resolvable in the long run.
+Decentralization and disintermediation
+One of the most important claims in this field is that blockchains are ‘trustless’.27
+This term is used to describe an environment in which there is no need to route
+23
+Dumb transactions are easily automatable transactions. They are simple and straightforward enough to be
+described by simple if-then rules, and don’t require sophisticated fallback infrastructures to operate, such
+as dispute resolution or real-world enforcement.
+24
+See K Levy, ‘Book-Smart, Not Street-Smart: Blockchain-Based Smart Contracts and The Social Workings
+of Law’ Engaging Science, Technology, and Society, [S.l.], v 3, 1–15 (February 2017), posing identical or
+similar questions.
+25
+The so-called DAO hack is usually used to demonstrate many of the unresolved issues between smart
+contracts and law. See: M Leising, ‘The Ether Thief’ Bloomberg Markets (13 June 2017) <https://www.
+bloomberg.com/features/2017-the-ether-thief/> accessed 16 July 2018.
+26
+On this point, see the discussion below at sub-section ‘Private ordering’ and the Section ‘Discussion: be-
+tween promise and hype’.
+27
+We use the term ‘trustless’ in a very narrow, technical sense, which refers to the expectations on the reli-
+ability of an individual technical node in a blockchain network. In a wider context, which also takes into
+account the social, economic, geographical, political contexts in which blockchain networks operate, and
+316
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+transactions through central trusted third parties for ‘untrusting’ entities to be able to
+engage with each other. The rules embedded in the design of the technology are
+meant to ensure that interacting actors remain honest, at least vis-a`-vis on-chain
+transactions.28
+This feature can be traced back to the ‘cryptoanarchists’ who worked on early
+cryptocurrencies with a view to bypass the authority of the State and central banks to
+regulate financial transactions.29 That this work has empowered a payment system
+(Bitcoin), which conducts transactions of value without relying on the involvement
+of traditional financial intermediaries, has led to arguments that decentralization and
+disintermediation would be a realistic option in other domains as well.30
+In the copyright domain, disintermediation would affect incumbents at every
+level: (i) publishers and music labels, (ii) CMOs, and (iii) online platforms, includ-
+ing those that host user-uploaded content. Some hope that blockchain applications
+would be able to remove all middlemen between artist and audience, and thus enable
+a direct relationship where artists can directly authorize uses, distribute their works
+and collect remuneration.31 For the reasons discussed below, complete disintermedi-
+ation is unlikely. Still, DLTs have the potential to upset the status quo by shifting the
+relative (institutional, negotiating, financial or other) powers of incumbents through
+the introduction of new stakeholders to the domain, and the alteration of the cost/
+benefit calculus for existing ones.
+Design choices: from open to closed
+DLTs come in many flavours. The underlying software may be open source or pro-
+prietary. Permission may be necessary to open an account, and initiate transactions.
+Different rules may apply to who (and by which means) is able to participate in the
+transaction validation consensus mechanisms. The different applications may de-
+mand different technological architectures, which will in turn have diverse legal and
+economic consequences.
+Bitcoin, the first mainstream blockchain-based application, as well as a number of
+subsequent cryptocurrencies, are public blockchains. On public blockchains anyone
+can be an account holder without the need for third party approval, review or inter-
+ference. If the blockchain is also unpermissioned, anyone can also participate in the
+their key components are embedded in, blockchain applications are rarely trustless. On the contrary, a
+whole new set of trust concerns arise, such as whether data on blockchain can be trusted to accurately
+represent the underlying reality in the real world, or whether the changes on- and off-chain can be trusted
+to remain in synchronicity. More on that later in the text.
+28
+Narayanan and others (n 11) (Ch 5). NB that smart contracts can only ensure that tokens representing
+certain goods or services are exchanged, but cannot enforce the exchange of the off-chain assets.
+29
+Q DuPont, ‘The Politics of Cryptography: Bitcoin and the Ordering Machines’ (2014) 1(4) Journal of
+Peer Production 1–10.
+30
+See: S Davidson, P De Filippi and J Potts, ‘Disrupting Governance: The New Institutional Economics of
+Distributed Ledger Technology’ (19 July 2016) <https://ssrn.com/abstract¼2811995> accessed 16
+July 2018.
+31
+See, eg I Heap, ‘Blockchain Could Help Musicians Make Money Again’ Harvard Business Review (5 June
+2017); <https://hbr.org/2017/06/blockchain-could-help-musicians-make-money-again> and J Porter, ‘For
+its Next Trick, Blockchain Plans on Making Recorded Music Profitable Again’ TechRadar (6 February
+2018) <http://www.techradar.com/news/for-its-next-trick-blockchain-plans-on-making-recorded-music-prof
+itable-again> accessed 16 July 2018.
+Blockchain and smart contracts
+
+317
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+verification of these transactions.32 Open blockchains also tend to rely on open
+source code, which anyone can study, alter, and develop. As a consequence, the
+technological design choices reflect the values and ideologies of the developer
+community.33
+On the other end of the spectrum, we find closed, private and permissioned
+blockchains. These blockchains limit access to the distributed ledger and limit who
+can participate in the transaction validation process. Such DLTs often use propri-
+etary source code, developed by privately owned organizations, who define their de-
+sign, use, and application.34
+In other words, blockchains can be open, like an open marketplace where anyone
+can come and trade, or closed, like invitation-only trading rooms. Between the two
+extremes are a number of applications that differ on the extent of openness.35
+These different technological architectures may have radically different consequen-
+ces in terms of the users and the uses of the system, as well as the organization, suscep-
+tibility of regulation, and economics of the practices they facilitate. For example, a
+public blockchain copyright registry needs to be accessible and open on most if not all
+of its possible dimensions to enable any creator to register their ownership and to fulfil
+its informative function vis-a`-vis third parties (other rights holders, the public, and ad-
+ministrative or judicial bodies). That is to say, such registry would have to rely on an
+open unpermissioned blockchain, running on open source software developed and
+managed by a diverse group of developers and other stakeholders. If the history of
+peer-to-peer file sharing is prologue for blockchain, it will be challenging for copyright
+law to adjust its rules to open and decentralized systems.36
+On the other extreme, for example, the cross-border accounting of royalties among
+national CMOs could be implemented on a closed model. The transparency of trans-
+actions may be a good reason to make a blockchain readable for anyone. However,
+transaction verification, token generation, and the writing of data on a blockchain is
+probably best left closed. Such an arrangement is unlikely to lead to decentralization
+and disintermediation per se, and may even result in the entrenchment of the status
+quo, especially as the legality of such an arrangement appears unproblematic.37
+In other words, blockchain technology in and by itself does not necessarily entail
+decentralization, disintermediation, or the removal of trusted intermediaries. In some
+fields, complete disintermediation may not be practical, possible, or even desirable.38
+This is illustrated in the field of online music, where many blockchain platforms
+32
+Narayanan and others (n 11).
+33
+W Reijers, F O’Brolcha´in and P Haynes, Governance in Blockchain Technologies & Social Contract Theories
+(Ledger 2016) 134–51; H Nissenbaum, ‘Values in the Design of Computer Systems’ [March 1998]
+Computers and Society 38–39; M Flanagan, D Howe and H Nissenbaum, ‘Embodying Values in
+Technology: Theory and Practice’ in J van den Hoven and J Weckert (eds), Information Technology and
+Moral Philosophy (CUP 2008).
+34
+Xu and others (n 12).
+35
+ibid.
+36
+R Giblin, Code Wars: 10 Years of P2P Software Litigation (Edward Elgar Publishing 2011), W Patry, Moral
+Panics and the Copyright Wars (OUP 2009).
+37
+A similar point is made by M Finck, ‘Blockchain Regulation’, Max Planck Institute for Innovation &
+Competition Research Paper No. 17-13 (2017), 6.
+38
+We describe a variety of possible new models below at Section ‘Blockchain and copyright intersections’.
+318
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+promise disintermediation of the relationship between artist and audience.39 In real-
+ity, however, either the platform in question is assuming the role of intermediary or
+lacks the necessary resources to make good on its promise. This is because current
+intermediaries control critical assets for disintermediation, such as the type of com-
+prehensive RMI datasets for musical works and sound recordings held by CMOs.
+In a weak blockchain future scenario, where applications of this technology play
+only a marginal role in the wider copyright ecosystem, solutions relying on it may
+emerge to enable new intermediaries that serve niche markets, as is already the case
+for instance in some segments of the Dutch Electronic Dance Music licensing mar-
+ket.40 In a scenario where blockchain eventually manages to significantly penetrate
+mainstream copyright licensing markets, a likely outcome is an active competition/
+cooperation between new and old middlemen.41 In the Section ‘Blockchain and
+copyright intersections’ we outline a number of ways in which this might happen.
+BLOCKCHAIN AND COPYRIGHT INTERSECTIONS
+The explosive development of blockchain technology and the surrounding hype have
+led to the emergence of a number of blockchain applications in the domain of copy-
+right, mainly in the online music sector. The development of market applications has
+been accompanied by a growing body of scholarship that investigates the implica-
+tions of blockchain from the perspective of information law and technology, with a
+focus on regulation, smart contracts and an emerging strand of scholarship on priv-
+acy and data protection.42 Still, there is relatively little research on the intersection of
+blockchain and copyright law.43
+39
+See for example the pitch of Potentiam, a startup in the music and blockchain domain: ‘The Potentiam
+platform wants to use the blockchain to encourage artists to connect directly with their fans in an effort
+to cut out the monumental cost of middlemen such as managers, booking agents, digital service providers,
+and many more entities that take up to 80% of the revenue generated from the music industry.’ S Osea,
+Potentiam: Revamping the Music Industry Using Blockchain Technology, Medium.com, <https://medium.
+com/potentiam/potentiam-revamping-the-music-industry-using-blockchain-technology-2fda8f4ccdac>
+accessed 17 July 2018.
+40
+Rightshare is a Dutch company founded by a former director of a CMO. It proved relatively successful in
+facilitating blockchain-based licensing of electronic dance music in the Netherlands. See Rightshare,
+<http://rightsshare.com> accessed 16 July 2018.
+41
+K Yeung, ‘Regulation by Blockchain: The Emerging Battle for Supremacy between the Code of Law and
+Code as Law’ Modern Law Review (forthcoming). (July 2, 2018). Available at SSRN: https://ssrn.com/
+abstract=3206546
+42
+See, eg De Filippi and Wright (n 11); M Swan, Blockchain: Blueprint for a New Economy (O’Reilly 2015);
+Tapscott and Tapscott (n 4); J Bacon and others (n 11); Yeung, ibid; M Raskin, ‘The Law and Legality of
+Smart Contracts’ (2017) 1 Georgetown Law Technology Review 304; S Hassan and P De Filippi, ‘The
+Expansion of Algorithmic Governance: From Code Is Law to Law Is Code’ (2017) Field Actions Science
+Reports: The Journal of Field Actions Special issue 17: Artificial Intelligence and Robotics in the City,
+Open Edition Journals; Cuccuru (n 8); S Shackelford and S Myers, ‘Block-by-Block: Leveraging the Power
+of Blockchain Technology to Build Trust and Promote Cyber Peace’ (2017) 19(1) Yale Journal of Law and
+Technology 335–88. On data protection, see eg S Sater, ‘Blockchain and the European Union’s General
+Data Protection Regulation: A Chance to Harmonize International Data Flows’ (6 November 2017)
+https://ssrn.com/abstract¼3080987 accessed 17 July 2018; M Finck, ‘Blockchains and Data Protection in
+the European Union’ (30 November 2017), Max Planck Institute for Innovation & Competition Research
+Paper No. 18-01 <http://dx.doi.org/10.2139/ssrn.3080322> accessed 17 July 2018.
+43
+See eg Tapscott and Tapscott (n 4); M O’Dair and others, Music On The Blockchain, Blockchain
+For Creative Industries Research Cluster Middlesex University, Report No 1 (July 2016) <https://
+Blockchain and smart contracts
+
+319
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+This article has identified four copyright domains where the implementation of
+blockchain technology is both promising and challenging, giving rise to a host of
+complex (and often interconnected) legal issues. These are the potential overreach
+of smart contracts and private ordering, copyright registries, the articulation with the
+legal regime of DRM, and fair remuneration. Our aim is not to be exhaustive but ra-
+ther to map out the copyright/blockchain intersection in these domains and flesh
+out some of its normative implications, which we then discuss at a higher level in the
+Section ‘Discussion: between promise and hype’ of the article. For the sake of the
+analysis, we assume that blockchain applications will work as promised in this field,
+while again recognizing the optimistic nature of this assumption.
+Private ordering
+Fragmentation
+Can the blockchain be used as a licensing tool for ‘international’ copyright rights?
+Although it is not inaccurate to speak of international copyright law, as contained for
+example in international treaties, there is no such thing as an international copyright
+right. The treaties recognize the protection of copyright in multiple jurisdictions, but
+based on the law of each jurisdiction. If the author creates a literary work in, say,
+Canada or the Netherlands, that work must be protected under the copyright laws of
+all other 175 member countries of the Berne Union (that is, countries party to the
+Berne Convention44) according to their domestic laws.45 For instance, a very short
+‘work’ or a creation with functional characteristics may be protected in one jurisdic-
+tion but not in another, on the grounds that it lacks originality. Under the Berne
+Convention, an author thus gets 176 different national bundles of copyright rights, if
+one counts the author’s own country.46
+It gets worse, for each of those copyright rights can be spliced and diced. For ex-
+ample, the author of a literary work may license or transfer to a third party only the
+right to translate the work in a specific different language or market. In other words,
+each right (the term ‘right fragment’ has been used to illustrate this ‘fragmentation’
+of rights47) in the copyright bundle can be owned and exploited separately—as far as
+the Berne Convention goes—176 times.
+www.mdx.ac.uk/__data/assets/pdf_file/0026/230696/Music-On-The-Blockchain.pdf> accessed 16 July
+2018; J Silver, ‘Blockchain or the Chaingang? Challenges, Opportunities and Hype: The Music Industry
+and Blockchain Technologies’ (2016) CREATe Working Paper 2016/05 <https://www.create.ac.uk/publi
+cations/blockchain-or-the-chaingang-challenges-opportunities-and-hype-the-music-industry-and-blockchain-
+technologies/> accessed 16 July 2018; Goldenfein and Hunter (n 20); Sheraton and Clark (n 16); A
+Savelyev, ‘Copyright in the Blockchain Era: Promises and Challenges’ (2018) 34 Computer Law &
+Security Review 550–61.
+44
+Berne Convention for the Protection of Literary and Artistic Works (September 1886), last revised 1971
+[hereinafter ‘Berne Convention’].
+45
+For the membership of the Berne Convention, see WIPO, ‘WIPO-Administered Treaties, Berne
+Convention for the Protection of Literary and Artistic Works’ <http://www.wipo.int/treaties/en/ip/
+berne/> accessed 17 July 2018.
+46
+Sheraton and Clark (n 16).
+47
+MS Van Houweling, ‘Author Autonomy and Atomism in Copyright Law’ (2010) 96 Virginia Law Review
+549.
+320
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+It gets worse still. Each country is free to choose which form of ‘exhaustion’ rule it
+will apply, as this matter is yet to be settled at international level.48 There are three
+main types of exhaustion: national, regional and international. Under a national ex-
+haustion regime, a copy of a work may only be sold with the consent of the copyright
+holder in that territory.49 National exhaustion means that parallel importing50 is not
+permitted because the rights of the copyright holders are treated as having a wholly
+independent existence in each national market.51 A variation on this theme is region-
+al exhaustion, a regime under which a copy put on the market legally in a region can
+be exploited in the entire region. This is the case within the EU for example, at least
+with respect to sales of physical copies of copyright works.52 The other ‘extreme’ is
+international exhaustion, a regime under which a copy put on the market legally any-
+where in the world can be sold in a country, such as the US, that opts for this regime.
+There are a number of grey areas that need not be belaboured here.53
+Then, due to the no-formalities rule, no mandatory registration can be applied at
+least to foreign authors in any of the 176 countries.54
+The common law notion of ‘title’ is useful to understand this idea. ‘Title’ is the
+term used at common law to refer to the legal link between a person who owns prop-
+erty and the property itself.55 An ‘international copyright’ (under the Berne
+Convention) is in reality 176 national bundles of rights each of which can vary in
+scope and duration. Each right fragment, in each territory, has its own title—that is,
+48
+See: TRIPS (n 9), art 6 (‘For the purposes of dispute settlement under this Agreement, subject to the
+provisions of Articles 3 and 4 nothing in this Agreement shall be used to address the issue of the exhaus-
+tion of intellectual property rights.’); WCT (n 9), art 6(2).
+49
+And, one might add, the right holder having the right concerned. For example, a CMO to which only the
+right of public performance in a musical work had been transferred could not license the making and sell-
+ing of copies of the work.
+50
+The notion of parallel importing is not limited to physical products. Electronic transmissions of copyright
+works and even services that can involve intellectual property, for example, can be parallel imported. By
+way of example, on 3 April 2014, the United States (US) International Trade Commission (ITC) issued
+a Summary Notice of Determination affirming an administrative law judge’s conclusion that electronically
+transmitted information could constitute an ‘article’, thereby asserting ITC jurisdiction over electronic
+transmissions across borders. See In the Matter of Certain Digital Models, Digital Data, and Treatment
+Plans for Use in Making Incremental Dental Positioning Adjustment Appliances, the Appliances Made
+Therefrom, and Methods of Making the Same, Inv No 337-TA-833 (10 April 2014) (pending). Under s 337
+(19 USC § 1337, as amended). See also S Frankel and D Gervais, ‘International Intellectual Property
+Rules and Parallel Importing’ in I Calboli and E Lee (eds), Research Handbook on Exhaustion and Parallel
+Imports (Edward Elgar 2016) 85–105.
+51
+Frankel and Gervais, ibid.
+52
+See art 4(2) Directive 2001/29/EC of the European Parliament and of the Council of 22 May 2001 on
+the Harmonization of Certain Aspects of Copyright and Related Rights in the Information Society, 2001
+OJ (L 167) 10–19.
+53
+For example, there are conflicting views on whether a copy put on the market in a country under a com-
+pulsory license may be exported to a country using international exhaustion. See Frankel and Gervais
+(n 50).
+54
+A country can decide not to apply Berne Convention protection to its own nationals, as the Convention
+(assuming the Convention does not form part of national law according to the national legal order of the
+country in question). This is the case in the United States where US authors are subject to a higher level
+of obligations (in terms of copyright registration) than foreign authors.
+See US Copyright Office,
+Compendium of U.S. Copyright Office Practices § 101 (3rd edn 2017) at para 2002.2.
+55
+Black’s, 8th edn at 1522, WEST GROUP.
+Blockchain and smart contracts
+
+321
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+each can theoretically have a different owner. If one were to posit that there are on
+average 10 right fragments per territory for each copyright work, that would means
+1 760 rights fragments and thus 1 760 ‘titles’. Each such title can be exploited and
+transferred independently of all others—it being understood that certain uses of
+works may require more than one right fragment.56
+The owner of the title to a right fragment may transfer the title, but h/she may
+decide only to permit its use by a third party under a license. A license may be exclu-
+sive or nonexclusive. An example of the former would be when the owner of the
+right of adaptation in a novel (literary work) authorizes a specific film producer to
+make a film based on the book. An example of the latter would be when the film pro-
+ducer who then makes the movie and becomes the owner of the copyright of the
+film authorizes 100 film theatres to show the film at the same time.
+The transfer of a copyright title often requires a written instrument. Whether
+courts interpret smart contracts (or laws are amended to that effect) as constituting
+a ‘written instrument’ is a matter we do not cover here, as this will impact many
+other types of transaction that require written form.57 Still, to the extent the conse-
+quence attached to a blockchain based transaction is technologically enabled or
+determined, it will occur de facto, even if the desired or corresponding legal effects
+of the transaction do not occur de iure. That is to say: the person giving a token rep-
+resenting a copyright claim away may intend to transfer ownership of the work but
+the applicable law may impose requirements for the transfer to be valid or effective
+that are not met by the token transaction.
+Licensing coordination
+Using blockchain technology for copyright licensing requires a massive amount of
+coordination both on-chain, and between on- and off-chain transactions. While co-
+ordination of strictly on-chain uses and users can be to an extent automated via smart
+contracts, we argue that conflict resolution may require off-chain institutions. This
+challenge is by orders of magnitude more complex when it comes to making sure
+that the reality as represented on a blockchain and the reality as represented through
+non-blockchain contracts and traditional institutions remains synchronous.
+To empower the development of blockchain-based smart contracts, the simplest
+solution would be that authors retain all their copyright rights. Each author could
+then allow some uses under exclusive licenses if and when appropriate, and then use
+blockchain technology to license mass uses on a non-exclusive basis. Because each
+author would retain, in our hypothetical, all 1 760 titles to each of their works, the
+smart contracts authorizing their use would be prima facie valid in each and every
+territory.
+That does not prevent all potential conflicts, however. A non-exclusive licensee’s
+right to use might conflict with the rights of an exclusive licensee in a given terri-
+tory—even if both were done through a blockchain. This may then become a matter
+of contract rather than copyright law (and possible infringement) between the
+56
+For example, a broadcaster who wishes to make a permanent copy of a musical work on her server and
+then broadcast it may need both the reproduction right and the right of communication to the public.
+57
+For a discussion on smart contracts as legal contracts, see De Filippi and Wright (n 11) 72–88.
+322
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+author and the exclusive licensee. Few, if any, courts would be likely to find the non-
+exclusive licensee liable in such a scenario and if they did, sanctions would probably
+be minimal.58
+Authors could do this by being in direct contact with users. As alluded to in the
+opening paragraphs, however, it is not clear that this is desirable. Indeed, for mass
+uses, this seems undesirable, if only as a matter of transaction costs. However, the
+way in which licensing may eventually be fully automated using smart contracts
+makes this statement subject to caution.
+If individual authors were to transfer some but not all of the titles to a work to a
+third party, for instance a CMO, conflicts could emerge either within a given terri-
+tory (because licensed uses and licensee rights would overlap) or among territories
+(because licensed uses and licensee rights would have a cross border dimension).
+Thus, the need for some form of coordination emerges. This is true as noted above
+even where an author owns all titles because she may lack the ability to coordinate
+international exploitation of the work in multiple formats and markets. It is not yet
+clear how and indeed whether platforms developed using blockchain technology can
+address this issue.
+Authors could work with existing intermediaries with broad licensing expertise,
+such as CMOs. But even then, making the system work globally presupposes some
+form of coordination (perhaps technologically automated) among CMOs. To effec-
+tuate this type of coordination, one CMO could own all the titles (or at the very least
+all titles for a certain form of exploitation) to a work, increasing its ability to ensure
+the orderly licensing of the work worldwide, which might trigger competition law
+concerns. This coordination role could also be played by other types of entities, for
+example an author’s cooperative.
+Furthermore, if a smart contact restricted a use in a way that conflicted with
+exceptions or limitations in the user’s territory, a court could impose an appropriate
+remedy, such as allowing circumvention of DRM or the reduction of any payment
+due.
+Finally, if an author retained all the titles to a work worldwide, conflicts could
+emerge between smart contracts and ‘normal’ or traditional licenses. A desynchron-
+ization of a blockchain can happen if off-chain transactions are not properly recorded
+on a digital ledger. Hence, rather than reducing information uncertainty and increas-
+ing trust, the introduction of a blockchain-based system may have the opposite effect.
+Does this require yet another layer of coordination? Not necessarily. Conflicts can
+be avoided either by foregoing entirely non-blockchain licenses or, more realistically,
+by ensuring that the same coordinating entity has responsibility for both. Even
+assuming automated coordination will one day be possible for uses licensed through
+smart contracts—a possibility yet to be demonstrated on any credible scale—, avoid-
+ing this type of conflict with non-blockchain licenses cannot be achieved by auto-
+mated means.59 It will require human coordination and access to all pertinent
+information. Ensuring that rights are pooled may make this task easier.
+58
+The user would have recourse against the licensor (author).
+59
+In the literature so called Oracles are proposed to provide authoritative information for on-chain actors
+on the off-chain state of the world. Much less information is available on how the reverse flow of
+Blockchain and smart contracts
+
+323
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+Registries
+Formalities
+By ‘copyright registries’ we mean the range of DLT applications that create a regis-
+tration of information regarding works. As noted above, such information can refer
+to a protected work (eg initial ownership, moment of creation/expression), RMI,
+terms of use (eg orphan status of a work) or any other related element.
+Registries can be voluntary or mandatory. A real world attempt at creating a vol-
+untary registry is the joint project between a group of different CMOs: Socie´te´ des
+auteurs, compositeurs et e´diteurs de musique (SACEM), American Society of
+Composers, Authors and Publishers (ASCAP) and PRS for music.60 This project
+aims to develop a proof of concept on the use of blockchain to improve data accur-
+acy for rights holders. The objective is to create a prototype for a shared system that
+manages authoritative music copyright information. The system would consist of a
+decentralized database of metadata on musical works ‘with real-time update and
+tracking capabilities’. It would manage the links between two existing music record-
+ings standard codes.61 The idea of a reliable central database on music ownership
+and use has long been a purported goal of the music industry, one with which it has
+failed to achieve.62
+DLT based registries can also be passive or active. In passive form DLTs are used
+to record RMI information as a time-stamped entry into a public ledger that anyone
+can consult. Given that such information is only useful if it is authoritative, RMI is
+most likely to be maintained by trusted intermediaries (such as CMOs). In such a
+scenario DLT is one, but certainly not the only, or even the most effective way to
+publish and maintain an authoritative public record of RMI. In the active DLT based
+registry scenario rights are tokenized, rights holders are account holders, so DLTs
+not just record, but facilitate the transactions of rights.
+Assuming applications of this type are scalable and reach a critical mass, one could
+envision a world where the exploitation of works (at least of a certain type, such as
+sound recordings) in the digital realm is dependent on registration in a digital ledger.
+Copyright works within this blockchain-based system could be easily licensed, their
+use tracked (and the corresponding remuneration paid), and of course enforced if
+that function can be performed by the accompanying smart contract. Works outside
+information is organized, and the types of actors, who could make sure that on-chain transactions’ poten-
+tial off-chain consequences are executed and enforced. While current intermediaries in the copyright do-
+main are best positioned to fulfil the dual roles of Oracles and Enforcers as Coordinators, they are the
+most threatened by the disintermediation effect of the technology.
+60
+SACEM, ASCAP, SACEM, AND PRS FOR MUSIC initiate joint Blockchain Project to improve data accuracy for
+rightsholders
+<https://societe.sacem.fr/en/press-resources/per-publication/press-releases/ascap-sacem-and-
+prs-for-music-initiate-joint-blockchain-project-to-improve-data-accuracy-for-rightsholders> accessed 17 July
+2018. SACEM is the French Society of Authors, Composers and Publishers of Music. ASCAP is the
+American Society of Composers, Authors and Publishers. PRS for music is the UK Performing Right Society.
+61
+Namely, the International Standard Recording Code (ISRC) and the International Standard Work Code
+(ISWC). See ISRC, The International Standard Recording Code <http://isrc.ifpi.org/en/> accessed 17
+July 2018; and ISWC International Agency, ‘Home’ <http://www.iswc.org/> accessed 17 July 2018.
+62
+See: K Milosic, ‘GRD’s Failure’ Berklee College of Music Music Business Journal (August 2015)
+<http://www.thembj.org/2015/08/grds-failure/> accessed 17 July 2018; Goldenfein and Hunter
+(n 20) 12.
+324
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+the system would have a hard time securing this level of protection, providing the ne-
+cessary (if in itself inadequate) incentive to register. While not imposed by law, regis-
+tration on such a ledger would become de facto an essential prerequisite to
+exploitation. The main legal issue that arises in this context is whether such a registry
+would constitute a prohibited formality under international law.
+Article 5(2) of the Berne Convention prohibits formalities that affect the ‘enjoy-
+ment’ or ‘exercise’ of protected rights in relation to non-domestic works.63 There are
+different types of formality, including registration, recordal of transfers of ownership,
+notice requirements, and deposit.64 The enjoyment of rights relates to author’s rights
+coming into existence and being recognized absent any formality. In essence, the
+prohibition rules out constitutive and maintenance formalities in respect of works
+of non-domestic origin, as well as those that function as ‘conditions to sue for
+infringement’.65 Conversely, certain declaratory formalities are allowed.66
+Voluntary registration of works in a blockchain-based system could be viewed as a
+variant of ‘new-style formalities’. These are ‘legal tools that establish a link between
+works, their creators, and/or the current copyright owners’, including ‘metadata-tagging
+of digital works, the storage of rights management information in digital repositories’,
+and other digital tools.67 In our view, it is difficult to argue that a blockchain-based volun-
+tary registry contravenes the Berne Convention. In practice, an author’s only way to ex-
+ploit a particular right fragment is often to join a CMO, as in the case of licensing
+broadcasting of music. That is not a prohibited formality under the Berne Convention.
+Nor is, for example, the need to comply with a court’s rule of procedure or evidence in a
+particular country. Only copyright-specific, government imposed formalities are prohib-
+ited. Put differently, a de facto ‘obligation’ to join a system meant to enable the collective
+or individual exercise of rights of copyright is not a prohibited ‘formality’ under Berne.68
+Orphan works and the public domain
+An orphan work may be defined as one where none of the right holders is identified
+or, even if one or more of them is identified, none is locatable despite a diligent
+search.69 Goldenfein and Hunter have proposed using ‘a blockchain to register
+attempts to find the authors of orphan works, and otherwise facilitate use of the
+63
+NB the prohibition is not absolute. See D Gervais, ‘Collective Management of Copyright: Theory and
+Practice in the Digital Age’ in D Gervais (ed), Collective Management of Copyright and Related Rights (3rd
+edn, Kluwer Law International 2016) 3, 30.
+64
+S van Gompel, Formalities in Copyright Law: An Analysis of Their History, Rationales and Possible Future
+(Kluwer Law International 2011) 15–27.
+65
+S van Gompel, ‘Copyright Formalities in the Internet Age: Filters of Protection or Facilitators of
+Licensing’ (2013) 3 Berkeley Technology Law Journal 1439.
+66
+These include for example formalities that present only evidentiary or procedural advantages, operating
+as incentives rather than obligations. See van Gompel, ibid 1439.
+67
+ibid 1435. See also C Sprigman, ‘Berne’s Vanishing Ban on Formalities’ (2013) 28 Berkeley Technology
+Law Journal 1565–82, mentioning new-style formalities.
+68
+For an overview of different models of collective rights management, see: Gervais (n 63); JP Quintais,
+Copyright in the Age of Online Access: Alternative Compensation Systems in EU Law (Kluwer Law
+International 2017) 85–138.
+69
+Art 2 Directive 2012/28/EU of the European Parliament and of the Council of 25 October 2012 on cer-
+tain permitted uses of orphan works OJ L 299, 27.10.2012, pp 5–12 [hereinafter ‘Orphan Works
+Directive’].
+Blockchain and smart contracts
+
+325
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+works’.70 In their proposal, an artificial intelligence system would carry out the dili-
+gent search for copyright owners of an orphan work. A blockchain would then be
+developed and implemented to record all diligent searches.71 Finally, the law would
+be amended so as to qualify the work as an orphan and allow its use upon satisfac-
+tion of the diligent search requirement.72 The use of blockchain technology in their
+proposal is aimed at overcoming the problems posed by the diligent search
+requirement.
+EU law contains a representative example of this requirement, generally deemed
+compliant with international copyright law.73 It functions as follows. First, only cer-
+tain EU cultural institutions can benefit from the orphan works regime.74 To estab-
+lish the orphan status of the work (or phonogram), these institutions must carry out
+a prior diligent search for each work, done by ‘consulting the appropriate sources for
+the category of works and other protected subject-matter in question’.75 Such appro-
+priateness is determined by each member state in consultation with rights holders
+and users, and the list of sources must include at least those identified in the annex
+to the directive.76 In general, the search must be carried out in the member state of
+first publication.77 The beneficiary institutions must ‘maintain records of their dili-
+gent searches’ and provide a set of related information to competent national author-
+ities.78 Finally, member states must implement a centralised database for that
+information managed by the European Union Intellectual Property Office
+(EUIPO).79 If a work qualifies as an orphan, the beneficiary institutions are granted
+an exception for certain non-commercial uses linked to their ‘public-interest mis-
+sions’, and tied to a fair compensation right.80
+In practice, the ‘diligent search’ requirement is cumbersome, and has resulted in a
+low rate of rights clearance by cultural institutions.81 To address this issue,
+Goldenfein and Hunter propose a blockchain platform ‘that collects and records
+every time a search for the owner of a work is completed’. The functions of the plat-
+form may vary depending on the underlying legal scheme of the system. Where, like
+in the EU, that scheme relies on a copyright exception, a blockchain-based registry
+70
+Goldenfein and Hunter (n 20) 1–3.
+71
+ibid 3–4.
+72
+ibid; The authors identify different ex ante and ex post legal schemes that may have this effect: exceptions
+or limitations (the EU approach), limitations on liability, statutory licensing, or extended or voluntary col-
+lective licensing.
+73
+ibid 4. See art 3 of the Orphan Works Directive.
+74
+Publicly accessible libraries, educational establishments and museums, archives, film or audio heritage
+institutions and public-service broadcasting organisations. Orphan Works Directive (n 69) art 1(1).
+75
+ibid art 3(1).
+76
+ibid art 3(2).
+77
+ibid art 3(3), with further specificities in this respect. In addition, if evidence exists to suggest relevant in-
+formation on ownership to be available in other countries, sources in those countries must be consulted.
+ibid art 3(4).
+78
+ibid art 3(5).
+79
+ibid art 3(6). See EUIPO, ‘Orphan Works Database’ <https://euipo.europa.eu/ohimportal/nl/web/ob
+servatory/orphan-works-database> accessed 17 July 2018.
+80
+Orphan Works Directive (n 69), art 6. If an author puts an end to the orphan status of the work she may
+receive compensation for the use of that work made by the beneficiary institution.
+81
+S Schroff, M Favale and A Bertoni, ‘The Impossible Quest – Problems with Diligent Search for Orphan
+Works’ (2017) 48(3) International Review of Intellectual Property and Competition Law 286.
+326
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+would, in combination with an automated search system, function as a database to
+‘publicize that a certain work could be used under the copyright exception and pro-
+vide a record of the search for owners’.82
+Assuming the feasibility of the automated diligent search software, the use of the
+proposed blockchain registry in an exception-based system could be possible without
+legislative changes. Under the Orphan Works Directive, it would be sufficient for a
+member state, in cooperation with the EUIPO, to define a certain blockchain-based
+platform as an appropriate source for carrying out a diligent search, in combination
+with the list of sources in the annex to the directive. This platform could come to
+contain all information on works included in those sources.
+The exact design choice—open versus closed—for the platform is a matter for de-
+bate. On the one hand, the limited range of beneficiaries in an exception-based orphan
+works regime, the general interest nature of the registry, and the lack of clear incentive
+structure for private parties, all argue for implementing a closed blockchain.83 On the
+other hand, the network effects of crowdsourcing in building such a digital ledger, par-
+ticularly helpful for rights clearance,84 together with the ‘social useful function’ of a public
+registry suggest the adoption of an open blockchain.85 From an international copyright
+law perspective, there seem to be no hurdles to implementing this proposal.86
+In theory, such a system could go one step further: a combination of smart con-
+tracts with a blockchain registry could enable the automatic licensing of these works.
+Such a system could encompass other licensed works (say, under CC), out-of-
+commerce works, or even those that are in the public domain. It could even ‘auto-
+mate attribution mechanisms’ so as to enable the ‘irreversible’ dedication of a work
+to the public domain.87 A system of dedication to the public domain based on a
+blockchain registry would have the required signalling function worldwide but its
+legal effect is unclear in each of the territories. A number of countries recognize the
+principle, as is arguably the case is US law.88 But legal questions remain to be
+explored, including whether the dedication can be taken back and, in the affirmative,
+what are the rights of third parties who relied on the public domain status,89 and
+82
+Goldenfein and Hunter (n 20) 39, noting that in a system of compulsory licensing, the blockchain could
+in addition ‘support payment and escrow of a license fee’.
+83
+ibid 10–11, raising these points when discussing the governance of blockchains in general.
+84
+See: K Erickson, ‘How Crowdsourcing Might Solve the Astronomical Challenge of Copyright Clearance’
+CREATe Blog (8 January 2016) <http://www.create.ac.uk/blog/2016/01/08/how-crowdsourcing-might-
+solve-the-astronomical-challenge-of-copyright-clearance/> accessed 17 July 2018; M Borghi, K Erickson
+and M Favale, ‘With Enough Eyeballs All Searches Are Diligent: Mobilizing the Crowd in Copyright
+Clearance for Mass Digitization’ (2016) 16(1) Chicago-Kent Journal of Intellectual Property 135–66.
+85
+Goldenfein and Hunter (n 20) 42.
+86
+ibid 28–30.
+87
+ibid 23–24. On the latter point, see D Gervais and D Renaud, ‘The Future of United States Copyright
+Formalities: Why We Should Prioritize Recordation, and How to Do It’ (2013) 28 Berkeley Technology
+Law Journal 13–40.
+88
+See Singer Mfg Co v June Mfg Co, 163 US 169, 186 (1896); and, in the specific context of copyright, Micro
+Star v Formgen Inc, 154 F.3d 1107, 1114 (9th Cir 1998) (‘It is well settled that rights gained under the
+Copyright Act may be abandoned.’).
+89
+This is reminiscent of the debate in both Eldred v Ashcroft, 537 US 186 (2003) and Golan v Holder, 132
+S.Ct 873 (2012). See D Gervais, ‘Golan v. Holder, A Look at the Constraints Imposed by the Berne
+Convention’ (2011) 64 Vanderbilt Law Review en banc 147–63.
+Blockchain and smart contracts
+
+327
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+what if anything can be done with moral rights, especially in jurisdictions—many of
+which European—where such rights are unwaivable.
+Rights management information
+The World Intellectual Property Organization (WIPO) Treaties impose obligations to
+provide adequate legal protection and effective legal remedies against: (i) the circum-
+vention of effective TPMs used by authors, performers or phonogram producers in
+connection with the exercise of their rights and that restrict acts not authorized by
+rights holders or permitted by law; and (ii) the removal or alteration of RMI, as well as
+a number of unauthorized uses of works, phonograms or performances with knowledge
+that RMI on them has been removed or altered.90 The effects of these provisions have
+been far ranging. To illustrate, the WIPO Copyright Treaty (WCT) has 96 members,
+including most of the developed economies. Every member’s national law now pro-
+vides for this additional layer of ‘paracopyright’ protection.91
+In this article we do not discuss in any detail the TPM aspects of blockchain appli-
+cations, as we do not foresee their widespread use. For that to occur would require
+that these measures be embedded in a sufficient amount of end-user devices so as to
+make them useful for the prevention and enforcement of copyright infringement. As
+long as cheaper and less complicated alternatives, such as simple peer-to-peer file
+sharing protocols remain widely accessible, there is little reason to expect blockchain
+applications to address enforcement in a meaningful way. Our focus is instead on the
+RMI aspects of blockchain applications.
+Blockchain-based systems make it easier for various players to cooperate. This is
+the case, for example, of numerous stakeholders in the music industry that may each
+own a ‘piece’ of music, including songwriters, performers, publishers and record
+companies. As a matter of political economy, ownership or at least control of the
+data is often perceived as a source of power, an aspect that disincentives the ‘sharing’
+of data openly. Absent the cooperation of major RMI holders, a database of such in-
+formation could be built through crowdsourcing.92
+One major problem in that regard is the possibility of conflicting claims on the
+same work. Blockchain technology may be excellent at safeguarding the validity and
+provenance of information already in the distributed ledger, but cannot in any mean-
+ingful sense check the validity of the information when it is first put into the system.
+Any blockchain-based solution must ensure that only truthful, valid, verified informa-
+tion gets into the ledger, and that there are appropriate dispute-settlement instru-
+ments to handle conflicting claims. Blockchain-based transparency may diminish the
+90
+WCT (n 9), arts 11–12, and WPPT (n 9), arts 18–19.
+91
+The term ‘paracopyright’ is taken from Peter Jaszi, ‘Intellectual Property Legislative Update: Copyright,
+Paracopyright, and Pseudo-Copyright’, talk delivered at the Association of Research Libraries Conference,
+Eugene (May 1998) <http://old.arl.org/resources/pubs/mmproceedings/132mmjasziprint.shtml>
+accessed 16 July 2018.
+92
+There are only a few at least partly successful efforts to crowd-source the creation of RMI (like) datasets.
+Open Library is an open database for bibliographic metadata. Discogs, freeDB and MusicBrainz are open
+source datasets of varying quality of sound recording metadata. Despite the relative success of some of these
+efforts, there aren’t any open, crowdsourced RMI datasets that could provide up-to-date, reliable information
+on the identity of all the rights holders associated with a copyrighted work in any domain, or territory.
+328
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+need to have a third party determine ownership, but it does not eliminate the need
+for other functions provided by such third parties. That said, a shift is likely to occur
+once (and if) a significant amount of data is entrusted to one or several blockchains.
+As this pool of open data grows, proprietary control of rights data becomes propor-
+tionally less attractive and the incentive to cooperate increases.
+Fair remuneration
+In the context of ensuring creator remuneration, blockchain technology can play
+three types of role. Firstly, it can enable payments similar to those already taking
+place through existing platforms. Secondly, it may open up uses currently licensed
+through statutory or compulsory licenses and collective rights management schemes
+to smart contract licensing. Thirdly, blockchains may provide greater transparency,
+especially from the perspective of authors and performers.
+An example of the first role might be ‘a blockchain-empowered rights and pay-
+ments’ system93 used by an artist or even a CMO, especially for a one-off license to
+perform or use musical works and recordings. In our view, if the system merely adds
+a mode of payment, then its impact will be minor. Whether cryptocurrencies will be
+commonly used to conduct micropayments by a substantial number of users for a
+substantial number of uses, is orthogonal to our analysis. Even if they do, the exist-
+ence of an additional payment channel for normal uses of works does not raise fun-
+damental challenges to the status quo in copyright law. It may affect which CMO
+collects what, which in turn raises issues of the role of CMO in national economies.94
+There would have to be measurable transparency benefits for a new blockchain-
+based system to make a notable difference in this scenario.
+An example of the second type of role would be a full switch to a rights and royal-
+ties management system based on blockchain technology, as EY and Microsoft have
+proposed in a joint project.95 The claim is that blockchains may negate the original
+conditions that historically led to the development of compulsory licensing and, as a
+result, may render this legal instrument obsolete in general, or as regards its applica-
+tion to particular cases. Compulsory licenses developed for a number of different rea-
+sons, such as refusal to deal, inadequate supply, public interest, or because of
+transactions costs in the analogue era prohibited the exact monitoring of mass use,
+and therefore individual licensing.96 In the context of blockchain technologies, this
+93
+Heap (n 31). UJOMusic, a blockchain platform has been offering a few music albums, Including Imogen
+Heap’s Tiny Human for sale for the Ethereum cryptocurrency. See: <www.ujomusic.com> accessed 17 July
+2018. The results so far are somewhat disappointing. See: D Gerard, ‘Ujo Attempts Music On The Blockchain
+A Second Time With: EGO By RAC [Op-Ed]’ (Hypebot.com, 2017) <http://www.hypebot.com/hypebot/
+2017/11/ujo-attempts-music-on-the-blockchain-a-second-time-with-ego-by-rac.html> accessed 17 July 2018.
+94
+See D Gervais, ‘The Cultural Role of Copyright Collectives’ (2018) 40(6) European Intellectual Property
+Review 349–56.
+95
+EY and Microsoft launch blockchain solution for content rights and royalties management for media and
+entertainment industry, 20 June 2018, <https://www.prnewswire.com/news-releases/ey-and-microsoft-
+launch-blockchain-solution-for-content-rights-and-royalties-management-for-media-and-entertainment-in
+dustry-300669800.html> accessed 17 July 2018.
+96
+See: C Correa, ‘Intellectual Property Rights and the Use of Compulsory Licenses: Options for
+Developing Countries’ (Geneva: South Centre 1999); DJ Brennan, ‘The First Compulsory Licensing of
+Patents and Copyright’ (2017) Legal History 1–45.
+Blockchain and smart contracts
+
+329
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+last reason—rooted in transaction costs—appears to be most relevant.97 It is too
+early to tell whether blockchain-based rights management systems will simply oper-
+ate within extant compulsory licensing schemes98 or whether they will question the
+need for such licenses. Market forces and evolving practices should indicate the tra-
+jectory that use of blockchain technology will take in this space.
+As economists have pointed out, where works have a relatively small value, but
+have a relatively large number of users and right holders, prohibitively high transac-
+tion costs prevent efficient licensing. Transaction costs include identifying and
+matching rights holders and users, the high costs of monitoring use, the costs of en-
+forcement, and the complexities of setting the price and negotiating the terms of
+use.99 Collective management has been successful because it offers substantial econo-
+mies of scale, making collectively managed licenses preferable to individual licensing.
+In that context, two of the aforementioned DLT functions may lower the costs of
+transactions to a level at which individual licensing may become the most efficient
+model. Firstly, DLTs have the theoretical capacity to ‘solve’ the problem of a com-
+prehensive RMI registry. The costs of identifying the rights holders of a work make
+up a substantial chunk of transactions costs. CMOs, as well as an increasing number
+of online platforms, currently exercise exclusive control over RMI datasets. Should
+an RMI registry be publicly available, direct licensing would theoretically be a more
+accessible option.
+Secondly, smart contracts may automate such direct licensing, further lowering
+transaction costs. Collective rights management schemes rely on blanket licensing of
+repertoires. For reasons of fair distribution, however, CMOs generate, collect and
+process considerable amounts of information on the uses of licensed works. Digital
+content intermediaries have first-hand information on usage, while digital fingerprint-
+ing technologies offer high-resolution insight into the online use of works at a rea-
+sonable cost to a wide group of stakeholders, including CMOs.
+The better availability of both RMI and usage information have already trans-
+formed licensing, allowing major rights holders, including a number of music pub-
+lishers, to bypass CMOs and enter into direct deals with major digital service
+providers. The same data may also be used in smart contract-based licensing solu-
+tions that further lower the number of intermediaries between the rights holders and
+their audience.100
+Smart contract-based automated licensing also has the potential of creating global
+licensing standards. CC licenses are an early example of a globally standardized
+hybrid copyright licensing, combining legal and software code. Their success
+demonstrates the potential impact of machine-readable standardized solutions.101
+97
+See J Ginsburg, ‘Fair Use for Free, or Permitted-but-Paid?’ (2015) 29(3) Berkeley Technology Law
+Journal 1383–446.
+98
+Such as the compulsory license for mechanical reproduction of musical works contained in s 115 of the
+US Copyright Act.
+99
+See: S Besen and SN Kirby, Compensating Creators of Intellectual Property – Collectives That Collect (The
+RAND Corporation 1989); C Handke and R Towse, ‘Economics of Copyright Collecting Societies’
+(2007) 38(8) International Review of Intellectual Property and Competition Law 937–57.
+100
+See B Rosenblatt, ‘Watermarking Technology and Blockchains in the Music Industry’ (2017) Digimarc.
+101
+See the Creative Commons Metrics page for an (unfortunately outdated) set of statistics on license
+adoption: <https://wiki.creativecommons.org/wiki/Metrics> accessed 17 July 2018.
+330
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+DLT-based smart contracting has the potential to aid similar standardization for
+commercial licenses.
+It remains to be seen to what extent DLTs that now transcend national and juris-
+dictional borders remain a low-friction infrastructure for cross-border transactions.
+But at least in theory, a standardized, smart contract based licensing approach that
+runs on a global distributed ledger network seems to be an ideal fit for the online
+usage logics which show little respect of, or interest in the nationally issued statutory
+and compulsory licenses.102 In any case, a standardized, planetary scale, self-
+enforcing smart contract-based licensing infrastructure may substantially change the
+economic calculus in this field, making collective rights management and compulsory
+licensing comparatively costlier. However, this potential future scenario is still far in
+the horizon.
+Thirdly, blockchain-based licensing may meet one of the key demands of import-
+ant creator groups in the online environment, namely transparency in financial
+flows.103 Secret deals between the three music majors (‘labels’) and online platforms,
+like Spotify, have left music creators vying for a spot at the table. Monies paid to
+labels in some cases as stock shares, options or in other forms have not been shared
+with creators but the extent to which this may be unfair is hard to judge without the
+data (and perhaps that is the point). In other words, a more open environment
+might not by itself reorient financial flows but it would likely shed light on a situation
+that many see as both unfair and unsustainable.104 Here again, blockchain may shed
+crucial light on an area where it is sorely needed. Whether that potential is put to
+good use remains to be seen.
+DISCUSSION: BETWEEN PROMISE AND HYPE
+In 2017, when we launched the debate that led to this article,105 we asked how block-
+chain and copyright interact. The initial discussion concluded that, at best, block-
+chain was an opportunity for incremental improvement of efficiency and
+transparency of online music licensing and rights management, while offering artists
+an additional avenue for direct licensing. At worst, blockchain was a seriously over-
+hyped fad with none of the predicted revolutionary potential. A more measured, the-
+oretical, normative analysis, as the one we try to provide in this article, reveals both
+promises for improving copyright based practices, and frictions between the design
+of the technology and the legal architecture. In this part, we hope to set the level of
+expectations to a somewhat realistic level. To better understand the possible role of
+blockchain technology, a quick look back at the purpose of copyright seems useful.
+Copyright emerged in the UK in the Statute of Anne (1709–1710) as a means of
+creating scarcity (mostly of physical copies) of books, sheet music and other works
+102
+For our purposes these two terms can be seen as synonyms. See Quintais (n 68) 25–27, 126–32, with a
+conceptual analysis of the terms.
+103
+E Schwartz, ‘Coda: Fair Trade Music: Letting the Light Shine in’ in S Frankel and D Gervais (eds), The
+Evolution and Equilibrium of Copyright in the Digital Age (CUP 2017) 312–16.
+104
+ibid.
+105
+JP Quintais, B Bodo´ and L Groeneveld, ‘Blockchain Copyright Symposium: Summary Report’ Kluwer
+Copyright Blog (3 August 2017) <http://copyrightblog.kluweriplaw.com/2017/08/03/blockchain-copy
+right-symposium-summary-report/> accessed 17 July 2018.
+Blockchain and smart contracts
+
+331
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+of art and literature.106 The purpose of the Statute, which was more or less copied
+by many colonies of the future US and which finds a direct echo in the 1790 US
+Copyright Act and in the state statutes that preceded the formation of the republic,
+was to replace a monopoly on book publishing granted decades earlier to the
+Stationers Company.107 Later, legal protection was extended to public uses of copy-
+right material, such as live performance of theatrical plays and music, and radio and
+television broadcasting.108 Most such uses could easily be tracked and pursued as
+infringements if unlicensed. Many passengers in the innovation bus driving down
+Schumpeter’s highway have thrown this notion out the window, technologically and
+possibly normatively as well. Technologically, uses of copyright material are now
+mostly online. As an illustration, YouTube is the largest source of access to music
+and much audio-visual content but a meagre source of income for creators.109 In
+many parts of the Internet, tracking uses and licenses is often difficult, ineffectual
+and frustrating.
+Copyright is regularly used to prevent some of the possibilities offered by the
+Internet, often simply because licensing seems impossible, ie a market failure. Yet,
+copyright was not meant to prevent access to books, but rather to organize the mar-
+ket for books.110 Preventing access is in no one’s interest: authors and creators want
+their material to be accessed and hopefully enjoyed; publishers and producers must
+have ‘users’ to generate revenue, and intermediates need content to generate usage,
+which they can monetize by selling advertising. Policies designed to remove or block
+access are, therefore, in no one’s interest.
+DRM was one of the technologies meant to prevent or allow access only in specif-
+ic instances set by right holders. In that respect, DRM mostly failed to deliver on its
+promises. In this failure may be lessons for advocates of blockchain in the licensing
+of copyright works. One such is in the regulatory sphere: as a result of misplaced
+expectations, the misunderstanding of technological capabilities and social practices,
+hasty legislation produced a deeply entrenched protection of a technology the time
+of which has mostly passed. The WCT, which embedded DRM technology protec-
+tion into the international copyright framework, was adopted in policy haste in
+December 1996 as the World Wide Web was in its infancy and still far from its cur-
+rent capacity due to poor bandwidth and the inability to accurately predict future ap-
+plication development.111
+In the case of blockchain it is hard, at least as of 2018, to detect high levels of en-
+thusiasm that would lead, in the short term, to the legal recognition/protection of
+copyright-replacing blockchain-related technological innovations. The questions
+106
+L Bently and B Sherman, Intellectual Property Law (OUP 2014).
+107
+ibid.
+108
+JP Liu, ‘Owning Digital Copies: Copyright Law and the Incidents of Copy Ownership’ (2001) 42(4)
+William and Mary Law Review 1245–366, 1255; JP Quintais and J Poort, ‘A Brief History of Value
+Gaps: Pre-Internet Copyright Protection and Exploitation Models’ in PB Hugenholtz (ed), Copyright
+Reconstructed: Rethinking Copyright’s Economic Rights in a Time of Highly Dynamic Technological and
+Economic Change (Kluwer Law 2018).
+109
+IFPI. Global Music Report 2017 (IFPI 2018).
+110
+M Senftleben and others, ‘The Recommendation on Measures to Safeguard Fundamental Rights and
+the Open Internet in the Framework of the EU Copyright Reform’ (2018) 40(3) EIPR 149, 156–58.
+111
+See arts 11 and 12 WCT.
+332
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+before us are different. Given the extreme complexity of copyright, could blockchain
+technology be used by right holders to bypass copyright’s structural complexity and
+replace it with standardized technological solutions? Will DLTs standardize RMIs?
+Will smart contracts standardize mass produced licensor–licensee relationships?112
+Do blockchains really represent a point of discontinuity in the history of copyright,
+an opportunity to reimagine, from scratch, the protection and use of intellectual
+properties, this time optimized for the affordances of a planetary scale, highly stand-
+ardized and automated technology?
+The question to ask, therefore, is not whether copyright has approached the end
+of its useful life, for the simple answer to that question is no. For one thing, it still
+works well in the offline market. Copies of physical books, paintings, sculptures are
+protected; theatres license the works they perform in public; and broadcasters pay li-
+cense fees.113 In the online environment, will the new possibilities that can be
+deployed using blockchain technologies affect copyright’s role?
+A possible future path built with blockchain technology could look like this:
+Authors publish their works on a blockchain creating a quasi-immutable114 record of
+initial ownership, and use smart contracts to automate the control of who has access
+to their works and under which conditions. Remuneration can theoretically happen
+on the same platform as the distribution of works. Would it be easy? Not necessarily.
+First, it may be challenging to map smart contracts onto individual uses of works.
+Moreover, some individual uses may not need to be licensed because they amount to
+privileged private or fair use, for example. Indeed, finding a definitive legal answer to
+which uses of a work require a license would, in theory, entail going to court case-by-
+case. This would amount to insurmountably high-transaction costs. Finally, why
+would smart contracts be bound or limited by the ‘fake scarcity’ and exceptions
+thereto that copyright aims to create in the online environment? In other words,
+what is to prevent a smart contract from coding a level of exclusivity beyond that
+allowed by copyright law?
+At a higher level of abstraction, why would a blockchain contract need to map
+onto any of the exclusive rights and exceptions in the copyright bundle? And then, in
+which jurisdiction? Recall that copyright varies in scope and by territory. For ex-
+ample, some jurisdictions have created separate rights in digital transmissions and
+the making available of copyright material online.115 Then the US has basically no
+moral right to speak of, even when compared to the minimum rights protected under
+Article 6bis of the Berne Convention—to which the US is nonetheless a party. The
+112
+J Beniger, The Control Revolution: Technological and Economic Origins of the Information Society (Harvard
+University Press 2009).
+113
+Gervais (n 63).
+114
+As pointed out by Finck, a blockchain is immutable only ‘to the extent that its human creators decide
+not to intervene’. See Finck (n 37) 3.
+115
+Contrast the US approaches in the US and EU, discussed eg by J Ginsburg and L Budiardjo, ‘Liability
+for Providing Hyperlinks to Copyright-Infringing Content: International and Comparative Law
+Perspectives’ (2018) 41 Columbia Journal of Law & the Arts 153.
+Blockchain and smart contracts
+
+333
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+term of rights may also vary for at least two reasons. First, some countries
+(eg Canada and New Zealand) protect rights for the life of the author plus 50 years,
+the minimum standard under Berne. A vast number of major jurisdictions, including
+the EU and the US, have moved to 70 years after the death of the author.116
+If blockchain-based smart contracts are a form of private ordering not tied to a
+particular jurisdiction, then they are problematic from the perspective of internation-
+al copyright law because, as explained at the beginning of the Section Blockchain and
+copyright intersection’, there is no such thing as an international copyright right.
+Although international treaties recognize the protection of copyright in multiple
+jurisdictions, a copyright work is protected under the copyright laws of the 176
+member countries of the Berne Union according to their domestic laws.117 And the
+rights in each such national law can be split by market, type of medium, language,
+etc. Moreover, as also explained above, each country is free to apply which form of
+‘exhaustion’ rule it will apply.118
+Does a blockchain-based copyright system, registry or smart contact have to re-
+flect all the layers and facts of this legal complexity? We can only offer a partial an-
+swer. Firstly, if a use of a work was allowed under a smart contract in a territory but
+not by the correct holder of the relevant right fragment in that territory, the user
+might still face an infringement action.119 Secondly, however, if the use was restricted
+in a way that limits the scope of an exception or limitation, then the user would have
+little recourse. Although the term ‘user right’ has been used in this context, few
+courts have vindicated such ‘rights’ when restricted by private contract or DRM.120
+Thirdly, nothing prevents the use of notice-and-take-down systems to target an inter-
+mediary in a territory in which the right holder would claim that a work is used il-
+legally in spite of the existence of a smart contract. The user would then have to
+resort to a counter-notice or other redress mechanism and possibly take the matter
+to court, which in practice seldom happens.121
+Fragmentation suggests that the optimal way to exploit the potential of smart con-
+tracts is to decouple them from international copyright’s national bundles of rights.
+How? Absent an internationally recognized mechanism for authors to permanently
+dedicate a work to the public domain122 and thus ‘get rid’ of copyright for works so
+116
+This gets even more complicated because the principle of national treatment does not apply mandatorily
+here. This means that a country using a life plus seventy years term may refuse to protect works originat-
+ing from a country where the shorter term applies beyond that shorter term.
+117
+See (n 45) above.
+118
+See TRIPS (n 9), art 6 (‘For the purposes of dispute settlement under this Agreement, subject to the
+provisions of Articles 3 and 4 nothing in this Agreement shall be used to address the issue of the exhaus-
+tion of intellectual property rights.’); WCT (n 9), art 6(2).
+119
+The user who is presumably in good faith would likely face reduced penalties and would have a recourse
+against the ‘wrong’ licensor.
+120
+L Guibault, Copyright Limitations and Contracts: An Analysis of the Contractual Overridability of
+Limitations on Copyright (Kluwer Law International 2002).
+121
+J Urban, J Karaganis and B Schofield, ‘Notice and Takedown in Everyday Practice’ UC Berkeley Public
+Law Research Paper No 2755628 (22 March 2017), 44 (‘ . . . by all accounts, the actual use of counter
+notices is extremely infrequent’).
+122
+The Creative Commons CC0 license is perhaps the closest we have come. See Creative Commons,
+Public Domain, CC0, <https://creativecommons.org/share-your-work/public-domain/cc0/> accessed
+17 July 2018.
+334
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+dedicated, a world in which smart contracts put in place a form of technologically en-
+forceable private ordering to replace copyright, while technically feasible, seems a
+very distant goal indeed.
+A second method of action would be legislative responses recognizing the role of
+smart contracts in this environment. But this raises three big issues of blockchain
+regulation: why, how and by whom? When confronted with the global nature of on-
+line exploitation of copyright, the tendency over the past two decades has been to in-
+creasingly target intermediary service providers. These providers, while benefiting
+liability exemptions or ‘safe harbours’, are also subject to series of measures and obli-
+gations to prevent the use of their services by third-party users for the infringement
+of copyright, including injunctions, duties of care, removal of infringing content
+(takedown) and even filtering.123 Beyond targeting current intermediaries with the
+existing system, however, it is not obvious how regulating blockchain-specific inter-
+mediaries (eg miners), as has been suggested for cryptocurrencies, would work in
+this context.124
+To some extent, there is a feeling of ‘old wine in new bottles’ to blockchain and
+copyright debate. More than a decade ago, in the DRM discussion, new technology
+was wrongly presented as an efficient enforcement tool: the answer to the machine
+was in the machine.125 This time, technology is presented not as the enforcer but ra-
+ther as possible replacement for copyright. It is seen as an opportunity to reduce
+market friction, and increase both the efficiency of transactions and the autonomy of
+creators. The framing, and the incentives to adopt blockchain technology in this con-
+text are markedly different from those that characterized copyright.
+CONCLUSION
+Copyright-based practices have changed almost beyond recognition: from a scarcity
+and exclusivity-based monetization model, to an all-you-can-eat access based one;
+from a one-to-many dissemination model curated by professionals, such as publishers
+and producers, to a mostly unfiltered many-to-many infrastructure where major
+internet platforms generate revenue by maximizing access to ‘content’. Enter the
+blockchain and the smart contracts it empowers: does it provide the means to retool
+copyright, or will it replace it?
+123
+Regarding so-called safe-harbors, see, in EU law, arts 12–15 of Directive 2000/31/EC of the European
+Parliament and of the Council of 8 June 2000 on certain legal aspects of information society services, in
+particular electronic commerce, in the Internal Market, 2000 OJ (L 178) 1–16 and, in the US, 17 USC
+§ 512 (Limitations on liability relating to material online).
+124
+‘Miners’ or ‘mining nodes’ are a set of computers in a DLT network tasked with the validation of trans-
+actions broadcasted by network participants or wallet holders. As neither wallet holders nor other valida-
+tor nodes are to be trusted, sophisticated algorithms must ensure that only the only transactions
+validated are those consistent with earlier records. As a result, miners are by design the enforcers the
+technologically encoded rules on a blockchain. Since the physical location of, as well as the operating
+(legal) entities behind these validator computers are relatively easy to uncover (and current economic
+incentives encourage the concentration of mining activities in the hands of a few large entities), miners
+are ideal regulatory enforcement targets. See A Efe Gencer and others, ‘Decentralization in Bitcoin and
+Ethereum Networks’ arXiv.org (9 February 2018) <http://arxiv.org/abs/1801.03998> accessed 17 July
+2018.
+125
+See, eg the often-cited C Clark, ‘The Answer to the Machine is in the Machine’ in P Bernt Hugenholtz
+(ed), The Future of Copyright in a Digital Environment (Kluwer Law International 1996) 139.
+Blockchain and smart contracts
+
+335
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025
+By now, it is clear that if there is a friction, it is not between a particular technol-
+ogy and copyright. Rather, the friction is between the social, economic, and political
+conditions that produced the blockchain technology ecosystem, on the one hand,
+and the social, economic, and political premises from which the current copyright
+system developed. Perhaps strangely, there is some conceptual alignment—on the
+surface, at least—between copyright’s exclusivity–scarcity paradigm and the exclusiv-
+ity–scarcity logic of blockchains and smart contracts. However, when digging deeper,
+structural incompatibilities emerge. Chief among them is the challenge of reconciling
+the hyper-fragmentation of copyright law with the impersonal, borderless, standar-
+dized, and automated regulatory solution offered by blockchain technology.
+Yet, fragmentation is neither mandatory nor totemic. Not all uses and users re-
+quire multiple right fragments to use a copyright work. Smart contracts may well
+prove a powerful way to license copyright material and to provide higher levels of
+transparency in financial flows to creators. Blockchain-based solutions can also be
+used to provide a vast and secure repository for RMI, at least in certain sectors.
+However, these achievements and the promise they hold are largely dependent on
+blockchain technologies achieving a degree of development, scalability, reliability and
+market adoption difficult to foresee at this stage. Indeed, it is possible that the tech-
+nology falls short of its promise.126 Still, should blockchain technology reach its mar-
+ket potential, it may have significant—perhaps transformative—impact on copyright
+in the digital environment.
+126
+For a powerful criticism of blockchain technologies, including their application in the music industry, D
+Gerard, Attack of the 50 Foot Blockchain: Bitcoin, Blockchain, Ethereum & Smart Contracts (2017) Ch 12.
+336
+
+Blockchain and smart contracts
+Downloaded from https://academic.oup.com/ijlit/article/26/4/311/5106727 by guest on 27 June 2025

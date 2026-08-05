@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Assistant - Upload</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md flex flex-col">
+        <div class="p-6 font-bold text-xl border-b">AI Research Assistant</div>
+        <nav class="flex-1 p-4 space-y-4">
+            <a href="/" class="block py-2 px-4 rounded hover:bg-gray-200">Upload PDFs</a>
+            <a href="/dashboard" class="block py-2 px-4 rounded hover:bg-gray-200">All Files</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-200">Profile</a>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 p-10">
+        <div class="max-w-2xl mx-auto bg-white p-8 rounded shadow">
+            <h1 class="text-2xl font-bold mb-4">Upload Academic PDF</h1>
+            <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data" class="space-y-4">
+                <div id="drop-area" class="flex items-center justify-center border-2 border-dashed border-gray-400 rounded h-32 cursor-pointer bg-gray-50 hover:bg-gray-100">
+                    <span class="text-gray-500">Drag & Drop PDF here or click to select</span>
+                    <input type="file" name="file" accept="application/pdf" class="hidden" id="fileElem">
+                </div>
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" id="ttsToggle" checked disabled>
+                    <label for="ttsToggle" class="text-gray-700">Generate Audio Podcast (TTS)</label>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Upload</button>
+            </form>
+            <div class="mt-6">
+                <div class="flex items-center space-x-2">
+                    <div class="w-4 h-4 bg-blue-600 rounded-full"></div>
+                    <span class="font-semibold">Step 1:</span> Upload PDF
+                </div>
+                <div class="flex items-center space-x-2 mt-2">
+                    <div class="w-4 h-4 bg-gray-300 rounded-full"></div>
+                    <span class="font-semibold">Step 2:</span> AI Summary & Metadata
+                </div>
+                <div class="flex items-center space-x-2 mt-2">
+                    <div class="w-4 h-4 bg-gray-300 rounded-full"></div>
+                    <span class="font-semibold">Step 3:</span> Audio Podcast
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const dropArea = document.getElementById('drop-area');
+        const fileElem = document.getElementById('fileElem');
+        dropArea.addEventListener('click', () => fileElem.click());
+        dropArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropArea.classList.add('bg-blue-50');
+        });
+        dropArea.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            dropArea.classList.remove('bg-blue-50');
+        });
+        dropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropArea.classList.remove('bg-blue-50');
+            fileElem.files = e.dataTransfer.files;
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,41 @@
+
+PLAY [masters] *****************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [master]
+
+TASK [Set local path provisionor] **********************************************
+changed: [master]
+
+TASK [Set default storage class] ***********************************************
+changed: [master]
+
+TASK [Apply load balancer] *****************************************************
+changed: [master]
+
+TASK [Get loadbalncer IP] ******************************************************
+changed: [master]
+
+TASK [debug] *******************************************************************
+ok: [master] => {
+    "msg": "NAMESPACE       NAME                                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE\ndefault         kubernetes                           ClusterIP   10.96.0.1       <none>        443/TCP                      35s\ningress-nginx   ingress-nginx-controller             NodePort    10.105.49.152   <none>        80:30345/TCP,443:31608/TCP   1s\ningress-nginx   ingress-nginx-controller-admission   ClusterIP   10.96.18.190    <none>        443/TCP                      1s\nkube-system     kube-dns                             ClusterIP   10.96.0.10      <none>        53/UDP,53/TCP,9153/TCP       33s"
+}
+
+TASK [Copy loadbalancer.] ******************************************************
+changed: [master -> localhost]
+
+TASK [Create kubeconfig folder] ************************************************
+changed: [master]
+
+TASK [Copy config file in kube config folder] **********************************
+changed: [master]
+
+TASK [Give kubernetes access to docker private registry on docker hub.] ********
+changed: [master]
+
+TASK [Patch service account] ***************************************************
+changed: [master]
+
+PLAY RECAP *********************************************************************
+master                     : ok=11   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

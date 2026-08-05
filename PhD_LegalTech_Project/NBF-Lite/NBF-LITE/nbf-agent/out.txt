@@ -1,0 +1,53 @@
+Using spec file: /home/cdac/servers/nbf-agent/ubfagent/spec.yaml
+Minifab Execution Context:
+    FABRIC_RELEASE=2.2.3
+    CHANNEL_NAME=localchannelone
+    PEER_DATABASE_TYPE=golevel
+    CHAINCODE_LANGUAGE=node
+    CHAINCODE_NAME=uidia
+    CHAINCODE_VERSION=1.0
+    CHAINCODE_INIT_REQUIRED=false
+    CHAINCODE_PARAMETERS="init","a","200","b","300"
+    CHAINCODE_PRIVATE=false
+    CHAINCODE_POLICY=
+    TRANSIENT_DATA=
+    BLOCK_NUMBER=newest
+    EXPOSE_ENDPOINTS=true
+    CURRENT_ORG=cdac.com
+    HOST_ADDRESSES=10.244.1.216
+    TARGET_ENV=DOCKER
+    WORKING_DIRECTORY: /home/cdac/servers/nbf-agent/ubfagent
+.....
+[1m# Preparing for the following operations: *********************[0m
+  [0;32mverify options, cc install, cc approve, cc commit, cc initialize, discover, channel query[0m
+.......
+[1m# Running operation: ******************************************[0m
+  [0;32mverify options[0m
+..
+[1m# Running operation: ******************************************[0m
+  [0;32mcc install[0m
+............
+[1m# Running operation: ******************************************[0m
+  [0;32mcc approve[0m
+......
+[1m# Running operation: ******************************************[0m
+  [0;32mcc commit[0m
+..............
+[1m# Running operation: ******************************************[0m
+  [0;32mcc initialize[0m
+......
+[1m# Running operation: ******************************************[0m
+  [0;32mdiscover[0m
+......................
+[1m# Discover endorsers results **********************************[0m
+  [0;32mChaincode endorsers file: ./vars/discover/localchannelone/uidia_endorsers.json[0m
+[1m# Discover orderers results ***********************************[0m
+  [0;32mChannel orderers file: ./vars/discover/localchannelone/ordererendpoints.json[0m
+[1m# Running operation: ******************************************[0m
+  [0;32mchannel query[0m
+......
+[1m# Channel configuration query results *************************[0m
+  [0;32mChannel configuration file: ./vars/localchannelone_config.json[0m
+
+[1m# STATS *******************************************************[0m
+[0;32mminifab: ok=98	failed=0	[0m

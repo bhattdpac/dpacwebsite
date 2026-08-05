@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background circle -->
+    <circle cx="128" cy="128" r="120" fill="#4a90e2"/>
+    
+    <!-- Book shape -->
+    <path d="M80 60h96v136H80z" fill="white"/>
+    <path d="M80 60h96v20H80z" fill="#e2e2e2"/>
+    
+    <!-- Text lines -->
+    <rect x="90" y="90" width="76" height="4" fill="#4a90e2"/>
+    <rect x="90" y="100" width="76" height="4" fill="#4a90e2"/>
+    <rect x="90" y="110" width="76" height="4" fill="#4a90e2"/>
+    
+    <!-- Decorative elements -->
+    <circle cx="128" cy="60" r="8" fill="#4a90e2"/>
+    <circle cx="128" cy="196" r="8" fill="#4a90e2"/>
+</svg> 

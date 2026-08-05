@@ -1,3 +1,9 @@
+import os
+import django
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
+django.setup()
+
 from api.models import SmartContractTemplate
 
 templates = [
@@ -21,6 +27,20 @@ templates = [
         'description': 'Manages contract expiry and manual termination by authorized parties.',
         'required_params': ['docHash', 'docURI', 'durationDays'],
         'sol_path': 'blockchain/contracts/templates/TerminationLogic.sol'
+    },
+    {
+        'name': 'Confidentiality NDA',
+        'contract_name': 'ConfidentialityNDA',
+        'description': 'Non-Disclosure Agreement hash registry with term duration.',
+        'required_params': ['docHash', 'docURI', 'disclosingParty', 'receivingParty', 'termDuration'],
+        'sol_path': 'blockchain/contracts/templates/ConfidentialityNDA.sol'
+    },
+    {
+        'name': 'Secured Loan',
+        'contract_name': 'SecuredLoan',
+        'description': 'Loan agreement with collateral locking and default tracking.',
+        'required_params': ['docHash', 'docURI', 'lender', 'borrower', 'loanAmount', 'interestRate', 'repaymentDeadline'],
+        'sol_path': 'blockchain/contracts/templates/SecuredLoan.sol'
     }
 ]
 

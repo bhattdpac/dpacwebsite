@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI Research Assistant</title>
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md p-6 flex flex-col">
+        <h1 class="text-2xl font-bold mb-8">AI Assistant</h1>
+        <nav class="flex flex-col gap-4">
+            <a href="/" class="hover:text-blue-600">Upload PDFs</a>
+            <a href="/dashboard" class="text-blue-600 font-semibold">All Files</a>
+            <a href="#" class="hover:text-blue-600">Profile</a>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 p-10">
+        <h2 class="text-xl font-bold mb-6">Uploaded Papers</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for file in files %}
+            <div class="bg-white rounded-lg shadow p-6 flex flex-col gap-2">
+                <div class="font-semibold">{{ file.filename }}</div>
+                <div class="text-gray-600 text-sm line-clamp-3">{{ file.summary }}</div>
+                <audio controls class="w-full mt-2" src="/static/audio/{{ file.audio }}"></audio>
+                <div class="flex gap-2 mt-2">
+                    <a href="/summary/{{ file.id }}" class="text-blue-600 hover:underline">View Summary</a>
+                    <a href="/metadata/{{ file.id }}" class="text-green-600 hover:underline">View Metadata</a>
+                    <a href="/chat/{{ file.id }}" class="text-purple-600 hover:underline">Chat</a>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-span-2 text-gray-500">No files uploaded yet.</div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html> 

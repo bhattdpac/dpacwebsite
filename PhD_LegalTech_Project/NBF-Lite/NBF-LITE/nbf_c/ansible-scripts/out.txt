@@ -1,0 +1,73 @@
+
+PLAY [demoVM] ******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [cdacnbf]
+
+TASK [Add NodeSource repository] ***********************************************
+changed: [cdacnbf]
+
+TASK [install nodejs] **********************************************************
+changed: [cdacnbf]
+
+TASK [Install pm2 package] *****************************************************
+ok: [cdacnbf]
+
+TASK [Install nvm in normal user] **********************************************
+changed: [cdacnbf]
+
+TASK [Creating Directory for Servers] ******************************************
+ok: [cdacnbf]
+
+TASK [Copy ubfagent to remote] *************************************************
+ok: [cdacnbf]
+
+TASK [Copy Samplerest to remote] ***********************************************
+ok: [cdacnbf]
+
+TASK [Untar Fabric-Agent] ******************************************************
+changed: [cdacnbf]
+
+TASK [Untar Fabric-Rest] *******************************************************
+changed: [cdacnbf]
+
+TASK [Install packages based on package.json in ubfagent.] *********************
+ok: [cdacnbf]
+
+TASK [Install packages based on package.json in samplerest.] *******************
+ok: [cdacnbf]
+
+TASK [Create destination folder for images] ************************************
+ok: [cdacnbf]
+
+TASK [Copy Docker image files to the target machine] ***************************
+ok: [cdacnbf]
+
+TASK [Find all Docker image files] *********************************************
+ok: [cdacnbf]
+
+TASK [Load all Docker images from the copied folder] ***************************
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/fabric-orderer_2.3.0.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 40337920, 'inode': 2921106, 'dev': 2053, 'nlink': 1, 'atime': 1774525272.1076343, 'mtime': 1774525191.9276352, 'ctime': 1774525192.1596353, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/fabric-peer_2.3.0.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 57142784, 'inode': 2921110, 'dev': 2053, 'nlink': 1, 'atime': 1774525273.1876342, 'mtime': 1774525220.635635, 'ctime': 1774525220.9156349, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/nginx_latest.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 196167168, 'inode': 2921112, 'dev': 2053, 'nlink': 1, 'atime': 1774525274.0476344, 'mtime': 1774525239.0916348, 'ctime': 1774525239.6596346, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/fabric-tools_2.3.0.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 446941696, 'inode': 2921105, 'dev': 2053, 'nlink': 1, 'atime': 1774525276.1436343, 'mtime': 1774525189.0996351, 'ctime': 1774525190.1956353, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/fabric-couchdb_latest.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 272953344, 'inode': 2921111, 'dev': 2053, 'nlink': 1, 'atime': 1774525280.603634, 'mtime': 1774525230.9556348, 'ctime': 1774525231.6916347, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/fabric-ca_1.4.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 163026432, 'inode': 2921115, 'dev': 2053, 'nlink': 1, 'atime': 1774525284.495634, 'mtime': 1774525269.1396344, 'ctime': 1774525269.7036343, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/fabric-ccenv_2.3.0.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 511474688, 'inode': 2921108, 'dev': 2053, 'nlink': 1, 'atime': 1774525287.0636342, 'mtime': 1774525214.451635, 'ctime': 1774525215.7116349, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/fabric-orderer_2.2.3.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 37719040, 'inode': 2921116, 'dev': 2053, 'nlink': 1, 'atime': 1774525289.087634, 'mtime': 1774525271.3156343, 'ctime': 1774525271.5396342, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/fabric-peer_2.2.3.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 53799424, 'inode': 2921109, 'dev': 2053, 'nlink': 1, 'atime': 1774525290.0036342, 'mtime': 1774525217.995635, 'ctime': 1774525218.263635, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/minifab_latest.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 571194880, 'inode': 2921113, 'dev': 2053, 'nlink': 1, 'atime': 1774525290.867634, 'mtime': 1774525252.6396346, 'ctime': 1774525254.0556345, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/portainer_ce_2.6.2-alpine.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 215371264, 'inode': 2921114, 'dev': 2053, 'nlink': 1, 'atime': 1774525298.8436341, 'mtime': 1774525262.0356345, 'ctime': 1774525262.6396344, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/fabric-tools_2.2.3.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 440422400, 'inode': 2921088, 'dev': 2053, 'nlink': 1, 'atime': 1774525300.511634, 'mtime': 1774525152.5236356, 'ctime': 1774525153.6076357, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/fabric-ccenv_2.2.3.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 524277248, 'inode': 2921104, 'dev': 2053, 'nlink': 1, 'atime': 1774525306.4036338, 'mtime': 1774525171.9076355, 'ctime': 1774525173.1796355, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+changed: [cdacnbf] => (item={'path': '/opt/docker_images/explorer-db_1.1.7.tar', 'mode': '0755', 'isdir': False, 'ischr': False, 'isblk': False, 'isreg': True, 'isfifo': False, 'islnk': False, 'issock': False, 'uid': 0, 'gid': 0, 'size': 102001664, 'inode': 2921107, 'dev': 2053, 'nlink': 1, 'atime': 1774525313.675634, 'mtime': 1774525196.0796351, 'ctime': 1774525196.4596353, 'gr_name': 'root', 'pw_name': 'root', 'wusr': True, 'rusr': True, 'xusr': True, 'wgrp': False, 'rgrp': True, 'xgrp': True, 'woth': False, 'roth': True, 'xoth': True, 'isuid': False, 'isgid': False})
+
+TASK [Running ubfagent from sudo] **********************************************
+changed: [cdacnbf]
+
+TASK [Running Samplerest from sudo] ********************************************
+changed: [cdacnbf]
+
+PLAY RECAP *********************************************************************
+cdacnbf                    : ok=18   changed=8    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

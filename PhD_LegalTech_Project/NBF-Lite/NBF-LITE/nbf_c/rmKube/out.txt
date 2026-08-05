@@ -1,0 +1,18 @@
+
+PLAY [allVMs] ******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [worker0]
+ok: [worker1]
+ok: [master]
+
+TASK [install kubernetes] ******************************************************
+changed: [worker1]
+changed: [worker0]
+changed: [master]
+
+PLAY RECAP *********************************************************************
+master                     : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+worker0                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+worker1                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

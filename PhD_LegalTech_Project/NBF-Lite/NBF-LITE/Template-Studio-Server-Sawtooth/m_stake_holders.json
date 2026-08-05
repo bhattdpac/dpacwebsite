@@ -1,0 +1,66 @@
+[{
+  
+  "template_type": "medical insurance",
+  "application_name": "Insurance",
+  "stake_holder_type": [
+    "verifier",
+    "Issuer"
+  ],
+  "version": "1.0",
+  "language": "nodejs",
+  "stake_holder_id": 7
+},
+{
+  
+  "stake_holder_id": 2,
+  "template_id": 1,
+  "stake_holder_type": "Certificate Verifier",
+  "template_type": "certificate"
+},
+{
+ 
+  "stake_holder_id": 1,
+  "template_id": 1,
+  "stake_holder_type": "Certificate Issuer",
+  "template_type": "certificate"
+},
+{
+  
+  "stake_holder_id": 6,
+  "template_id": 4,
+  "stake_holder_type": "Hospital",
+  "template_type": "insurance"
+},
+{
+  
+  "stake_holder_id": 3,
+  "template_id": 2,
+  "stake_holder_type": "PDS Issuer",
+  "template_type": "insurance"
+},
+{
+  
+  "stake_holder_id": 5,
+  "template_id": 4,
+  "stake_holder_type": "Policy Holder",
+  "template_type": "insurance"
+},
+{
+  "stake_holder_id": 4,
+  "template_id": 4,
+  "stake_holder_type": "Insurance Company",
+  "template_type": "insurance"
+},
+{
+  
+  "stake_holder_id": 10,
+  "template_id": 3,
+  "stake_holder_type": "Buyer",
+  "template_type": "supplychain"
+},
+{
+  "stake_holder_id": 11,
+  "template_id": 3,
+  "stake_holder_type": "Seller",
+  "template_type": "supplychain"
+}]

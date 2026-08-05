@@ -1,6 +1,7 @@
 # Plan: PhD Research Management System (PRMS) Implementation
 
-This plan adopts the "Master Specification" from `idea2.md` to build a professional PhD Research Management System (PRMS) for `deepakbhatt.dev`.
+This plan adopts the "Master Specification" from [`idea2.md`](file:///root/dpacwebsite/plans/idea2.md) to build a professional PhD Research Management System (PRMS) for `deepakbhatt.dev`.
+
 
 ## Strategic Alignment
 Every feature in this system is mapped directly to the four approved PhD Research Objectives:

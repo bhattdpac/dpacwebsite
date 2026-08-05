@@ -67,8 +67,8 @@ const PortfolioHome = () => {
             <span className="font-display text-2xl font-bold tracking-tight">DPAC<span className="text-accent-primary">.</span>DEV</span>
           </div>
           <div className="hidden lg:flex gap-10 text-xs font-bold uppercase tracking-[0.2em] text-text-muted">
-            {['About', 'Architecture', 'Skills', 'Work', 'Academy', 'Research'].map(item => (
-              <a key={item} href={item === 'Academy' ? '/academy' : item === 'Research' ? '/research' : `#${item.toLowerCase()}`} className="hover:text-accent-primary transition-colors">
+            {['About', 'Objectives', 'Architecture', 'Skills', 'Work', 'Academy', 'Research'].map(item => (
+              <a key={item} href={item === 'Academy' ? '/academy' : item === 'Research' ? '/research' : item === 'Objectives' ? '#research-blueprint' : `#${item.toLowerCase()}`} className="hover:text-accent-primary transition-colors">
                 {item}
               </a>
             ))}
@@ -152,6 +152,69 @@ const PortfolioHome = () => {
                 <p className="text-[10px] font-bold text-text-muted uppercase tracking-widest">{skill.category}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Aim & Research Objectives Section */}
+      <section id="research-blueprint" className="py-40 px-8 border-t border-white/5 bg-white/[0.002]">
+        <div className="max-w-7xl mx-auto space-y-24">
+          <div className="text-center max-w-3xl mx-auto space-y-6">
+            <h2 className="text-5xl font-display font-bold uppercase tracking-tight">PhD Research Blueprint</h2>
+            <p className="text-text-muted text-lg font-medium">
+              Academic framework and core goals aligned with Uttaranchal University PhD thesis: <br />
+              <span className="text-text-primary">"Implementing Smart Contracts Using Blockchain Technology for Secure and Transparent Legal Documentation"</span>
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-5 gap-8 items-stretch">
+            {/* Aim Card */}
+            <div className="lg:col-span-2 group p-8 space-card rounded-3xl border border-white/5 hover:border-accent-secondary/50 transition-all flex flex-col justify-between">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-secondary/10 text-accent-secondary text-[9px] font-bold uppercase tracking-[0.2em] mb-8 border border-accent-secondary/20">
+                  Core Aim
+                </div>
+                <h3 className="text-3xl font-display font-bold mb-6 uppercase tracking-tight">Aim of the Research</h3>
+                <p className="text-text-muted font-medium leading-relaxed">
+                  To implement smart contracts using blockchain technology for secure and transparent legal documentation.
+                </p>
+              </div>
+              <div className="w-12 h-1.5 sunset-gradient rounded-full mt-8"></div>
+            </div>
+
+            {/* Objectives Cards */}
+            <div className="lg:col-span-3 grid md:grid-cols-2 gap-4">
+              {[
+                {
+                  num: '01',
+                  title: 'Theory & Principles',
+                  desc: 'Investigate the core principles of smart contracts and blockchain technology, focusing on their application in legal documentation.'
+                },
+                {
+                  num: '02',
+                  title: 'Security Auditing',
+                  desc: 'Evaluate the security features of blockchain that ensure the integrity and transparency of smart contracts, enhancing their reliability for legal purposes.'
+                },
+                {
+                  num: '03',
+                  title: 'Framework Design',
+                  desc: 'Design and propose a comprehensive framework for implementing smart contracts in legal documentation, addressing technical and practical aspects.'
+                },
+                {
+                  num: '04',
+                  title: 'Empirical Evaluation',
+                  desc: 'Measure the effectiveness of smart contracts in reducing costs, improving efficiency, and minimizing fraud in legal documentation processes.'
+                }
+              ].map((obj, i) => (
+                <div key={i} className="group p-6 space-card rounded-2xl border border-white/5 hover:bg-white/[0.03] transition-all flex flex-col justify-between">
+                  <div>
+                    <span className="text-xl font-bold text-accent-primary group-hover:text-accent-secondary transition-colors font-mono">{obj.num}</span>
+                    <h4 className="font-bold text-sm text-text-primary uppercase tracking-wider mt-4 mb-2">{obj.title}</h4>
+                    <p className="text-xs text-text-muted leading-relaxed font-medium">{obj.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

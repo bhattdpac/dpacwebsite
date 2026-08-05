@@ -31,3 +31,9 @@ Thumbs.db
 # Project Specific
 nginx.conf
 host.md
+
+# Large Data & DB Files
+backend/arxiv_index.db
+corpus/
+research/papers/
+

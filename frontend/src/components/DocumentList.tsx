@@ -17,15 +17,14 @@ interface DocumentListProps {
   documents: Document[];
   onDelete: (id: number) => void;
 }
-
 const DocumentList = ({ documents, onDelete }: DocumentListProps) => {
   const getStatusColor = (doc: Document) => {
-    if (doc.proposal?.contract_address) return 'text-accent-primary bg-blue-50 border border-accent-primary/20';
+    if (doc.proposal?.contract_address) return 'text-accent-primary bg-accent-primary/10 border border-accent-primary/20';
     switch (doc.status) {
-      case 'COMPLETED': return 'text-state-success bg-green-50';
-      case 'PROCESSING': return 'text-state-warning bg-amber-50';
-      case 'FAILED': return 'text-state-error bg-red-50';
-      default: return 'text-text-muted bg-gray-50';
+      case 'COMPLETED': return 'text-state-success bg-state-success/10';
+      case 'PROCESSING': return 'text-state-warning bg-state-warning/10';
+      case 'FAILED': return 'text-state-error bg-state-error/10';
+      default: return 'text-text-muted bg-white/5';
     }
   };
 
@@ -45,9 +44,9 @@ const DocumentList = ({ documents, onDelete }: DocumentListProps) => {
   }
 
   return (
-    <div className="bg-bg-surface rounded-xl border border-border-default shadow-sm overflow-hidden">
+    <div className="bg-bg-surface rounded-xl border border-border-default shadow-sm overflow-hidden animate-fade-in">
       <table className="w-full text-left border-collapse">
-        <thead className="bg-gray-50 border-b border-border-default">
+        <thead className="bg-white/5 border-b border-border-default">
           <tr>
             <th className="px-6 py-4 text-sm font-bold text-text-primary">Document Name</th>
             <th className="px-6 py-4 text-sm font-bold text-text-primary">Status</th>
@@ -57,7 +56,7 @@ const DocumentList = ({ documents, onDelete }: DocumentListProps) => {
         </thead>
         <tbody className="divide-y divide-border-default">
           {documents.map((doc) => (
-            <tr key={doc.id} className="hover:bg-gray-50 transition-colors">
+            <tr key={doc.id} className="hover:bg-white/5 transition-colors">
               <td className="px-6 py-4">
                 <div className="flex items-center gap-3">
                   <FileText className="h-5 w-5 text-accent-primary" />

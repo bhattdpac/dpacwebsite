@@ -1,0 +1,359 @@
+
+PLAY [ipfs] ********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [testvm1]
+ok: [testvm2]
+ok: [testvm0]
+
+TASK [ipfs : Create download directory] ****************************************
+ok: [testvm2]
+ok: [testvm1]
+ok: [testvm0]
+
+TASK [ipfs : Download ipfs] ****************************************************
+skipping: [testvm1]
+skipping: [testvm0]
+skipping: [testvm2]
+
+TASK [ipfs : Link ipfs binary] *************************************************
+ok: [testvm1]
+ok: [testvm0]
+ok: [testvm2]
+
+TASK [ipfs : install npm] ******************************************************
+fatal: [testvm0]: FAILED! => {"cache_update_time": 1688568338, "cache_updated": true, "changed": false, "msg": "'/usr/bin/apt-get -y -o \"Dpkg::Options::=--force-confdef\" -o \"Dpkg::Options::=--force-confold\"       install 'npm'' failed: E: Unable to correct problems, you have held broken packages.\n", "rc": 100, "stderr": "E: Unable to correct problems, you have held broken packages.\n", "stderr_lines": ["E: Unable to correct problems, you have held broken packages."], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nSome packages could not be installed. This may mean that you have\nrequested an impossible situation or if you are using the unstable\ndistribution that some required packages have not yet been created\nor been moved out of Incoming.\nThe following information may help to resolve the situation:\n\nThe following packages have unmet dependencies:\n npm : Depends: node-agent-base but it is not going to be installed\n       Depends: node-aproba but it is not going to be installed\n       Depends: node-archy but it is not going to be installed\n       Depends: node-cacache but it is not going to be installed\n       Depends: node-chalk but it is not going to be installed\n       Depends: node-cli-table3\n       Depends: node-colors but it is not going to be installed\n       Depends: node-columnify but it is not going to be installed\n       Depends: node-debug but it is not going to be installed\n       Depends: node-emoji-regex\n       Depends: node-got but it is not going to be installed\n       Depends: node-graceful-fs but it is not going to be installed\n       Depends: node-gyp but it is not going to be installed\n       Depends: node-https-proxy-agent but it is not going to be installed\n       Depends: node-mkdirp but it is not going to be installed\n       Depends: node-ms but it is not going to be installed\n       Depends: node-nopt but it is not going to be installed\n       Depends: node-normalize-package-data but it is not going to be installed\n       Depends: node-npm-package-arg but it is not going to be installed\n       Depends: node-npmlog but it is not going to be installed\n       Depends: node-read-package-json but it is not going to be installed\n       Depends: node-rimraf but it is not going to be installed\n       Depends: node-semver but it is not going to be installed\n       Depends: node-ssri but it is not going to be installed\n       Depends: node-string-width but it is not going to be installed\n       Depends: node-strip-ansi but it is not going to be installed\n       Depends: node-tar but it is not going to be installed\n       Depends: node-validate-npm-package-name but it is not going to be installed\n       Depends: node-which but it is not going to be installed\n       Depends: node-write-file-atomic but it is not going to be installed\n       Depends: nodejs:any (>= 10)\n       Recommends: node-tap but it is not going to be installed\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "Some packages could not be installed. This may mean that you have", "requested an impossible situation or if you are using the unstable", "distribution that some required packages have not yet been created", "or been moved out of Incoming.", "The following information may help to resolve the situation:", "", "The following packages have unmet dependencies:", " npm : Depends: node-agent-base but it is not going to be installed", "       Depends: node-aproba but it is not going to be installed", "       Depends: node-archy but it is not going to be installed", "       Depends: node-cacache but it is not going to be installed", "       Depends: node-chalk but it is not going to be installed", "       Depends: node-cli-table3", "       Depends: node-colors but it is not going to be installed", "       Depends: node-columnify but it is not going to be installed", "       Depends: node-debug but it is not going to be installed", "       Depends: node-emoji-regex", "       Depends: node-got but it is not going to be installed", "       Depends: node-graceful-fs but it is not going to be installed", "       Depends: node-gyp but it is not going to be installed", "       Depends: node-https-proxy-agent but it is not going to be installed", "       Depends: node-mkdirp but it is not going to be installed", "       Depends: node-ms but it is not going to be installed", "       Depends: node-nopt but it is not going to be installed", "       Depends: node-normalize-package-data but it is not going to be installed", "       Depends: node-npm-package-arg but it is not going to be installed", "       Depends: node-npmlog but it is not going to be installed", "       Depends: node-read-package-json but it is not going to be installed", "       Depends: node-rimraf but it is not going to be installed", "       Depends: node-semver but it is not going to be installed", "       Depends: node-ssri but it is not going to be installed", "       Depends: node-string-width but it is not going to be installed", "       Depends: node-strip-ansi but it is not going to be installed", "       Depends: node-tar but it is not going to be installed", "       Depends: node-validate-npm-package-name but it is not going to be installed", "       Depends: node-which but it is not going to be installed", "       Depends: node-write-file-atomic but it is not going to be installed", "       Depends: nodejs:any (>= 10)", "       Recommends: node-tap but it is not going to be installed"]}
+The following additional packages will be installed:
+  adwaita-icon-theme at-spi2-core dconf-gsettings-backend dconf-service
+  fontconfig gsettings-desktop-schemas gtk-update-icon-cache gyp
+  hicolor-icon-theme humanity-icon-theme libatk-bridge2.0-0 libatk1.0-0
+  libatk1.0-data libatspi2.0-0 libauthen-sasl-perl libavahi-client3
+  libavahi-common-data libavahi-common3 libc-ares2 libcairo-gobject2 libcairo2
+  libclone-perl libcolord2 libcups2 libdata-dump-perl libdatrie1 libdconf1
+  libdrm-amdgpu1 libdrm-intel1 libdrm-nouveau2 libdrm-radeon1
+  libencode-locale-perl libepoxy0 libfile-basedir-perl
+  libfile-desktopentry-perl libfile-listing-perl libfile-mimeinfo-perl
+  libfont-afm-perl libfontenc1 libgdk-pixbuf-2.0-0 libgdk-pixbuf2.0-bin
+  libgdk-pixbuf2.0-common libgl1 libgl1-amber-dri libgl1-mesa-dri
+  libglapi-mesa libglvnd0 libglx-mesa0 libglx0 libgraphite2-3 libgtk-3-0
+  libgtk-3-bin libgtk-3-common libgtkd-3-0 libharfbuzz0b libhtml-form-perl
+  libhtml-format-perl libhtml-parser-perl libhtml-tagset-perl
+  libhtml-tree-perl libhttp-cookies-perl libhttp-daemon-perl libhttp-date-perl
+  libhttp-message-perl libhttp-negotiate-perl libice6 libio-html-perl
+  libio-socket-ssl-perl libio-stringy-perl libipc-system-simple-perl
+  libjs-events libjs-highlight.js libjs-inherits libjs-is-typedarray libjs-psl
+  libjs-source-map libjs-sprintf-js libjs-typedarray-to-buffer liblcms2-2
+  libllvm11 libllvm15 liblwp-mediatypes-perl liblwp-protocol-https-perl
+  libmailtools-perl libnet-dbus-perl libnet-http-perl libnet-smtp-ssl-perl
+  libnet-ssleay-perl libnode-dev libnode72 libnotify-bin libnotify4
+  libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 libpciaccess0
+  libphobos2-ldc-shared98 libpixman-1-0 librsvg2-2 librsvg2-common
+  libsensors-config libsensors5 libsm6 libthai-data libthai0
+  libtie-ixhash-perl libtimedate-perl libtry-tiny-perl liburi-perl libuv1-dev
+  libvte-2.91-0 libvte-2.91-common libvted-3-0 libwayland-client0
+  libwayland-cursor0 libwayland-egl1 libwww-perl libwww-robotrules-perl
+  libx11-protocol-perl libx11-xcb1 libxaw7 libxcb-dri2-0 libxcb-dri3-0
+  libxcb-glx0 libxcb-present0 libxcb-render0 libxcb-shape0 libxcb-shm0
+  libxcb-sync1 libxcb-xfixes0 libxcomposite1 libxcursor1 libxdamage1
+  libxfixes3 libxft2 libxi6 libxinerama1 libxkbcommon0 libxkbfile1
+  libxml-parser-perl libxml-twig-perl libxml-xpathengine-perl libxmu6
+  libxrandr2 libxrender1 libxshmfence1 libxt6 libxtst6 libxv1 libxxf86dga1
+  libxxf86vm1 node-abab node-abbrev node-agent-base node-ansi-regex
+  node-ansi-styles node-ansistyles node-aproba node-archy
+  node-are-we-there-yet node-argparse node-arrify node-asap node-asynckit
+  node-balanced-match node-brace-expansion node-builtins node-cacache
+  node-chalk node-chownr node-clean-yaml-object node-cli-table node-clone
+  node-color-convert node-color-name node-colors node-columnify
+  node-combined-stream node-commander node-console-control-strings
+  node-copy-concurrently node-core-util-is node-coveralls node-cssom
+  node-cssstyle node-debug node-decompress-response node-defaults
+  node-delayed-stream node-delegates node-depd node-diff node-encoding
+  node-end-of-stream node-err-code node-escape-string-regexp node-esprima
+  node-events node-fancy-log node-fetch node-foreground-child node-form-data
+  node-fs-write-stream-atomic node-fs.realpath node-function-bind node-gauge
+  node-get-stream node-glob node-got node-graceful-fs node-growl node-gyp
+  node-has-flag node-has-unicode node-hosted-git-info node-https-proxy-agent
+  node-iconv-lite node-iferr node-imurmurhash node-indent-string node-inflight
+  node-inherits node-ini node-ip node-ip-regex node-is-buffer
+  node-is-plain-obj node-is-typedarray node-isarray node-isexe node-js-yaml
+  node-jsdom node-json-buffer node-json-parse-better-errors node-jsonparse
+  node-kind-of node-lcov-parse node-lodash-packages node-log-driver
+  node-lowercase-keys node-lru-cache node-mime node-mime-types
+  node-mimic-response node-minimatch node-minimist node-minipass node-mkdirp
+  node-move-concurrently node-ms node-mute-stream node-negotiator node-nopt
+  node-normalize-package-data node-npm-bundled node-npm-package-arg
+  node-npmlog node-object-assign node-once node-opener node-osenv
+  node-p-cancelable node-p-map node-path-is-absolute node-process-nextick-args
+  node-promise-inflight node-promise-retry node-promzard node-psl node-pump
+  node-punycode node-quick-lru node-read node-read-package-json
+  node-readable-stream node-resolve node-retry node-rimraf node-run-queue
+  node-safe-buffer node-semver node-set-blocking node-signal-exit node-slash
+  node-slice-ansi node-source-map node-source-map-support node-spdx-correct
+  node-spdx-exceptions node-spdx-expression-parse node-spdx-license-ids
+  node-sprintf-js node-ssri node-stack-utils node-stealthy-require
+  node-string-decoder node-string-width node-strip-ansi node-supports-color
+  node-tap node-tap-mocha-reporter node-tap-parser node-tar node-text-table
+  node-time-stamp node-tmatch node-tough-cookie node-typedarray-to-buffer
+  node-unique-filename node-universalify node-util-deprecate
+  node-validate-npm-package-license node-validate-npm-package-name
+  node-wcwidth.js node-webidl-conversions node-whatwg-fetch node-which
+  node-wide-align node-wrappy node-write-file-atomic node-ws node-yallist
+  nodejs nodejs-doc perl-openssl-defaults session-migration tilix tilix-common
+  ubuntu-mono x11-common x11-utils x11-xserver-utils xdg-utils
+Suggested packages:
+  libdigest-hmac-perl libgssapi-perl colord cups-common gvfs libjs-angularjs
+  liblcms2-utils libcrypt-ssleay-perl gnome-shell | notification-daemon
+  librsvg2-bin lm-sensors libsub-name-perl libbusiness-isbn-perl
+  libauthen-ntlm-perl libunicode-map8-perl libunicode-string-perl
+  xml-twig-tools node-nyc python-nautilus mesa-utils nickle cairo-5c
+  xorg-docs-core
+The following NEW packages will be installed:
+  adwaita-icon-theme at-spi2-core dconf-gsettings-backend dconf-service
+  fontconfig gsettings-desktop-schemas gtk-update-icon-cache gyp
+  hicolor-icon-theme humanity-icon-theme libatk-bridge2.0-0 libatk1.0-0
+  libatk1.0-data libatspi2.0-0 libauthen-sasl-perl libavahi-client3
+  libavahi-common-data libavahi-common3 libc-ares2 libcairo-gobject2 libcairo2
+  libclone-perl libcolord2 libcups2 libdata-dump-perl libdatrie1 libdconf1
+  libdrm-amdgpu1 libdrm-intel1 libdrm-nouveau2 libdrm-radeon1
+  libencode-locale-perl libepoxy0 libfile-basedir-perl
+  libfile-desktopentry-perl libfile-listing-perl libfile-mimeinfo-perl
+  libfont-afm-perl libfontenc1 libgdk-pixbuf-2.0-0 libgdk-pixbuf2.0-bin
+  libgdk-pixbuf2.0-common libgl1 libgl1-amber-dri libgl1-mesa-dri
+  libglapi-mesa libglvnd0 libglx-mesa0 libglx0 libgraphite2-3 libgtk-3-0
+  libgtk-3-bin libgtk-3-common libgtkd-3-0 libharfbuzz0b libhtml-form-perl
+  libhtml-format-perl libhtml-parser-perl libhtml-tagset-perl
+  libhtml-tree-perl libhttp-cookies-perl libhttp-daemon-perl libhttp-date-perl
+  libhttp-message-perl libhttp-negotiate-perl libice6 libio-html-perl
+  libio-socket-ssl-perl libio-stringy-perl libipc-system-simple-perl
+  libjs-events libjs-highlight.js libjs-inherits libjs-is-typedarray libjs-psl
+  libjs-source-map libjs-sprintf-js libjs-typedarray-to-buffer liblcms2-2
+  libllvm11 libllvm15 liblwp-mediatypes-perl liblwp-protocol-https-perl
+  libmailtools-perl libnet-dbus-perl libnet-http-perl libnet-smtp-ssl-perl
+  libnet-ssleay-perl libnode-dev libnode72 libnotify-bin libnotify4
+  libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 libpciaccess0
+  libphobos2-ldc-shared98 libpixman-1-0 librsvg2-2 librsvg2-common
+  libsensors-config libsensors5 libsm6 libthai-data libthai0
+  libtie-ixhash-perl libtimedate-perl libtry-tiny-perl liburi-perl libuv1-dev
+  libvte-2.91-0 libvte-2.91-common libvted-3-0 libwayland-client0
+  libwayland-cursor0 libwayland-egl1 libwww-perl libwww-robotrules-perl
+  libx11-protocol-perl libx11-xcb1 libxaw7 libxcb-dri2-0 libxcb-dri3-0
+  libxcb-glx0 libxcb-present0 libxcb-render0 libxcb-shape0 libxcb-shm0
+  libxcb-sync1 libxcb-xfixes0 libxcomposite1 libxcursor1 libxdamage1
+  libxfixes3 libxft2 libxi6 libxinerama1 libxkbcommon0 libxkbfile1
+  libxml-parser-perl libxml-twig-perl libxml-xpathengine-perl libxmu6
+  libxrandr2 libxrender1 libxshmfence1 libxt6 libxtst6 libxv1 libxxf86dga1
+  libxxf86vm1 node-abab node-abbrev node-agent-base node-ansi-regex
+  node-ansi-styles node-ansistyles node-aproba node-archy
+  node-are-we-there-yet node-argparse node-arrify node-asap node-asynckit
+  node-balanced-match node-brace-expansion node-builtins node-cacache
+  node-chalk node-chownr node-clean-yaml-object node-cli-table node-clone
+  node-color-convert node-color-name node-colors node-columnify
+  node-combined-stream node-commander node-console-control-strings
+  node-copy-concurrently node-core-util-is node-coveralls node-cssom
+  node-cssstyle node-debug node-decompress-response node-defaults
+  node-delayed-stream node-delegates node-depd node-diff node-encoding
+  node-end-of-stream node-err-code node-escape-string-regexp node-esprima
+  node-events node-fancy-log node-fetch node-foreground-child node-form-data
+  node-fs-write-stream-atomic node-fs.realpath node-function-bind node-gauge
+  node-get-stream node-glob node-got node-graceful-fs node-growl node-gyp
+  node-has-flag node-has-unicode node-hosted-git-info node-https-proxy-agent
+  node-iconv-lite node-iferr node-imurmurhash node-indent-string node-inflight
+  node-inherits node-ini node-ip node-ip-regex node-is-buffer
+  node-is-plain-obj node-is-typedarray node-isarray node-isexe node-js-yaml
+  node-jsdom node-json-buffer node-json-parse-better-errors node-jsonparse
+  node-kind-of node-lcov-parse node-lodash-packages node-log-driver
+  node-lowercase-keys node-lru-cache node-mime node-mime-types
+  node-mimic-response node-minimatch node-minimist node-minipass node-mkdirp
+  node-move-concurrently node-ms node-mute-stream node-negotiator node-nopt
+  node-normalize-package-data node-npm-bundled node-npm-package-arg
+  node-npmlog node-object-assign node-once node-opener node-osenv
+  node-p-cancelable node-p-map node-path-is-absolute node-process-nextick-args
+  node-promise-inflight node-promise-retry node-promzard node-psl node-pump
+  node-punycode node-quick-lru node-read node-read-package-json
+  node-readable-stream node-resolve node-retry node-rimraf node-run-queue
+  node-safe-buffer node-semver node-set-blocking node-signal-exit node-slash
+  node-slice-ansi node-source-map node-source-map-support node-spdx-correct
+  node-spdx-exceptions node-spdx-expression-parse node-spdx-license-ids
+  node-sprintf-js node-ssri node-stack-utils node-stealthy-require
+  node-string-decoder node-string-width node-strip-ansi node-supports-color
+  node-tap node-tap-mocha-reporter node-tap-parser node-tar node-text-table
+  node-time-stamp node-tmatch node-tough-cookie node-typedarray-to-buffer
+  node-unique-filename node-universalify node-util-deprecate
+  node-validate-npm-package-license node-validate-npm-package-name
+  node-wcwidth.js node-webidl-conversions node-whatwg-fetch node-which
+  node-wide-align node-wrappy node-write-file-atomic node-ws node-yallist
+  nodejs nodejs-doc npm perl-openssl-defaults session-migration tilix
+  tilix-common ubuntu-mono x11-common x11-utils x11-xserver-utils xdg-utils
+0 upgraded, 334 newly installed, 0 to remove and 94 not upgraded.
+changed: [testvm1]
+The following additional packages will be installed:
+  adwaita-icon-theme at-spi2-core dconf-gsettings-backend dconf-service
+  fontconfig gsettings-desktop-schemas gtk-update-icon-cache gyp
+  hicolor-icon-theme humanity-icon-theme libatk-bridge2.0-0 libatk1.0-0
+  libatk1.0-data libatspi2.0-0 libauthen-sasl-perl libavahi-client3
+  libavahi-common-data libavahi-common3 libc-ares2 libcairo-gobject2 libcairo2
+  libclone-perl libcolord2 libcups2 libdata-dump-perl libdatrie1 libdconf1
+  libdrm-amdgpu1 libdrm-intel1 libdrm-nouveau2 libdrm-radeon1
+  libencode-locale-perl libepoxy0 libfile-basedir-perl
+  libfile-desktopentry-perl libfile-listing-perl libfile-mimeinfo-perl
+  libfont-afm-perl libfontenc1 libgdk-pixbuf-2.0-0 libgdk-pixbuf2.0-bin
+  libgdk-pixbuf2.0-common libgl1 libgl1-amber-dri libgl1-mesa-dri
+  libglapi-mesa libglvnd0 libglx-mesa0 libglx0 libgraphite2-3 libgtk-3-0
+  libgtk-3-bin libgtk-3-common libgtkd-3-0 libharfbuzz0b libhtml-form-perl
+  libhtml-format-perl libhtml-parser-perl libhtml-tagset-perl
+  libhtml-tree-perl libhttp-cookies-perl libhttp-daemon-perl libhttp-date-perl
+  libhttp-message-perl libhttp-negotiate-perl libice6 libio-html-perl
+  libio-socket-ssl-perl libio-stringy-perl libipc-system-simple-perl
+  libjs-events libjs-highlight.js libjs-inherits libjs-is-typedarray libjs-psl
+  libjs-source-map libjs-sprintf-js libjs-typedarray-to-buffer liblcms2-2
+  libllvm11 libllvm15 liblwp-mediatypes-perl liblwp-protocol-https-perl
+  libmailtools-perl libnet-dbus-perl libnet-http-perl libnet-smtp-ssl-perl
+  libnet-ssleay-perl libnode-dev libnode72 libnotify-bin libnotify4
+  libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 libpciaccess0
+  libphobos2-ldc-shared98 libpixman-1-0 librsvg2-2 librsvg2-common
+  libsensors-config libsensors5 libsm6 libthai-data libthai0
+  libtie-ixhash-perl libtimedate-perl libtry-tiny-perl liburi-perl libuv1-dev
+  libvte-2.91-0 libvte-2.91-common libvted-3-0 libwayland-client0
+  libwayland-cursor0 libwayland-egl1 libwww-perl libwww-robotrules-perl
+  libx11-protocol-perl libx11-xcb1 libxaw7 libxcb-dri2-0 libxcb-dri3-0
+  libxcb-glx0 libxcb-present0 libxcb-render0 libxcb-shape0 libxcb-shm0
+  libxcb-sync1 libxcb-xfixes0 libxcomposite1 libxcursor1 libxdamage1
+  libxfixes3 libxft2 libxi6 libxinerama1 libxkbcommon0 libxkbfile1
+  libxml-parser-perl libxml-twig-perl libxml-xpathengine-perl libxmu6
+  libxrandr2 libxrender1 libxshmfence1 libxt6 libxtst6 libxv1 libxxf86dga1
+  libxxf86vm1 node-abab node-abbrev node-agent-base node-ansi-regex
+  node-ansi-styles node-ansistyles node-aproba node-archy
+  node-are-we-there-yet node-argparse node-arrify node-asap node-asynckit
+  node-balanced-match node-brace-expansion node-builtins node-cacache
+  node-chalk node-chownr node-clean-yaml-object node-cli-table node-clone
+  node-color-convert node-color-name node-colors node-columnify
+  node-combined-stream node-commander node-console-control-strings
+  node-copy-concurrently node-core-util-is node-coveralls node-cssom
+  node-cssstyle node-debug node-decompress-response node-defaults
+  node-delayed-stream node-delegates node-depd node-diff node-encoding
+  node-end-of-stream node-err-code node-escape-string-regexp node-esprima
+  node-events node-fancy-log node-fetch node-foreground-child node-form-data
+  node-fs-write-stream-atomic node-fs.realpath node-function-bind node-gauge
+  node-get-stream node-glob node-got node-graceful-fs node-growl node-gyp
+  node-has-flag node-has-unicode node-hosted-git-info node-https-proxy-agent
+  node-iconv-lite node-iferr node-imurmurhash node-indent-string node-inflight
+  node-inherits node-ini node-ip node-ip-regex node-is-buffer
+  node-is-plain-obj node-is-typedarray node-isarray node-isexe node-js-yaml
+  node-jsdom node-json-buffer node-json-parse-better-errors node-jsonparse
+  node-kind-of node-lcov-parse node-lodash-packages node-log-driver
+  node-lowercase-keys node-lru-cache node-mime node-mime-types
+  node-mimic-response node-minimatch node-minimist node-minipass node-mkdirp
+  node-move-concurrently node-ms node-mute-stream node-negotiator node-nopt
+  node-normalize-package-data node-npm-bundled node-npm-package-arg
+  node-npmlog node-object-assign node-once node-opener node-osenv
+  node-p-cancelable node-p-map node-path-is-absolute node-process-nextick-args
+  node-promise-inflight node-promise-retry node-promzard node-psl node-pump
+  node-punycode node-quick-lru node-read node-read-package-json
+  node-readable-stream node-resolve node-retry node-rimraf node-run-queue
+  node-safe-buffer node-semver node-set-blocking node-signal-exit node-slash
+  node-slice-ansi node-source-map node-source-map-support node-spdx-correct
+  node-spdx-exceptions node-spdx-expression-parse node-spdx-license-ids
+  node-sprintf-js node-ssri node-stack-utils node-stealthy-require
+  node-string-decoder node-string-width node-strip-ansi node-supports-color
+  node-tap node-tap-mocha-reporter node-tap-parser node-tar node-text-table
+  node-time-stamp node-tmatch node-tough-cookie node-typedarray-to-buffer
+  node-unique-filename node-universalify node-util-deprecate
+  node-validate-npm-package-license node-validate-npm-package-name
+  node-wcwidth.js node-webidl-conversions node-whatwg-fetch node-which
+  node-wide-align node-wrappy node-write-file-atomic node-ws node-yallist
+  nodejs nodejs-doc perl-openssl-defaults session-migration tilix tilix-common
+  ubuntu-mono x11-common x11-utils x11-xserver-utils xdg-utils
+Suggested packages:
+  libdigest-hmac-perl libgssapi-perl colord cups-common gvfs libjs-angularjs
+  liblcms2-utils libcrypt-ssleay-perl gnome-shell | notification-daemon
+  librsvg2-bin lm-sensors libsub-name-perl libbusiness-isbn-perl
+  libauthen-ntlm-perl libunicode-map8-perl libunicode-string-perl
+  xml-twig-tools node-nyc python-nautilus mesa-utils nickle cairo-5c
+  xorg-docs-core
+The following NEW packages will be installed:
+  adwaita-icon-theme at-spi2-core dconf-gsettings-backend dconf-service
+  fontconfig gsettings-desktop-schemas gtk-update-icon-cache gyp
+  hicolor-icon-theme humanity-icon-theme libatk-bridge2.0-0 libatk1.0-0
+  libatk1.0-data libatspi2.0-0 libauthen-sasl-perl libavahi-client3
+  libavahi-common-data libavahi-common3 libc-ares2 libcairo-gobject2 libcairo2
+  libclone-perl libcolord2 libcups2 libdata-dump-perl libdatrie1 libdconf1
+  libdrm-amdgpu1 libdrm-intel1 libdrm-nouveau2 libdrm-radeon1
+  libencode-locale-perl libepoxy0 libfile-basedir-perl
+  libfile-desktopentry-perl libfile-listing-perl libfile-mimeinfo-perl
+  libfont-afm-perl libfontenc1 libgdk-pixbuf-2.0-0 libgdk-pixbuf2.0-bin
+  libgdk-pixbuf2.0-common libgl1 libgl1-amber-dri libgl1-mesa-dri
+  libglapi-mesa libglvnd0 libglx-mesa0 libglx0 libgraphite2-3 libgtk-3-0
+  libgtk-3-bin libgtk-3-common libgtkd-3-0 libharfbuzz0b libhtml-form-perl
+  libhtml-format-perl libhtml-parser-perl libhtml-tagset-perl
+  libhtml-tree-perl libhttp-cookies-perl libhttp-daemon-perl libhttp-date-perl
+  libhttp-message-perl libhttp-negotiate-perl libice6 libio-html-perl
+  libio-socket-ssl-perl libio-stringy-perl libipc-system-simple-perl
+  libjs-events libjs-highlight.js libjs-inherits libjs-is-typedarray libjs-psl
+  libjs-source-map libjs-sprintf-js libjs-typedarray-to-buffer liblcms2-2
+  libllvm11 libllvm15 liblwp-mediatypes-perl liblwp-protocol-https-perl
+  libmailtools-perl libnet-dbus-perl libnet-http-perl libnet-smtp-ssl-perl
+  libnet-ssleay-perl libnode-dev libnode72 libnotify-bin libnotify4
+  libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 libpciaccess0
+  libphobos2-ldc-shared98 libpixman-1-0 librsvg2-2 librsvg2-common
+  libsensors-config libsensors5 libsm6 libthai-data libthai0
+  libtie-ixhash-perl libtimedate-perl libtry-tiny-perl liburi-perl libuv1-dev
+  libvte-2.91-0 libvte-2.91-common libvted-3-0 libwayland-client0
+  libwayland-cursor0 libwayland-egl1 libwww-perl libwww-robotrules-perl
+  libx11-protocol-perl libx11-xcb1 libxaw7 libxcb-dri2-0 libxcb-dri3-0
+  libxcb-glx0 libxcb-present0 libxcb-render0 libxcb-shape0 libxcb-shm0
+  libxcb-sync1 libxcb-xfixes0 libxcomposite1 libxcursor1 libxdamage1
+  libxfixes3 libxft2 libxi6 libxinerama1 libxkbcommon0 libxkbfile1
+  libxml-parser-perl libxml-twig-perl libxml-xpathengine-perl libxmu6
+  libxrandr2 libxrender1 libxshmfence1 libxt6 libxtst6 libxv1 libxxf86dga1
+  libxxf86vm1 node-abab node-abbrev node-agent-base node-ansi-regex
+  node-ansi-styles node-ansistyles node-aproba node-archy
+  node-are-we-there-yet node-argparse node-arrify node-asap node-asynckit
+  node-balanced-match node-brace-expansion node-builtins node-cacache
+  node-chalk node-chownr node-clean-yaml-object node-cli-table node-clone
+  node-color-convert node-color-name node-colors node-columnify
+  node-combined-stream node-commander node-console-control-strings
+  node-copy-concurrently node-core-util-is node-coveralls node-cssom
+  node-cssstyle node-debug node-decompress-response node-defaults
+  node-delayed-stream node-delegates node-depd node-diff node-encoding
+  node-end-of-stream node-err-code node-escape-string-regexp node-esprima
+  node-events node-fancy-log node-fetch node-foreground-child node-form-data
+  node-fs-write-stream-atomic node-fs.realpath node-function-bind node-gauge
+  node-get-stream node-glob node-got node-graceful-fs node-growl node-gyp
+  node-has-flag node-has-unicode node-hosted-git-info node-https-proxy-agent
+  node-iconv-lite node-iferr node-imurmurhash node-indent-string node-inflight
+  node-inherits node-ini node-ip node-ip-regex node-is-buffer
+  node-is-plain-obj node-is-typedarray node-isarray node-isexe node-js-yaml
+  node-jsdom node-json-buffer node-json-parse-better-errors node-jsonparse
+  node-kind-of node-lcov-parse node-lodash-packages node-log-driver
+  node-lowercase-keys node-lru-cache node-mime node-mime-types
+  node-mimic-response node-minimatch node-minimist node-minipass node-mkdirp
+  node-move-concurrently node-ms node-mute-stream node-negotiator node-nopt
+  node-normalize-package-data node-npm-bundled node-npm-package-arg
+  node-npmlog node-object-assign node-once node-opener node-osenv
+  node-p-cancelable node-p-map node-path-is-absolute node-process-nextick-args
+  node-promise-inflight node-promise-retry node-promzard node-psl node-pump
+  node-punycode node-quick-lru node-read node-read-package-json
+  node-readable-stream node-resolve node-retry node-rimraf node-run-queue
+  node-safe-buffer node-semver node-set-blocking node-signal-exit node-slash
+  node-slice-ansi node-source-map node-source-map-support node-spdx-correct
+  node-spdx-exceptions node-spdx-expression-parse node-spdx-license-ids
+  node-sprintf-js node-ssri node-stack-utils node-stealthy-require
+  node-string-decoder node-string-width node-strip-ansi node-supports-color
+  node-tap node-tap-mocha-reporter node-tap-parser node-tar node-text-table
+  node-time-stamp node-tmatch node-tough-cookie node-typedarray-to-buffer
+  node-unique-filename node-universalify node-util-deprecate
+  node-validate-npm-package-license node-validate-npm-package-name
+  node-wcwidth.js node-webidl-conversions node-whatwg-fetch node-which
+  node-wide-align node-wrappy node-write-file-atomic node-ws node-yallist
+  nodejs nodejs-doc npm perl-openssl-defaults session-migration tilix
+  tilix-common ubuntu-mono x11-common x11-utils x11-xserver-utils xdg-utils
+0 upgraded, 334 newly installed, 0 to remove and 94 not upgraded.
+changed: [testvm2]
+
+NO MORE HOSTS LEFT *************************************************************
+
+PLAY RECAP *********************************************************************
+testvm0                    : ok=3    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+testvm1                    : ok=4    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+testvm2                    : ok=4    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
