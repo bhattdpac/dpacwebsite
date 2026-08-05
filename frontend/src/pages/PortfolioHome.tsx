@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { 
   Shield, 
   Cpu, 
@@ -17,8 +18,32 @@ import {
 import { Link } from 'react-router-dom';
 import ArchitectureVisual from '../components/ArchitectureVisual';
 import BlockchainRoadmap from '../components/BlockchainRoadmap';
+import api from '../api/api';
 
 const PortfolioHome = () => {
+  const [stats, setStats] = useState({
+    papers: '81K+',
+    experiments: '24+',
+    publications: '4',
+    progress: '65%'
+  });
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const response = await api.get('/stats-summary/');
+        setStats({
+          papers: response.data.papers_count > 0 ? `${response.data.papers_count} Papers` : '81K+',
+          experiments: response.data.experiments_count > 0 ? `${response.data.experiments_count}+` : '24+',
+          publications: response.data.publications_count > 0 ? `${response.data.publications_count}` : '4',
+          progress: response.data.thesis_progress || '65%'
+        });
+      } catch (err) {
+        // use fallback
+      }
+    };
+    fetchStats();
+  }, []);
   const skills = [
     { name: 'Solidity', icon: <Shield className="w-5 h-5" />, category: 'Blockchain' },
     { name: 'Hardhat', icon: <Blocks className="w-5 h-5" />, category: 'Blockchain' },
@@ -125,10 +150,10 @@ const PortfolioHome = () => {
             {/* Stats Counter Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/5">
               {[
-                { value: '81K+', label: 'Papers Indexed', detail: 'arXiv legal-blockchain corpus', path: '/research' },
-                { value: '24+', label: 'NLP Experiments', detail: 'Bias audits & contract runs', path: '/experiments' },
-                { value: '4', label: 'Publications', detail: 'Conference & journals', path: '/publications' },
-                { value: '65%', label: 'Thesis Progress', detail: 'PhD milestone completion', path: '/research-dashboard' }
+                { value: stats.papers, label: 'Papers Indexed', detail: 'arXiv legal-blockchain corpus', path: '/research' },
+                { value: stats.experiments, label: 'NLP Experiments', detail: 'Bias audits & contract runs', path: '/experiments' },
+                { value: stats.publications, label: 'Publications', detail: 'Conference & journals', path: '/publications' },
+                { value: stats.progress, label: 'Thesis Progress', detail: 'PhD milestone completion', path: '/research-dashboard' }
               ].map((stat, i) => (
                 <Link key={i} to={stat.path} className="space-y-1 block hover:opacity-85 hover:scale-[1.02] transition-all duration-300">
                   <div className="text-3xl md:text-4xl font-display font-bold tracking-tight text-transparent bg-clip-text sunset-gradient">

@@ -16,6 +16,28 @@ from .permissions import IsLawyer
 def health_check(request):
     return Response({"status": "healthy", "message": "Backend is operational"})
 
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def stats_summary(request):
+    papers_count = ResearchPaper.objects.count()
+    experiments_count = Experiment.objects.count()
+    publications_count = Publication.objects.count()
+    
+    # Calculate average thesis progress based on objectives
+    objectives = ResearchObjective.objects.all()
+    if objectives.exists():
+        avg_progress = int(sum(o.progress_percentage for o in objectives) / objectives.count())
+    else:
+        avg_progress = 65
+        
+    return Response({
+        'papers_count': papers_count,
+        'experiments_count': experiments_count,
+        'publications_count': publications_count,
+        'thesis_progress': f"{avg_progress}%"
+    })
+
+
 class DocumentViewSet(viewsets.ModelViewSet):
     serializer_class = DocumentSerializer
     permission_classes = [IsAuthenticated]

@@ -8,7 +8,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 from api.views import (
-    health_check, register_user, get_current_user, 
+    health_check, register_user, get_current_user, stats_summary,
     DocumentViewSet, ClauseViewSet, ContractProposalViewSet, ResearchPaperViewSet, ResearchObjectiveViewSet, PublicationViewSet, ExperimentViewSet, ResearchLogViewSet, CourseViewSet, ResourceViewSet
 )
 
@@ -27,6 +27,7 @@ router.register(r'resources', ResourceViewSet, basename='resource')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/health/', health_check, name='health_check'),
+    path('api/stats-summary/', stats_summary, name='stats_summary'),
     path('api/auth/register/', register_user, name='register'),
     path('api/auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/auth/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
