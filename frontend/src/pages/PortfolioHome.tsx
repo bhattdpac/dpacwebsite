@@ -91,21 +91,45 @@ const PortfolioHome = () => {
           <div className="max-w-4xl space-y-10">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-accent-tertiary text-[10px] font-bold uppercase tracking-[0.3em]">
               <span className="w-2 h-2 rounded-full bg-accent-tertiary animate-ping"></span>
-              Engineering the Trustless Era
+              PhD Research Laboratory
             </div>
             
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-[0.9] tracking-tight">
-              Architecting <br />
-              <span className="text-transparent bg-clip-text sunset-gradient">Digital Integrity.</span>
-            </h1>
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.95] tracking-tight">
+                Deepak Bhatt
+              </h1>
+              <h2 className="text-lg md:text-xl text-accent-primary uppercase tracking-[0.25em] font-bold font-mono">
+                Assistant Professor & AI/Blockchain Researcher
+              </h2>
+            </div>
             
-            <p className="text-xl md:text-2xl text-text-muted font-medium leading-relaxed max-w-2xl">
-              I build secure, modular blockchain infrastructure that bridges the gap between <span className="text-text-primary">human-readable agreements</span> and <span className="text-text-primary">immutable code</span>.
+            <p className="text-lg md:text-xl text-text-muted font-medium leading-relaxed max-w-2xl">
+              Investigating secure and transparent smart contract legal frameworks at the intersection of Natural Language Processing (NLP) and Blockchain technology.
             </p>
             
+            {/* Stats Counter Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/5">
+              {[
+                { value: '81K+', label: 'Papers Indexed', detail: 'arXiv legal-blockchain corpus' },
+                { value: '24+', label: 'NLP Experiments', detail: 'Bias audits & contract runs' },
+                { value: '4', label: 'Publications', detail: 'Conference & journals' },
+                { value: '65%', label: 'Thesis Progress', detail: 'PhD milestone completion' }
+              ].map((stat, i) => (
+                <div key={i} className="space-y-1">
+                  <div className="text-3xl md:text-4xl font-display font-bold tracking-tight text-transparent bg-clip-text sunset-gradient">
+                    {stat.value}
+                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-text-primary">
+                    {stat.label}
+                  </div>
+                  <div className="text-[9px] text-text-muted leading-tight">
+                    {stat.detail}
+                  </div>
+                </div>
+              ))}
+            </div>
 
-
-            <div className="flex flex-wrap gap-6 pt-10">
+            <div className="flex flex-wrap gap-6 pt-6">
               <a href="#projects" className="sunset-gradient text-white px-10 py-5 rounded-2xl font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-2xl shadow-orange-500/20">
                 View Projects
               </a>
@@ -188,29 +212,45 @@ const PortfolioHome = () => {
                 {
                   num: '01',
                   title: 'Theory & Principles',
-                  desc: 'Investigate the core principles of smart contracts and blockchain technology, focusing on their application in legal documentation.'
+                  desc: 'Investigate the core principles of smart contracts and blockchain technology, focusing on their application in legal documentation.',
+                  progress: 90
                 },
                 {
                   num: '02',
                   title: 'Security Auditing',
-                  desc: 'Evaluate the security features of blockchain that ensure the integrity and transparency of smart contracts, enhancing their reliability for legal purposes.'
+                  desc: 'Evaluate the security features of blockchain that ensure the integrity and transparency of smart contracts, enhancing their reliability for legal purposes.',
+                  progress: 75
                 },
                 {
                   num: '03',
                   title: 'Framework Design',
-                  desc: 'Design and propose a comprehensive framework for implementing smart contracts in legal documentation, addressing technical and practical aspects.'
+                  desc: 'Design and propose a comprehensive framework for implementing smart contracts in legal documentation, addressing technical and practical aspects.',
+                  progress: 60
                 },
                 {
                   num: '04',
                   title: 'Empirical Evaluation',
-                  desc: 'Measure the effectiveness of smart contracts in reducing costs, improving efficiency, and minimizing fraud in legal documentation processes.'
+                  desc: 'Measure the effectiveness of smart contracts in reducing costs, improving efficiency, and minimizing fraud in legal documentation processes.',
+                  progress: 40
                 }
               ].map((obj, i) => (
                 <div key={i} className="group p-6 space-card rounded-2xl border border-white/5 hover:bg-white/[0.03] transition-all flex flex-col justify-between">
                   <div>
                     <span className="text-xl font-bold text-accent-primary group-hover:text-accent-secondary transition-colors font-mono">{obj.num}</span>
                     <h4 className="font-bold text-sm text-text-primary uppercase tracking-wider mt-4 mb-2">{obj.title}</h4>
-                    <p className="text-xs text-text-muted leading-relaxed font-medium">{obj.desc}</p>
+                    <p className="text-xs text-text-muted leading-relaxed font-medium mb-4">{obj.desc}</p>
+                  </div>
+                  <div className="space-y-1.5 pt-4 border-t border-white/5">
+                    <div className="flex justify-between text-[10px] font-bold uppercase tracking-wider">
+                      <span className="text-text-muted">Milestone Progress</span>
+                      <span className="text-accent-primary font-mono">{obj.progress}%</span>
+                    </div>
+                    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full sunset-gradient rounded-full" 
+                        style={{ width: `${obj.progress}%` }}
+                      ></div>
+                    </div>
                   </div>
                 </div>
               ))}

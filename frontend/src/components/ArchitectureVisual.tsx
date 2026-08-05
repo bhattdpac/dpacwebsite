@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { 
   Globe, 
   Server, 
@@ -8,6 +9,38 @@ import {
 } from 'lucide-react';
 
 const ArchitectureVisual = () => {
+  const [activeLayer, setActiveLayer] = useState<string | null>(null);
+
+  const layerDetails: Record<string, {
+    title: string;
+    importance: string;
+    status: string;
+    tech: string[];
+    accentColor: string;
+  }> = {
+    frontend: {
+      title: "Frontend Layer (UX & Human-in-the-Loop)",
+      importance: "Serves as the gateway for legal professionals and clients, transforming complex Web3 variables and bytecode logs into plain-language explanations. This visual validation ensures lawyers remain in control of the final smart contract translation.",
+      status: "Operational. Optimized with the 'Cyber Sunset' theme, featuring step-by-step upload wizards, pipeline status trackers, and accessibility elements.",
+      tech: ["React 19", "Vite", "TypeScript", "Tailwind CSS", "Lucide React"],
+      accentColor: "border-accent-tertiary text-accent-tertiary"
+    },
+    engine: {
+      title: "Core Engine (NLP & Bias Audit Services)",
+      importance: "The cognitive processor of the platform. It parses legal agreements, extracts semantic clauses, conducts fairness/bias checking (preventing power imbalances), and queries database indices to suggest relevant academic literature and legal precedents.",
+      status: "Active. Powered by a Django REST API. Linked with sqlite3 engines containing over 81,194 arXiv papers and 3,890 indexed Federal Court of Australia legal cases.",
+      tech: ["Django REST Framework", "spaCy NLP", "SQLite3", "Python 3.10"],
+      accentColor: "border-accent-primary text-accent-primary"
+    },
+    blockchain: {
+      title: "Immutable Layer (Smart Contract Ledger)",
+      importance: "Enforces trustless execution of the verified legal agreements. It renders parameters into secure Solidity code, compiles them using Hardhat, deploys them to the blockchain ledger, and logs immutable transaction signatures.",
+      status: "Online. Templates (Escrow, NDAs, Loans) tested and secure under Slither audits. Local Hardhat node active in the background under PM2 management.",
+      tech: ["Solidity", "Hardhat", "Ethers.js", "TypeChain"],
+      accentColor: "border-accent-secondary text-accent-secondary"
+    }
+  };
+
   return (
     <div className="w-full space-card rounded-3xl p-10 relative overflow-hidden group">
       {/* Dynamic Background Glows */}
@@ -18,8 +51,14 @@ const ArchitectureVisual = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
         
         {/* Layer 1: Frontend */}
-        <div className="flex flex-col items-center text-center p-8 bg-white/5 rounded-2xl border border-white/5 group/item transition-all hover:bg-white/10">
-          <div className="w-16 h-16 bg-bg-surface rounded-2xl shadow-xl border border-white/10 flex items-center justify-center mb-6 group-hover/item:scale-110 transition-transform">
+        <div 
+          role="button"
+          tabIndex={0}
+          onClick={() => setActiveLayer(activeLayer === 'frontend' ? null : 'frontend')}
+          onKeyDown={(e) => e.key === 'Enter' && setActiveLayer(activeLayer === 'frontend' ? null : 'frontend')}
+          className={`flex flex-col items-center text-center p-8 bg-white/5 rounded-2xl border transition-all duration-300 hover:bg-white/10 cursor-pointer focus:outline-none ${activeLayer === 'frontend' ? 'border-accent-tertiary ring-2 ring-accent-tertiary/20' : 'border-white/5'}`}
+        >
+          <div className="w-16 h-16 bg-bg-surface rounded-2xl shadow-xl border border-white/10 flex items-center justify-center mb-6 transition-transform hover:scale-110">
             <Globe className="text-accent-tertiary w-8 h-8" />
           </div>
           <h3 className="font-display text-xl font-bold mb-2">Frontend</h3>
@@ -36,9 +75,15 @@ const ArchitectureVisual = () => {
           </div>
         </div>
 
-        {/* Layer 2: Backend & AI */}
-        <div className="flex flex-col items-center text-center p-8 bg-white/5 rounded-2xl border border-white/5 group/item transition-all hover:bg-white/10">
-          <div className="w-16 h-16 bg-bg-surface rounded-2xl shadow-xl border border-white/10 flex items-center justify-center mb-6 group-hover/item:scale-110 transition-transform">
+        {/* Layer 2: Core Engine */}
+        <div 
+          role="button"
+          tabIndex={0}
+          onClick={() => setActiveLayer(activeLayer === 'engine' ? null : 'engine')}
+          onKeyDown={(e) => e.key === 'Enter' && setActiveLayer(activeLayer === 'engine' ? null : 'engine')}
+          className={`flex flex-col items-center text-center p-8 bg-white/5 rounded-2xl border transition-all duration-300 hover:bg-white/10 cursor-pointer focus:outline-none ${activeLayer === 'engine' ? 'border-accent-primary ring-2 ring-accent-primary/20' : 'border-white/5'}`}
+        >
+          <div className="w-16 h-16 bg-bg-surface rounded-2xl shadow-xl border border-white/10 flex items-center justify-center mb-6 transition-transform hover:scale-110">
             <Server className="text-accent-primary w-8 h-8" />
           </div>
           <h3 className="font-display text-xl font-bold mb-2">Core Engine</h3>
@@ -61,8 +106,14 @@ const ArchitectureVisual = () => {
         </div>
 
         {/* Layer 3: Blockchain */}
-        <div className="flex flex-col items-center text-center p-8 bg-white/5 rounded-2xl border border-white/5 group/item transition-all hover:bg-white/10">
-          <div className="w-16 h-16 bg-bg-surface rounded-2xl shadow-xl border border-white/10 flex items-center justify-center mb-6 group-hover/item:scale-110 transition-transform">
+        <div 
+          role="button"
+          tabIndex={0}
+          onClick={() => setActiveLayer(activeLayer === 'blockchain' ? null : 'blockchain')}
+          onKeyDown={(e) => e.key === 'Enter' && setActiveLayer(activeLayer === 'blockchain' ? null : 'blockchain')}
+          className={`flex flex-col items-center text-center p-8 bg-white/5 rounded-2xl border transition-all duration-300 hover:bg-white/10 cursor-pointer focus:outline-none ${activeLayer === 'blockchain' ? 'border-accent-secondary ring-2 ring-accent-secondary/20' : 'border-white/5'}`}
+        >
+          <div className="w-16 h-16 bg-bg-surface rounded-2xl shadow-xl border border-white/10 flex items-center justify-center mb-6 transition-transform hover:scale-110">
             <Cpu className="text-accent-secondary w-8 h-8" />
           </div>
           <h3 className="font-display text-xl font-bold mb-2">Immutable Layer</h3>
@@ -76,6 +127,40 @@ const ArchitectureVisual = () => {
 
       </div>
 
+      {/* Interactive Details Panel */}
+      {activeLayer && (
+        <div className={`mt-8 p-6 bg-white/5 rounded-2xl border transition-all duration-300 ${layerDetails[activeLayer].accentColor.split(' ')[0]}`}>
+          <div className="flex justify-between items-start gap-4 mb-4">
+            <h4 className="font-display text-sm font-bold uppercase tracking-widest text-white">
+              {layerDetails[activeLayer].title}
+            </h4>
+            <button 
+              onClick={() => setActiveLayer(null)}
+              className="text-[10px] uppercase font-bold tracking-widest text-text-muted hover:text-white transition-colors"
+            >
+              Close
+            </button>
+          </div>
+          <div className="space-y-4 text-xs leading-relaxed font-medium">
+            <p>
+              <strong className="text-white uppercase tracking-wider block mb-1 text-[10px]">Role & Importance:</strong>
+              <span className="text-text-muted">{layerDetails[activeLayer].importance}</span>
+            </p>
+            <p>
+              <strong className="text-white uppercase tracking-wider block mb-1 text-[10px]">Current Operations:</strong>
+              <span className="text-text-muted">{layerDetails[activeLayer].status}</span>
+            </p>
+            <div className="flex flex-wrap gap-2 pt-2">
+              {layerDetails[activeLayer].tech.map((t, idx) => (
+                <span key={idx} className="px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-[9px] font-mono tracking-wider text-white">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="mt-12 text-center">
         <div className="inline-flex items-center gap-4 p-1 px-4 rounded-full bg-white/5 border border-white/5">
           <div className="flex -space-x-1">
@@ -83,7 +168,9 @@ const ArchitectureVisual = () => {
             <div className="w-2 h-2 rounded-full bg-accent-secondary"></div>
             <div className="w-2 h-2 rounded-full bg-accent-tertiary"></div>
           </div>
-          <span className="text-[10px] font-bold text-text-muted uppercase tracking-[0.25em]">End-to-End Encryption & Trust</span>
+          <span className="text-[10px] font-bold text-text-muted uppercase tracking-[0.25em]">
+            {activeLayer ? 'Click another layer or close to reset' : 'Click a layer card above to view details & importance'}
+          </span>
         </div>
       </div>
     </div>
