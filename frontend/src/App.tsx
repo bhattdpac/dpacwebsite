@@ -11,6 +11,11 @@ import LegalFrameworkLanding from './pages/LegalFrameworkLanding';
 import Academy from './pages/Academy';
 import ResearchHub from './pages/ResearchHub';
 import SynopsisView from './pages/SynopsisView';
+import Publications from './pages/Publications';
+import Experiments from './pages/Experiments';
+import ResearchJournal from './pages/ResearchJournal';
+import Teaching from './pages/Teaching';
+import Downloads from './pages/Downloads';
 
 function App() {
   return (
@@ -22,6 +27,11 @@ function App() {
           <Route path="/academy" element={<Academy />} />
           <Route path="/research" element={<ResearchHub />} />
           <Route path="/research/synopsis" element={<SynopsisView />} />
+          <Route path="/publications" element={<Publications />} />
+          <Route path="/experiments" element={<Experiments />} />
+          <Route path="/journal" element={<ResearchJournal />} />
+          <Route path="/teaching" element={<Teaching />} />
+          <Route path="/downloads" element={<Downloads />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route 

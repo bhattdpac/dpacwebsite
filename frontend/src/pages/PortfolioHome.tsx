@@ -66,11 +66,26 @@ const PortfolioHome = () => {
             </div>
             <span className="font-display text-2xl font-bold tracking-tight">DPAC<span className="text-accent-primary">.</span>DEV</span>
           </div>
-          <div className="hidden lg:flex gap-10 text-xs font-bold uppercase tracking-[0.2em] text-text-muted">
-            {['About', 'Objectives', 'Architecture', 'Skills', 'Work', 'Academy', 'Research'].map(item => (
-              <a key={item} href={item === 'Academy' ? '/academy' : item === 'Research' ? '/research' : item === 'Objectives' ? '#research-blueprint' : `#${item.toLowerCase()}`} className="hover:text-accent-primary transition-colors">
-                {item}
-              </a>
+          <div className="hidden lg:flex gap-8 text-xs font-bold uppercase tracking-[0.2em] text-text-muted">
+            {[
+              { label: 'About', path: '#about', isAnchor: true },
+              { label: 'Research', path: '/research', isAnchor: false },
+              { label: 'Publications', path: '/publications', isAnchor: false },
+              { label: 'Experiments', path: '/experiments', isAnchor: false },
+              { label: 'Journal', path: '/journal', isAnchor: false },
+              { label: 'Academy', path: '/academy', isAnchor: false },
+              { label: 'Teaching', path: '/teaching', isAnchor: false },
+              { label: 'Downloads', path: '/downloads', isAnchor: false },
+            ].map(item => (
+              item.isAnchor ? (
+                <a key={item.label} href={item.path} className="hover:text-accent-primary transition-colors">
+                  {item.label}
+                </a>
+              ) : (
+                <Link key={item.label} to={item.path} className="hover:text-accent-primary transition-colors">
+                  {item.label}
+                </Link>
+              )
             ))}
           </div>
           <div className="flex items-center gap-6">
