@@ -48,6 +48,19 @@ experiments = [
         },
         'observations': 'Compared models to human legal experts (94% accuracy). Found that while text classification baseline yields solid predictions, explainability metrics require additional structured reasoning graphs to match expert lawyer annotations.',
         'future_work': 'Combine smart contract generation mapping with CJPE precedents to recommend dispute resolution templates.'
+    },
+    {
+        'title': 'Indian Legal Named Entity Recognition (NER) Benchmark using OpenNyAI spaCy Pipeline',
+        'goal': 'Train and evaluate the OpenNyAI custom spaCy pipeline on Indian court judgments to extract legal entities (Judges, Courts, Statutes, Precedents, Petitioners).',
+        'dataset': 'OpenNyAI NER Corpus (46,545 annotated entities)',
+        'model_details': 'opennyai/spacy-pipeline + InLegalBERT-NER',
+        'metrics': {
+            'precision': 0.84,
+            'recall': 0.81,
+            'f1_score': 0.825
+        },
+        'observations': 'Rhetorical role classification pipeline segmentations (such as identifying facts vs rulings) are robust. Statute and Provision entity extractions are highly useful for auto-identifying regulatory smart contract parameters.',
+        'future_work': 'Integrate OpenNyAI NER outputs to automatically pre-populate smart contract compilation parameters.'
     }
 ]
 

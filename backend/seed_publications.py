@@ -36,6 +36,16 @@ publications = [
         'status': 'PUBLISHED',
         'doi': '10.18653/v1/2021.acl-long.313',
         'citation': 'Malik, V., Sanjay, R., Nigam, S. K., Ghosh, K., Guha, S. K., Bhattacharya, A., & Modi, A. (2021). ILDC for CJPE: Indian Legal Documents Corpus for Court Judgment Prediction and Explanation. Proceedings of the 59th ACL-IJCNLP, 4046–4062.'
+    },
+    {
+        'title': 'Named Entity Recognition in Indian Court Judgments',
+        'authors': 'Prathamesh Kalamkar, Astha Agarwal, Aman Tiwari, Smita Gupta, Saurabh Karn, Vivek Raghavan',
+        'venue': 'Proceedings of the Natural Legal Language Processing Workshop 2022 (NLLP 2022)',
+        'year': 2022,
+        'abstract': 'This paper introduces a corpus of 46,545 annotated legal named entities mapped to 14 fine-grained Indian legal entity types (e.g. COURT, LAWYER, STATUTE, PRECEDENT), releasing the OpenNyAI pipeline baseline model for structured Indian case parsing.',
+        'status': 'PUBLISHED',
+        'doi': '10.18653/v1/2022.nllp-1.15',
+        'citation': 'Kalamkar, P., Agarwal, A., Tiwari, A., Gupta, S., Karn, S., & Raghavan, V. (2022). Named Entity Recognition in Indian Court Judgments. Proceedings of the ACL Natural Legal Language Processing Workshop 2022, 184–193.'
     }
 ]
 
