@@ -119,3 +119,28 @@ class ResearchObjective(models.Model):
     def __str__(self):
         return f"Objective {self.num}: {self.title}"
 
+class Experiment(models.Model):
+    title = models.CharField(max_length=255)
+    goal = models.TextField()
+    dataset = models.CharField(max_length=255, blank=True, null=True)
+    model_details = models.CharField(max_length=255) # e.g., "AirLLM + LLaMA-3-70B"
+    metrics = models.JSONField(default=dict) # e.g. {"accuracy": 0.89, "vram_limit": "4GB"}
+    observations = models.TextField()
+    future_work = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+class ResearchLog(models.Model):
+    week_number = models.IntegerField()
+    date = models.DateField()
+    achievements = models.TextField()
+    blockers = models.TextField(blank=True, null=True)
+    next_goals = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Week {self.week_number} Log"
+
+
