@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import api, { uploadResearchPaper, getResearchPapers } from '../api/api';
+import { useAuth } from '../context/AuthContext';
 
 interface Paper {
   id: number;
@@ -24,16 +25,62 @@ interface Paper {
   abstract?: string;
   methodology?: string;
   findings?: string;
+  research_gap?: string;
+  dataset_notes?: string;
+  implementation_status?: string;
   created_at: string;
 }
 
 const ResearchHub = () => {
+  const { user } = useAuth();
   const [isUploading, setIsUploading] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [results, setResults] = useState<Paper | null>(null);
   const [recentPapers, setRecentPapers] = useState<Paper[]>([]);
   const [recommendations, setRecommendations] = useState<{ papers: any[]; cases: any[] }>({ papers: [], cases: [] });
   const [loadingRecommendations, setLoadingRecommendations] = useState(false);
+
+  const [gapInput, setGapInput] = useState('');
+  const [datasetInput, setDatasetInput] = useState('');
+  const [statusInput, setStatusInput] = useState('NOT_IMPLEMENTED');
+  const [savingNotes, setSavingNotes] = useState(false);
+
+  useEffect(() => {
+    if (results) {
+      setGapInput(results.research_gap || '');
+      setDatasetInput(results.dataset_notes || '');
+      setStatusInput(results.implementation_status || 'NOT_IMPLEMENTED');
+    }
+  }, [results]);
+
+  const loadRecentPapers = useCallback(async () => {
+    try {
+      const papers = await getResearchPapers();
+      setRecentPapers(papers);
+    } catch {
+      setRecentPapers([]);
+    }
+  }, []);
+
+  const saveResearchNotes = async () => {
+    if (!results) return;
+    setSavingNotes(true);
+    try {
+      const response = await api.patch(`/research-papers/${results.id}/`, {
+        research_gap: gapInput,
+        dataset_notes: datasetInput,
+        implementation_status: statusInput
+      });
+      setResults(response.data);
+      loadRecentPapers();
+      alert("Research notes saved successfully.");
+    } catch (err) {
+      console.error(err);
+      alert("Failed to save research notes.");
+    } finally {
+      setSavingNotes(false);
+    }
+  };
 
   const fetchRecommendations = useCallback(async (paperId: number) => {
     setLoadingRecommendations(true);
@@ -47,15 +94,6 @@ const ResearchHub = () => {
     }
   }, []);
 
-
-  const loadRecentPapers = useCallback(async () => {
-    try {
-      const papers = await getResearchPapers();
-      setRecentPapers(papers);
-    } catch {
-      // Error handled by interceptors or logged
-    }
-  }, []);
 
   useEffect(() => {
     loadRecentPapers();
@@ -227,6 +265,82 @@ const ResearchHub = () => {
                       </div>
                       <p className="text-xs text-text-muted font-medium leading-relaxed">{results.findings || "Section not found."}</p>
                     </div>
+                  </div>
+
+                  {/* Research Literature review Annotation panel */}
+                  <div className="border-t border-white/5 pt-6 space-y-6">
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-4">
+                        <h4 className="text-xs font-bold text-white uppercase tracking-widest flex items-center gap-2">
+                          <BookOpen className="w-3.5 h-3.5 text-accent-primary" /> Literature Review annotations
+                        </h4>
+                        <span className={`text-[9px] font-bold px-2.5 py-1 rounded-md border uppercase tracking-wider ${
+                          results.implementation_status === 'COMPLETED' ? 'bg-accent-tertiary/10 border-accent-tertiary/20 text-accent-tertiary' :
+                          results.implementation_status === 'IN_PROGRESS' ? 'bg-accent-primary/10 border-accent-primary/20 text-accent-primary' :
+                          'bg-white/5 border-white/10 text-text-muted'
+                        }`}>
+                          {results.implementation_status ? results.implementation_status.replace('_', ' ') : 'NOT STARTED'}
+                        </span>
+                      </div>
+                      {user?.role === 'LAWYER' && (
+                        <button 
+                          onClick={saveResearchNotes}
+                          disabled={savingNotes}
+                          className="px-4 py-2 rounded-xl bg-accent-primary text-white text-[9px] font-bold uppercase tracking-wider hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center gap-2 animate-pulse"
+                        >
+                          {savingNotes ? <Loader2 className="w-3 h-3 animate-spin" /> : "Save Annotations"}
+                        </button>
+                      )}
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-bold uppercase tracking-wider text-text-muted block">Research Gap Identified</label>
+                        {user?.role === 'LAWYER' ? (
+                          <textarea 
+                            value={gapInput}
+                            onChange={(e) => setGapInput(e.target.value)}
+                            placeholder="Describe any gaps in research identified in this paper..."
+                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-xs focus:outline-none focus:border-accent-primary h-24 font-medium"
+                          />
+                        ) : (
+                          <p className="text-xs text-text-muted leading-relaxed font-medium bg-white/[0.01] border border-white/5 p-3 rounded-xl min-h-[96px]">
+                            {results.research_gap || "No research gaps annotated yet."}
+                          </p>
+                        )}
+                      </div>
+
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-bold uppercase tracking-wider text-text-muted block">Dataset & Implementation Notes</label>
+                        {user?.role === 'LAWYER' ? (
+                          <textarea 
+                            value={datasetInput}
+                            onChange={(e) => setDatasetInput(e.target.value)}
+                            placeholder="Add notes about datasets used or framework implementation options..."
+                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-xs focus:outline-none focus:border-accent-primary h-24 font-medium"
+                          />
+                        ) : (
+                          <p className="text-xs text-text-muted leading-relaxed font-medium bg-white/[0.01] border border-white/5 p-3 rounded-xl min-h-[96px]">
+                            {results.dataset_notes || "No dataset or implementation notes annotated."}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    {user?.role === 'LAWYER' && (
+                      <div className="flex items-center gap-4 pt-2">
+                        <label className="text-[10px] font-bold uppercase tracking-wider text-text-muted">Set Implementation Status:</label>
+                        <select 
+                          value={statusInput}
+                          onChange={(e) => setStatusInput(e.target.value)}
+                          className="bg-bg-base border border-white/10 rounded-lg p-2 text-xs text-text-primary focus:outline-none focus:border-accent-primary"
+                        >
+                          <option value="NOT_IMPLEMENTED">Not Started</option>
+                          <option value="IN_PROGRESS">In Progress</option>
+                          <option value="COMPLETED">Completed</option>
+                        </select>
+                      </div>
+                    )}
                   </div>
                 </div>
 

@@ -1,13 +1,13 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import Document, Clause, SmartContractTemplate, ContractProposal, ResearchPaper, ResearchObjective
+from .models import Document, Clause, SmartContractTemplate, ContractProposal, ResearchPaper, ResearchObjective, Publication
 
 User = get_user_model()
 
 class ResearchPaperSerializer(serializers.ModelSerializer):
     class Meta:
         model = ResearchPaper
-        fields = ('id', 'title', 'file', 'abstract', 'methodology', 'findings', 'owner', 'created_at')
+        fields = ('id', 'title', 'file', 'abstract', 'methodology', 'findings', 'research_gap', 'dataset_notes', 'implementation_status', 'owner', 'created_at')
         read_only_fields = ('owner', 'created_at', 'abstract', 'methodology', 'findings')
 
 class ClauseSerializer(serializers.ModelSerializer):
@@ -72,4 +72,10 @@ class ResearchObjectiveSerializer(serializers.ModelSerializer):
     class Meta:
         model = ResearchObjective
         fields = '__all__'
+
+class PublicationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Publication
+        fields = '__all__'
+
 

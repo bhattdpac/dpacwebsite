@@ -5,9 +5,9 @@ from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from .serializers import (
     RegisterSerializer, UserSerializer, DocumentSerializer, 
-    ClauseSerializer, ContractProposalSerializer, ResearchPaperSerializer, ResearchObjectiveSerializer
+    ClauseSerializer, ContractProposalSerializer, ResearchPaperSerializer, ResearchObjectiveSerializer, PublicationSerializer
 )
-from .models import Document, Clause, ContractProposal, ResearchPaper, ResearchObjective
+from .models import Document, Clause, ContractProposal, ResearchPaper, ResearchObjective, Publication
 from .services import nlp_service, mapping_service, generation_service, deployment_service, research_nlp_service
 from .permissions import IsLawyer
 
@@ -175,5 +175,15 @@ class ResearchObjectiveViewSet(viewsets.ModelViewSet):
         if self.action in ['list', 'retrieve']:
             return [AllowAny()]
         return [IsAuthenticated(), IsLawyer()]
+
+class PublicationViewSet(viewsets.ModelViewSet):
+    queryset = Publication.objects.all().order_by('-year', '-created_at')
+    serializer_class = PublicationSerializer
+
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve']:
+            return [AllowAny()]
+        return [IsAuthenticated(), IsLawyer()]
+
 
 

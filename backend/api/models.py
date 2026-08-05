@@ -73,11 +73,34 @@ class ResearchPaper(models.Model):
     abstract = models.TextField(blank=True, null=True)
     methodology = models.TextField(blank=True, null=True)
     findings = models.TextField(blank=True, null=True)
+    research_gap = models.TextField(blank=True, null=True)
+    dataset_notes = models.TextField(blank=True, null=True)
+    implementation_status = models.CharField(max_length=50, default='NOT_IMPLEMENTED')
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='research_papers')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
+
+class Publication(models.Model):
+    STATUS_CHOICES = (
+        ('UNDER_REVIEW', 'Under Review'),
+        ('ACCEPTED', 'Accepted'),
+        ('PUBLISHED', 'Published'),
+    )
+    title = models.CharField(max_length=255)
+    authors = models.CharField(max_length=255)
+    venue = models.CharField(max_length=255)
+    year = models.IntegerField()
+    abstract = models.TextField(blank=True, null=True)
+    doi = models.CharField(max_length=100, blank=True, null=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='UNDER_REVIEW')
+    file_url = models.URLField(blank=True, null=True)
+    citation = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.title} ({self.year})"
 
 class ResearchObjective(models.Model):
     STATUS_CHOICES = (
