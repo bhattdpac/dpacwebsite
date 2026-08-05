@@ -34,6 +34,20 @@ experiments = [
         },
         'observations': 'Successfully flagged gendered terminology and notices of absolute discretion. Integrating these checks lowers downstream contract compliance risks and ensures ethical transparency.',
         'future_work': 'Map localized Hindi and bilingual legal templates to the pipeline model.'
+    },
+    {
+        'title': 'Court Judgment Prediction and Explanation (CJPE) on Indian Supreme Court ILDC Corpus',
+        'goal': 'Train and evaluate baseline models (Legal-BERT, RoBERTa) on the Indian Legal Documents Corpus to predict appeal decisions (granted vs denied) and extract salient rationales.',
+        'dataset': 'ILDC (35,000 Supreme Court of India case documents)',
+        'model_details': 'Hierarchical Occlusion Model + law-ai/InLegalBERT',
+        'metrics': {
+            'accuracy': 0.78,
+            'precision': 0.76,
+            'recall': 0.75,
+            'f1_score': 0.755
+        },
+        'observations': 'Compared models to human legal experts (94% accuracy). Found that while text classification baseline yields solid predictions, explainability metrics require additional structured reasoning graphs to match expert lawyer annotations.',
+        'future_work': 'Combine smart contract generation mapping with CJPE precedents to recommend dispute resolution templates.'
     }
 ]
 

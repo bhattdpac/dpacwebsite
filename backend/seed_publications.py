@@ -26,6 +26,16 @@ publications = [
         'status': 'UNDER_REVIEW',
         'doi': '10.1109/TSE.2025.35232',
         'citation': 'Bhatt, D., & Rawat, A. J. (2025). Fairness and Bias Audits in Natural Language Processing Pipelines for Smart Contract Mapping. IEEE Transactions on Software Engineering (Under Review).'
+    },
+    {
+        'title': 'ILDC for CJPE: Indian Legal Documents Corpus for Court Judgment Prediction and Explanation',
+        'authors': 'Vijit Malik, Rishabh Sanjay, Shubham Kumar Nigam, Kripabandhu Ghosh, Shouvik Kumar Guha, Arnab Bhattacharya, Ashutosh Modi',
+        'venue': 'Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics (ACL-IJCNLP)',
+        'year': 2021,
+        'abstract': 'This work introduces the Indian Legal Documents Corpus (ILDC), a dataset of 35k Indian Supreme Court cases annotated with original court decisions and gold standard explanations by legal experts, proposing the task of Court Judgment Prediction and Explanation (CJPE).',
+        'status': 'PUBLISHED',
+        'doi': '10.18653/v1/2021.acl-long.313',
+        'citation': 'Malik, V., Sanjay, R., Nigam, S. K., Ghosh, K., Guha, S. K., Bhattacharya, A., & Modi, A. (2021). ILDC for CJPE: Indian Legal Documents Corpus for Court Judgment Prediction and Explanation. Proceedings of the 59th ACL-IJCNLP, 4046–4062.'
     }
 ]
 
