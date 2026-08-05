@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import Document, Clause, SmartContractTemplate, ContractProposal, ResearchPaper
+from .models import Document, Clause, SmartContractTemplate, ContractProposal, ResearchPaper, ResearchObjective
 
 User = get_user_model()
 
@@ -67,3 +67,9 @@ class RegisterSerializer(serializers.ModelSerializer):
             last_name=validated_data.get('last_name', ''),
         )
         return user
+
+class ResearchObjectiveSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ResearchObjective
+        fields = '__all__'
+

@@ -78,3 +78,21 @@ class ResearchPaper(models.Model):
 
     def __str__(self):
         return self.title
+
+class ResearchObjective(models.Model):
+    STATUS_CHOICES = (
+        ('NOT_STARTED', 'Not Started'),
+        ('IN_PROGRESS', 'In Progress'),
+        ('COMPLETED', 'Completed'),
+    )
+    num = models.CharField(max_length=5) # e.g. "01", "02"
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    progress_percentage = models.IntegerField(default=0)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='NOT_STARTED')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"Objective {self.num}: {self.title}"
+

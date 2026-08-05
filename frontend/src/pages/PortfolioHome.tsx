@@ -69,12 +69,12 @@ const PortfolioHome = () => {
           <div className="hidden lg:flex gap-8 text-xs font-bold uppercase tracking-[0.2em] text-text-muted">
             {[
               { label: 'About', path: '#about', isAnchor: true },
+              { label: 'Dashboard', path: '/research-dashboard', isAnchor: false },
               { label: 'Research', path: '/research', isAnchor: false },
               { label: 'Publications', path: '/publications', isAnchor: false },
               { label: 'Experiments', path: '/experiments', isAnchor: false },
               { label: 'Journal', path: '/journal', isAnchor: false },
               { label: 'Academy', path: '/academy', isAnchor: false },
-              { label: 'Teaching', path: '/teaching', isAnchor: false },
               { label: 'Downloads', path: '/downloads', isAnchor: false },
             ].map(item => (
               item.isAnchor ? (
@@ -125,12 +125,12 @@ const PortfolioHome = () => {
             {/* Stats Counter Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-white/5">
               {[
-                { value: '81K+', label: 'Papers Indexed', detail: 'arXiv legal-blockchain corpus' },
-                { value: '24+', label: 'NLP Experiments', detail: 'Bias audits & contract runs' },
-                { value: '4', label: 'Publications', detail: 'Conference & journals' },
-                { value: '65%', label: 'Thesis Progress', detail: 'PhD milestone completion' }
+                { value: '81K+', label: 'Papers Indexed', detail: 'arXiv legal-blockchain corpus', path: '/research' },
+                { value: '24+', label: 'NLP Experiments', detail: 'Bias audits & contract runs', path: '/experiments' },
+                { value: '4', label: 'Publications', detail: 'Conference & journals', path: '/publications' },
+                { value: '65%', label: 'Thesis Progress', detail: 'PhD milestone completion', path: '/research-dashboard' }
               ].map((stat, i) => (
-                <div key={i} className="space-y-1">
+                <Link key={i} to={stat.path} className="space-y-1 block hover:opacity-85 hover:scale-[1.02] transition-all duration-300">
                   <div className="text-3xl md:text-4xl font-display font-bold tracking-tight text-transparent bg-clip-text sunset-gradient">
                     {stat.value}
                   </div>
@@ -140,7 +140,7 @@ const PortfolioHome = () => {
                   <div className="text-[9px] text-text-muted leading-tight">
                     {stat.detail}
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 

@@ -16,6 +16,7 @@ import Experiments from './pages/Experiments';
 import ResearchJournal from './pages/ResearchJournal';
 import Teaching from './pages/Teaching';
 import Downloads from './pages/Downloads';
+import ResearchDashboard from './pages/ResearchDashboard';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<PortfolioHome />} />
+          <Route path="/research-dashboard" element={<ResearchDashboard />} />
           <Route path="/legal-framework" element={<LegalFrameworkLanding />} />
           <Route path="/academy" element={<Academy />} />
           <Route path="/research" element={<ResearchHub />} />

@@ -9,7 +9,7 @@ from rest_framework_simplejwt.views import (
 )
 from api.views import (
     health_check, register_user, get_current_user, 
-    DocumentViewSet, ClauseViewSet, ContractProposalViewSet, ResearchPaperViewSet
+    DocumentViewSet, ClauseViewSet, ContractProposalViewSet, ResearchPaperViewSet, ResearchObjectiveViewSet
 )
 
 router = DefaultRouter()
@@ -17,6 +17,7 @@ router.register(r'documents', DocumentViewSet, basename='document')
 router.register(r'clauses', ClauseViewSet, basename='clause')
 router.register(r'proposals', ContractProposalViewSet, basename='proposal')
 router.register(r'research-papers', ResearchPaperViewSet, basename='research-paper')
+router.register(r'objectives', ResearchObjectiveViewSet, basename='objective')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
