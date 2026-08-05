@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import Document, Clause, SmartContractTemplate, ContractProposal, ResearchPaper, ResearchObjective, Publication, Experiment, ResearchLog
+from .models import Document, Clause, SmartContractTemplate, ContractProposal, ResearchPaper, ResearchObjective, Publication, Experiment, ResearchLog, Course, Resource
 
 User = get_user_model()
 
@@ -87,6 +87,17 @@ class ResearchLogSerializer(serializers.ModelSerializer):
     class Meta:
         model = ResearchLog
         fields = '__all__'
+
+class CourseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Course
+        fields = '__all__'
+
+class ResourceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Resource
+        fields = '__all__'
+
 
 
 

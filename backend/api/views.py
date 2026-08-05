@@ -5,9 +5,9 @@ from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from .serializers import (
     RegisterSerializer, UserSerializer, DocumentSerializer, 
-    ClauseSerializer, ContractProposalSerializer, ResearchPaperSerializer, ResearchObjectiveSerializer, PublicationSerializer, ExperimentSerializer, ResearchLogSerializer
+    ClauseSerializer, ContractProposalSerializer, ResearchPaperSerializer, ResearchObjectiveSerializer, PublicationSerializer, ExperimentSerializer, ResearchLogSerializer, CourseSerializer, ResourceSerializer
 )
-from .models import Document, Clause, ContractProposal, ResearchPaper, ResearchObjective, Publication, Experiment, ResearchLog
+from .models import Document, Clause, ContractProposal, ResearchPaper, ResearchObjective, Publication, Experiment, ResearchLog, Course, Resource
 from .services import nlp_service, mapping_service, generation_service, deployment_service, research_nlp_service
 from .permissions import IsLawyer
 
@@ -202,6 +202,32 @@ class ResearchLogViewSet(viewsets.ModelViewSet):
         if self.action in ['list', 'retrieve']:
             return [AllowAny()]
         return [IsAuthenticated(), IsLawyer()]
+
+class CourseViewSet(viewsets.ModelViewSet):
+    queryset = Course.objects.all().order_by('-created_at')
+    serializer_class = CourseSerializer
+
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve']:
+            return [AllowAny()]
+        return [IsAuthenticated(), IsLawyer()]
+
+class ResourceViewSet(viewsets.ModelViewSet):
+    queryset = Resource.objects.all().order_by('-created_at')
+    serializer_class = ResourceSerializer
+
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve', 'increment_download']:
+            return [AllowAny()]
+        return [IsAuthenticated(), IsLawyer()]
+
+    @action(detail=True, methods=['post'], permission_classes=[AllowAny])
+    def increment_download(self, request, pk=None):
+        resource = self.get_object()
+        resource.downloads_count += 1
+        resource.save()
+        return Response({'status': 'download count incremented', 'downloads_count': resource.downloads_count})
+
 
 
 

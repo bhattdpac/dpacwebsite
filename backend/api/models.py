@@ -143,4 +143,27 @@ class ResearchLog(models.Model):
     def __str__(self):
         return f"Week {self.week_number} Log"
 
+class Course(models.Model):
+    title = models.CharField(max_length=255)
+    code = models.CharField(max_length=50)
+    description = models.TextField()
+    syllabus_file = models.FileField(upload_to='syllabi/', blank=True, null=True)
+    resource_links = models.JSONField(default=list)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.code}: {self.title}"
+
+class Resource(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    file_type = models.CharField(max_length=50)
+    file_url = models.URLField(blank=True, null=True)
+    downloads_count = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+
 
