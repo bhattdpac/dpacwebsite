@@ -12,6 +12,7 @@ Update this file after every meaningful implementation change.
 
 ## Completed
 
+- **Academic Identity & Interactive Topology (Sprint 1 Step 1):** Updated [`PortfolioHome.tsx`](file:///root/dpacwebsite/frontend/src/pages/PortfolioHome.tsx) to display Assistant Professor and AI/Blockchain Research headlines, added real-time statistics counters, and embedded visual progress bars into the 4 PhD research objectives. Refactored [`ArchitectureVisual.tsx`](file:///root/dpacwebsite/frontend/src/components/ArchitectureVisual.tsx) to support interactive detail modules explaining the role, importance, and status of the Frontend, Core Engine, and Immutable Layers.
 - **Production VPS Deployment Execution:** Pushed the latest updates (incorporating FCA case precedent recommendation engine, arXiv paper recommendations list, and the PhD blueprint) to production at `/var/www/deepakbhatt.dev/`, ran frontend assets compilation and backend static compilation, checked Django database migration status, and reloaded Gunicorn and Npx Hardhat node via PM2.
 - ... (previous units)
 - Unit 11: Audit Trail & On-Chain Status (Final Dashboard) complete with Audit Timeline and Recent Deployments view.
