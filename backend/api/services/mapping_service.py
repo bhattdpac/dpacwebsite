@@ -20,7 +20,18 @@ def suggest_templates(document: Document) -> Optional[ContractProposal]:
     # Check for specific clause types
     proposals = []
     
-    # 1. Payment Mapping
+    # 1. Confidentiality/NDA Mapping (High Priority)
+    conf_clause = approved_clauses.filter(type__in=['CONFIDENTIALITY', 'NDA']).first()
+    if conf_clause:
+        template = SmartContractTemplate.objects.filter(contract_name='ConfidentialityNDA').first()
+        if template:
+            params = extract_nda_params(conf_clause)
+            proposals.append({
+                'template': template,
+                'parameters': params
+            })
+
+    # 2. Payment Mapping
     payment_clause = approved_clauses.filter(type='PAYMENT').first()
     if payment_clause:
         template = SmartContractTemplate.objects.filter(contract_name='PaymentEscrow').first()
@@ -31,7 +42,7 @@ def suggest_templates(document: Document) -> Optional[ContractProposal]:
                 'parameters': params
             })
 
-    # 2. Termination Mapping
+    # 3. Termination Mapping
     term_clause = approved_clauses.filter(type='TERMINATION').first()
     if term_clause:
         template = SmartContractTemplate.objects.filter(contract_name='TerminationLogic').first()
@@ -106,4 +117,28 @@ def extract_termination_params(clause: Clause) -> Dict[str, Any]:
     if days_match:
         params['durationDays'] = int(days_match.group(1))
         
+    return params
+
+def extract_nda_params(clause: Clause) -> Dict[str, Any]:
+    """
+    Extracts addresses and duration from confidentiality clauses.
+    """
+    text = clause.text
+    params = {
+        'disclosingParty': "0x0000000000000000000000000000000000000000",
+        'receivingParty': "0x0000000000000000000000000000000000000000",
+        'termDuration': "31536000" # 1 year default in seconds
+    }
+    
+    duration_match = re.search(r'(\d+)\s*(?:years|year|months|month)', text, re.IGNORECASE)
+    if duration_match:
+        try:
+            val = int(duration_match.group(1))
+            if 'month' in duration_match.group(0).lower():
+                params['termDuration'] = str(val * 30 * 86400)
+            else:
+                params['termDuration'] = str(val * 365 * 86400)
+        except:
+            pass
+            
     return params

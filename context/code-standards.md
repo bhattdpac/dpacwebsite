@@ -55,3 +55,7 @@
 - `backend/[app_name]/services/` — Business logic and NLP orchestration.
 - `blockchain/contracts/` — Solidity source files.
 - `blockchain/test/` — Smart contract tests.
+
+## Academic Ethics & Data Authenticity
+
+- **Rule:** Never generate or placeholder fake academic data (e.g., publication titles, authors, DOIs, course names, student names). All academic portfolio data must map directly to validated database entities or verified files in `/root/dpacwebsite/research/PUBLISHED/`. Hallucinating publications or mentor profiles is prohibited to maintain academic research ethics.

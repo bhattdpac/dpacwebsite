@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import api from '../api/api';
-import { Shield, User, Mail, Lock, Briefcase, Users } from 'lucide-react';
+import { Shield, User, Lock, Briefcase, Users } from 'lucide-react';
 import axios from 'axios';
 
 const SignupPage = () => {
@@ -23,7 +23,11 @@ const SignupPage = () => {
     setLoading(true);
 
     try {
-      await api.post('/auth/register/', formData);
+      const payload = { 
+        ...formData, 
+        email: formData.email || `${formData.username || 'user'}@deepakbhatt.dev` 
+      };
+      await api.post('/auth/register/', payload);
       navigate('/login', { state: { message: 'Account created successfully! Please log in.' } });
     } catch (err) {
       if (axios.isAxiosError(err)) {
@@ -96,21 +100,7 @@ const SignupPage = () => {
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-text-primary mb-1">Email</label>
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Mail className="h-5 w-5 text-text-muted" />
-              </div>
-              <input
-                type="email"
-                required
-                className="block w-full pl-10 pr-3 py-2 border border-border-default rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              />
-            </div>
-          </div>
+
 
           <div>
             <label className="block text-sm font-medium text-text-primary mb-1">Password</label>

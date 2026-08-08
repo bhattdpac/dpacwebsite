@@ -13,7 +13,8 @@ import {
   History,
   Home,
   BookOpen,
-  Lock
+  Lock,
+  Presentation
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import api, { uploadResearchPaper, getResearchPapers } from '../api/api';
@@ -129,7 +130,7 @@ const ResearchHub = () => {
   return (
     <div className="min-h-screen bg-bg-base font-sans text-text-primary selection:bg-accent-primary selection:text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-[100] bg-bg-base/80 backdrop-blur-xl border-b border-white/5 px-8 py-5">
+      <nav className="fixed top-0 left-0 right-0 z-[100] bg-bg-base/85 backdrop-blur-xl border-b border-border-default/60 px-8 py-5">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-accent-secondary flex items-center justify-center shadow-lg shadow-accent-secondary/20">
@@ -138,18 +139,19 @@ const ResearchHub = () => {
             <span className="font-display text-xl font-bold tracking-tight">DPAC<span className="text-accent-secondary">.</span>RESEARCH</span>
           </Link>
           <div className="flex gap-8">
-            <Link to="/academy" className="text-[10px] font-bold uppercase tracking-widest text-text-muted hover:text-white transition-colors">Academy</Link>
-            <Link to="/" className="text-[10px] font-bold uppercase tracking-widest text-text-muted hover:text-white transition-colors">Portfolio</Link>
+            <Link to="/academy" className="text-[10px] font-bold uppercase tracking-widest text-text-muted hover:text-accent-primary transition-colors">Academy</Link>
+            <Link to="/" className="text-[10px] font-bold uppercase tracking-widest text-text-muted hover:text-accent-primary transition-colors">Portfolio</Link>
           </div>
         </div>
       </nav>
 
       <section className="pt-48 pb-24 px-8 relative overflow-hidden">
-        <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-accent-secondary/5 rounded-full blur-[120px] -z-10"></div>
+        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-accent-primary/10 to-accent-secondary/10 rounded-full blur-[120px] -z-10 animate-float-slow"></div>
+        <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-gradient-to-bl from-accent-secondary/10 to-rose-500/8 rounded-full blur-[100px] -z-10 animate-float-delay"></div>
         
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-start">
           <div className="space-y-10">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-accent-secondary text-[10px] font-bold uppercase tracking-[0.3em]">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-border-default/30 border border-border-default text-accent-secondary text-[10px] font-bold uppercase tracking-[0.3em]">
               AI Literature Reviewer
             </div>
             <h1 className="text-6xl md:text-7xl font-display font-bold leading-tight tracking-tight">
@@ -163,7 +165,7 @@ const ResearchHub = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Link 
                 to="/research/synopsis" 
-                className="group p-6 space-card rounded-2xl border border-white/5 hover:border-accent-secondary/50 transition-all flex items-center gap-5 flex-1"
+                className="group p-6 space-card rounded-2xl border border-border-default/60 hover:border-accent-secondary/50 transition-all flex items-center gap-5 flex-1"
               >
                 <div className="w-12 h-12 rounded-xl sunset-gradient flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-transform">
                   <FileText className="text-white w-6 h-6" />
@@ -173,17 +175,31 @@ const ResearchHub = () => {
                   <p className="text-sm font-bold group-hover:text-accent-secondary transition-colors">Read Research Synopsis</p>
                 </div>
               </Link>
+
+              <a 
+                href="/RDC_Presentation.pptx" 
+                download
+                className="group p-6 space-card rounded-2xl border border-border-default/60 hover:border-accent-primary/50 transition-all flex items-center gap-5 flex-1"
+              >
+                <div className="w-12 h-12 rounded-xl bg-accent-primary flex items-center justify-center shadow-lg shadow-accent-primary/20 group-hover:scale-110 transition-transform">
+                  <Presentation className="text-white w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-text-muted mb-1">RDC Review</p>
+                  <p className="text-sm font-bold group-hover:text-accent-primary transition-colors">Download Presentation</p>
+                </div>
+              </a>
             </div>
 
             <div className="space-y-6 pt-6">
               <div className="flex items-center gap-4 text-sm font-medium text-text-muted">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary">
+                <div className="w-10 h-10 rounded-xl bg-border-default/30 border border-border-default flex items-center justify-center text-accent-secondary">
                   <Database className="w-5 h-5" />
                 </div>
                 <span>Automated Metadata Extraction</span>
               </div>
               <div className="flex items-center gap-4 text-sm font-medium text-text-muted">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary">
+                <div className="w-10 h-10 rounded-xl bg-border-default/30 border border-border-default flex items-center justify-center text-accent-secondary">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <span>Immutable Citation Integrity</span>
@@ -192,7 +208,7 @@ const ResearchHub = () => {
           </div>
 
           {/* Upload Card */}
-          <div className="space-card rounded-[2.5rem] p-12 border border-white/5 relative">
+          <div className="space-card rounded-[2.5rem] p-12 border border-border-default/60 relative">
             {!results ? (
               <div className="space-y-8">
                 <div className="text-center space-y-4">
@@ -200,8 +216,8 @@ const ResearchHub = () => {
                   <p className="text-text-muted text-sm font-medium">Supported formats: PDF (Max 20MB)</p>
                 </div>
 
-                <div className="border-2 border-dashed border-white/10 rounded-3xl p-12 text-center space-y-6 bg-white/[0.02] hover:bg-white/[0.04] transition-all group">
-                  <div className="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                <div className="border-2 border-dashed border-border-default rounded-3xl p-12 text-center space-y-6 bg-bg-base/40 hover:bg-white/[0.04] transition-all group">
+                  <div className="w-20 h-20 rounded-full bg-border-default/30 border border-border-default flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
                     <Upload className="w-8 h-8 text-accent-secondary" />
                   </div>
                   <div className="space-y-2">
@@ -214,7 +230,7 @@ const ResearchHub = () => {
                 </div>
 
                 {selectedFile && (
-                  <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                  <div className="p-6 rounded-2xl bg-border-default/30 border border-border-default flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       <FileText className="w-6 h-6 text-accent-secondary" />
                       <div className="max-w-[200px] truncate">
@@ -234,12 +250,12 @@ const ResearchHub = () => {
               </div>
             ) : (
               <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
-                <div className="flex items-center justify-between border-b border-white/5 pb-8">
+                <div className="flex items-center justify-between border-b border-border-default/60 pb-8">
                   <div>
                     <h3 className="text-2xl font-display font-bold mb-1 truncate max-w-[250px]">{results.title}</h3>
                     <p className="text-xs font-bold text-accent-secondary uppercase tracking-[0.2em]">Analysis Complete</p>
                   </div>
-                  <button onClick={() => {setResults(null); setSelectedFile(null);}} className="text-[10px] font-bold uppercase tracking-widest text-text-muted hover:text-white transition-colors">
+                  <button onClick={() => {setResults(null); setSelectedFile(null);}} className="text-[10px] font-bold uppercase tracking-widest text-text-muted hover:text-accent-primary transition-colors">
                     New Review
                   </button>
                 </div>
@@ -268,7 +284,7 @@ const ResearchHub = () => {
                   </div>
 
                   {/* Research Literature review Annotation panel */}
-                  <div className="border-t border-white/5 pt-6 space-y-6">
+                  <div className="border-t border-border-default/60 pt-6 space-y-6">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-4">
                         <h4 className="text-xs font-bold text-white uppercase tracking-widest flex items-center gap-2">
@@ -277,7 +293,7 @@ const ResearchHub = () => {
                         <span className={`text-[9px] font-bold px-2.5 py-1 rounded-md border uppercase tracking-wider ${
                           results.implementation_status === 'COMPLETED' ? 'bg-accent-tertiary/10 border-accent-tertiary/20 text-accent-tertiary' :
                           results.implementation_status === 'IN_PROGRESS' ? 'bg-accent-primary/10 border-accent-primary/20 text-accent-primary' :
-                          'bg-white/5 border-white/10 text-text-muted'
+                          'bg-border-default/30 border-border-default text-text-muted'
                         }`}>
                           {results.implementation_status ? results.implementation_status.replace('_', ' ') : 'NOT STARTED'}
                         </span>
@@ -301,10 +317,10 @@ const ResearchHub = () => {
                             value={gapInput}
                             onChange={(e) => setGapInput(e.target.value)}
                             placeholder="Describe any gaps in research identified in this paper..."
-                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-xs focus:outline-none focus:border-accent-primary h-24 font-medium"
+                            className="w-full bg-border-default/30 border border-border-default rounded-xl p-3 text-xs focus:outline-none focus:border-accent-primary h-24 font-medium"
                           />
                         ) : (
-                          <p className="text-xs text-text-muted leading-relaxed font-medium bg-white/[0.01] border border-white/5 p-3 rounded-xl min-h-[96px]">
+                          <p className="text-xs text-text-muted leading-relaxed font-medium bg-white/[0.01] border border-border-default/60 p-3 rounded-xl min-h-[96px]">
                             {results.research_gap || "No research gaps annotated yet."}
                           </p>
                         )}
@@ -317,10 +333,10 @@ const ResearchHub = () => {
                             value={datasetInput}
                             onChange={(e) => setDatasetInput(e.target.value)}
                             placeholder="Add notes about datasets used or framework implementation options..."
-                            className="w-full bg-white/5 border border-white/10 rounded-xl p-3 text-xs focus:outline-none focus:border-accent-primary h-24 font-medium"
+                            className="w-full bg-border-default/30 border border-border-default rounded-xl p-3 text-xs focus:outline-none focus:border-accent-primary h-24 font-medium"
                           />
                         ) : (
-                          <p className="text-xs text-text-muted leading-relaxed font-medium bg-white/[0.01] border border-white/5 p-3 rounded-xl min-h-[96px]">
+                          <p className="text-xs text-text-muted leading-relaxed font-medium bg-white/[0.01] border border-border-default/60 p-3 rounded-xl min-h-[96px]">
                             {results.dataset_notes || "No dataset or implementation notes annotated."}
                           </p>
                         )}
@@ -333,7 +349,7 @@ const ResearchHub = () => {
                         <select 
                           value={statusInput}
                           onChange={(e) => setStatusInput(e.target.value)}
-                          className="bg-bg-base border border-white/10 rounded-lg p-2 text-xs text-text-primary focus:outline-none focus:border-accent-primary"
+                          className="bg-bg-base border border-border-default rounded-lg p-2 text-xs text-text-primary focus:outline-none focus:border-accent-primary"
                         >
                           <option value="NOT_IMPLEMENTED">Not Started</option>
                           <option value="IN_PROGRESS">In Progress</option>
@@ -345,7 +361,7 @@ const ResearchHub = () => {
                 </div>
 
                 {/* Recommendations Grid */}
-                <div className="border-t border-white/5 pt-8 grid md:grid-cols-2 gap-6">
+                <div className="border-t border-border-default/60 pt-8 grid md:grid-cols-2 gap-6">
                   {/* arXiv Recommendations */}
                   <div className="space-y-4">
                     <h4 className="text-xs font-bold text-accent-secondary uppercase tracking-widest flex items-center gap-2">
@@ -358,7 +374,7 @@ const ResearchHub = () => {
                     ) : recommendations.papers && recommendations.papers.length > 0 ? (
                       <div className="space-y-3 max-h-[250px] overflow-y-auto pr-1 scrollbar-thin">
                         {recommendations.papers.map((rec: any) => (
-                          <div key={rec.id} className="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-accent-secondary/35 transition-colors">
+                          <div key={rec.id} className="p-4 rounded-xl bg-bg-base/40 border border-border-default/60 hover:border-accent-secondary/35 transition-colors">
                             <p className="font-bold text-sm text-text-primary leading-snug line-clamp-1">{rec.title}</p>
                             <p className="text-[10px] text-text-muted mt-1 truncate">Authors: {rec.authors} | Class: {rec.categories}</p>
                             <p className="text-[10px] text-text-muted line-clamp-2 mt-2 font-medium italic">"{rec.abstract}"</p>
@@ -371,7 +387,7 @@ const ResearchHub = () => {
                   </div>
 
                   {/* FCA Legal Case Recommendations */}
-                  <div className="space-y-4 border-t md:border-t-0 md:border-l border-white/5 pt-6 md:pt-0 md:pl-6">
+                  <div className="space-y-4 border-t md:border-t-0 md:border-l border-border-default/60 pt-6 md:pt-0 md:pl-6">
                     <h4 className="text-xs font-bold text-accent-primary uppercase tracking-widest flex items-center gap-2">
                       <ShieldCheck className="h-4 w-4" /> Recommended Legal Cases (FCA)
                     </h4>
@@ -382,7 +398,7 @@ const ResearchHub = () => {
                     ) : recommendations.cases && recommendations.cases.length > 0 ? (
                       <div className="space-y-3 max-h-[250px] overflow-y-auto pr-1 scrollbar-thin">
                         {recommendations.cases.map((rec: any) => (
-                          <div key={rec.id} className="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-accent-primary/35 transition-colors">
+                          <div key={rec.id} className="p-4 rounded-xl bg-bg-base/40 border border-border-default/60 hover:border-accent-primary/35 transition-colors">
                             <p className="font-bold text-sm text-text-primary leading-snug line-clamp-1">{rec.name}</p>
                             {rec.catchphrases && (
                               <p className="text-[10px] text-text-muted mt-1 line-clamp-2">
@@ -410,7 +426,7 @@ const ResearchHub = () => {
 
 
                 <div className="pt-8">
-                  <button className="w-full bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center justify-between group hover:bg-white/10 transition-all">
+                  <button className="w-full bg-border-default/30 border border-border-default p-6 rounded-2xl flex items-center justify-between group hover:bg-border-default/50 transition-all">
                     <div className="flex items-center gap-4 text-left">
                       <div className="w-10 h-10 rounded-xl sunset-gradient flex items-center justify-center">
                         <Zap className="text-white w-5 h-5" />
@@ -430,11 +446,11 @@ const ResearchHub = () => {
       </section>
 
       {/* Recent Reviews Section */}
-      <section className="py-24 px-8 border-t border-white/5">
+      <section className="py-24 px-8 border-t border-border-default/60">
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary">
+              <div className="w-10 h-10 rounded-xl bg-border-default/30 border border-border-default flex items-center justify-center text-accent-secondary">
                 <History className="w-5 h-5" />
               </div>
               <h2 className="text-3xl font-display font-bold uppercase tracking-tight">Recent Reviews</h2>
@@ -445,14 +461,14 @@ const ResearchHub = () => {
             {recentPapers.map((paper) => (
               <div 
                 key={paper.id} 
-                className="p-8 space-card rounded-3xl border border-white/5 hover:bg-white/[0.04] transition-all cursor-pointer group" 
+                className="p-8 space-card rounded-3xl border border-border-default/60 hover:bg-white/[0.04] transition-all cursor-pointer group" 
                 onClick={() => {
                   setResults(paper);
                   fetchRecommendations(paper.id);
                 }}
               >
                 <div className="flex justify-between items-start mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-bg-base border border-white/5 flex items-center justify-center text-text-muted group-hover:border-accent-secondary transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-bg-base border border-border-default/60 flex items-center justify-center text-text-muted group-hover:border-accent-secondary transition-colors">
                     <FileText className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-bold text-text-muted uppercase tracking-widest">{new Date(paper.created_at).toLocaleDateString()}</span>
@@ -467,7 +483,7 @@ const ResearchHub = () => {
               </div>
             ))}
             {recentPapers.length === 0 && (
-              <div className="col-span-full py-24 text-center border-2 border-dashed border-white/5 rounded-[2.5rem]">
+              <div className="col-span-full py-24 text-center border-2 border-dashed border-border-default/60 rounded-[2.5rem]">
                 <p className="text-text-muted font-medium uppercase tracking-widest text-xs">No research papers analyzed yet.</p>
               </div>
             )}
@@ -476,7 +492,7 @@ const ResearchHub = () => {
       </section>
 
       {/* Detailed Research Context & Guide */}
-      <section className="py-24 px-8 border-t border-white/5 bg-white/[0.01]">
+      <section className="py-24 px-8 border-t border-border-default/60 bg-white/[0.01]">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-secondary/10 text-accent-secondary text-[10px] font-bold uppercase tracking-widest border border-accent-secondary/20">
@@ -490,8 +506,8 @@ const ResearchHub = () => {
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* The Research Thesis */}
-            <div className="p-8 space-card rounded-3xl border border-white/5 space-y-6">
-              <h3 className="text-2xl font-display font-bold text-accent-secondary border-b border-white/5 pb-4">What My Research Is About</h3>
+            <div className="p-8 space-card rounded-3xl border border-border-default/60 space-y-6">
+              <h3 className="text-2xl font-display font-bold text-accent-secondary border-b border-border-default/60 pb-4">What My Research Is About</h3>
               
               <div className="space-y-4 text-sm text-text-muted leading-relaxed">
                 <p>
@@ -514,15 +530,15 @@ const ResearchHub = () => {
             </div>
 
             {/* How To Guide */}
-            <div className="p-8 space-card rounded-3xl border border-white/5 space-y-6">
-              <h3 className="text-2xl font-display font-bold text-accent-primary border-b border-white/5 pb-4">How To Use the System</h3>
+            <div className="p-8 space-card rounded-3xl border border-border-default/60 space-y-6">
+              <h3 className="text-2xl font-display font-bold text-accent-primary border-b border-border-default/60 pb-4">How To Use the System</h3>
               
               <div className="space-y-4 text-sm text-text-muted leading-relaxed">
                 <p>
                   The framework coordinates a seamless 5-step pipeline matching raw document uploads to deployed blockchain transactions:
                 </p>
 
-                <div className="relative border-l border-white/10 pl-6 space-y-6">
+                <div className="relative border-l border-border-default pl-6 space-y-6">
                   <div className="relative">
                     <span className="absolute -left-[30px] w-2.5 h-2.5 rounded-full bg-accent-secondary mt-1.5" />
                     <h5 className="font-bold text-text-primary text-xs uppercase tracking-wider">Step 1: Document Upload</h5>
@@ -560,7 +576,7 @@ const ResearchHub = () => {
       </section>
 
       {/* Super Simple Site Map / Guide */}
-      <section className="py-24 px-8 border-t border-white/5 bg-white/[0.01]">
+      <section className="py-24 px-8 border-t border-border-default/60 bg-white/[0.01]">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-secondary/10 text-accent-secondary text-[10px] font-bold uppercase tracking-widest border border-accent-secondary/20">
@@ -573,8 +589,8 @@ const ResearchHub = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-            <Link to="/" className="p-6 space-card rounded-2xl border border-white/5 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
+            <Link to="/" className="p-6 space-card rounded-2xl border border-border-default/60 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
+              <div className="w-10 h-10 rounded-xl bg-border-default/30 border border-border-default flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
                 <Home className="w-5 h-5" />
               </div>
               <h4 className="text-sm font-bold mb-2 group-hover:text-accent-secondary transition-colors">1. Home Base</h4>
@@ -586,8 +602,8 @@ const ResearchHub = () => {
               </div>
             </Link>
 
-            <Link to="/academy" className="p-6 space-card rounded-2xl border border-white/5 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
+            <Link to="/academy" className="p-6 space-card rounded-2xl border border-border-default/60 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
+              <div className="w-10 h-10 rounded-xl bg-border-default/30 border border-border-default flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
                 <BookOpen className="w-5 h-5" />
               </div>
               <h4 className="text-sm font-bold mb-2 group-hover:text-accent-secondary transition-colors">2. Blockchain School</h4>
@@ -599,8 +615,8 @@ const ResearchHub = () => {
               </div>
             </Link>
 
-            <Link to="/research" className="p-6 space-card rounded-2xl border border-white/5 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
+            <Link to="/research" className="p-6 space-card rounded-2xl border border-border-default/60 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
+              <div className="w-10 h-10 rounded-xl bg-border-default/30 border border-border-default flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
                 <Brain className="w-5 h-5" />
               </div>
               <h4 className="text-sm font-bold mb-2 group-hover:text-accent-secondary transition-colors">3. Research Hub</h4>
@@ -612,8 +628,8 @@ const ResearchHub = () => {
               </div>
             </Link>
 
-            <Link to="/research/synopsis" className="p-6 space-card rounded-2xl border border-white/5 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
+            <Link to="/research/synopsis" className="p-6 space-card rounded-2xl border border-border-default/60 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
+              <div className="w-10 h-10 rounded-xl bg-border-default/30 border border-border-default flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
                 <FileText className="w-5 h-5" />
               </div>
               <h4 className="text-sm font-bold mb-2 group-hover:text-accent-secondary transition-colors">4. Simple Story</h4>
@@ -625,8 +641,8 @@ const ResearchHub = () => {
               </div>
             </Link>
 
-            <Link to="/login" className="p-6 space-card rounded-2xl border border-white/5 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
+            <Link to="/login" className="p-6 space-card rounded-2xl border border-border-default/60 hover:border-accent-secondary/50 transition-all flex flex-col h-full group">
+              <div className="w-10 h-10 rounded-xl bg-border-default/30 border border-border-default flex items-center justify-center text-accent-secondary mb-4 group-hover:scale-110 transition-transform">
                 <Lock className="w-5 h-5" />
               </div>
               <h4 className="text-sm font-bold mb-2 group-hover:text-accent-secondary transition-colors">5. Lawyer Room</h4>

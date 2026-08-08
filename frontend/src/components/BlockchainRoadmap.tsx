@@ -54,18 +54,18 @@ const roadmapItems = [
 const BlockchainRoadmap = () => {
   return (
     <div className="max-w-4xl mx-auto py-12 px-6">
-      <div className="relative border-l-2 border-white/5 ml-3 md:ml-6 space-y-16">
+      <div className="relative border-l-2 border-border-default/60 ml-3 md:ml-6 space-y-16">
         {roadmapItems.map((item, index) => (
           <div key={index} className="relative group pl-10">
             {/* Step Marker */}
-            <div className={`absolute -left-[1.35rem] md:-left-[1.65rem] top-0 w-10 h-10 rounded-2xl bg-bg-surface border border-white/10 shadow-xl flex items-center justify-center z-10 group-hover:scale-110 group-hover:border-accent-primary transition-all duration-300`}>
+            <div className={`absolute -left-[1.35rem] md:-left-[1.65rem] top-0 w-10 h-10 rounded-2xl bg-bg-surface border border-border-default shadow-xl flex items-center justify-center z-10 group-hover:scale-110 group-hover:border-accent-primary transition-all duration-300`}>
               {item.icon}
             </div>
             
             <div className="space-y-6">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <h3 className="text-3xl font-display font-bold text-text-primary tracking-tight">{item.stage}</h3>
-                <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-text-muted text-[10px] font-bold uppercase tracking-widest border border-white/10">
+                <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-border-default/30 text-text-muted text-[10px] font-bold uppercase tracking-widest border border-border-default">
                   <Play className="w-3 h-3 text-accent-primary" /> Curated Content
                 </div>
               </div>
@@ -76,7 +76,7 @@ const BlockchainRoadmap = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Topics */}
-                <div className="space-card p-6 rounded-2xl border border-white/5">
+                <div className="space-card p-6 rounded-2xl border border-border-default/60">
                   <div className="flex items-center gap-2 mb-4 font-bold text-xs uppercase tracking-[0.2em] text-accent-tertiary">
                     <BookOpen className="w-4 h-4" /> Core Modules
                   </div>
@@ -91,13 +91,13 @@ const BlockchainRoadmap = () => {
                 </div>
 
                 {/* Channels */}
-                <div className="bg-white/5 p-6 rounded-2xl border border-white/5">
+                <div className="bg-border-default/30 p-6 rounded-2xl border border-border-default/60">
                   <div className="flex items-center gap-2 mb-4 font-bold text-xs uppercase tracking-[0.2em] text-accent-secondary">
                     <Play className="w-4 h-4" /> Expert Channels
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {item.channels.map((channel, i) => (
-                      <span key={i} className="text-[10px] font-bold px-3 py-1.5 rounded-lg bg-bg-base border border-white/10 text-text-muted hover:text-text-primary hover:border-accent-primary transition-all">
+                      <span key={i} className="text-[10px] font-bold px-3 py-1.5 rounded-lg bg-bg-base border border-border-default text-text-muted hover:text-text-primary hover:border-accent-primary transition-all">
                         {channel}
                       </span>
                     ))}
@@ -110,8 +110,8 @@ const BlockchainRoadmap = () => {
 
         {/* Final Trophy */}
         <div className="relative group pl-10">
-          <div className="absolute -left-[1.35rem] md:-left-[1.65rem] top-0 w-10 h-10 rounded-2xl bg-gradient-to-br from-orange-500 to-magenta-500 border border-white/20 shadow-[0_0_30px_rgba(249,115,22,0.3)] flex items-center justify-center z-10 animate-bounce">
-            <Trophy className="w-5 h-5 text-white" />
+          <div className="absolute -left-[1.35rem] md:-left-[1.65rem] top-0 w-10 h-10 rounded-2xl bg-gradient-to-br from-orange-500 to-magenta-500 border border-border-default shadow-[0_0_30px_rgba(249,115,22,0.3)] flex items-center justify-center z-10 animate-bounce">
+            <Trophy className="w-5 h-5 text-text-primary" />
           </div>
           <div className="space-y-2">
             <h3 className="text-2xl font-display font-bold text-accent-primary">Lead Systems Architect</h3>

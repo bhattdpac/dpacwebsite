@@ -70,7 +70,7 @@ const ResearchJournal = () => {
       <div className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-[100] bg-bg-base/80 backdrop-blur-xl border-b border-white/5 px-8 py-5">
+      <nav className="fixed top-0 left-0 right-0 z-[100] bg-bg-base/80 backdrop-blur-xl border-b border-border-default/60 px-8 py-5">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-8 h-8 rounded-lg bg-accent-primary flex items-center justify-center shadow-lg shadow-accent-primary/20 group-hover:scale-110 transition-transform">
@@ -78,7 +78,7 @@ const ResearchJournal = () => {
             </div>
             <span className="font-display text-xl font-bold tracking-tight">BACK TO<span className="text-accent-primary">.</span>HOME</span>
           </Link>
-          <div className="px-4 py-2 space-card rounded-xl border border-white/5 text-[10px] font-bold uppercase tracking-widest text-text-muted flex items-center gap-2">
+          <div className="px-4 py-2 space-card rounded-xl border border-border-default/60 text-[10px] font-bold uppercase tracking-widest text-text-muted flex items-center gap-2">
             <BookOpenCheck className="w-3.5 h-3.5 text-accent-primary" /> Progress Journal
           </div>
         </div>
@@ -86,7 +86,7 @@ const ResearchJournal = () => {
 
       {/* Main Content */}
       <main className="flex-grow pt-32 pb-24 px-8 max-w-4xl mx-auto w-full space-y-12">
-        <div className="space-y-4 pb-6 border-b border-white/5">
+        <div className="space-y-4 pb-6 border-b border-border-default/60">
           <h1 className="text-4xl font-display font-bold uppercase tracking-tight">Research Journal</h1>
           <p className="text-sm text-text-muted leading-relaxed max-w-2xl">
             A weekly chronological log detailing milestones reached, blockers resolved, and next actionable steps for the duration of the PhD candidature.
@@ -99,7 +99,7 @@ const ResearchJournal = () => {
             <Loader2 className="w-8 h-8 text-accent-primary animate-spin" />
           </div>
         ) : (
-          <div className="relative border-l border-white/10 pl-8 ml-4 space-y-12 py-4">
+          <div className="relative border-l border-border-default pl-8 ml-4 space-y-12 py-4">
             {logs.map((log) => (
               <div key={log.id} className="relative space-y-4 animate-in fade-in duration-500">
                 {/* Visual Timeline Marker Node */}
@@ -112,13 +112,13 @@ const ResearchJournal = () => {
                   <span className="text-lg font-mono font-bold text-accent-primary uppercase tracking-wider">
                     Week {log.week_number}
                   </span>
-                  <span className="text-[10px] font-bold text-text-muted uppercase tracking-widest bg-white/5 px-2.5 py-1 rounded">
+                  <span className="text-[10px] font-bold text-text-muted uppercase tracking-widest bg-border-default/30 px-2.5 py-1 rounded">
                     {new Date(log.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
                   </span>
                 </div>
 
                 {/* Content Card */}
-                <div className="p-8 space-card rounded-3xl border border-white/5 hover:border-white/10 transition-colors space-y-6 relative overflow-hidden">
+                <div className="p-8 space-card rounded-3xl border border-border-default/60 hover:border-border-default transition-colors space-y-6 relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-500/[0.01] via-transparent to-magenta-500/[0.01] pointer-events-none"></div>
 
                   <div className="space-y-4">
@@ -156,7 +156,7 @@ const ResearchJournal = () => {
       </main>
 
       {/* Footer */}
-      <footer className="py-16 border-t border-white/5 text-center">
+      <footer className="py-16 border-t border-border-default/60 text-center">
         <p className="text-text-muted text-[10px] font-bold uppercase tracking-[0.4em]">
           &copy; 2026 Deepak Bhatt • Academic Integrity Protocol
         </p>

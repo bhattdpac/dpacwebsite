@@ -117,7 +117,7 @@ const DocumentReview = () => {
   }
 
   return (
-    <div className="min-h-screen bg-bg-base flex flex-col">
+    <div className="legal-app-theme min-h-screen bg-bg-base flex flex-col">
       {/* Header */}
       <header className="bg-bg-surface border-b border-border-default px-8 py-4 sticky top-0 z-10 shadow-sm">
         <div className="max-w-[1600px] mx-auto flex justify-between items-center">
@@ -153,12 +153,12 @@ const DocumentReview = () => {
               </div>
             </div>
             <button 
-              disabled={approvedCount < clauses.length || generating}
+              disabled={clauses.length === 0 || approvedCount < clauses.length || generating}
               onClick={handleGenerate}
               className={`flex items-center gap-2 px-6 py-2 rounded-md font-bold transition-all shadow-sm ${
-                approvedCount === clauses.length && clauses.length > 0 && !generating
+                clauses.length > 0 && approvedCount === clauses.length && !generating
                   ? 'bg-state-success text-white hover:bg-green-700'
-                  : 'bg-gray-100 text-text-muted cursor-not-allowed'
+                  : 'bg-gray-100/10 text-text-muted cursor-not-allowed'
               }`}
             >
               {generating ? (

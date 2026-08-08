@@ -67,7 +67,7 @@ const Teaching = () => {
       <div className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-[100] bg-bg-base/80 backdrop-blur-xl border-b border-white/5 px-8 py-5">
+      <nav className="fixed top-0 left-0 right-0 z-[100] bg-bg-base/80 backdrop-blur-xl border-b border-border-default/60 px-8 py-5">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-8 h-8 rounded-lg bg-accent-primary flex items-center justify-center shadow-lg shadow-accent-primary/20 group-hover:scale-110 transition-transform">
@@ -75,7 +75,7 @@ const Teaching = () => {
             </div>
             <span className="font-display text-xl font-bold tracking-tight">BACK TO<span className="text-accent-primary">.</span>HOME</span>
           </Link>
-          <div className="px-4 py-2 space-card rounded-xl border border-white/5 text-[10px] font-bold uppercase tracking-widest text-text-muted flex items-center gap-2">
+          <div className="px-4 py-2 space-card rounded-xl border border-border-default/60 text-[10px] font-bold uppercase tracking-widest text-text-muted flex items-center gap-2">
             <BookOpen className="w-3.5 h-3.5 text-accent-primary" /> Teaching Portal
           </div>
         </div>
@@ -83,7 +83,7 @@ const Teaching = () => {
 
       {/* Main Content */}
       <main className="flex-grow pt-32 pb-24 px-8 max-w-5xl mx-auto w-full space-y-12">
-        <div className="space-y-4 pb-6 border-b border-white/5">
+        <div className="space-y-4 pb-6 border-b border-border-default/60">
           <h1 className="text-4xl font-display font-bold uppercase tracking-tight">Academic Courses & Schedule</h1>
           <p className="text-sm text-text-muted leading-relaxed max-w-2xl">
             Office hours, teaching timetable, and structured syllabi for current classes at the School of Computer Science, Uttaranchal University.
@@ -94,7 +94,7 @@ const Teaching = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Schedule sidebar */}
           <div className="space-y-6">
-            <div className="p-6 space-card rounded-3xl border border-white/5 space-y-4">
+            <div className="p-6 space-card rounded-3xl border border-border-default/60 space-y-4">
               <h3 className="text-lg font-display font-bold uppercase tracking-tight text-white">Office Hours</h3>
               <div className="space-y-3 text-xs text-text-muted">
                 <div className="flex items-center gap-2">
@@ -112,7 +112,7 @@ const Teaching = () => {
               </div>
             </div>
 
-            <div className="p-6 space-card rounded-3xl border border-white/5 space-y-4">
+            <div className="p-6 space-card rounded-3xl border border-border-default/60 space-y-4">
               <h3 className="text-lg font-display font-bold uppercase tracking-tight text-white">Academic Calendar</h3>
               <div className="space-y-2 text-xs text-text-muted">
                 <p>&bull; Autumn Sem classes: Aug – Dec</p>
@@ -135,7 +135,7 @@ const Teaching = () => {
             ) : (
               <div className="space-y-6">
                 {courses.map((course) => (
-                  <div key={course.id} className="p-6 space-card rounded-2xl border border-white/5 hover:border-white/10 transition-all space-y-3">
+                  <div key={course.id} className="p-6 space-card rounded-2xl border border-border-default/60 hover:border-border-default transition-all space-y-3">
                     <div className="flex justify-between items-center">
                       <span className="text-[10px] font-mono font-bold text-accent-secondary uppercase tracking-widest">
                         {course.code}
@@ -152,7 +152,7 @@ const Teaching = () => {
       </main>
 
       {/* Footer */}
-      <footer className="py-16 border-t border-white/5 text-center">
+      <footer className="py-16 border-t border-border-default/60 text-center">
         <p className="text-text-muted text-[10px] font-bold uppercase tracking-[0.4em]">
           &copy; 2026 Deepak Bhatt • Academic Integrity Protocol
         </p>

@@ -11,7 +11,7 @@ interface TimelineStepProps {
 const TimelineStep = ({ label, description, isComplete, isLast, icon }: TimelineStepProps) => (
   <div className="flex gap-4">
     <div className="flex flex-col items-center">
-      <div className={`p-2 rounded-full border-2 ${isComplete ? 'bg-state-success border-state-success text-white' : 'bg-white border-border-default text-text-muted'}`}>
+      <div className={`p-2 rounded-full border-2 ${isComplete ? 'bg-state-success border-state-success text-text-primary' : 'bg-white border-border-default text-text-muted'}`}>
         {icon}
       </div>
       {!isLast && <div className={`w-0.5 h-12 ${isComplete ? 'bg-state-success' : 'bg-border-default'}`} />}

@@ -96,7 +96,7 @@ const Publications = () => {
       <div className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-[100] bg-bg-base/80 backdrop-blur-xl border-b border-white/5 px-8 py-5">
+      <nav className="fixed top-0 left-0 right-0 z-[100] bg-bg-base/80 backdrop-blur-xl border-b border-border-default/60 px-8 py-5">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-8 h-8 rounded-lg bg-accent-primary flex items-center justify-center shadow-lg shadow-accent-primary/20 group-hover:scale-110 transition-transform">
@@ -104,7 +104,7 @@ const Publications = () => {
             </div>
             <span className="font-display text-xl font-bold tracking-tight">BACK TO<span className="text-accent-primary">.</span>HOME</span>
           </Link>
-          <div className="px-4 py-2 space-card rounded-xl border border-white/5 text-[10px] font-bold uppercase tracking-widest text-text-muted flex items-center gap-2">
+          <div className="px-4 py-2 space-card rounded-xl border border-border-default/60 text-[10px] font-bold uppercase tracking-widest text-text-muted flex items-center gap-2">
             <BookOpen className="w-3.5 h-3.5 text-accent-primary" /> Academic Bibliography
           </div>
         </div>
@@ -112,7 +112,7 @@ const Publications = () => {
 
       {/* Main Content */}
       <main className="flex-grow pt-32 pb-24 px-8 max-w-5xl mx-auto w-full space-y-12">
-        <div className="space-y-4 pb-6 border-b border-white/5">
+        <div className="space-y-4 pb-6 border-b border-border-default/60">
           <h1 className="text-4xl font-display font-bold uppercase tracking-tight">Research Publications</h1>
           <p className="text-sm text-text-muted leading-relaxed max-w-2xl">
             A listing of peer-reviewed journal articles, conference papers, and active research submissions charting the progress of our legal-tech smart contract framework.
@@ -127,7 +127,7 @@ const Publications = () => {
             placeholder="Search by title, authors, or publication venue..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-6 text-sm focus:outline-none focus:border-accent-primary transition-colors font-medium"
+            className="w-full bg-border-default/30 border border-border-default rounded-2xl py-4 pl-12 pr-6 text-sm focus:outline-none focus:border-accent-primary transition-colors font-medium"
           />
         </div>
 
@@ -137,22 +137,22 @@ const Publications = () => {
             <Loader2 className="w-8 h-8 text-accent-primary animate-spin" />
           </div>
         ) : filteredPublications.length === 0 ? (
-          <div className="text-center py-20 space-card rounded-3xl border border-white/5">
+          <div className="text-center py-20 space-card rounded-3xl border border-border-default/60">
             <p className="text-text-muted text-sm font-medium">No publications found matching your search query.</p>
           </div>
         ) : (
           <div className="space-y-6">
             {filteredPublications.map((pub) => (
-              <div key={pub.id} className="p-8 space-card rounded-[2rem] border border-white/5 hover:border-white/10 transition-all flex flex-col md:flex-row justify-between items-start gap-8 relative overflow-hidden">
+              <div key={pub.id} className="p-8 space-card rounded-[2rem] border border-border-default/60 hover:border-border-default transition-all flex flex-col md:flex-row justify-between items-start gap-8 relative overflow-hidden">
                 <div className="space-y-4 flex-grow max-w-3xl">
                   <div className="flex flex-wrap gap-2 items-center">
-                    <span className="text-[9px] font-bold px-3 py-1 rounded-md bg-white/5 border border-white/5 text-accent-secondary uppercase tracking-widest">
+                    <span className="text-[9px] font-bold px-3 py-1 rounded-md bg-border-default/30 border border-border-default/60 text-accent-secondary uppercase tracking-widest">
                       {pub.year}
                     </span>
                     <span className={`text-[9px] font-bold px-3 py-1 rounded-md border uppercase tracking-widest ${
                       pub.status === 'PUBLISHED' ? 'bg-accent-tertiary/10 border-accent-tertiary/20 text-accent-tertiary' :
                       pub.status === 'ACCEPTED' ? 'bg-accent-secondary/10 border-accent-secondary/20 text-accent-secondary' :
-                      'bg-white/5 border-white/10 text-text-muted'
+                      'bg-border-default/30 border-border-default text-text-muted'
                     }`}>
                       {pub.status.replace('_', ' ')}
                     </span>
@@ -174,10 +174,10 @@ const Publications = () => {
                   )}
                 </div>
 
-                <div className="flex md:flex-col gap-3 min-w-[140px] w-full md:w-auto pt-6 md:pt-0 border-t md:border-t-0 md:border-l border-white/5 md:pl-8">
+                <div className="flex md:flex-col gap-3 min-w-[140px] w-full md:w-auto pt-6 md:pt-0 border-t md:border-t-0 md:border-l border-border-default/60 md:pl-8">
                   <button 
                     onClick={() => copyCitation(pub)}
-                    className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 border border-white/5 text-[10px] font-bold uppercase tracking-wider hover:bg-white/10 hover:border-white/10 transition-colors w-full text-center"
+                    className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-border-default/30 border border-border-default/60 text-[10px] font-bold uppercase tracking-wider hover:bg-border-default/50 hover:border-border-default transition-colors w-full text-center"
                   >
                     {copiedId === pub.id ? (
                       <>
@@ -194,7 +194,7 @@ const Publications = () => {
                       href={`https://doi.org/${pub.doi}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 border border-white/5 text-[10px] font-bold uppercase tracking-wider hover:bg-white/10 hover:border-white/10 transition-colors w-full text-center"
+                      className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-border-default/30 border border-border-default/60 text-[10px] font-bold uppercase tracking-wider hover:bg-border-default/50 hover:border-border-default transition-colors w-full text-center"
                     >
                       <ExternalLink className="w-3.5 h-3.5 text-text-muted" /> View DOI
                     </a>
@@ -213,7 +213,7 @@ const Publications = () => {
       </main>
 
       {/* Footer */}
-      <footer className="py-16 border-t border-white/5 text-center">
+      <footer className="py-16 border-t border-border-default/60 text-center">
         <p className="text-text-muted text-[10px] font-bold uppercase tracking-[0.4em]">
           &copy; 2026 Deepak Bhatt • Academic Integrity Protocol
         </p>

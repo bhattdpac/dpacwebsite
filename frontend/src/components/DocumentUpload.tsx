@@ -101,8 +101,8 @@ const DocumentUpload = ({ onUploadSuccess, onClose }: DocumentUploadProps) => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-                    currentStep > 1 ? 'bg-state-success text-white' : 
-                    currentStep === 1 ? 'bg-accent-primary text-white animate-pulse' : 
+                    currentStep > 1 ? 'bg-state-success text-text-primary' : 
+                    currentStep === 1 ? 'bg-accent-primary text-text-primary animate-pulse' : 
                     'bg-bg-base border border-border-default text-text-muted'
                   }`}>
                     {currentStep > 1 ? '✓' : '1'}
@@ -115,8 +115,8 @@ const DocumentUpload = ({ onUploadSuccess, onClose }: DocumentUploadProps) => {
 
                 <div className="flex items-center gap-3">
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-                    currentStep > 2 ? 'bg-state-success text-white' : 
-                    currentStep === 2 ? 'bg-accent-primary text-white animate-pulse' : 
+                    currentStep > 2 ? 'bg-state-success text-text-primary' : 
+                    currentStep === 2 ? 'bg-accent-primary text-text-primary animate-pulse' : 
                     'bg-bg-base border border-border-default text-text-muted'
                   }`}>
                     {currentStep > 2 ? '✓' : '2'}
@@ -129,8 +129,8 @@ const DocumentUpload = ({ onUploadSuccess, onClose }: DocumentUploadProps) => {
 
                 <div className="flex items-center gap-3">
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-                    currentStep > 3 ? 'bg-state-success text-white' : 
-                    currentStep === 3 ? 'bg-accent-primary text-white animate-pulse' : 
+                    currentStep > 3 ? 'bg-state-success text-text-primary' : 
+                    currentStep === 3 ? 'bg-accent-primary text-text-primary animate-pulse' : 
                     'bg-bg-base border border-border-default text-text-muted'
                   }`}>
                     {currentStep > 3 ? '✓' : '3'}
@@ -196,7 +196,7 @@ const DocumentUpload = ({ onUploadSuccess, onClose }: DocumentUploadProps) => {
               <button
                 type="submit"
                 disabled={loading || !file}
-                className="w-full bg-accent-primary text-white py-3 rounded-md font-bold hover:bg-blue-700 transition-colors disabled:opacity-50"
+                className="w-full bg-accent-primary text-text-primary py-3 rounded-md font-bold hover:bg-blue-700 transition-colors disabled:opacity-50"
               >
                 Start Analysis
               </button>

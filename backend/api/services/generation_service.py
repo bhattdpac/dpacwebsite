@@ -84,6 +84,16 @@ def generate_client_explanation(template: SmartContractTemplate, params: Dict[st
             f"terminates it earlier (e.g., due to a breach), the contract's primary functions will be locked."
         )
     
+    if name == 'ConfidentialityNDA':
+        duration_seconds = int(params.get('termDuration', 31536000))
+        duration_years = round(duration_seconds / (365 * 86400), 1)
+        return (
+            f"This contract registers a Non-Disclosure Agreement (NDA). "
+            f"The disclosing party ({params.get('disclosingParty')}) and receiving party "
+            f"({params.get('receivingParty')}) agree to maintain strict confidentiality. "
+            f"The confidentiality obligations will remain active for {duration_years} years."
+        )
+    
     return (
         "This is a fundamental legal registry contract. It stores a digital fingerprint (hash) "
         "of your document on the blockchain, providing an immutable record that the document "

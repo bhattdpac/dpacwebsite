@@ -15,6 +15,7 @@
   /* Typography */
   --font-sans: var(--font-sans);
   --font-display: var(--font-display);
+  --font-serif: var(--font-serif);
   --font-mono: var(--font-mono);
 
   /* Map to standard Tailwind utility classes */
@@ -22,40 +23,61 @@
 }
 
 :root {
-  /* Cyber Sunset Aesthetic */
-  --bg-base: #030304;
-  --bg-surface: #0A0A0E;
-  --text-primary: #F8FAFC;
-  --text-muted: #94A3B8;
-  --accent-primary: #F97316; /* Sunset Orange */
-  --accent-secondary: #D946EF; /* Cosmic Magenta */
-  --accent-tertiary: #38BDF8; /* Space Cyan */
-  --border-default: #1E293B;
-  --state-error: #F43F5E;
+  /* Default: Modern AI Research Lab Light Theme (White, Light Gray, Near Black, Electric Blue/Indigo) */
+  --bg-base: #FFFFFF;
+  --bg-surface: #F8FAFC;
+  --text-primary: #0F172A;       /* Near Black */
+  --text-muted: #57657A;         /* Muted Slate Grey */
+  --accent-primary: #2563EB;     /* Electric Blue */
+  --accent-secondary: #4F46E5;   /* Indigo */
+  --accent-tertiary: #7C3AED;    /* Purple */
+  --border-default: #E2E8F0;     /* Very Light Gray Border */
+  --state-error: #EF4444;
   --state-success: #10B981;
-  --state-warning: #FBBF24;
+  --state-warning: #F59E0B;
 
-  /* Typography */
+  /* Typography representing Research and Academic Identity */
   --font-sans: "Inter", sans-serif;
   --font-display: "Space Grotesk", sans-serif;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Scoped Legal Tech Dark Theme for the Product/Application platform */
+.legal-app-theme {
+  --bg-base: #030408;            /* Deepest obsidian navy black */
+  --bg-surface: #0A0D16;         /* Obsidian dark surface */
+  --text-primary: #F8FAFC;       /* Off-white */
+  --text-muted: #8F9BB3;         /* Muted blue-grey */
+  --accent-primary: #D4AF37;     /* Justice Gold / Premium Amber */
+  --accent-secondary: #2563EB;   /* Blockchain Electric Blue */
+  --accent-tertiary: #0D9488;    /* Sage Tech Green */
+  --border-default: #1E293B;     /* Steel slate border */
+  
+  background-color: var(--bg-base);
+  color: var(--text-primary);
 }
 
 @layer base {
   body {
-    @apply bg-bg-base text-text-primary font-sans antialiased selection:bg-accent-primary selection:text-white;
+    @apply bg-bg-base text-text-primary font-sans antialiased selection:bg-accent-primary selection:text-white transition-colors duration-300;
     background-image: 
-      radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 100% 100%, rgba(217, 70, 239, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.02) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(79, 70, 229, 0.015) 0%, transparent 40%);
     background-attachment: fixed;
   }
 
   .sunset-gradient {
-    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, var(--accent-tertiary) 100%);
   }
 
   .space-card {
-    @apply bg-bg-surface/40 backdrop-blur-md border border-white/5 hover:border-white/10 transition-all;
+    @apply bg-bg-surface border border-border-default hover:border-accent-primary/40 hover:bg-white hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(37,99,235,0.04)] transition-all duration-300;
+  }
+
+  /* Scoped space-card overrides inside Legal App dark mode */
+  .legal-app-theme .space-card {
+    @apply bg-bg-surface/60 backdrop-blur-xl border border-border-default/90 hover:border-accent-primary/40 hover:bg-bg-surface/80 hover:-translate-y-0.5 hover:shadow-[0_0_35px_rgba(212,175,55,0.08)] transition-all duration-300;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -67,9 +89,25 @@
   .animate-fade-in {
     animation: fade-in 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   }
+  .animate-float-slow {
+    animation: float-slow 10s ease-in-out infinite;
+  }
+  .animate-float-delay {
+    animation: float-delay 12s ease-in-out infinite;
+  }
 }
 
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.03); }
+}
+
+@keyframes float-delay {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(20px) scale(1.02); }
 }

@@ -95,7 +95,7 @@ const Experiments = () => {
       <div className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-[100] bg-bg-base/80 backdrop-blur-xl border-b border-white/5 px-8 py-5">
+      <nav className="fixed top-0 left-0 right-0 z-[100] bg-bg-base/80 backdrop-blur-xl border-b border-border-default/60 px-8 py-5">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-8 h-8 rounded-lg bg-accent-primary flex items-center justify-center shadow-lg shadow-accent-primary/20 group-hover:scale-110 transition-transform">
@@ -103,7 +103,7 @@ const Experiments = () => {
             </div>
             <span className="font-display text-xl font-bold tracking-tight">BACK TO<span className="text-accent-primary">.</span>HOME</span>
           </Link>
-          <div className="px-4 py-2 space-card rounded-xl border border-white/5 text-[10px] font-bold uppercase tracking-widest text-text-muted flex items-center gap-2">
+          <div className="px-4 py-2 space-card rounded-xl border border-border-default/60 text-[10px] font-bold uppercase tracking-widest text-text-muted flex items-center gap-2">
             <FlaskConical className="w-3.5 h-3.5 text-accent-secondary" /> Technical Logbook
           </div>
         </div>
@@ -111,7 +111,7 @@ const Experiments = () => {
 
       {/* Main Content */}
       <main className="flex-grow pt-32 pb-24 px-8 max-w-5xl mx-auto w-full space-y-12">
-        <div className="space-y-4 pb-6 border-b border-white/5">
+        <div className="space-y-4 pb-6 border-b border-border-default/60">
           <h1 className="text-4xl font-display font-bold uppercase tracking-tight">Experiment Logs</h1>
           <p className="text-sm text-text-muted leading-relaxed max-w-2xl">
             A comprehensive, high-fidelity log of model training iterations, local inference evaluations (such as AirLLM), dataset benchmarking runs, and security audits.
@@ -126,7 +126,7 @@ const Experiments = () => {
             placeholder="Search experiments by title, model details, or observations..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-6 text-sm focus:outline-none focus:border-accent-primary transition-colors font-medium"
+            className="w-full bg-border-default/30 border border-border-default rounded-2xl py-4 pl-12 pr-6 text-sm focus:outline-none focus:border-accent-primary transition-colors font-medium"
           />
         </div>
 
@@ -136,23 +136,23 @@ const Experiments = () => {
             <Loader2 className="w-8 h-8 text-accent-primary animate-spin" />
           </div>
         ) : filteredExperiments.length === 0 ? (
-          <div className="text-center py-20 space-card rounded-3xl border border-white/5">
+          <div className="text-center py-20 space-card rounded-3xl border border-border-default/60">
             <p className="text-text-muted text-sm font-medium">No experiments found matching your search query.</p>
           </div>
         ) : (
           <div className="space-y-8">
             {filteredExperiments.map((exp) => (
-              <div key={exp.id} className="p-8 space-card rounded-[2.5rem] border border-white/5 hover:border-white/10 transition-all space-y-6 relative overflow-hidden">
+              <div key={exp.id} className="p-8 space-card rounded-[2.5rem] border border-border-default/60 hover:border-border-default transition-all space-y-6 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-orange-500/[0.02] via-transparent to-magenta-500/[0.02] pointer-events-none"></div>
                 
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/5 pb-6">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border-default/60 pb-6">
                   <div className="space-y-1">
                     <h3 className="text-2xl font-display font-bold uppercase tracking-tight text-white">{exp.title}</h3>
                     <div className="flex items-center gap-2 text-[10px] font-mono text-accent-primary uppercase tracking-wider font-bold">
                       <Server className="w-3.5 h-3.5" /> {exp.model_details}
                     </div>
                   </div>
-                  <span className="text-[10px] font-bold text-text-muted uppercase tracking-widest bg-white/5 border border-white/5 px-3.5 py-1.5 rounded-md">
+                  <span className="text-[10px] font-bold text-text-muted uppercase tracking-widest bg-border-default/30 border border-border-default/60 px-3.5 py-1.5 rounded-md">
                     {new Date(exp.created_at).toLocaleDateString()}
                   </span>
                 </div>
@@ -177,7 +177,7 @@ const Experiments = () => {
                   </div>
 
                   {/* Metrics and datasets */}
-                  <div className="space-y-6 md:border-l border-white/5 md:pl-8">
+                  <div className="space-y-6 md:border-l border-border-default/60 md:pl-8">
                     {exp.dataset && (
                       <div className="space-y-2">
                         <h4 className="text-[10px] font-bold uppercase tracking-wider text-text-primary flex items-center gap-1.5">
@@ -191,9 +191,9 @@ const Experiments = () => {
                       <h4 className="text-[10px] font-bold uppercase tracking-wider text-text-primary flex items-center gap-1.5">
                         <TrendingUp className="w-3.5 h-3.5 text-accent-secondary" /> Performance Metrics
                       </h4>
-                      <div className="space-y-2 bg-white/[0.02] border border-white/5 p-4 rounded-xl">
+                      <div className="space-y-2 bg-bg-base/40 border border-border-default/60 p-4 rounded-xl">
                         {Object.entries(exp.metrics).map(([key, val]) => (
-                          <div key={key} className="flex justify-between items-center text-[10px] font-mono border-b border-white/5 pb-1.5 last:border-b-0 last:pb-0">
+                          <div key={key} className="flex justify-between items-center text-[10px] font-mono border-b border-border-default/60 pb-1.5 last:border-b-0 last:pb-0">
                             <span className="text-text-muted uppercase">{key.replace('_', ' ')}</span>
                             <span className="text-accent-secondary font-bold">{val.toString()}</span>
                           </div>
@@ -209,7 +209,7 @@ const Experiments = () => {
       </main>
 
       {/* Footer */}
-      <footer className="py-16 border-t border-white/5 text-center">
+      <footer className="py-16 border-t border-border-default/60 text-center">
         <p className="text-text-muted text-[10px] font-bold uppercase tracking-[0.4em]">
           &copy; 2026 Deepak Bhatt • Academic Integrity Protocol
         </p>

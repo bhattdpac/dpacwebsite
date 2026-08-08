@@ -108,7 +108,7 @@ const ContractPreview = () => {
   }
 
   return (
-    <div className="min-h-screen bg-bg-base flex flex-col">
+    <div className="legal-app-theme min-h-screen bg-bg-base flex flex-col">
       <header className="bg-bg-surface border-b border-border-default px-8 py-4 sticky top-0 z-10 shadow-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
@@ -145,16 +145,33 @@ const ContractPreview = () => {
                     )}
                   </>
                 ) : (
-                  user?.role === 'CLIENT' && (
-                    <button 
-                      onClick={handleApprove}
-                      disabled={approving}
-                      className="bg-accent-primary text-white px-8 py-2 rounded-md font-bold hover:bg-blue-700 transition-all shadow-md flex items-center gap-2"
-                    >
-                      {approving ? <Loader2 className="h-5 w-5 animate-spin" /> : <CheckCircle className="h-5 w-5" />}
-                      Confirm & Approve Contract
-                    </button>
-                  )
+                  <>
+                    {user?.role === 'CLIENT' ? (
+                      <button 
+                        onClick={handleApprove}
+                        disabled={approving}
+                        className="bg-accent-primary text-white px-8 py-2 rounded-md font-bold hover:bg-blue-700 transition-all shadow-md flex items-center gap-2"
+                      >
+                        {approving ? <Loader2 className="h-5 w-5 animate-spin" /> : <CheckCircle className="h-5 w-5" />}
+                        Confirm & Approve Contract
+                      </button>
+                    ) : (
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs text-state-warning bg-state-warning/10 px-3 py-2 rounded font-bold border border-state-warning/20">
+                          Waiting for Client Approval
+                        </span>
+                        <button 
+                          onClick={handleApprove}
+                          disabled={approving}
+                          className="bg-accent-secondary text-white px-6 py-2 rounded-md text-xs font-bold hover:bg-indigo-700 transition-all shadow flex items-center gap-1.5"
+                          title="Simulate Client Sign-off in Demo Mode"
+                        >
+                          {approving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Cpu className="h-4 w-4" />}
+                          Simulate Client Sign-off
+                        </button>
+                      </div>
+                    )}
+                  </>
                 )}
               </>
             )}
@@ -168,7 +185,7 @@ const ContractPreview = () => {
           <div className="flex items-center gap-2 mb-4 text-text-muted uppercase text-xs font-bold tracking-widest">
             <Cpu className="h-4 w-4" /> Technical Implementation (Solidity)
           </div>
-          <div className="flex-1 bg-slate-900 rounded-xl p-6 overflow-auto shadow-inner border border-slate-800 text-sm font-mono text-slate-300">
+          <div className="flex-1 bg-slate-900 rounded-xl p-6 overflow-auto shadow-inner border border-slate-800 text-sm font-mono text-slate-100">
             <pre className="leading-relaxed">
               {proposal.generated_code}
             </pre>

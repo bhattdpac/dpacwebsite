@@ -54,9 +54,9 @@ const LoginPage = () => {
       {/* Background blur */}
       <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-accent-secondary/5 rounded-full blur-[120px] -z-10"></div>
       
-      <div className="max-w-md w-full bg-bg-surface rounded-3xl border border-white/5 shadow-2xl p-8 relative">
+      <div className="max-w-md w-full bg-bg-surface rounded-3xl border border-border-default/60 shadow-2xl p-8 relative">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-12 h-12 bg-white/5 border border-white/10 rounded-xl mb-4">
+          <div className="inline-flex items-center justify-center w-12 h-12 bg-border-default/30 border border-border-default rounded-xl mb-4">
             <Shield className="text-accent-secondary h-6 w-6" />
           </div>
           <h2 className="text-3xl font-display font-bold text-text-primary uppercase tracking-tight">Welcome Back</h2>
@@ -79,7 +79,7 @@ const LoginPage = () => {
               <input
                 type="text"
                 required
-                className="block w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm focus:outline-none focus:border-accent-secondary transition-colors"
+                className="block w-full pl-11 pr-4 py-3 bg-border-default/30 border border-border-default rounded-xl text-sm focus:outline-none focus:border-accent-secondary transition-colors"
                 placeholder="Enter your username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -93,7 +93,7 @@ const LoginPage = () => {
               <button 
                 type="button"
                 onClick={() => setShowForgotModal(true)}
-                className="text-xs text-accent-secondary hover:text-white transition-colors uppercase font-bold tracking-wider"
+                className="text-xs text-accent-secondary hover:text-accent-primary transition-colors uppercase font-bold tracking-wider"
               >
                 Forgot Password?
               </button>
@@ -105,7 +105,7 @@ const LoginPage = () => {
               <input
                 type="password"
                 required
-                className="block w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm focus:outline-none focus:border-accent-secondary transition-colors"
+                className="block w-full pl-11 pr-4 py-3 bg-border-default/30 border border-border-default rounded-xl text-sm focus:outline-none focus:border-accent-secondary transition-colors"
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -122,7 +122,26 @@ const LoginPage = () => {
           </button>
         </form>
 
-        <div className="mt-8 text-center text-xs">
+        {/* Role Reference Card */}
+        <div className="mt-8 pt-6 border-t border-border-default/60 space-y-4 font-sans">
+          <div className="text-center">
+            <span className="text-[10px] font-bold text-accent-secondary uppercase tracking-[0.2em]">Demo Role Credentials</span>
+          </div>
+          <div className="grid grid-cols-2 gap-3 text-left">
+            <div className="p-3 rounded-xl bg-bg-base/30 border border-border-default space-y-1">
+              <span className="text-[8px] font-bold text-accent-primary uppercase tracking-wider">Admin / Collaborator</span>
+              <p className="text-xs font-bold text-text-primary font-mono select-all">demo_lawyer</p>
+              <p className="text-[10px] text-text-muted">Pass: password</p>
+            </div>
+            <div className="p-3 rounded-xl bg-bg-base/30 border border-border-default space-y-1">
+              <span className="text-[8px] font-bold text-accent-secondary uppercase tracking-wider">Student / Visitor</span>
+              <p className="text-xs font-bold text-text-primary font-mono select-all">demo_client</p>
+              <p className="text-[10px] text-text-muted">Pass: password</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 text-center text-xs">
           <span className="text-text-muted font-semibold">Don't have an account?</span>{' '}
           <Link to="/signup" className="text-accent-secondary font-bold hover:underline ml-1">
             Create an account
@@ -133,14 +152,14 @@ const LoginPage = () => {
       {/* Forgot Password Modal */}
       {showForgotModal && (
         <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
-          <div className="bg-bg-surface border border-white/10 rounded-3xl p-8 max-w-sm w-full space-y-6 animate-in fade-in zoom-in-95 duration-200">
+          <div className="bg-bg-surface border border-border-default rounded-3xl p-8 max-w-sm w-full space-y-6 animate-in fade-in zoom-in-95 duration-200">
             <div className="flex justify-between items-start">
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary">
+              <div className="w-10 h-10 rounded-xl bg-border-default/30 border border-border-default flex items-center justify-center text-accent-secondary">
                 <Mail className="h-5 w-5" />
               </div>
               <button 
                 onClick={() => {setShowForgotModal(false); setRecoverySent(false);}}
-                className="text-text-muted hover:text-white p-1 transition-colors"
+                className="text-text-muted hover:text-accent-primary p-1 transition-colors"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -157,7 +176,7 @@ const LoginPage = () => {
               <input
                 type="email"
                 required
-                className="block w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm focus:outline-none focus:border-accent-secondary transition-colors"
+                className="block w-full px-4 py-3 bg-border-default/30 border border-border-default rounded-xl text-sm focus:outline-none focus:border-accent-secondary transition-colors"
                 placeholder="Enter email address"
                 value={recoveryEmail}
                 onChange={(e) => setRecoveryEmail(e.target.value)}
@@ -165,7 +184,7 @@ const LoginPage = () => {
               <button
                 type="submit"
                 disabled={recoverySent}
-                className="w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white py-3 rounded-xl text-xs font-bold uppercase tracking-widest disabled:opacity-50"
+                className="w-full bg-border-default/30 hover:bg-border-default/50 border border-border-default text-white py-3 rounded-xl text-xs font-bold uppercase tracking-widest disabled:opacity-50"
               >
                 {recoverySent ? "Sending request..." : "Send Recovery Link"}
               </button>

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../context/AuthContext';
 import api from '../api/api';
-import { LogOut, User, Briefcase, FileText, Activity, Plus, Shield } from 'lucide-react';
+import { LogOut, User, Briefcase, FileText, Activity, Plus, Shield, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import DocumentUpload from '../components/DocumentUpload';
 import DocumentList from '../components/DocumentList';
@@ -132,7 +132,7 @@ const Dashboard = () => {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-bg-base flex">
+    <div className="legal-app-theme min-h-screen bg-bg-base flex">
       {/* Sidebar */}
       <aside className="w-64 bg-bg-surface border-r border-border-default flex flex-col">
         <div className="p-6 border-b border-border-default flex items-center gap-2">
@@ -144,11 +144,11 @@ const Dashboard = () => {
           <a href="#" className="flex items-center gap-3 px-4 py-2 bg-accent-primary/10 text-accent-primary rounded-md font-medium">
             <Activity className="h-5 w-5" /> Dashboard
           </a>
-          <a href="#" className="flex items-center gap-3 px-4 py-2 text-text-muted hover:bg-white/5 rounded-md transition-colors">
+          <a href="#" className="flex items-center gap-3 px-4 py-2 text-text-muted hover:bg-border-default/30 rounded-md transition-colors">
             <FileText className="h-5 w-5" /> My Documents
           </a>
           {user.role === 'LAWYER' && (
-            <a href="#" className="flex items-center gap-3 px-4 py-2 text-text-muted hover:bg-white/5 rounded-md transition-colors">
+            <a href="#" className="flex items-center gap-3 px-4 py-2 text-text-muted hover:bg-border-default/30 rounded-md transition-colors">
               <Briefcase className="h-5 w-5" /> Deployments
             </a>
           )}
@@ -359,29 +359,71 @@ const Dashboard = () => {
                 )}
               </div>
 
-              {/* Right Column: Audit Logs */}
+              {/* Right Column: Audit Logs & LLM Checker */}
               {user.role === 'LAWYER' && (
-                <div className="bg-bg-surface p-6 rounded-xl border border-border-default shadow-sm flex flex-col h-[350px]">
-                  <h3 className="text-lg font-bold text-text-primary mb-4 flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-accent-primary" /> Security & AI Audit Log
-                  </h3>
-                  <div className="flex-1 overflow-y-auto space-y-4 pr-1 scrollbar-thin">
-                    {auditLogs.map((log) => (
-                      <div key={log.id} className="text-xs border-b border-border-default/50 pb-2 last:border-b-0 animate-fade-in">
-                        <div className="flex justify-between items-start gap-2">
-                          <span className={`px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${
-                            log.type === 'SECURITY' ? 'bg-state-error/10 text-state-error border border-state-error/20' :
-                            log.type === 'AUDIT' ? 'bg-state-warning/10 text-state-warning border border-state-warning/20' :
-                            log.type === 'DEPLOYMENT' ? 'bg-state-success/10 text-state-success border border-state-success/20' :
-                            'bg-accent-primary/10 text-accent-primary border border-accent-primary/20'
-                          }`}>
-                            {log.type}
-                          </span>
-                          <span className="text-[9px] text-text-muted font-mono whitespace-nowrap">{log.time}</span>
+                <div className="space-y-6">
+                  {/* Audit Logs */}
+                  <div className="bg-bg-surface p-6 rounded-xl border border-border-default shadow-sm flex flex-col h-[280px]">
+                    <h3 className="text-lg font-bold text-text-primary mb-4 flex items-center gap-2">
+                      <Shield className="h-5 w-5 text-accent-primary" /> Security & AI Audit Log
+                    </h3>
+                    <div className="flex-1 overflow-y-auto space-y-4 pr-1 scrollbar-thin">
+                      {auditLogs.map((log) => (
+                        <div key={log.id} className="text-xs border-b border-border-default/50 pb-2 last:border-b-0 animate-fade-in">
+                          <div className="flex justify-between items-start gap-2">
+                            <span className={`px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${
+                              log.type === 'SECURITY' ? 'bg-state-error/10 text-state-error border border-state-error/20' :
+                              log.type === 'AUDIT' ? 'bg-state-warning/10 text-state-warning border border-state-warning/20' :
+                              log.type === 'DEPLOYMENT' ? 'bg-state-success/10 text-state-success border border-state-success/20' :
+                              'bg-accent-primary/10 text-accent-primary border border-accent-primary/20'
+                            }`}>
+                              {log.type}
+                            </span>
+                            <span className="text-[9px] text-text-muted font-mono whitespace-nowrap">{log.time}</span>
+                          </div>
+                          <p className="text-text-primary mt-1 font-sans">{log.message}</p>
                         </div>
-                        <p className="text-text-primary mt-1 font-sans">{log.message}</p>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* LLM Checker */}
+                  <div className="bg-bg-surface p-6 rounded-xl border border-border-default shadow-sm">
+                    <h3 className="text-lg font-bold text-text-primary mb-4 flex items-center gap-2">
+                      <Cpu className="h-5 w-5 text-accent-primary animate-pulse" /> Local LLM Checker (Ollama)
+                    </h3>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center bg-bg-base p-3 rounded-lg border border-border-default">
+                        <div>
+                          <p className="text-[10px] text-text-muted uppercase font-bold">Recommended Model</p>
+                          <p className="text-sm font-bold text-text-primary">Gemma 2B (Ollama)</p>
+                        </div>
+                        <span className="text-[9px] bg-state-success/10 text-state-success px-2 py-0.5 rounded font-bold uppercase border border-state-success/20">
+                          80.4% Match
+                        </span>
                       </div>
-                    ))}
+
+                      <div className="space-y-2 text-xs">
+                        <div className="flex justify-between">
+                          <span className="text-text-muted">Hardware Tier:</span>
+                          <span className="text-text-primary font-bold">Ultra Low (VPS CPU)</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-text-muted">Available Memory:</span>
+                          <span className="text-text-primary font-bold">1.3 GB / 3.8 GB</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-text-muted">Estimated speed:</span>
+                          <span className="text-text-primary font-bold">~12 tokens/sec</span>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-slate-950 p-3 rounded-lg font-mono text-[10px] text-slate-300 border border-slate-800">
+                        <span className="text-state-warning"># CLI Command to install:</span>
+                        <br />
+                        ollama pull gemma
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}

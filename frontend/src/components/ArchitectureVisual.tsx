@@ -56,9 +56,9 @@ const ArchitectureVisual = () => {
           tabIndex={0}
           onClick={() => setActiveLayer(activeLayer === 'frontend' ? null : 'frontend')}
           onKeyDown={(e) => e.key === 'Enter' && setActiveLayer(activeLayer === 'frontend' ? null : 'frontend')}
-          className={`flex flex-col items-center text-center p-8 bg-white/5 rounded-2xl border transition-all duration-300 hover:bg-white/10 cursor-pointer focus:outline-none ${activeLayer === 'frontend' ? 'border-accent-tertiary ring-2 ring-accent-tertiary/20' : 'border-white/5'}`}
+          className={`flex flex-col items-center text-center p-8 bg-border-default/30 rounded-2xl border transition-all duration-300 hover:bg-border-default/50 cursor-pointer focus:outline-none ${activeLayer === 'frontend' ? 'border-accent-tertiary ring-2 ring-accent-tertiary/20' : 'border-border-default/60'}`}
         >
-          <div className="w-16 h-16 bg-bg-surface rounded-2xl shadow-xl border border-white/10 flex items-center justify-center mb-6 transition-transform hover:scale-110">
+          <div className="w-16 h-16 bg-bg-surface rounded-2xl shadow-xl border border-border-default flex items-center justify-center mb-6 transition-transform hover:scale-110">
             <Globe className="text-accent-tertiary w-8 h-8" />
           </div>
           <h3 className="font-display text-xl font-bold mb-2">Frontend</h3>
@@ -70,7 +70,7 @@ const ArchitectureVisual = () => {
 
         {/* Connector 1 */}
         <div className="hidden lg:flex items-center justify-center absolute left-[31%] top-1/2 -translate-y-1/2 z-10">
-          <div className="p-3 rounded-full bg-bg-surface border border-white/10 shadow-lg">
+          <div className="p-3 rounded-full bg-bg-surface border border-border-default shadow-lg">
             <ArrowRight className="text-accent-primary w-4 h-4" />
           </div>
         </div>
@@ -81,18 +81,18 @@ const ArchitectureVisual = () => {
           tabIndex={0}
           onClick={() => setActiveLayer(activeLayer === 'engine' ? null : 'engine')}
           onKeyDown={(e) => e.key === 'Enter' && setActiveLayer(activeLayer === 'engine' ? null : 'engine')}
-          className={`flex flex-col items-center text-center p-8 bg-white/5 rounded-2xl border transition-all duration-300 hover:bg-white/10 cursor-pointer focus:outline-none ${activeLayer === 'engine' ? 'border-accent-primary ring-2 ring-accent-primary/20' : 'border-white/5'}`}
+          className={`flex flex-col items-center text-center p-8 bg-border-default/30 rounded-2xl border transition-all duration-300 hover:bg-border-default/50 cursor-pointer focus:outline-none ${activeLayer === 'engine' ? 'border-accent-primary ring-2 ring-accent-primary/20' : 'border-border-default/60'}`}
         >
-          <div className="w-16 h-16 bg-bg-surface rounded-2xl shadow-xl border border-white/10 flex items-center justify-center mb-6 transition-transform hover:scale-110">
+          <div className="w-16 h-16 bg-bg-surface rounded-2xl shadow-xl border border-border-default flex items-center justify-center mb-6 transition-transform hover:scale-110">
             <Server className="text-accent-primary w-8 h-8" />
           </div>
           <h3 className="font-display text-xl font-bold mb-2">Core Engine</h3>
           <p className="text-xs text-text-muted mb-6 font-medium">Django & NLP Pipeline</p>
           <div className="space-y-2 w-full">
-            <div className="flex items-center gap-2 text-[10px] font-bold text-text-primary bg-bg-base p-2 rounded-lg border border-white/5">
+            <div className="flex items-center gap-2 text-[10px] font-bold text-text-primary bg-bg-base p-2 rounded-lg border border-border-default/60">
               <Search className="w-3 h-3 text-accent-primary" /> Clause Intelligence
             </div>
-            <div className="flex items-center gap-2 text-[10px] font-bold text-text-primary bg-bg-base p-2 rounded-lg border border-white/5">
+            <div className="flex items-center gap-2 text-[10px] font-bold text-text-primary bg-bg-base p-2 rounded-lg border border-border-default/60">
               <CheckCircle2 className="w-3 h-3 text-accent-secondary" /> Fairness Audit
             </div>
           </div>
@@ -100,7 +100,7 @@ const ArchitectureVisual = () => {
 
         {/* Connector 2 */}
         <div className="hidden lg:flex items-center justify-center absolute left-[64%] top-1/2 -translate-y-1/2 z-10">
-          <div className="p-3 rounded-full bg-bg-surface border border-white/10 shadow-lg">
+          <div className="p-3 rounded-full bg-bg-surface border border-border-default shadow-lg">
             <ArrowRight className="text-accent-secondary w-4 h-4" />
           </div>
         </div>
@@ -111,9 +111,9 @@ const ArchitectureVisual = () => {
           tabIndex={0}
           onClick={() => setActiveLayer(activeLayer === 'blockchain' ? null : 'blockchain')}
           onKeyDown={(e) => e.key === 'Enter' && setActiveLayer(activeLayer === 'blockchain' ? null : 'blockchain')}
-          className={`flex flex-col items-center text-center p-8 bg-white/5 rounded-2xl border transition-all duration-300 hover:bg-white/10 cursor-pointer focus:outline-none ${activeLayer === 'blockchain' ? 'border-accent-secondary ring-2 ring-accent-secondary/20' : 'border-white/5'}`}
+          className={`flex flex-col items-center text-center p-8 bg-border-default/30 rounded-2xl border transition-all duration-300 hover:bg-border-default/50 cursor-pointer focus:outline-none ${activeLayer === 'blockchain' ? 'border-accent-secondary ring-2 ring-accent-secondary/20' : 'border-border-default/60'}`}
         >
-          <div className="w-16 h-16 bg-bg-surface rounded-2xl shadow-xl border border-white/10 flex items-center justify-center mb-6 transition-transform hover:scale-110">
+          <div className="w-16 h-16 bg-bg-surface rounded-2xl shadow-xl border border-border-default flex items-center justify-center mb-6 transition-transform hover:scale-110">
             <Cpu className="text-accent-secondary w-8 h-8" />
           </div>
           <h3 className="font-display text-xl font-bold mb-2">Immutable Layer</h3>
@@ -129,30 +129,30 @@ const ArchitectureVisual = () => {
 
       {/* Interactive Details Panel */}
       {activeLayer && (
-        <div className={`mt-8 p-6 bg-white/5 rounded-2xl border transition-all duration-300 ${layerDetails[activeLayer].accentColor.split(' ')[0]}`}>
+        <div className={`mt-8 p-6 bg-border-default/30 rounded-2xl border transition-all duration-300 ${layerDetails[activeLayer].accentColor.split(' ')[0]}`}>
           <div className="flex justify-between items-start gap-4 mb-4">
-            <h4 className="font-display text-sm font-bold uppercase tracking-widest text-white">
+            <h4 className="font-display text-sm font-bold uppercase tracking-widest text-text-primary">
               {layerDetails[activeLayer].title}
             </h4>
             <button 
               onClick={() => setActiveLayer(null)}
-              className="text-[10px] uppercase font-bold tracking-widest text-text-muted hover:text-white transition-colors"
+              className="text-[10px] uppercase font-bold tracking-widest text-text-muted hover:text-accent-primary transition-colors"
             >
               Close
             </button>
           </div>
           <div className="space-y-4 text-xs leading-relaxed font-medium">
             <p>
-              <strong className="text-white uppercase tracking-wider block mb-1 text-[10px]">Role & Importance:</strong>
+              <strong className="text-text-primary uppercase tracking-wider block mb-1 text-[10px]">Role & Importance:</strong>
               <span className="text-text-muted">{layerDetails[activeLayer].importance}</span>
             </p>
             <p>
-              <strong className="text-white uppercase tracking-wider block mb-1 text-[10px]">Current Operations:</strong>
+              <strong className="text-text-primary uppercase tracking-wider block mb-1 text-[10px]">Current Operations:</strong>
               <span className="text-text-muted">{layerDetails[activeLayer].status}</span>
             </p>
             <div className="flex flex-wrap gap-2 pt-2">
               {layerDetails[activeLayer].tech.map((t, idx) => (
-                <span key={idx} className="px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-[9px] font-mono tracking-wider text-white">
+                <span key={idx} className="px-2.5 py-1 rounded-md bg-border-default/30 border border-border-default/60 text-[9px] font-mono tracking-wider text-text-primary">
                   {t}
                 </span>
               ))}
@@ -162,7 +162,7 @@ const ArchitectureVisual = () => {
       )}
 
       <div className="mt-12 text-center">
-        <div className="inline-flex items-center gap-4 p-1 px-4 rounded-full bg-white/5 border border-white/5">
+        <div className="inline-flex items-center gap-4 p-1 px-4 rounded-full bg-border-default/30 border border-border-default/60">
           <div className="flex -space-x-1">
             <div className="w-2 h-2 rounded-full bg-accent-primary"></div>
             <div className="w-2 h-2 rounded-full bg-accent-secondary"></div>

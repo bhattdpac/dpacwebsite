@@ -10,21 +10,23 @@ All components must use these tokens (configured in Tailwind) — no hardcoded h
 
 | Role            | CSS Variable       | Value     |
 | --------------- | ------------------ | --------- |
-| Page background | `--bg-base`        | `#F9FAFB` |
+| Page background | `--bg-base`        | `#FCFAF7` |
 | Surface         | `--bg-surface`     | `#FFFFFF` |
-| Primary text    | `--text-primary`   | `#111827` |
+| Primary text    | `--text-primary`   | `#1E2229` |
 | Muted text      | `--text-muted`     | `#6B7280` |
-| Primary accent  | `--accent-primary` | `#2563EB` |
-| Border          | `--border-default` | `#E5E7EB` |
-| Error           | `--state-error`    | `#EF4444` |
-| Success         | `--state-success`  | `#10B981` |
-| Warning         | `--state-warning`  | `#F59E0B` |
+| Primary accent  | `--accent-primary` | `#D95420` |
+| Border          | `--border-default` | `#EAE3D9` |
+| Error           | `--state-error`    | `#DC2626` |
+| Success         | `--state-success`  | `#059669` |
+| Warning         | `--state-warning`  | `#D97706` |
 
 ## Typography
 
 | Role      | Font                | Variable      |
 | --------- | ------------------- | ------------- |
 | UI text   | Inter / System Sans | `--font-sans` |
+| Display   | Playfair Display    | `--font-display`|
+| Research  | Lora (Serif)        | `--font-serif`|
 | Code/mono | Fira Code / Mono    | `--font-mono` |
 
 ## Border Radius

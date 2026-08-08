@@ -98,7 +98,7 @@ const ClauseItem = ({ clause, onUpdate, onDelete }: ClauseItemProps) => {
           <button
             onClick={handleSaveEdit}
             disabled={loading}
-            className="flex items-center gap-2 bg-accent-primary text-white px-4 py-2 rounded-md font-bold text-sm hover:bg-blue-700"
+            className="flex items-center gap-2 bg-accent-primary text-text-primary px-4 py-2 rounded-md font-bold text-sm hover:bg-blue-700"
           >
             <Save className="h-4 w-4" /> {loading ? 'Saving...' : 'Save Changes'}
           </button>
